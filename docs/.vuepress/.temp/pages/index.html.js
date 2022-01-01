@@ -43,7 +43,16 @@ export const data = {
   },
   "excerpt": "",
   "headers": [],
-  "git": {},
+  "git": {
+    "updatedTime": 1640575710000,
+    "contributors": [
+      {
+        "name": "Joe",
+        "email": "me@qjidea.com",
+        "commits": 1
+      }
+    ]
+  },
   "filePathRelative": "README.md"
 }
 

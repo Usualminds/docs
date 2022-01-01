@@ -1,6 +1,6 @@
 export const data = {
-  "key": "v-b26deb9c",
-  "path": "/algorithms/",
+  "key": "v-21a0d321",
+  "path": "/algorithms/README%20copy.html",
   "title": "二叉树",
   "lang": "en-US",
   "frontmatter": {},
@@ -8,20 +8,8 @@ export const data = {
   "headers": [
     {
       "level": 2,
-      "title": "从上到下打印二叉树 I",
-      "slug": "从上到下打印二叉树-i",
-      "children": []
-    },
-    {
-      "level": 2,
       "title": "从上到下打印二叉树 II",
       "slug": "从上到下打印二叉树-ii",
-      "children": []
-    },
-    {
-      "level": 2,
-      "title": "从上到下打印二叉树 III",
-      "slug": "从上到下打印二叉树-iii",
       "children": []
     }
   ]

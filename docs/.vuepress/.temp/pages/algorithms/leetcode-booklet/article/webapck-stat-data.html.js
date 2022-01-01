@@ -44,7 +44,16 @@ export const data = {
       ]
     }
   ],
-  "git": {},
+  "git": {
+    "updatedTime": 1640575710000,
+    "contributors": [
+      {
+        "name": "Joe",
+        "email": "me@qjidea.com",
+        "commits": 1
+      }
+    ]
+  },
   "filePathRelative": "algorithms/leetcode-booklet/article/webapck-stat-data.md"
 }
 

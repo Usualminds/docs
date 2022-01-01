@@ -25,7 +25,7 @@ export const themeData = {
         },
         {
           "text": "每日一题",
-          "link": ""
+          "link": "/leetcode/"
         },
         {
           "text": "打包工具",
@@ -59,7 +59,9 @@ export const themeData = {
           {
             "text": "算法",
             "children": [
-              "/algorithms/README.md"
+              "/algorithms/README.md",
+              "/algorithms/dp.md",
+              "/algorithms/linklist.md"
             ]
           }
         ],
@@ -71,31 +73,13 @@ export const themeData = {
               "/zh/advanced/plugin.md",
               "/zh/advanced/theme.md"
             ]
-          },
-          {
-            "text": "Cookbook",
-            "children": [
-              "/zh/advanced/cookbook/README.md",
-              "/zh/advanced/cookbook/usage-of-client-app-enhance.md",
-              "/zh/advanced/cookbook/adding-extra-pages.md",
-              "/zh/advanced/cookbook/extending-a-theme.md",
-              "/zh/advanced/cookbook/passing-data-to-client-code.md",
-              "/zh/advanced/cookbook/markdown-and-vue-sfc.md"
-            ]
           }
         ],
         "/zh/reference/": [
           {
             "text": "VuePress 参考",
             "children": [
-              "/zh/reference/cli.md",
-              "/zh/reference/config.md",
-              "/zh/reference/frontmatter.md",
-              "/zh/reference/components.md",
-              "/zh/reference/plugin-api.md",
-              "/zh/reference/theme-api.md",
-              "/zh/reference/client-api.md",
-              "/zh/reference/node-api.md"
+              "/zh/reference/cli.md"
             ]
           }
         ],
@@ -134,38 +118,6 @@ export const themeData = {
                   "/zh/reference/plugin/medium-zoom.md",
                   "/zh/reference/plugin/nprogress.md",
                   "/zh/reference/plugin/register-components.md"
-                ]
-              },
-              {
-                "text": "内容搜索",
-                "children": [
-                  "/zh/reference/plugin/docsearch.md",
-                  "/zh/reference/plugin/search.md"
-                ]
-              },
-              {
-                "text": "PWA",
-                "children": [
-                  "/zh/reference/plugin/pwa.md",
-                  "/zh/reference/plugin/pwa-popup.md"
-                ]
-              },
-              {
-                "text": "语法高亮",
-                "children": [
-                  "/zh/reference/plugin/prismjs.md",
-                  "/zh/reference/plugin/shiki.md"
-                ]
-              },
-              {
-                "text": "主题开发",
-                "children": [
-                  "/zh/reference/plugin/active-header-links.md",
-                  "/zh/reference/plugin/debug.md",
-                  "/zh/reference/plugin/git.md",
-                  "/zh/reference/plugin/palette.md",
-                  "/zh/reference/plugin/theme-data.md",
-                  "/zh/reference/plugin/toc.md"
                 ]
               }
             ]

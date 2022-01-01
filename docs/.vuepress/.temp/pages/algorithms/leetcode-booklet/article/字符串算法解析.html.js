@@ -6,7 +6,16 @@ export const data = {
   "frontmatter": {},
   "excerpt": "",
   "headers": [],
-  "git": {},
+  "git": {
+    "updatedTime": 1640575710000,
+    "contributors": [
+      {
+        "name": "Joe",
+        "email": "me@qjidea.com",
+        "commits": 1
+      }
+    ]
+  },
   "filePathRelative": "algorithms/leetcode-booklet/article/字符串算法解析.md"
 }
 

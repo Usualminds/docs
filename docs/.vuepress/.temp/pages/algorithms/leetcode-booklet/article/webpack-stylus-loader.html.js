@@ -123,7 +123,16 @@ export const data = {
       "children": []
     }
   ],
-  "git": {},
+  "git": {
+    "updatedTime": 1640575710000,
+    "contributors": [
+      {
+        "name": "Joe",
+        "email": "me@qjidea.com",
+        "commits": 1
+      }
+    ]
+  },
   "filePathRelative": "algorithms/leetcode-booklet/article/webpack-stylus-loader.md"
 }
 

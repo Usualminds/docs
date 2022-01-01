@@ -24,7 +24,7 @@ export const zh: NavbarConfig = [
     },
     {
         text: '每日一题',
-        link: ''
+        link: '/leetcode/'
     },
     {
         text: '打包工具',

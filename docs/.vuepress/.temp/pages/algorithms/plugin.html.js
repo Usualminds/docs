@@ -1,30 +1,29 @@
 export const data = {
-  "key": "v-b26deb9c",
-  "path": "/algorithms/",
-  "title": "二叉树",
+  "key": "v-15855c14",
+  "path": "/algorithms/plugin.html",
+  "title": "插件",
   "lang": "en-US",
   "frontmatter": {},
   "excerpt": "",
   "headers": [
     {
       "level": 2,
-      "title": "从上到下打印二叉树 I",
-      "slug": "从上到下打印二叉树-i",
+      "title": "社区插件",
+      "slug": "社区插件",
       "children": []
     },
     {
       "level": 2,
-      "title": "从上到下打印二叉树 II",
-      "slug": "从上到下打印二叉树-ii",
-      "children": []
-    },
-    {
-      "level": 2,
-      "title": "从上到下打印二叉树 III",
-      "slug": "从上到下打印二叉树-iii",
+      "title": "本地插件",
+      "slug": "本地插件",
       "children": []
     }
-  ]
+  ],
+  "git": {
+    "updatedTime": null,
+    "contributors": []
+  },
+  "filePathRelative": "algorithms/plugin.md"
 }
 
 if (import.meta.webpackHot) {
