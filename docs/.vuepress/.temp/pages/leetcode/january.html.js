@@ -1,29 +1,23 @@
 export const data = {
-  "key": "v-5699a55b",
-  "path": "/algorithms/dp.html",
-  "title": "动态规划",
+  "key": "v-7ada4160",
+  "path": "/leetcode/january.html",
+  "title": "一月",
   "lang": "en-US",
   "frontmatter": {},
   "excerpt": "",
   "headers": [
     {
       "level": 2,
-      "title": "打家劫舍",
-      "slug": "打家劫舍",
+      "title": "2022.1.1",
+      "slug": "_2022-1-1",
       "children": []
     }
   ],
   "git": {
-    "updatedTime": 1641009315000,
-    "contributors": [
-      {
-        "name": "Joe",
-        "email": "me@qjidea.com",
-        "commits": 1
-      }
-    ]
+    "updatedTime": null,
+    "contributors": []
   },
-  "filePathRelative": "algorithms/dp.md"
+  "filePathRelative": "leetcode/january.md"
 }
 
 if (import.meta.webpackHot) {

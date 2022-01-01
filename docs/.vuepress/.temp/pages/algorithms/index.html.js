@@ -24,7 +24,18 @@ export const data = {
       "slug": "从上到下打印二叉树-iii",
       "children": []
     }
-  ]
+  ],
+  "git": {
+    "updatedTime": 1641009315000,
+    "contributors": [
+      {
+        "name": "Joe",
+        "email": "me@qjidea.com",
+        "commits": 2
+      }
+    ]
+  },
+  "filePathRelative": "algorithms/README.md"
 }
 
 if (import.meta.webpackHot) {

@@ -25,7 +25,7 @@ export const themeData = {
         },
         {
           "text": "每日一题",
-          "link": "/leetcode/"
+          "link": "/leetcode/january.md"
         },
         {
           "text": "打包工具",
@@ -65,13 +65,11 @@ export const themeData = {
             ]
           }
         ],
-        "/zh/advanced/": [
+        "/leetcode/": [
           {
-            "text": "深入",
+            "text": "每日一题",
             "children": [
-              "/zh/advanced/architecture.md",
-              "/zh/advanced/plugin.md",
-              "/zh/advanced/theme.md"
+              "/leetcode/january.md"
             ]
           }
         ],

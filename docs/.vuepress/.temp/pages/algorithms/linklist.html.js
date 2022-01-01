@@ -12,7 +12,18 @@ export const data = {
       "slug": "链表的中间结点",
       "children": []
     }
-  ]
+  ],
+  "git": {
+    "updatedTime": 1641009315000,
+    "contributors": [
+      {
+        "name": "Joe",
+        "email": "me@qjidea.com",
+        "commits": 1
+      }
+    ]
+  },
+  "filePathRelative": "algorithms/linklist.md"
 }
 
 if (import.meta.webpackHot) {

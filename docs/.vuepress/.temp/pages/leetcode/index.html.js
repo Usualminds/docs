@@ -1,11 +1,18 @@
 export const data = {
   "key": "v-31987621",
   "path": "/leetcode/",
-  "title": "leetcode",
+  "title": "一月",
   "lang": "en-US",
   "frontmatter": {},
   "excerpt": "",
-  "headers": []
+  "headers": [
+    {
+      "level": 2,
+      "title": "2022.1.1",
+      "slug": "_2022-1-1",
+      "children": []
+    }
+  ]
 }
 
 if (import.meta.webpackHot) {
