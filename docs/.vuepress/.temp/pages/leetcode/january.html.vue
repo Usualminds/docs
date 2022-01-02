@@ -39,4 +39,48 @@
   <span class="token keyword">return</span> results
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br></div></div>  </CodeGroupItem>
+</CodeGroup>
+<h2 id="_2022-1-2" tabindex="-1"><a class="header-anchor" href="#_2022-1-2" aria-hidden="true">#</a> 2022.1.2</h2>
+<blockquote>
+<p>👉
+<a href="https://leetcode-cn.com/problems/elimination-game/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+</blockquote>
+<p>列表 arr 由在范围 [1, n] 中的所有整数组成，并按严格递增排序。请你对 arr 应用下述算法：</p>
+<p>从左到右，删除第一个数字，然后每隔一个数字删除一个，直到到达列表末尾。
+重复上面的步骤，但这次是从右到左。也就是，删除最右侧的数字，然后剩下的数字每隔一个删除一个。
+不断重复这两步，从左到右和从右到左交替进行，直到只剩下一个数字。
+给你整数 n ，返回 arr 最后剩下的数字。</p>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<ul>
+<li>示例 1：</li>
+</ul>
+<p>输入：n = 9
+输出：6
+解释：
+arr = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+arr = [2, 4, 6, 8]
+arr = [2, 6]
+arr = [6]</p>
+<ul>
+<li>示例 2：</li>
+</ul>
+<p>输入：n = 1
+输出：1</p>
+</div>
+<CodeGroup>
+  <CodeGroupItem title="TS" active>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">lastRemaining</span><span class="token punctuation">(</span>n<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+    <span class="token keyword">return</span> <span class="token function">count</span><span class="token punctuation">(</span>n<span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+<span class="token keyword">function</span> <span class="token function">count</span><span class="token punctuation">(</span>n<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> flag<span class="token operator">:</span> <span class="token builtin">boolean</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>flag<span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">2</span><span class="token operator">*</span><span class="token function">count</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>n <span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">!</span>flag<span class="token punctuation">)</span>
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>n <span class="token operator">%</span> <span class="token number">2</span> <span class="token operator">===</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">2</span><span class="token operator">*</span><span class="token function">count</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>n <span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">!</span>flag<span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token number">2</span><span class="token operator">*</span><span class="token function">count</span><span class="token punctuation">(</span>Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>n <span class="token operator">/</span><span class="token number">2</span><span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token operator">!</span>flag<span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">1</span> 
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div>  </CodeGroupItem>
 </CodeGroup></template>

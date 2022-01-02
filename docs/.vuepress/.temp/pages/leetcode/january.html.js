@@ -11,13 +11,14 @@ export const data = {
       "title": "2022.1.1",
       "slug": "_2022-1-1",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "2022.1.2",
+      "slug": "_2022-1-2",
+      "children": []
     }
-  ],
-  "git": {
-    "updatedTime": null,
-    "contributors": []
-  },
-  "filePathRelative": "leetcode/january.md"
+  ]
 }
 
 if (import.meta.webpackHot) {
