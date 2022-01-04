@@ -110,7 +110,7 @@ arr = [6]</p>
 输出：&quot;Sunday&quot;</p>
 </div>
 <CodeGroup>
-  <CodeGroupItem title="TS" active>
+  <CodeGroupItem title="解法一" active>
 <div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">dayOfTheWeek</span><span class="token punctuation">(</span>day<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> month<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> year<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> weeks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">"Monday"</span><span class="token punctuation">,</span> <span class="token string">"Tuesday"</span><span class="token punctuation">,</span> <span class="token string">"Wednesday"</span><span class="token punctuation">,</span> <span class="token string">"Thursday"</span><span class="token punctuation">,</span> <span class="token string">"Friday"</span><span class="token punctuation">,</span> <span class="token string">"Saturday"</span><span class="token punctuation">,</span> <span class="token string">"Sunday"</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
     <span class="token keyword">let</span> today <span class="token operator">=</span> <span class="token function">getDay</span><span class="token punctuation">(</span>day<span class="token punctuation">,</span> month<span class="token punctuation">,</span> year<span class="token punctuation">)</span>
@@ -135,5 +135,63 @@ arr = [6]</p>
     <span class="token keyword">return</span> count <span class="token operator">+</span> day
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br></div></div>  </CodeGroupItem>
+ <CodeGroupItem title="解法二" active>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">// API 调用方法</span>
+<span class="token keyword">function</span> <span class="token function">dayOfTheWeek</span><span class="token punctuation">(</span>day<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> month<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> year<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> weeks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Sunday'</span><span class="token punctuation">,</span><span class="token string">'Monday'</span><span class="token punctuation">,</span><span class="token string">'Tuesday'</span><span class="token punctuation">,</span><span class="token string">'Wednesday'</span><span class="token punctuation">,</span><span class="token string">'Thursday'</span><span class="token punctuation">,</span><span class="token string">'Friday'</span><span class="token punctuation">,</span><span class="token string">'Saturday'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+    <span class="token keyword">let</span> now <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">Date</span><span class="token punctuation">(</span>year<span class="token punctuation">,</span> month<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">,</span> day<span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> weeks<span class="token punctuation">[</span>now<span class="token punctuation">.</span><span class="token function">getDay</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span>
+<span class="token punctuation">}</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div>  </CodeGroupItem>
+ <CodeGroupItem title="解法三" active>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">dayOfTheWeek</span><span class="token punctuation">(</span>day<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> month<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">,</span> year<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+    <span class="token comment">// 蔡勒公式释义： https://zh.wikipedia.org/wiki/%E8%94%A1%E5%8B%92%E5%85%AC%E5%BC%8F</span>
+    <span class="token comment">// w：星期（计算所得的数值对应的星期：0-星期日；1-星期一；2-星期二；3-星期三；4-星期四；5-星期五；6-星期六）</span>
+    <span class="token keyword">let</span> weeks <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">'Sunday'</span><span class="token punctuation">,</span> <span class="token string">'Monday'</span><span class="token punctuation">,</span> <span class="token string">'Tuesday'</span><span class="token punctuation">,</span> <span class="token string">'Wednesday'</span><span class="token punctuation">,</span> <span class="token string">'Thursday'</span><span class="token punctuation">,</span> <span class="token string">'Friday'</span><span class="token punctuation">,</span> <span class="token string">'Saturday'</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>month <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        month <span class="token operator">+=</span> <span class="token number">12</span>
+        year<span class="token operator">--</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token comment">// c：年份前两位数 </span>
+    <span class="token comment">// y：年份后两位数</span>
+    <span class="token comment">// m：月（m的取值范围为3至14，即在蔡勒公式中，某年的1、2月要看作上一年的13、14月来计算，比如2003年1月1日要看作2002年的13月1日来计算)</span>
+    <span class="token comment">// d：日</span>
+    <span class="token keyword">let</span> c <span class="token operator">=</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>year <span class="token operator">/</span> <span class="token number">100</span><span class="token punctuation">)</span><span class="token punctuation">,</span> y <span class="token operator">=</span> year <span class="token operator">%</span> <span class="token number">100</span><span class="token punctuation">,</span> m <span class="token operator">=</span> month<span class="token punctuation">,</span> d <span class="token operator">=</span> day
+
+    <span class="token comment">// 公式</span>
+    <span class="token keyword">let</span> w <span class="token operator">=</span> <span class="token punctuation">(</span>y <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>y <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span>c <span class="token operator">/</span> <span class="token number">4</span><span class="token punctuation">)</span> <span class="token operator">-</span> <span class="token number">2</span> <span class="token operator">*</span> c <span class="token operator">+</span> <span class="token number">2</span> <span class="token operator">*</span> m <span class="token operator">+</span> Math<span class="token punctuation">.</span><span class="token function">floor</span><span class="token punctuation">(</span><span class="token number">3</span> <span class="token operator">*</span> <span class="token punctuation">(</span>m <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">/</span> <span class="token number">5</span><span class="token punctuation">)</span> <span class="token operator">+</span> d <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">)</span> 
+
+    <span class="token comment">// 防止负数溢出</span>
+    w <span class="token operator">=</span> <span class="token punctuation">(</span>w<span class="token operator">%</span><span class="token number">7</span> <span class="token operator">+</span> <span class="token number">7</span><span class="token punctuation">)</span> <span class="token operator">%</span> <span class="token number">7</span>
+
+    <span class="token keyword">return</span> weeks<span class="token punctuation">[</span>w<span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br></div></div>  </CodeGroupItem>
 </CodeGroup>
-</template>
+<h2 id="_2022-1-4" tabindex="-1"><a class="header-anchor" href="#_2022-1-4" aria-hidden="true">#</a> 2022.1.4</h2>
+<blockquote>
+<p>👉
+<a href="https://leetcode-cn.com/problems/cat-and-mouse/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+</blockquote>
+<p>猫和老鼠</p>
+<p>两位玩家分别扮演猫和老鼠，在一张 无向 图上进行游戏，两人轮流行动。</p>
+<p>图的形式是：graph[a] 是一个列表，由满足 ab 是图中的一条边的所有节点 b 组成。</p>
+<p>老鼠从节点 1 开始，第一个出发；猫从节点 2 开始，第二个出发。在节点 0 处有一个洞。</p>
+<p>在每个玩家的行动中，他们 必须 沿着图中与所在当前位置连通的一条边移动。例如，如果老鼠在节点 1 ，那么它必须移动到 graph[1] 中的任一节点。</p>
+<p>此外，猫无法移动到洞中（节点 0）。</p>
+<p>然后，游戏在出现以下三种情形之一时结束：</p>
+<p>如果猫和老鼠出现在同一个节点，猫获胜。
+如果老鼠到达洞中，老鼠获胜。
+如果某一位置重复出现（即，玩家的位置和移动顺序都与上一次行动相同），游戏平局。
+给你一张图 graph ，并假设两位玩家都都以最佳状态参与游戏：</p>
+<p>如果老鼠获胜，则返回 1；
+如果猫获胜，则返回 2；
+如果平局，则返回 0 。</p>
+<CodeGroup>
+  <CodeGroupItem title="TS" active>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">// TODO: 复杂动态规划及图论相关，待研究</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div>  </CodeGroupItem>
+</CodeGroup></template>

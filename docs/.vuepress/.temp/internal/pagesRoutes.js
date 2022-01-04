@@ -4,6 +4,7 @@ const routeItems = [
   ["v-8daa1a0e","/",{"title":"首页"},["/index.html","/README.md"]],
   ["v-b26deb9c","/algorithms/",{"title":"二叉树"},["/algorithms/index.html","/algorithms/README.md"]],
   ["v-5699a55b","/algorithms/dp.html",{"title":"动态规划"},["/algorithms/dp","/algorithms/dp.md"]],
+  ["v-087293fd","/algorithms/graph.html",{"title":"图论"},["/algorithms/graph","/algorithms/graph.md"]],
   ["v-8114f962","/algorithms/linklist.html",{"title":"链表"},["/algorithms/linklist","/algorithms/linklist.md"]],
   ["v-7ada4160","/leetcode/january.html",{"title":"一月"},["/leetcode/january","/leetcode/january.md"]],
   ["v-328148e3","/algorithms/leetcode-booklet/",{"title":""},["/algorithms/leetcode-booklet/index.html","/algorithms/leetcode-booklet/README.md"]],

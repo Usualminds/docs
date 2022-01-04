@@ -23,19 +23,23 @@ export const data = {
       "title": "2022.1.3",
       "slug": "_2022-1-3",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "2022.1.4",
+      "slug": "_2022-1-4",
+      "children": []
     }
-  ]
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
+  ],
+  "git": {
+    "updatedTime": 1641203096000,
+    "contributors": [
+      {
+        "name": "Joe",
+        "email": "me@qjidea.com",
+        "commits": 3
+      }
+    ]
+  },
+  "filePathRelative": "leetcode/january.md"
 }

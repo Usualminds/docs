@@ -8,6 +8,7 @@ export const zh: SidebarConfig = {
                 '/algorithms/README.md',
                 '/algorithms/dp.md',
                 '/algorithms/linklist.md',
+                '/algorithms/graph.md',
             ],
         },
     ],
