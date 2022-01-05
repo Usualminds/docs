@@ -1,6 +1,6 @@
 export const data = {
-  "key": "v-7ada4160",
-  "path": "/leetcode/january.html",
+  "key": "v-0388766a",
+  "path": "/leetcode/january%20copy.html",
   "title": "一月",
   "lang": "en-US",
   "frontmatter": {},
@@ -36,18 +36,7 @@ export const data = {
       "slug": "_2022-1-5",
       "children": []
     }
-  ],
-  "git": {
-    "updatedTime": 1641280784000,
-    "contributors": [
-      {
-        "name": "Joe",
-        "email": "me@qjidea.com",
-        "commits": 4
-      }
-    ]
-  },
-  "filePathRelative": "leetcode/january.md"
+  ]
 }
 
 if (import.meta.webpackHot) {

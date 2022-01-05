@@ -17,6 +17,7 @@ export const zh: SidebarConfig = {
             text: '每日一题',
             children: [
                 '/leetcode/january.md',
+                '/leetcode/february.md',
             ],
         },
     ],
