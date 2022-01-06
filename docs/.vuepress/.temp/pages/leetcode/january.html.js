@@ -35,19 +35,21 @@ export const data = {
       "title": "2022.1.5",
       "slug": "_2022-1-5",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "2022.1.6",
+      "slug": "_2022-1-6",
+      "children": [
+        {
+          "level": 3,
+          "title": "解题思路",
+          "slug": "解题思路",
+          "children": []
+        }
+      ]
     }
-  ],
-  "git": {
-    "updatedTime": 1641280784000,
-    "contributors": [
-      {
-        "name": "Joe",
-        "email": "me@qjidea.com",
-        "commits": 4
-      }
-    ]
-  },
-  "filePathRelative": "leetcode/january.md"
+  ]
 }
 
 if (import.meta.webpackHot) {
