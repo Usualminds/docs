@@ -49,7 +49,18 @@ export const data = {
         }
       ]
     }
-  ]
+  ],
+  "git": {
+    "updatedTime": 1641433232000,
+    "contributors": [
+      {
+        "name": "Joe",
+        "email": "me@qjidea.com",
+        "commits": 6
+      }
+    ]
+  },
+  "filePathRelative": "leetcode/january.md"
 }
 
 if (import.meta.webpackHot) {

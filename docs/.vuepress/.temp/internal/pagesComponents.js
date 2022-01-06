@@ -3,14 +3,14 @@ import { defineAsyncComponent } from 'vue'
 export const pagesComponents = {
   // path: /
   "v-8daa1a0e": defineAsyncComponent(() => import(/* webpackChunkName: "v-8daa1a0e" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/index.html.vue")),
-  // path: /algorithms/
-  "v-b26deb9c": defineAsyncComponent(() => import(/* webpackChunkName: "v-b26deb9c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/index.html.vue")),
   // path: /algorithms/dp.html
   "v-5699a55b": defineAsyncComponent(() => import(/* webpackChunkName: "v-5699a55b" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/dp.html.vue")),
   // path: /algorithms/graph.html
   "v-087293fd": defineAsyncComponent(() => import(/* webpackChunkName: "v-087293fd" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/graph.html.vue")),
   // path: /algorithms/linklist.html
   "v-8114f962": defineAsyncComponent(() => import(/* webpackChunkName: "v-8114f962" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/linklist.html.vue")),
+  // path: /algorithms/tree.html
+  "v-7f4aae09": defineAsyncComponent(() => import(/* webpackChunkName: "v-7f4aae09" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/tree.html.vue")),
   // path: /leetcode/february.html
   "v-5266a414": defineAsyncComponent(() => import(/* webpackChunkName: "v-5266a414" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/february.html.vue")),
   // path: /leetcode/january.html

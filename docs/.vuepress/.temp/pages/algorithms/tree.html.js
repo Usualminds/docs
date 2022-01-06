@@ -1,6 +1,6 @@
 export const data = {
-  "key": "v-b26deb9c",
-  "path": "/algorithms/",
+  "key": "v-7f4aae09",
+  "path": "/algorithms/tree.html",
   "title": "树",
   "lang": "en-US",
   "frontmatter": {},
@@ -44,16 +44,10 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1641009315000,
-    "contributors": [
-      {
-        "name": "Joe",
-        "email": "me@qjidea.com",
-        "commits": 2
-      }
-    ]
+    "updatedTime": null,
+    "contributors": []
   },
-  "filePathRelative": "algorithms/README.md"
+  "filePathRelative": "algorithms/tree.md"
 }
 
 if (import.meta.webpackHot) {

@@ -4,7 +4,7 @@ export const themeData = {
       "navbar": [
         {
           "text": "算法",
-          "link": "/algorithms/"
+          "link": "/algorithms/tree.md"
         },
         {
           "text": "框架",
@@ -59,7 +59,7 @@ export const themeData = {
           {
             "text": "算法",
             "children": [
-              "/algorithms/README.md",
+              "/algorithms/tree.md",
               "/algorithms/dp.md",
               "/algorithms/linklist.md",
               "/algorithms/graph.md"

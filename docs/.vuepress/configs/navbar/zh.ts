@@ -3,7 +3,7 @@ import type { NavbarConfig } from '@vuepress/theme-default'
 export const zh: NavbarConfig = [
     {
         text: '算法',
-        link: '/algorithms/',
+        link: '/algorithms/tree.md',
     },
     {
         text: '框架',

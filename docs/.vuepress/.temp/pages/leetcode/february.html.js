@@ -12,7 +12,18 @@ export const data = {
       "slug": "_2022-2-1",
       "children": []
     }
-  ]
+  ],
+  "git": {
+    "updatedTime": 1641350925000,
+    "contributors": [
+      {
+        "name": "Joe",
+        "email": "me@qjidea.com",
+        "commits": 1
+      }
+    ]
+  },
+  "filePathRelative": "leetcode/february.md"
 }
 
 if (import.meta.webpackHot) {
