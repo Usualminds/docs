@@ -317,4 +317,50 @@ arr = [6]</p>
     <span class="token keyword">return</span> <span class="token string">'/'</span> <span class="token operator">+</span> stack<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span><span class="token string">'/'</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div>  </CodeGroupItem>
+</CodeGroup>
+<h2 id="_2022-1-7" tabindex="-1"><a class="header-anchor" href="#_2022-1-7" aria-hidden="true">#</a> 2022.1.7</h2>
+<blockquote>
+<p>👉
+<a href="https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+</blockquote>
+<p>如果字符串满足以下条件之一，则可以称之为 有效括号字符串（valid parentheses string，可以简写为 VPS）：</p>
+<p>字符串是一个空字符串 &quot;&quot;，或者是一个不为 &quot;(&quot; 或 &quot;)&quot; 的单字符。
+字符串可以写为 AB（A 与 B 字符串连接），其中 A 和 B 都是 有效括号字符串 。
+字符串可以写为 (A)，其中 A 是一个 有效括号字符串</p>
+<p>给你一个 有效括号字符串 s，返回该字符串的 s 嵌套深度 。</p>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<ul>
+<li>示例 1：</li>
+</ul>
+<p>输入：s = &quot;(1+(2*3)+((8)/4))+1&quot;
+输出：3
+解释：数字 8 在嵌套的 3 层括号中。</p>
+<ul>
+<li>示例 2：</li>
+</ul>
+<p>输入：s = &quot;(1)+((2))+(((3)))&quot;
+输出：3</p>
+<ul>
+<li>示例 3：</li>
+</ul>
+<p>输入：s = &quot;1+(2*3)/(2-1)&quot;
+输出：1</p>
+</div>
+<CodeGroup>
+  <CodeGroupItem title="TS" active>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">maxDepth</span><span class="token punctuation">(</span>s<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> max <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> count <span class="token operator">=</span> <span class="token number">0</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> char <span class="token keyword">of</span> s<span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">if</span><span class="token punctuation">(</span>char <span class="token operator">===</span> <span class="token string">'('</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            count<span class="token operator">++</span>
+            max <span class="token operator">=</span> count <span class="token operator">></span> max <span class="token operator">?</span> count <span class="token operator">:</span> max
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>char <span class="token operator">===</span> <span class="token string">')'</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+            count<span class="token operator">--</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> max
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div>  </CodeGroupItem>
 </CodeGroup></template>

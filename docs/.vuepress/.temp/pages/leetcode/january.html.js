@@ -48,19 +48,14 @@ export const data = {
           "children": []
         }
       ]
+    },
+    {
+      "level": 2,
+      "title": "2022.1.7",
+      "slug": "_2022-1-7",
+      "children": []
     }
-  ],
-  "git": {
-    "updatedTime": 1641433232000,
-    "contributors": [
-      {
-        "name": "Joe",
-        "email": "me@qjidea.com",
-        "commits": 6
-      }
-    ]
-  },
-  "filePathRelative": "leetcode/january.md"
+  ]
 }
 
 if (import.meta.webpackHot) {
