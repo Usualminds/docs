@@ -363,4 +363,65 @@ arr = [6]</p>
     <span class="token keyword">return</span> max
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div>  </CodeGroupItem>
+</CodeGroup>
+<h2 id="_2022-1-8" tabindex="-1"><a class="header-anchor" href="#_2022-1-8" aria-hidden="true">#</a> 2022.1.8</h2>
+<blockquote>
+<p>👉
+<a href="https://leetcode-cn.com/problems/gray-code/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+</blockquote>
+<p>n 位格雷码序列 是一个由 2n 个整数组成的序列，其中：
+每个整数都在范围 [0, 2n - 1] 内（含 0 和 2n - 1）
+第一个整数是 0
+一个整数在序列中出现 不超过一次
+每对 相邻 整数的二进制表示 恰好一位不同 ，且
+第一个 和 最后一个 整数的二进制表示 恰好一位不同
+给你一个整数 n ，返回任一有效的 n 位格雷码序列 。</p>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<ul>
+<li>
+<p>示例 1：</p>
+</li>
+<li>
+<p>输入：n = 2</p>
+</li>
+<li>
+<p>输出：[0,1,3,2]</p>
+<ul>
+<li>[0,1,3,2] 的二进制表示是 [00,01,11,10] 。
+<ul>
+<li>00 和 01 有一位不同</li>
+<li>01 和 11 有一位不同</li>
+<li>11 和 10 有一位不同</li>
+<li>10 和 00 有一位不同</li>
+</ul>
+</li>
+<li>[0,2,3,1] 也是一个有效的格雷码序列，其二进制表示是 [00,10,11,01] 。
+<ul>
+<li>00 和 10 有一位不同</li>
+<li>10 和 11 有一位不同</li>
+<li>11 和 01 有一位不同</li>
+<li>01 和 00 有一位不同</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<CodeGroup>
+  <CodeGroupItem title="TS" active>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">grayCode</span><span class="token punctuation">(</span>n<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> ans<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n <span class="token operator">+</span> <span class="token number">1</span><span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">const</span> m <span class="token operator">=</span> ans<span class="token punctuation">.</span>length
+
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> j <span class="token operator">=</span> m <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">;</span> j <span class="token operator">>=</span> <span class="token number">0</span><span class="token punctuation">;</span> j<span class="token operator">--</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            <span class="token keyword">const</span> value <span class="token operator">=</span> ans<span class="token punctuation">[</span>j<span class="token punctuation">]</span> <span class="token operator">|</span> <span class="token punctuation">(</span><span class="token number">1</span> <span class="token operator">&lt;&lt;</span> <span class="token punctuation">(</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span><span class="token punctuation">)</span><span class="token punctuation">;</span>
+            ans<span class="token punctuation">.</span><span class="token function">push</span><span class="token punctuation">(</span>value<span class="token punctuation">)</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> ans
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div>  </CodeGroupItem>
 </CodeGroup></template>

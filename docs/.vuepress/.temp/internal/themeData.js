@@ -62,7 +62,8 @@ export const themeData = {
               "/algorithms/tree.md",
               "/algorithms/dp.md",
               "/algorithms/linklist.md",
-              "/algorithms/graph.md"
+              "/algorithms/graph.md",
+              "/algorithms/math.md"
             ]
           }
         ],

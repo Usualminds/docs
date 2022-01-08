@@ -54,6 +54,12 @@ export const data = {
       "title": "2022.1.7",
       "slug": "_2022-1-7",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "2022.1.8",
+      "slug": "_2022-1-8",
+      "children": []
     }
   ]
 }
