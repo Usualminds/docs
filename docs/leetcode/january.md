@@ -477,3 +477,30 @@ function grayCode(n: number): number[] {
 ```
   </CodeGroupItem>
 </CodeGroup>
+
+## 2022.1.9 按键持续时间最长的键
+> :point_right: 
+[Leetcode 链接](https://leetcode-cn.com/problems/slowest-key/)
+
+<CodeGroup>
+  <CodeGroupItem title="TS" active>
+
+```ts
+function slowestKey(releaseTimes: number[], keysPressed: string): string {
+    let max = releaseTimes[0], char = keysPressed[0]
+
+    for (let i = 1; i < releaseTimes.length; i++) {
+        let temp = releaseTimes[i] - releaseTimes[i - 1], key = keysPressed[i]
+
+        if (temp > max || (temp === max && key > char)) {
+            max = temp
+            char = key
+        }
+
+    }
+
+    return char
+};
+```
+  </CodeGroupItem>
+</CodeGroup>

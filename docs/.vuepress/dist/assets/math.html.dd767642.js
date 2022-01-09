@@ -1,0 +1,1 @@
+const t={key:"v-abd8a642",path:"/algorithms/math.html",title:"\u6570\u5B66",lang:"en-US",frontmatter:{},excerpt:"",headers:[{level:2,title:"\u6700\u5927\u516C\u7EA6\u6570",slug:"\u6700\u5927\u516C\u7EA6\u6570",children:[]}],git:{updatedTime:1641609801e3,contributors:[{name:"Joe",email:"me@qjidea.com",commits:1}]},filePathRelative:"algorithms/math.md"};export{t as data};

@@ -424,4 +424,28 @@ arr = [6]</p>
     <span class="token keyword">return</span> ans
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div>  </CodeGroupItem>
+</CodeGroup>
+<h2 id="_2022-1-9-按键持续时间最长的键" tabindex="-1"><a class="header-anchor" href="#_2022-1-9-按键持续时间最长的键" aria-hidden="true">#</a> 2022.1.9 按键持续时间最长的键</h2>
+<blockquote>
+<p>👉
+<a href="https://leetcode-cn.com/problems/slowest-key/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+</blockquote>
+<CodeGroup>
+  <CodeGroupItem title="TS" active>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">slowestKey</span><span class="token punctuation">(</span>releaseTimes<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> keysPressed<span class="token operator">:</span> <span class="token builtin">string</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">string</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> max <span class="token operator">=</span> releaseTimes<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> char <span class="token operator">=</span> keysPressed<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> releaseTimes<span class="token punctuation">.</span>length<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        <span class="token keyword">let</span> temp <span class="token operator">=</span> releaseTimes<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">-</span> releaseTimes<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span><span class="token punctuation">,</span> key <span class="token operator">=</span> keysPressed<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>temp <span class="token operator">></span> max <span class="token operator">||</span> <span class="token punctuation">(</span>temp <span class="token operator">===</span> max <span class="token operator">&amp;&amp;</span> key <span class="token operator">></span> char<span class="token punctuation">)</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            max <span class="token operator">=</span> temp
+            char <span class="token operator">=</span> key
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> char
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div>  </CodeGroupItem>
 </CodeGroup></template>
