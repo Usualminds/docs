@@ -504,3 +504,45 @@ function slowestKey(releaseTimes: number[], keysPressed: string): string {
 ```
   </CodeGroupItem>
 </CodeGroup>
+
+
+## 2022.1.10 累加数
+> :point_right: 
+[Leetcode 链接](https://leetcode-cn.com/problems/additive-number/)
+
+<CodeGroup>
+  <CodeGroupItem title="TS" active>
+
+```ts
+function isAdditiveNumber(num: string): boolean {
+    const len = num.length
+
+    for(let i=0;i<len-2;i++){
+        for(let j=i+1;j<len-1;j++){
+            const x = num.slice(0, i+1)
+            const y = num.slice(i+1, j+1)
+
+            if(x[0] === '0' && x.length > 1 || y[0] === '0' && y.length >1) continue
+
+            if(j+1 === num.length) continue 
+
+            if(dfs(num, j+1, x, y)) return true
+        }
+    }
+
+    return false
+};
+
+function dfs(num: string, start: number, x: string, y: string): boolean {
+    if(start === num.length) return true
+
+    const next = String(Number(x) + Number(y))
+    const nextStr = num.slice(start, start + next.length)
+
+    if(next === nextStr && (dfs(num, start + nextStr.length, y, nextStr))) return true
+
+    return false
+}
+```
+  </CodeGroupItem>
+</CodeGroup>

@@ -19,6 +19,7 @@ export const zh: SidebarConfig = {
             children: [
                 '/leetcode/january.md',
                 '/leetcode/february.md',
+                '/leetcode/contest.md',
             ],
         },
     ],
