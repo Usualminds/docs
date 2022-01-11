@@ -72,6 +72,12 @@ export const data = {
       "title": "2022.1.10 累加数",
       "slug": "_2022-1-10-累加数",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "2022.1.11 逃离大迷宫",
+      "slug": "_2022-1-11-逃离大迷宫",
+      "children": []
     }
   ]
 }
