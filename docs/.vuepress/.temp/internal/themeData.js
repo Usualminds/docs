@@ -49,6 +49,17 @@ export const themeData = {
               ]
             }
           ]
+        },
+        {
+          "text": "文章",
+          "children": [
+            {
+              "text": "动态规划",
+              "children": [
+                "/article/dp.md"
+              ]
+            }
+          ]
         }
       ],
       "selectLanguageName": "简体中文",
@@ -77,51 +88,11 @@ export const themeData = {
             ]
           }
         ],
-        "/zh/reference/": [
+        "/article/": [
           {
-            "text": "VuePress 参考",
+            "text": "文章",
             "children": [
-              "/zh/reference/cli.md"
-            ]
-          }
-        ],
-        "/zh/reference/bundler/": [
-          {
-            "text": "打包工具参考",
-            "children": [
-              "/zh/reference/bundler/vite.md",
-              "/zh/reference/bundler/webpack.md"
-            ]
-          }
-        ],
-        "/zh/reference/default-theme/": [
-          {
-            "text": "默认主题参考",
-            "children": [
-              "/zh/reference/default-theme/config.md",
-              "/zh/reference/default-theme/frontmatter.md",
-              "/zh/reference/default-theme/components.md",
-              "/zh/reference/default-theme/markdown.md",
-              "/zh/reference/default-theme/styles.md"
-            ]
-          }
-        ],
-        "/zh/reference/plugin/": [
-          {
-            "text": "官方插件参考",
-            "children": [
-              {
-                "text": "常用功能",
-                "children": [
-                  "/zh/reference/plugin/back-to-top.md",
-                  "/zh/reference/plugin/container.md",
-                  "/zh/reference/plugin/external-link-icon.md",
-                  "/zh/reference/plugin/google-analytics.md",
-                  "/zh/reference/plugin/medium-zoom.md",
-                  "/zh/reference/plugin/nprogress.md",
-                  "/zh/reference/plugin/register-components.md"
-                ]
-              }
+              "/article/dp.md"
             ]
           }
         ]

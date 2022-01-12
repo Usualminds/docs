@@ -49,4 +49,15 @@ export const zh: NavbarConfig = [
             },
         ],
     },
+    {
+        text: '文章',
+        children: [
+            {
+                text: '动态规划',
+                children: [
+                    '/article/dp.md'
+                ]
+            }
+        ]
+    },
 ]

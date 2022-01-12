@@ -12,7 +12,18 @@ export const data = {
       "slug": "_275-周赛复盘",
       "children": []
     }
-  ]
+  ],
+  "git": {
+    "updatedTime": 1641804146000,
+    "contributors": [
+      {
+        "name": "Joe",
+        "email": "me@qjidea.com",
+        "commits": 1
+      }
+    ]
+  },
+  "filePathRelative": "leetcode/contest.md"
 }
 
 if (import.meta.webpackHot) {

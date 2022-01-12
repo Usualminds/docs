@@ -42,8 +42,38 @@ export const data = {
       "title": "把数字翻译成字符串",
       "slug": "把数字翻译成字符串",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "最长不含重复字符的子字符串",
+      "slug": "最长不含重复字符的子字符串",
+      "children": [
+        {
+          "level": 3,
+          "title": "哈希表+动态规划",
+          "slug": "哈希表-动态规划",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "哈希表+双指针",
+          "slug": "哈希表-双指针",
+          "children": []
+        }
+      ]
     }
-  ]
+  ],
+  "git": {
+    "updatedTime": 1641959079000,
+    "contributors": [
+      {
+        "name": "Joe",
+        "email": "me@qjidea.com",
+        "commits": 3
+      }
+    ]
+  },
+  "filePathRelative": "algorithms/dp.md"
 }
 
 if (import.meta.webpackHot) {

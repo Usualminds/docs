@@ -85,7 +85,18 @@ export const data = {
       "slug": "_2022-1-12-递增的三元子序列",
       "children": []
     }
-  ]
+  ],
+  "git": {
+    "updatedTime": 1641952139000,
+    "contributors": [
+      {
+        "name": "Joe",
+        "email": "me@qjidea.com",
+        "commits": 12
+      }
+    ]
+  },
+  "filePathRelative": "leetcode/january.md"
 }
 
 if (import.meta.webpackHot) {

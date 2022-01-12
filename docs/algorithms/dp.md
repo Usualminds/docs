@@ -174,3 +174,68 @@ function translateNum(num: number): number {
     return result
 };
 ```
+
+## 最长不含重复字符的子字符串
+> :point_right: 
+[Leetcode 链接](https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/)
+
+请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度。
+
+::: tip 
+- 示例 1:
+    - 输入: "abcabcbb"
+    - 输出: 3 
+    - 解释: 因为无重复字符的最长子串是 "abc"，所以其长度为 3。
+- 示例 2:
+    - 输入: "bbbbb"
+    - 输出: 1
+    - 解释: 因为无重复字符的最长子串是 "b"，所以其长度为 1。
+:::
+
+> 思路：通过哈希表记录重复字符出现对位置，转移公式 `max(dp[j - 1], dp[j])`
+
+### 哈希表+动态规划
+
+```ts
+function lengthOfLongestSubstring(s: string): number {
+    let map = new Map(), len = s.length, temp = 0, max = 0, left = -1
+
+    for (let right = 0; right < len; right++) {
+        let char = s.charAt(right)
+
+        if (map.has(char)) {
+            left = map.get(char)
+        }
+
+        map.set(char, right)
+
+        temp = temp < (right - left) ? (temp + 1) : (right - left)
+
+        max = Math.max(max, temp)
+    }
+
+    return max
+};
+```
+
+### 哈希表+双指针
+```ts
+function lengthOfLongestSubstring(s: string): number {
+    let map = new Map(), len = s.length, left = -1, max = 0
+
+    for (let i = 0; i < len; i++) {
+        let char = s.charAt(i)
+
+        if (map.has(char)) {
+            let value = map.get(char)
+            left = Math.max(left, value)
+        }
+
+        map.set(char, i)
+
+        max = Math.max(max, i - left + 1)
+    }
+
+    return max
+};
+```
