@@ -52,6 +52,13 @@ function set(target, key, val) {
   target[key] = val;
   return val;
 }
+function del(target, key) {
+  if (Array.isArray(target)) {
+    target.splice(key, 1);
+    return;
+  }
+  delete target[key];
+}
 
 // node_modules/@vueuse/shared/index.mjs
 function and(...args) {
@@ -1190,12 +1197,12 @@ function asyncComputed(evaluationCallback, initialState2, optionsOrRef) {
     counter++;
     const counterAtBeginning = counter;
     let hasFinished = false;
+    if (evaluating) {
+      Promise.resolve().then(() => {
+        evaluating.value = true;
+      });
+    }
     try {
-      if (evaluating) {
-        Promise.resolve().then(() => {
-          evaluating.value = true;
-        });
-      }
       const result = await evaluationCallback((cancelCallback) => {
         onInvalidate(() => {
           if (evaluating)
@@ -1426,7 +1433,7 @@ function templateRef(key, initialValue = null) {
       }
     };
   });
-  onMounted(_trigger);
+  tryOnMounted(_trigger);
   onUpdated(_trigger);
   return element;
 }
@@ -1491,22 +1498,24 @@ function useAsyncQueue(tasks, options = {}) {
     result
   };
 }
-function useAsyncState(promise, initialState2, options = {}) {
+function useAsyncState(promise, initialState2, options) {
   const {
     immediate = true,
     delay = 0,
     onError = noop,
     resetOnExecute = true,
     shallow = true
-  } = options;
+  } = options != null ? options : {};
   const state = shallow ? shallowRef(initialState2) : ref(initialState2);
   const isReady = ref(false);
+  const isLoading = ref(false);
   const error = ref(void 0);
   async function execute(delay2 = 0, ...args) {
     if (resetOnExecute)
       state.value = initialState2;
     error.value = void 0;
     isReady.value = false;
+    isLoading.value = true;
     if (delay2 > 0)
       await promiseTimeout(delay2);
     const _promise = typeof promise === "function" ? promise(...args) : promise;
@@ -1518,6 +1527,7 @@ function useAsyncState(promise, initialState2, options = {}) {
       error.value = e;
       onError(e);
     }
+    isLoading.value = false;
     return state.value;
   }
   if (immediate)
@@ -1525,6 +1535,7 @@ function useAsyncState(promise, initialState2, options = {}) {
   return {
     state,
     isReady,
+    isLoading,
     error,
     execute
   };
@@ -1760,6 +1771,53 @@ function useBreakpoints(breakpoints, options = {}) {
     }
   }, shortcutMethods);
 }
+var useBroadcastChannel = (options) => {
+  const {
+    name,
+    window: window2 = defaultWindow
+  } = options;
+  const isSupported = window2 && "BroadcastChannel" in window2;
+  const isClosed = ref(false);
+  const channel = ref();
+  const data = ref();
+  const error = ref(null);
+  const post = (data2) => {
+    if (channel.value)
+      channel.value.postMessage(data2);
+  };
+  const close = () => {
+    if (channel.value)
+      channel.value.close();
+    isClosed.value = true;
+  };
+  if (isSupported) {
+    tryOnMounted(() => {
+      error.value = null;
+      channel.value = new BroadcastChannel(name);
+      channel.value.addEventListener("message", (e) => {
+        data.value = e.data;
+      }, { passive: true });
+      channel.value.addEventListener("messageerror", (e) => {
+        error.value = e;
+      }, { passive: true });
+      channel.value.addEventListener("close", () => {
+        isClosed.value = true;
+      });
+    });
+  }
+  tryOnScopeDispose(() => {
+    close();
+  });
+  return {
+    isSupported,
+    channel,
+    data,
+    post,
+    close,
+    error,
+    isClosed
+  };
+};
 function useBrowserLocation({ window: window2 = defaultWindow } = {}) {
   const buildState = (trigger) => {
     const { state: state2, length } = (window2 == null ? void 0 : window2.history) || {};
@@ -1875,10 +1933,7 @@ var StorageSerializers = {
     write: (v) => JSON.stringify(Array.from(v.entries()))
   }
 };
-function useStorage(key, initialValue, storage = getSSRHandler("getDefaultStorage", () => {
-  var _a2;
-  return (_a2 = defaultWindow) == null ? void 0 : _a2.localStorage;
-})(), options = {}) {
+function useStorage(key, initialValue, storage, options = {}) {
   var _a2;
   const {
     flush = "pre",
@@ -1896,6 +1951,16 @@ function useStorage(key, initialValue, storage = getSSRHandler("getDefaultStorag
   const type = guessSerializerType(rawInit);
   const data = (shallow ? shallowRef : ref)(initialValue);
   const serializer = (_a2 = options.serializer) != null ? _a2 : StorageSerializers[type];
+  if (!storage) {
+    try {
+      storage = getSSRHandler("getDefaultStorage", () => {
+        var _a22;
+        return (_a22 = defaultWindow) == null ? void 0 : _a22.localStorage;
+      })();
+    } catch (e) {
+      onError(e);
+    }
+  }
   function read(event) {
     if (!storage || event && event.key !== key)
       return;
@@ -1959,10 +2024,7 @@ function useColorMode(options = {}) {
     selector = "html",
     attribute = "class",
     window: window2 = defaultWindow,
-    storage = getSSRHandler("getDefaultStorage", () => {
-      var _a2;
-      return (_a2 = defaultWindow) == null ? void 0 : _a2.localStorage;
-    })(),
+    storage,
     storageKey = "vueuse-color-scheme",
     listenToStorageChanges = true,
     storageRef
@@ -2727,6 +2789,36 @@ function useElementBounding(target) {
     update
   };
 }
+function useRafFn(fn, options = {}) {
+  const {
+    immediate = true,
+    window: window2 = defaultWindow
+  } = options;
+  const isActive = ref(false);
+  function loop() {
+    if (!isActive.value || !window2)
+      return;
+    fn();
+    window2.requestAnimationFrame(loop);
+  }
+  function resume() {
+    if (!isActive.value && window2) {
+      isActive.value = true;
+      loop();
+    }
+  }
+  function pause() {
+    isActive.value = false;
+  }
+  if (immediate)
+    resume();
+  tryOnScopeDispose(pause);
+  return {
+    isActive,
+    pause,
+    resume
+  };
+}
 var __defProp$9 = Object.defineProperty;
 var __getOwnPropSymbols$a = Object.getOwnPropertySymbols;
 var __hasOwnProp$a = Object.prototype.hasOwnProperty;
@@ -3182,36 +3274,6 @@ function useFocusWithin(target, options = {}) {
   const targetElement = computed(() => unrefElement(target));
   const focused = computed(() => targetElement.value && activeElement.value ? targetElement.value.contains(activeElement.value) : false);
   return { focused };
-}
-function useRafFn(fn, options = {}) {
-  const {
-    immediate = true,
-    window: window2 = defaultWindow
-  } = options;
-  const isActive = ref(false);
-  function loop() {
-    if (!isActive.value || !window2)
-      return;
-    fn();
-    window2.requestAnimationFrame(loop);
-  }
-  function resume() {
-    if (!isActive.value && window2) {
-      isActive.value = true;
-      loop();
-    }
-  }
-  function pause() {
-    isActive.value = false;
-  }
-  if (immediate)
-    resume();
-  tryOnScopeDispose(pause);
-  return {
-    isActive,
-    pause,
-    resume
-  };
 }
 function useFps(options) {
   var _a2;
@@ -3758,6 +3820,54 @@ function useMediaControls(target, options = {}) {
     isPictureInPicture,
     onSourceError: sourceErrorEvent.on
   };
+}
+var getMapVue2Compat = () => {
+  const data = reactive({});
+  return {
+    get: (key) => data[key],
+    set: (key, value) => set(data, key, value),
+    has: (key) => Object.prototype.hasOwnProperty.call(data, key),
+    delete: (key) => del(data, key),
+    clear: () => {
+      Object.keys(data).forEach((key) => {
+        del(data, key);
+      });
+    }
+  };
+};
+function useMemoize(resolver, options) {
+  const initCache = () => {
+    if (options == null ? void 0 : options.cache)
+      return reactive(options.cache);
+    if (isVue2)
+      return getMapVue2Compat();
+    return reactive(new Map());
+  };
+  const cache = initCache();
+  const generateKey = (...args) => (options == null ? void 0 : options.getKey) ? options.getKey(...args) : JSON.stringify(args);
+  const _loadData = (key, ...args) => {
+    cache.set(key, resolver(...args));
+    return cache.get(key);
+  };
+  const loadData = (...args) => _loadData(generateKey(...args), ...args);
+  const deleteData = (...args) => {
+    cache.delete(generateKey(...args));
+  };
+  const clearData = () => {
+    cache.clear();
+  };
+  const memoized = (...args) => {
+    const key = generateKey(...args);
+    if (cache.has(key))
+      return cache.get(key);
+    return _loadData(key, ...args);
+  };
+  memoized.load = loadData;
+  memoized.delete = deleteData;
+  memoized.clear = clearData;
+  memoized.generateKey = generateKey;
+  memoized.cache = cache;
+  return memoized;
 }
 function useMemory(options = {}) {
   const memory = ref();
@@ -4490,10 +4600,11 @@ function useScriptTag(src, onLoaded = noop, options = {}) {
     if (!document2)
       return;
     _promise = null;
-    if (scriptTag.value) {
-      document2.head.removeChild(scriptTag.value);
+    if (scriptTag.value)
       scriptTag.value = null;
-    }
+    const el = document2.querySelector(`script[src="${src}"]`);
+    if (el)
+      document2.head.removeChild(el);
   };
   if (immediate && !manual)
     tryOnMounted(load);
@@ -4817,10 +4928,7 @@ function useSpeechSynthesis(text, options = {}) {
     speak
   };
 }
-function useStorageAsync(key, initialValue, storage = getSSRHandler("getDefaultStorageAsync", () => {
-  var _a2;
-  return (_a2 = defaultWindow) == null ? void 0 : _a2.localStorage;
-})(), options = {}) {
+function useStorageAsync(key, initialValue, storage, options = {}) {
   var _a2;
   const {
     flush = "pre",
@@ -4838,6 +4946,16 @@ function useStorageAsync(key, initialValue, storage = getSSRHandler("getDefaultS
   const type = guessSerializerType(rawInit);
   const data = (shallow ? shallowRef : ref)(initialValue);
   const serializer = (_a2 = options.serializer) != null ? _a2 : StorageSerializers[type];
+  if (!storage) {
+    try {
+      storage = getSSRHandler("getDefaultStorage", () => {
+        var _a22;
+        return (_a22 = defaultWindow) == null ? void 0 : _a22.localStorage;
+      })();
+    } catch (e) {
+      onError(e);
+    }
+  }
   async function read(event) {
     if (!storage || event && event.key !== key)
       return;
@@ -4931,12 +5049,13 @@ function getRectFromSelection(selection) {
   };
 }
 function useTextSelection(element) {
+  var _a2;
   const state = ref(initialState);
-  if (!(window == null ? void 0 : window.getSelection))
+  if (!((_a2 = defaultWindow) == null ? void 0 : _a2.getSelection))
     return state;
   const onMouseup = () => {
-    var _a2;
-    const text = (_a2 = window.getSelection()) == null ? void 0 : _a2.toString();
+    var _a22;
+    const text = (_a22 = window.getSelection()) == null ? void 0 : _a22.toString();
     if (text) {
       const rect = getRectFromSelection(window.getSelection());
       state.value = __spreadProps$12(__spreadValues$32(__spreadValues$32({}, state.value), rect), {
@@ -4945,9 +5064,9 @@ function useTextSelection(element) {
     }
   };
   const onMousedown = () => {
-    var _a2;
+    var _a22;
     state.value.text && (state.value = initialState);
-    (_a2 = window.getSelection()) == null ? void 0 : _a2.removeAllRanges();
+    (_a22 = window.getSelection()) == null ? void 0 : _a22.removeAllRanges();
   };
   useEventListener(element != null ? element : document, "mouseup", onMouseup);
   useEventListener(document, "mousedown", onMousedown);
@@ -5434,6 +5553,38 @@ function useVModels(props, emit, options = {}) {
     ret[key] = useVModel(props, key, emit, options);
   return ret;
 }
+function useVibrate(options) {
+  const {
+    pattern = [],
+    interval = 0,
+    navigator = defaultNavigator
+  } = options || {};
+  const isSupported = typeof navigator !== "undefined" && "vibrate" in navigator;
+  const patternRef = ref(pattern);
+  let intervalControls;
+  const vibrate = (pattern2 = patternRef.value) => {
+    if (isSupported)
+      navigator.vibrate(pattern2);
+  };
+  const stop = () => {
+    if (isSupported)
+      navigator.vibrate(0);
+    intervalControls == null ? void 0 : intervalControls.pause();
+  };
+  if (interval > 0) {
+    intervalControls = useIntervalFn(vibrate, interval, {
+      immediate: false,
+      immediateCallback: false
+    });
+  }
+  return {
+    isSupported,
+    pattern,
+    intervalControls,
+    vibrate,
+    stop
+  };
+}
 function useVirtualList(list, options) {
   const containerRef = ref();
   const size = useElementSize(containerRef);
@@ -5536,7 +5687,10 @@ function useVirtualList(list, options) {
   };
 }
 var useWakeLock = (options = {}) => {
-  const { navigator = defaultNavigator, document: document2 = defaultDocument } = options;
+  const {
+    navigator = defaultNavigator,
+    document: document2 = defaultDocument
+  } = options;
   let wakeLock;
   const isSupported = navigator && "wakeLock" in navigator;
   const isActive = ref(false);
@@ -5567,6 +5721,64 @@ var useWakeLock = (options = {}) => {
     isActive,
     request,
     release
+  };
+};
+var useWebNotification = (defaultOptions2 = {}) => {
+  const {
+    window: window2 = defaultWindow
+  } = defaultOptions2;
+  const isSupported = !!window2 && "Notification" in window2;
+  const notification = ref(null);
+  const requestPermission = async () => {
+    if (!isSupported)
+      return;
+    if ("permission" in Notification && Notification.permission !== "denied")
+      await Notification.requestPermission();
+  };
+  const onClick = createEventHook();
+  const onShow = createEventHook();
+  const onError = createEventHook();
+  const onClose = createEventHook();
+  const show = async (overrides) => {
+    if (!isSupported)
+      return;
+    await requestPermission();
+    const options = Object.assign({}, defaultOptions2, overrides);
+    notification.value = new Notification(options.title || "", options);
+    notification.value.onclick = (event) => onClick.trigger(event);
+    notification.value.onshow = (event) => onShow.trigger(event);
+    notification.value.onerror = (event) => onError.trigger(event);
+    notification.value.onclose = (event) => onClose.trigger(event);
+    return notification.value;
+  };
+  const close = () => {
+    if (notification.value)
+      notification.value.close();
+    notification.value = null;
+  };
+  tryOnMounted(async () => {
+    if (isSupported)
+      await requestPermission();
+  });
+  tryOnScopeDispose(close);
+  if (isSupported && window2) {
+    const document2 = window2.document;
+    useEventListener(document2, "visibilitychange", (e) => {
+      e.preventDefault();
+      if (document2.visibilityState === "visible") {
+        close();
+      }
+    });
+  }
+  return {
+    isSupported,
+    notification,
+    show,
+    close,
+    onClick,
+    onShow,
+    onError,
+    onClose
   };
 };
 function resolveNestedOptions(options) {
@@ -5949,6 +6161,7 @@ export {
   useBase64,
   useBattery,
   useBreakpoints,
+  useBroadcastChannel,
   useBrowserLocation,
   useClamp,
   useClipboard,
@@ -5995,6 +6208,7 @@ export {
   useManualRefHistory,
   useMediaControls,
   useMediaQuery,
+  useMemoize,
   useMemory,
   useMounted,
   useMouse,
@@ -6043,8 +6257,10 @@ export {
   useUserMedia,
   useVModel,
   useVModels,
+  useVibrate,
   useVirtualList,
   useWakeLock,
+  useWebNotification,
   useWebSocket,
   useWebWorker,
   useWebWorkerFn,

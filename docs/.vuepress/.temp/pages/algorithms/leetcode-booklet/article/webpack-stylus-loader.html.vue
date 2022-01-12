@@ -6,11 +6,11 @@
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br></div></div><p>然后将该 loader 添加到 <code>webpack</code> 配置中。例如：</p>
 <p><strong>webpack.config.js</strong></p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
-        loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 将 Stylus 文件编译为 CSS</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 将 Stylus 文件编译为 CSS</span>
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -69,21 +69,21 @@
 <p>使用对象（Object）的形式传递 options 给 Stylus。</p>
 <p><strong>webpack.config.js</strong></p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
-              stylusOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">stylusOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
                 <span class="token doc-comment comment">/**
                  * 指定要使用的 Stylus 插件。将插件作为
                  * 字符串进行传递，而不是从 Webpack 配置中导入。
@@ -91,7 +91,7 @@
                  * <span class="token keyword">@type</span> <span class="token class-name"><span class="token punctuation">{</span><span class="token punctuation">(</span>string<span class="token operator">|</span>Function<span class="token punctuation">)</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span>
                  * <span class="token keyword">@default</span> []
                  */</span>
-                use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"nib"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"nib"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
 
                 <span class="token doc-comment comment">/**
                  * 指定 path 的查找路径。
@@ -99,7 +99,7 @@
                  * <span class="token keyword">@type</span> <span class="token class-name"><span class="token punctuation">{</span>string<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">}</span></span>
                  * <span class="token keyword">@default</span> []
                  */</span>
-                include<span class="token operator">:</span> <span class="token punctuation">[</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"src/styl/config"</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">include</span><span class="token operator">:</span> <span class="token punctuation">[</span>path<span class="token punctuation">.</span><span class="token function">join</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"src/styl/config"</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
 
                 <span class="token doc-comment comment">/**
                  * 导入指定的 Stylus 文件或者路径
@@ -116,7 +116,7 @@
                  * <span class="token keyword">@default</span> <span class="token punctuation">{</span><span class="token punctuation">}</span>
                  */</span>
                 <span class="token comment">// 定义数组语法的推荐格式：[key, value, raw]</span>
-                define<span class="token operator">:</span> <span class="token punctuation">[</span>
+                <span class="token literal-property property">define</span><span class="token operator">:</span> <span class="token punctuation">[</span>
                   <span class="token punctuation">[</span><span class="token string">"$development"</span><span class="token punctuation">,</span> process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span> <span class="token operator">===</span> <span class="token string">"development"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
                   <span class="token punctuation">[</span><span class="token string">"rawVar"</span><span class="token punctuation">,</span> <span class="token number">42</span><span class="token punctuation">,</span> <span class="token boolean">true</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
                 <span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -132,7 +132,7 @@
                  * <span class="token keyword">@type</span> <span class="token class-name"><span class="token punctuation">{</span>boolean<span class="token punctuation">}</span></span>
                  * <span class="token keyword">@default</span> false
                  */</span>
-                includeCSS<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">includeCSS</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
 
                 <span class="token doc-comment comment">/**
                  * 解析导入文件中的相对 url()。
@@ -142,7 +142,7 @@
                  * <span class="token keyword">@type</span> <span class="token class-name"><span class="token punctuation">{</span>boolean<span class="token operator">|</span>Object<span class="token punctuation">}</span></span>
                  * <span class="token keyword">@default</span> <span class="token class-name"><span class="token punctuation">{</span> nocheck<span class="token operator">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span></span>
                  */</span>
-                resolveURL<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">resolveURL</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
                 <span class="token comment">// resolveURL: { nocheck: true },</span>
 
                 <span class="token doc-comment comment">/**
@@ -153,7 +153,7 @@
                  * <span class="token keyword">@type</span> <span class="token class-name"><span class="token punctuation">{</span>boolean<span class="token punctuation">}</span></span>
                  * <span class="token keyword">@default</span> false
                  */</span>
-                lineNumbers<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">lineNumbers</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
                 <span class="token doc-comment comment">/**
                  * 将 @import 和 @charset 移至文件顶部。
@@ -163,7 +163,7 @@
                  * <span class="token keyword">@type</span> <span class="token class-name"><span class="token punctuation">{</span>boolean<span class="token punctuation">}</span></span>
                  * <span class="token keyword">@default</span> false
                  */</span>
-                hoistAtrules<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">hoistAtrules</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
 
                 <span class="token doc-comment comment">/**
                  * 压缩输出的 CSS。
@@ -174,7 +174,7 @@
                  * <span class="token keyword">@type</span> <span class="token class-name"><span class="token punctuation">{</span>boolean<span class="token punctuation">}</span></span>
                  * <span class="token keyword">@default</span> false
                  */</span>
-                compress<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">compress</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
               <span class="token punctuation">}</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -186,16 +186,16 @@
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br><span class="line-number">61</span><br><span class="line-number">62</span><br><span class="line-number">63</span><br><span class="line-number">64</span><br><span class="line-number">65</span><br><span class="line-number">66</span><br><span class="line-number">67</span><br><span class="line-number">68</span><br><span class="line-number">69</span><br><span class="line-number">70</span><br><span class="line-number">71</span><br><span class="line-number">72</span><br><span class="line-number">73</span><br><span class="line-number">74</span><br><span class="line-number">75</span><br><span class="line-number">76</span><br><span class="line-number">77</span><br><span class="line-number">78</span><br><span class="line-number">79</span><br><span class="line-number">80</span><br><span class="line-number">81</span><br><span class="line-number">82</span><br><span class="line-number">83</span><br><span class="line-number">84</span><br><span class="line-number">85</span><br><span class="line-number">86</span><br><span class="line-number">87</span><br><span class="line-number">88</span><br><span class="line-number">89</span><br><span class="line-number">90</span><br><span class="line-number">91</span><br><span class="line-number">92</span><br><span class="line-number">93</span><br><span class="line-number">94</span><br><span class="line-number">95</span><br><span class="line-number">96</span><br><span class="line-number">97</span><br><span class="line-number">98</span><br><span class="line-number">99</span><br><span class="line-number">100</span><br><span class="line-number">101</span><br><span class="line-number">102</span><br><span class="line-number">103</span><br><span class="line-number">104</span><br><span class="line-number">105</span><br><span class="line-number">106</span><br><span class="line-number">107</span><br><span class="line-number">108</span><br><span class="line-number">109</span><br><span class="line-number">110</span><br><span class="line-number">111</span><br><span class="line-number">112</span><br><span class="line-number">113</span><br><span class="line-number">114</span><br><span class="line-number">115</span><br></div></div><h4 id="function" tabindex="-1"><a class="header-anchor" href="#function" aria-hidden="true">#</a> <code>Function</code></h4>
 <p>允许根据 loader 的 context 来设置 options，再传递给  Stylus。</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
           <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
               <span class="token function-variable function">stylusOptions</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">loaderContext</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
                 <span class="token comment">// 更多可用的属性参见 https://webpack.js.org/api/loaders/</span>
                 <span class="token keyword">const</span> <span class="token punctuation">{</span> resourcePath<span class="token punctuation">,</span> rootContext <span class="token punctuation">}</span> <span class="token operator">=</span> loaderContext<span class="token punctuation">;</span>
@@ -203,12 +203,12 @@
 
                 <span class="token keyword">if</span> <span class="token punctuation">(</span>relativePath <span class="token operator">===</span> <span class="token string">"styles/foo.styl"</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
                   <span class="token keyword">return</span> <span class="token punctuation">{</span>
-                    paths<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"absolute/path/c"</span><span class="token punctuation">,</span> <span class="token string">"absolute/path/d"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                    <span class="token literal-property property">paths</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"absolute/path/c"</span><span class="token punctuation">,</span> <span class="token string">"absolute/path/d"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
                   <span class="token punctuation">}</span><span class="token punctuation">;</span>
                 <span class="token punctuation">}</span>
 
                 <span class="token keyword">return</span> <span class="token punctuation">{</span>
-                  paths<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"absolute/path/a"</span><span class="token punctuation">,</span> <span class="token string">"absolute/path/b"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                  <span class="token literal-property property">paths</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"absolute/path/a"</span><span class="token punctuation">,</span> <span class="token string">"absolute/path/b"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
                 <span class="token punctuation">}</span><span class="token punctuation">;</span>
               <span class="token punctuation">}</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -222,22 +222,22 @@
 <p>类型：<code>Boolean</code></p>
 <p><strong>webpack.config.js</strong></p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
-              sourceMap<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">sourceMap</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
-              sourceMap<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">sourceMap</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -253,17 +253,17 @@
 但是请慎用，因为可能会使得 aliases 和以 <code>~</code> 开头的 <code>@import</code> 规则失效。</p>
 <p><strong>webpack.config.js</strong></p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
           <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
-              webpackImporter<span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">webpackImporter</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -282,17 +282,17 @@
 </blockquote>
 <h4 id="string" tabindex="-1"><a class="header-anchor" href="#string" aria-hidden="true">#</a> <code>String</code></h4>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
           <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
-              additionalData<span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">@env: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">additionalData</span><span class="token operator">:</span> <span class="token template-string"><span class="token template-punctuation string">`</span><span class="token string">@env: </span><span class="token interpolation"><span class="token interpolation-punctuation punctuation">${</span>process<span class="token punctuation">.</span>env<span class="token punctuation">.</span><span class="token constant">NODE_ENV</span><span class="token interpolation-punctuation punctuation">}</span></span><span class="token string">;</span><span class="token template-punctuation string">`</span></span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -303,16 +303,16 @@
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h4 id="function-1" tabindex="-1"><a class="header-anchor" href="#function-1" aria-hidden="true">#</a> <code>Function</code></h4>
 <h5 id="sync" tabindex="-1"><a class="header-anchor" href="#sync" aria-hidden="true">#</a> Sync</h5>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
           <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
               <span class="token function-variable function">additionalData</span><span class="token operator">:</span> <span class="token punctuation">(</span><span class="token parameter">content<span class="token punctuation">,</span> loaderContext</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
                 <span class="token comment">// 更多可用的属性参见 https://webpack.js.org/api/loaders/</span>
                 <span class="token keyword">const</span> <span class="token punctuation">{</span> resourcePath<span class="token punctuation">,</span> rootContext <span class="token punctuation">}</span> <span class="token operator">=</span> loaderContext<span class="token punctuation">;</span>
@@ -333,16 +333,16 @@
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><h5 id="async" tabindex="-1"><a class="header-anchor" href="#async" aria-hidden="true">#</a> Async</h5>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
           <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
               <span class="token function-variable function">additionalData</span><span class="token operator">:</span> <span class="token keyword">async</span> <span class="token punctuation">(</span><span class="token parameter">content<span class="token punctuation">,</span> loaderContext</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
                 <span class="token comment">// 更多可用的属性参见 https://webpack.js.org/api/loaders/</span>
                 <span class="token keyword">const</span> <span class="token punctuation">{</span> resourcePath<span class="token punctuation">,</span> rootContext <span class="token punctuation">}</span> <span class="token operator">=</span> loaderContext<span class="token punctuation">;</span>
@@ -367,17 +367,17 @@
 <h4 id="function-2" tabindex="-1"><a class="header-anchor" href="#function-2" aria-hidden="true">#</a> Function</h4>
 <p><strong>webpack.config.js</strong></p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
           <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
-              implementation<span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"stylus"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">implementation</span><span class="token operator">:</span> <span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"stylus"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -388,17 +388,17 @@
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br></div></div><h4 id="string-1" tabindex="-1"><a class="header-anchor" href="#string-1" aria-hidden="true">#</a> String</h4>
 <p><strong>webpack.config.js</strong></p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span><span class="token regex-flags">i</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
           <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
-              implementation<span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"stylus"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">implementation</span><span class="token operator">:</span> require<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span><span class="token string">"stylus"</span><span class="token punctuation">)</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -411,19 +411,19 @@
 <p>将 <code>stylus-loader</code>、<RouterLink to="/loaders/css-loader/"><code>css-loader</code></RouterLink> 和 <RouterLink to="/loaders/style-loader/"><code>style-loader</code></RouterLink> 串联起来使用可立即将所有样式更新到 DOM。</p>
 <p><strong>webpack.config.js</strong></p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"style-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 从 JS 中创建样式节点</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"style-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 从 JS 中创建样式节点</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"css-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 将 CSS 转为 CommonJS</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"css-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 将 CSS 转为 CommonJS</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 将 Stylus 编译为 CSS</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 将 Stylus 编译为 CSS</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">]</span><span class="token punctuation">,</span>
       <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -434,23 +434,23 @@
 <p>为了生成 CSS 的 source map, 你需要在 loader 的可选项中设置 <code>sourceMap</code> 属性。如果没设置的话 loader 将会继承你 webpack 中为生成 source map 设置的属性值 <code>devtool</code>。</p>
 <p><strong>webpack.config.js</strong></p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  devtool<span class="token operator">:</span> <span class="token string">"source-map"</span><span class="token punctuation">,</span> <span class="token comment">// 任何类似于 "source-map" 的 devtool 值都可以</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">devtool</span><span class="token operator">:</span> <span class="token string">"source-map"</span><span class="token punctuation">,</span> <span class="token comment">// 任何类似于 "source-map" 的 devtool 值都可以</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
-              sourceMap<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">sourceMap</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
-              sourceMap<span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">sourceMap</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
         <span class="token punctuation">]</span><span class="token punctuation">,</span>
@@ -461,22 +461,22 @@
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br></div></div><h3 id="stylus-中使用-nib" tabindex="-1"><a class="header-anchor" href="#stylus-中使用-nib" aria-hidden="true">#</a> stylus 中使用 nib</h3>
 <p><strong>webpack.config.js</strong></p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"style-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 从 JS 中创建样式节点</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"style-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 从 JS 中创建样式节点</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"css-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 将 CSS 转为 CommonJS</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"css-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 将 CSS 转为 CommonJS</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 将 Stylus 编译为 CSS</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
-              stylusOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
-                use<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"nib"</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span> <span class="token comment">// 将 Stylus 编译为 CSS</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">stylusOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token function">require</span><span class="token punctuation">(</span><span class="token string">"nib"</span><span class="token punctuation">)</span><span class="token punctuation">(</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
                 <span class="token keyword">import</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"nib"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
               <span class="token punctuation">}</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -500,19 +500,19 @@
 
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p><strong>webpack.config.js</strong></p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl$</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
           <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
-              stylusOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">stylusOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
                 <span class="token comment">// 指定文件查找路径。</span>
-                paths<span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"node_modules/vars"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+                <span class="token literal-property property">paths</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token string">"node_modules/vars"</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
               <span class="token punctuation">}</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
@@ -540,22 +540,22 @@
 这是 Stylus 的默认行为。</p>
 <p><strong>webpack.config.js</strong></p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code>module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
-  module<span class="token operator">:</span> <span class="token punctuation">{</span>
-    rules<span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token literal-property property">module</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+    <span class="token literal-property property">rules</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token punctuation">{</span>
-        test<span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
-        use<span class="token operator">:</span> <span class="token punctuation">[</span>
+        <span class="token literal-property property">test</span><span class="token operator">:</span> <span class="token regex"><span class="token regex-delimiter">/</span><span class="token regex-source language-regex">\.styl</span><span class="token regex-delimiter">/</span></span><span class="token punctuation">,</span>
+        <span class="token literal-property property">use</span><span class="token operator">:</span> <span class="token punctuation">[</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"style-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"css-loader"</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">{</span>
-            loader<span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
-            options<span class="token operator">:</span> <span class="token punctuation">{</span>
-              stylusOptions<span class="token operator">:</span> <span class="token punctuation">{</span>
-                paths<span class="token operator">:</span> <span class="token punctuation">[</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"node_modules"</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">loader</span><span class="token operator">:</span> <span class="token string">"stylus-loader"</span><span class="token punctuation">,</span>
+            <span class="token literal-property property">options</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+              <span class="token literal-property property">stylusOptions</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+                <span class="token literal-property property">paths</span><span class="token operator">:</span> <span class="token punctuation">[</span>path<span class="token punctuation">.</span><span class="token function">resolve</span><span class="token punctuation">(</span>__dirname<span class="token punctuation">,</span> <span class="token string">"node_modules"</span><span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">,</span>
               <span class="token punctuation">}</span><span class="token punctuation">,</span>
             <span class="token punctuation">}</span><span class="token punctuation">,</span>
           <span class="token punctuation">}</span><span class="token punctuation">,</span>

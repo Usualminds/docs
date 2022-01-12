@@ -9,44 +9,44 @@
 <h2 id="配置结构-structure" tabindex="-1"><a class="header-anchor" href="#配置结构-structure" aria-hidden="true">#</a> 配置结构（Structure)</h2>
 <p>输出 JSON 文件的顶层结构相当简单，但是也包含部分嵌套的数据结构。为了让文档更易于使用，每个嵌套的数据结构都有对应的一小节来讲，注意，你可以点击如下的链接，跳转到相关章节查看文档：</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token punctuation">{</span>
-  <span class="token string">'version'</span><span class="token operator">:</span> <span class="token string">'5.9.0'</span><span class="token punctuation">,</span> <span class="token comment">// 用来编译的 webpack 版本</span>
-  <span class="token string">'hash'</span><span class="token operator">:</span> <span class="token string">'11593e3b3ac85436984a'</span><span class="token punctuation">,</span> <span class="token comment">// 编译的特定哈希值</span>
-  <span class="token string">'time'</span><span class="token operator">:</span> <span class="token number">2469</span><span class="token punctuation">,</span> <span class="token comment">// 编译时间（毫秒）</span>
-  <span class="token string">'publicPath'</span><span class="token operator">:</span> <span class="token string">'auto'</span><span class="token punctuation">,</span>
-  <span class="token string">'outputPath'</span><span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token comment">// webpack 的输出目录路径</span>
-  <span class="token string">'assetsByChunkName'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token string-property property">'version'</span><span class="token operator">:</span> <span class="token string">'5.9.0'</span><span class="token punctuation">,</span> <span class="token comment">// 用来编译的 webpack 版本</span>
+  <span class="token string-property property">'hash'</span><span class="token operator">:</span> <span class="token string">'11593e3b3ac85436984a'</span><span class="token punctuation">,</span> <span class="token comment">// 编译的特定哈希值</span>
+  <span class="token string-property property">'time'</span><span class="token operator">:</span> <span class="token number">2469</span><span class="token punctuation">,</span> <span class="token comment">// 编译时间（毫秒）</span>
+  <span class="token string-property property">'publicPath'</span><span class="token operator">:</span> <span class="token string">'auto'</span><span class="token punctuation">,</span>
+  <span class="token string-property property">'outputPath'</span><span class="token operator">:</span> <span class="token string">'/'</span><span class="token punctuation">,</span> <span class="token comment">// webpack 的输出目录路径</span>
+  <span class="token string-property property">'assetsByChunkName'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token comment">// 输出资源对应的 Chunk 名称</span>
-    <span class="token string">'main'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string-property property">'main'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token string">'web.js?h=11593e3b3ac85436984a'</span>
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token string">'named-chunk'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string-property property">'named-chunk'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token string">'named-chunk.web.js'</span>
     <span class="token punctuation">]</span><span class="token punctuation">,</span>
-    <span class="token string">'other-chunk'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+    <span class="token string-property property">'other-chunk'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
       <span class="token string">'other-chunk.js'</span><span class="token punctuation">,</span>
       <span class="token string">'other-chunk.css'</span>
     <span class="token punctuation">]</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token string">'assets'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">'assets'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// [asset objects](#asset-objects) 列表</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">'chunks'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">'chunks'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// [chunk objects](#chunk-objects) 列表</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">'modules'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">'modules'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// [module objects](#module-objects) 列表</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">'entryPoints'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token string-property property">'entryPoints'</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token comment">// [entry objects](#entry-objects) 列表</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token string">'errors'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">'errors'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// [error objects](#errors-and-warnings) 列表</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">'errorsCount'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 错误个数</span>
-  <span class="token string">'warnings'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">'errorsCount'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 错误个数</span>
+  <span class="token string-property property">'warnings'</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// [warning objects](#errors-and-warnings) 列表</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">'warningsCount'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 告警个数</span>
+  <span class="token string-property property">'warningsCount'</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 告警个数</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br></div></div><h3 id="asset-对象" tabindex="-1"><a class="header-anchor" href="#asset-对象" aria-hidden="true">#</a> Asset 对象</h3>
 <p>每个 <code>assets</code> 对象表示编译过程中生成的 <code>output</code> 文件。它们都遵循类似的结构：</p>
@@ -70,79 +70,79 @@
 <h3 id="chunk-对象" tabindex="-1"><a class="header-anchor" href="#chunk-对象" aria-hidden="true">#</a> Chunk 对象</h3>
 <p>每个 <code>chunks</code> 对象代表一组名为 <RouterLink to="/glossary/#c">chunk</RouterLink> 的模块。每个对象都遵循如下结构：</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token punctuation">{</span>
-  <span class="token string">"entry"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 指定 webpack 运行时是否包含 chunk</span>
-  <span class="token string">"files"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">"entry"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 指定 webpack 运行时是否包含 chunk</span>
+  <span class="token string-property property">"files"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// 包含 chunk 的文件名字符数组</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">"filteredModules"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 查看关于 [top-level structure](#structure) 描述</span>
-  <span class="token string">"id"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// chunk 对应的 ID</span>
-  <span class="token string">"initial"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 指定 chunk 是在页面初始化时加载还是[按需加载](/guides/lazy-loading)</span>
-  <span class="token string">"modules"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">"filteredModules"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 查看关于 [top-level structure](#structure) 描述</span>
+  <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// chunk 对应的 ID</span>
+  <span class="token string-property property">"initial"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 指定 chunk 是在页面初始化时加载还是[按需加载](/guides/lazy-loading)</span>
+  <span class="token string-property property">"modules"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// [module objects](#module-objects) 列表</span>
     <span class="token string">"web.js?h=11593e3b3ac85436984a"</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">"names"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">"names"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// 包含当前 chunk 的 chunk 名称列表</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">"origins"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">"origins"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// 查看后面的描述...</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">"parents"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 父级 chunk ID</span>
-  <span class="token string">"rendered"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 指定 chunk 是否经过代码生成</span>
-  <span class="token string">"size"</span><span class="token operator">:</span> <span class="token number">188057</span> <span class="token comment">// chunk 大小，单位字节</span>
+  <span class="token string-property property">"parents"</span><span class="token operator">:</span> <span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">,</span> <span class="token comment">// 父级 chunk ID</span>
+  <span class="token string-property property">"rendered"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 指定 chunk 是否经过代码生成</span>
+  <span class="token string-property property">"size"</span><span class="token operator">:</span> <span class="token number">188057</span> <span class="token comment">// chunk 大小，单位字节</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div><p><code>chunks</code> 对象还包含一个 <code>origins</code> 列表，它描述来给定的 chunk 每个 <code>origins</code> 对象都遵循以下模式：</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token punctuation">{</span>
-  <span class="token string">"loc"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token comment">// 生成当前 chunk 的代码行</span>
-  <span class="token string">"module"</span><span class="token operator">:</span> <span class="token string">"(webpack)\\test\\browsertest\\lib\\index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// module的路径</span>
-  <span class="token string">"moduleId"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// module 对应的 ID</span>
-  <span class="token string">"moduleIdentifier"</span><span class="token operator">:</span> <span class="token string">"(webpack)\\test\\browsertest\\lib\\index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// module 对应的路径</span>
-  <span class="token string">"moduleName"</span><span class="token operator">:</span> <span class="token string">"./lib/index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// module对应的相对路径</span>
-  <span class="token string">"name"</span><span class="token operator">:</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token comment">// chunk 名称</span>
-  <span class="token string">"reasons"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">"loc"</span><span class="token operator">:</span> <span class="token string">""</span><span class="token punctuation">,</span> <span class="token comment">// 生成当前 chunk 的代码行</span>
+  <span class="token string-property property">"module"</span><span class="token operator">:</span> <span class="token string">"(webpack)\\test\\browsertest\\lib\\index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// module的路径</span>
+  <span class="token string-property property">"moduleId"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// module 对应的 ID</span>
+  <span class="token string-property property">"moduleIdentifier"</span><span class="token operator">:</span> <span class="token string">"(webpack)\\test\\browsertest\\lib\\index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// module 对应的路径</span>
+  <span class="token string-property property">"moduleName"</span><span class="token operator">:</span> <span class="token string">"./lib/index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// module对应的相对路径</span>
+  <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"main"</span><span class="token punctuation">,</span> <span class="token comment">// chunk 名称</span>
+  <span class="token string-property property">"reasons"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// 在 [module objects](#module-objects) 中找到相同的 `reason` 列表</span>
   <span class="token punctuation">]</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div><h3 id="module-对象" tabindex="-1"><a class="header-anchor" href="#module-对象" aria-hidden="true">#</a> Module 对象</h3>
 <p>假如不描述编译后的应用程序的实际模块，这些统计的数据有什么作用？其依赖关系图中的每个模块用如下结构表示：</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token punctuation">{</span>
-  <span class="token string">"assets"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">"assets"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// [asset objects](#asset-objects) 列表</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">"built"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 指定该模块经过 [Loaders](/concepts/loaders)、解析和代码生成</span>
-  <span class="token string">"cacheable"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 是否可以缓存</span>
-  <span class="token string">"chunks"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">"built"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 指定该模块经过 [Loaders](/concepts/loaders)、解析和代码生成</span>
+  <span class="token string-property property">"cacheable"</span><span class="token operator">:</span> <span class="token boolean">true</span><span class="token punctuation">,</span> <span class="token comment">// 是否可以缓存</span>
+  <span class="token string-property property">"chunks"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// 当前模块包含的 chunk ID</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">"errors"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 解析或处理模块时的错误个数</span>
-  <span class="token string">"failed"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 当前模块编译是否失败</span>
-  <span class="token string">"id"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 模块 ID (类似于 [`module.id`](/api/module-variables/#moduleid-commonjs))</span>
-  <span class="token string">"identifier"</span><span class="token operator">:</span> <span class="token string">"(webpack)\\test\\browsertest\\lib\\index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// 内部使用的唯一 ID</span>
-  <span class="token string">"name"</span><span class="token operator">:</span> <span class="token string">"./lib/index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// 实际文件的路径</span>
-  <span class="token string">"optional"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 对当前模块的所有请求都带上 `try... catch` blocks (与 ESM 无关)</span>
-  <span class="token string">"prefetched"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 指定模块是否被 [prefetched](/plugins/prefetch-plugin)</span>
-  <span class="token string">"profile"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
+  <span class="token string-property property">"errors"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 解析或处理模块时的错误个数</span>
+  <span class="token string-property property">"failed"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 当前模块编译是否失败</span>
+  <span class="token string-property property">"id"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 模块 ID (类似于 [`module.id`](/api/module-variables/#moduleid-commonjs))</span>
+  <span class="token string-property property">"identifier"</span><span class="token operator">:</span> <span class="token string">"(webpack)\\test\\browsertest\\lib\\index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// 内部使用的唯一 ID</span>
+  <span class="token string-property property">"name"</span><span class="token operator">:</span> <span class="token string">"./lib/index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// 实际文件的路径</span>
+  <span class="token string-property property">"optional"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 对当前模块的所有请求都带上 `try... catch` blocks (与 ESM 无关)</span>
+  <span class="token string-property property">"prefetched"</span><span class="token operator">:</span> <span class="token boolean">false</span><span class="token punctuation">,</span> <span class="token comment">// 指定模块是否被 [prefetched](/plugins/prefetch-plugin)</span>
+  <span class="token string-property property">"profile"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
     <span class="token comment">// 对应于 [`--profile` 标志位](/api/cli/#profiling) 的模块特定编译统计（以毫秒为单位）</span>
-    <span class="token string">"building"</span><span class="token operator">:</span> <span class="token number">73</span><span class="token punctuation">,</span> <span class="token comment">// 加载和解析</span>
-    <span class="token string">"dependencies"</span><span class="token operator">:</span> <span class="token number">242</span><span class="token punctuation">,</span> <span class="token comment">// 构建依赖</span>
-    <span class="token string">"factory"</span><span class="token operator">:</span> <span class="token number">11</span> <span class="token comment">// 解析依赖关系</span>
+    <span class="token string-property property">"building"</span><span class="token operator">:</span> <span class="token number">73</span><span class="token punctuation">,</span> <span class="token comment">// 加载和解析</span>
+    <span class="token string-property property">"dependencies"</span><span class="token operator">:</span> <span class="token number">242</span><span class="token punctuation">,</span> <span class="token comment">// 构建依赖</span>
+    <span class="token string-property property">"factory"</span><span class="token operator">:</span> <span class="token number">11</span> <span class="token comment">// 解析依赖关系</span>
   <span class="token punctuation">}</span><span class="token punctuation">,</span>
-  <span class="token string">"reasons"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
+  <span class="token string-property property">"reasons"</span><span class="token operator">:</span> <span class="token punctuation">[</span>
     <span class="token comment">// 查看下面的描述...</span>
   <span class="token punctuation">]</span><span class="token punctuation">,</span>
-  <span class="token string">"size"</span><span class="token operator">:</span> <span class="token number">3593</span><span class="token punctuation">,</span> <span class="token comment">// 预估模块大小，单位为字节</span>
-  <span class="token string">"source"</span><span class="token operator">:</span> <span class="token string">"// 不要改变它...\r\nif(typeof..."</span><span class="token punctuation">,</span> <span class="token comment">// 字符串的原始源头</span>
-  <span class="token string">"warnings"</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token comment">// 解析或处理模块时的警告数</span>
+  <span class="token string-property property">"size"</span><span class="token operator">:</span> <span class="token number">3593</span><span class="token punctuation">,</span> <span class="token comment">// 预估模块大小，单位为字节</span>
+  <span class="token string-property property">"source"</span><span class="token operator">:</span> <span class="token string">"// 不要改变它...\r\nif(typeof..."</span><span class="token punctuation">,</span> <span class="token comment">// 字符串的原始源头</span>
+  <span class="token string-property property">"warnings"</span><span class="token operator">:</span> <span class="token number">0</span> <span class="token comment">// 解析或处理模块时的警告数</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br></div></div><p>每个模块还包含了一个 <code>reasons</code> 列表，它描述了为什么该模块会被包含在依赖关系图中。每个 <code>reason</code> 都类似于上面的 <a href="#chunk-objects">chunk objects</a> 章节的 <code>origins</code>：</p>
 <div class="language-javascript ext-js line-numbers-mode"><pre v-pre class="language-javascript"><code><span class="token punctuation">{</span>
-  <span class="token string">"loc"</span><span class="token operator">:</span> <span class="token string">"33:24-93"</span><span class="token punctuation">,</span> <span class="token comment">// 当前模块包含的代码行数</span>
-  <span class="token string">"module"</span><span class="token operator">:</span> <span class="token string">"./lib/index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// 基于 [context](/configuration/entry-context/#context) 的模块相对路径</span>
-  <span class="token string">"moduleId"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 模块对应的 ID</span>
-  <span class="token string">"moduleIdentifier"</span><span class="token operator">:</span> <span class="token string">"(webpack)\\test\\browsertest\\lib\\index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// 模块对应路径</span>
-  <span class="token string">"moduleName"</span><span class="token operator">:</span> <span class="token string">"./lib/index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// 可读性更高的模块名称</span>
-  <span class="token string">"type"</span><span class="token operator">:</span> <span class="token string">"require.context"</span><span class="token punctuation">,</span> <span class="token comment">// 使用的 [请求类型](/api/module-methods)</span>
-  <span class="token string">"userRequest"</span><span class="token operator">:</span> <span class="token string">"../../cases"</span> <span class="token comment">// 用于 `import` 或者 `require` 请求的原始字符串</span>
+  <span class="token string-property property">"loc"</span><span class="token operator">:</span> <span class="token string">"33:24-93"</span><span class="token punctuation">,</span> <span class="token comment">// 当前模块包含的代码行数</span>
+  <span class="token string-property property">"module"</span><span class="token operator">:</span> <span class="token string">"./lib/index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// 基于 [context](/configuration/entry-context/#context) 的模块相对路径</span>
+  <span class="token string-property property">"moduleId"</span><span class="token operator">:</span> <span class="token number">0</span><span class="token punctuation">,</span> <span class="token comment">// 模块对应的 ID</span>
+  <span class="token string-property property">"moduleIdentifier"</span><span class="token operator">:</span> <span class="token string">"(webpack)\\test\\browsertest\\lib\\index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// 模块对应路径</span>
+  <span class="token string-property property">"moduleName"</span><span class="token operator">:</span> <span class="token string">"./lib/index.web.js"</span><span class="token punctuation">,</span> <span class="token comment">// 可读性更高的模块名称</span>
+  <span class="token string-property property">"type"</span><span class="token operator">:</span> <span class="token string">"require.context"</span><span class="token punctuation">,</span> <span class="token comment">// 使用的 [请求类型](/api/module-methods)</span>
+  <span class="token string-property property">"userRequest"</span><span class="token operator">:</span> <span class="token string">"../../cases"</span> <span class="token comment">// 用于 `import` 或者 `require` 请求的原始字符串</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br></div></div><h3 id="entry-对象" tabindex="-1"><a class="header-anchor" href="#entry-对象" aria-hidden="true">#</a> Entry 对象</h3>
 <div class="language-json ext-json line-numbers-mode"><pre v-pre class="language-json"><code><span class="token property">"main"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
