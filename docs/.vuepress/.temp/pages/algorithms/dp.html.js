@@ -11,19 +11,14 @@ export const data = {
       "title": "打家劫舍",
       "slug": "打家劫舍",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "礼物的最大价值",
+      "slug": "礼物的最大价值",
+      "children": []
     }
-  ],
-  "git": {
-    "updatedTime": 1641009315000,
-    "contributors": [
-      {
-        "name": "Joe",
-        "email": "me@qjidea.com",
-        "commits": 1
-      }
-    ]
-  },
-  "filePathRelative": "algorithms/dp.md"
+  ]
 }
 
 if (import.meta.webpackHot) {
