@@ -555,4 +555,65 @@ arr = [6]</p>
     <span class="token keyword">return</span> <span class="token constant">VALID</span><span class="token punctuation">;</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br><span class="line-number">38</span><br><span class="line-number">39</span><br><span class="line-number">40</span><br><span class="line-number">41</span><br><span class="line-number">42</span><br><span class="line-number">43</span><br><span class="line-number">44</span><br><span class="line-number">45</span><br><span class="line-number">46</span><br><span class="line-number">47</span><br><span class="line-number">48</span><br><span class="line-number">49</span><br><span class="line-number">50</span><br><span class="line-number">51</span><br><span class="line-number">52</span><br><span class="line-number">53</span><br><span class="line-number">54</span><br><span class="line-number">55</span><br><span class="line-number">56</span><br><span class="line-number">57</span><br><span class="line-number">58</span><br><span class="line-number">59</span><br><span class="line-number">60</span><br></div></div>  </CodeGroupItem>
+</CodeGroup>
+<h2 id="_2022-1-12-递增的三元子序列" tabindex="-1"><a class="header-anchor" href="#_2022-1-12-递增的三元子序列" aria-hidden="true">#</a> 2022.1.12 递增的三元子序列</h2>
+<blockquote>
+<p>👉
+<a href="https://leetcode-cn.com/problems/increasing-triplet-subsequence/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+</blockquote>
+<p>给你一个整数数组 nums ，判断这个数组中是否存在长度为 3 的递增子序列。</p>
+<p>如果存在这样的三元组下标 (i, j, k) 且满足 i &lt; j &lt; k ，使得 nums[i] &lt; nums[j] &lt; nums[k] ，返回 true ；否则，返回 false 。</p>
+<div class="custom-container tip"><p class="custom-container-title">测试用例</p>
+<ul>
+<li>
+<p>示例 1：</p>
+<ul>
+<li>输入：nums = [1,2,3,4,5]</li>
+<li>输出：true</li>
+<li>解释：任何 i &lt; j &lt; k 的三元组都满足题意</li>
+</ul>
+</li>
+<li>
+<p>示例 2：</p>
+<ul>
+<li>输入：nums = [5,4,3,2,1]</li>
+<li>输出：false</li>
+<li>解释：不存在满足题意的三元组</li>
+</ul>
+</li>
+<li>
+<p>示例 3：</p>
+<ul>
+<li>输入：nums = [2,1,5,0,4,6]</li>
+<li>输出：true</li>
+<li>解释：三元组 (3, 4, 5) 满足题意，因为 nums[3] == 0 &lt; nums[4] == 4 &lt; nums[5] == 6</li>
+</ul>
+</li>
+</ul>
+</div>
+<CodeGroup>
+  <CodeGroupItem title="TS" active>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">increasingTriplet</span><span class="token punctuation">(</span>nums<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> len <span class="token operator">=</span> nums<span class="token punctuation">.</span>length
+
+    <span class="token keyword">if</span><span class="token punctuation">(</span>len <span class="token operator">&lt;</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token boolean">false</span>
+
+    <span class="token keyword">let</span> first <span class="token operator">=</span> nums<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span><span class="token punctuation">,</span> second <span class="token operator">=</span> Number<span class="token punctuation">.</span><span class="token constant">MAX_VALUE</span>
+
+    <span class="token keyword">for</span><span class="token punctuation">(</span><span class="token keyword">let</span> i<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">;</span>i<span class="token operator">&lt;</span>len<span class="token punctuation">;</span>i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        <span class="token keyword">const</span> num <span class="token operator">=</span> nums<span class="token punctuation">[</span>i<span class="token punctuation">]</span>
+
+        <span class="token keyword">if</span><span class="token punctuation">(</span>num <span class="token operator">></span> second<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            <span class="token keyword">return</span> <span class="token boolean">true</span>
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token keyword">if</span><span class="token punctuation">(</span>num <span class="token operator">></span> first<span class="token punctuation">)</span><span class="token punctuation">{</span>
+            second <span class="token operator">=</span> num
+        <span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+            first <span class="token operator">=</span> num
+        <span class="token punctuation">}</span>
+
+    <span class="token punctuation">}</span>
+    
+    <span class="token keyword">return</span> <span class="token boolean">false</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br></div></div>  </CodeGroupItem>
 </CodeGroup></template>
