@@ -14,8 +14,33 @@ export const data = {
     },
     {
       "level": 2,
+      "title": "股票的最大利润",
+      "slug": "股票的最大利润",
+      "children": [
+        {
+          "level": 3,
+          "title": "暴力法",
+          "slug": "暴力法",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "一次遍历",
+          "slug": "一次遍历",
+          "children": []
+        }
+      ]
+    },
+    {
+      "level": 2,
       "title": "礼物的最大价值",
       "slug": "礼物的最大价值",
+      "children": []
+    },
+    {
+      "level": 2,
+      "title": "把数字翻译成字符串",
+      "slug": "把数字翻译成字符串",
       "children": []
     }
   ]
