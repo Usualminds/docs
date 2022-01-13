@@ -675,3 +675,35 @@ function increasingTriplet(nums: number[]): boolean {
 ```
   </CodeGroupItem>
 </CodeGroup>
+
+## 2022.1.13 至少是其他数字两倍的最大数
+> :point_right: 
+[Leetcode 链接](https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/)
+
+给你一个整数数组 nums ，其中总是存在 唯一的 一个最大整数 。
+
+请你找出数组中的最大元素并检查它是否 至少是数组中每个其他数字的两倍 。如果是，则返回 最大元素的下标 ，否则返回 -1 。
+
+::: tip 测试用例
+- 示例 1：
+    - 输入：nums = [3,6,1,0]
+    - 输出：1
+    - 解释：6 是最大的整数，对于数组中的其他整数，6 大于数组中其他元素的两倍。6 的下标是 1 ，所以返回 1 。
+:::
+
+```ts
+function dominantIndex(nums: number[]): number {
+    const len = nums.length
+    const index = nums.findIndex((v) => v === Math.max(...nums))
+
+    if (len === 1) return 0
+
+    nums.sort((a, b) => b - a)
+
+    if (nums[0] >= (nums[1] * 2)) {
+        return index
+    }
+
+    return -1
+};
+```
