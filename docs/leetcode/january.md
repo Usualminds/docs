@@ -1,6 +1,6 @@
 # 一月
 
-## 2022.1.1
+## 2022.1.1 数组 ⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/convert-1d-array-into-2d-array/)
 
@@ -48,7 +48,7 @@ function construct2DArray(original: number[], m: number, n: number): number[][] 
   </CodeGroupItem>
 </CodeGroup>
 
-## 2022.1.2
+## 2022.1.2 数组 ⭐⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/elimination-game/)
 
@@ -97,7 +97,7 @@ function count(n: number, flag: boolean){
   </CodeGroupItem>
 </CodeGroup>
 
-## 2022.1.3
+## 2022.1.3 日期 ⭐⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/day-of-the-week/)
 
@@ -197,7 +197,7 @@ function dayOfTheWeek(day: number, month: number, year: number): string {
   </CodeGroupItem>
 </CodeGroup>
 
-## 2022.1.4
+## 2022.1.4 图 ⭐⭐⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/cat-and-mouse/)
 
@@ -234,7 +234,7 @@ function dayOfTheWeek(day: number, month: number, year: number): string {
   </CodeGroupItem>
 </CodeGroup>
 
-## 2022.1.5
+## 2022.1.5 字符串 ⭐⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/replace-all-s-to-avoid-consecutive-repeating-characters/)
 
@@ -292,7 +292,7 @@ function modifyString(s: string): string {
   </CodeGroupItem>
 </CodeGroup>
 
-## 2022.1.6
+## 2022.1.6 字符串 ⭐⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/simplify-path/)
 
@@ -373,7 +373,7 @@ function simplifyPath(path: string): string {
   </CodeGroupItem>
 </CodeGroup>
 
-## 2022.1.7
+## 2022.1.7 字符串 ⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/maximum-nesting-depth-of-the-parentheses/)
 
@@ -426,7 +426,7 @@ function maxDepth(s: string): number {
   </CodeGroupItem>
 </CodeGroup>
 
-## 2022.1.8
+## 2022.1.8 数学 ⭐⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/gray-code/)
 
@@ -478,7 +478,7 @@ function grayCode(n: number): number[] {
   </CodeGroupItem>
 </CodeGroup>
 
-## 2022.1.9 按键持续时间最长的键
+## 2022.1.9 按键持续时间最长的键 ⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/slowest-key/)
 
@@ -506,7 +506,7 @@ function slowestKey(releaseTimes: number[], keysPressed: string): string {
 </CodeGroup>
 
 
-## 2022.1.10 累加数
+## 2022.1.10 累加数 ⭐⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/additive-number/)
 
@@ -547,7 +547,7 @@ function dfs(num: string, start: number, x: string, y: string): boolean {
   </CodeGroupItem>
 </CodeGroup>
 
-## 2022.1.11 逃离大迷宫
+## 2022.1.11 逃离大迷宫 ⭐⭐⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/escape-a-large-maze/)
 
@@ -619,7 +619,7 @@ const check = (blocked, start, finish, hashBlocked) => {
   </CodeGroupItem>
 </CodeGroup>
 
-## 2022.1.12 递增的三元子序列
+## 2022.1.12 递增的三元子序列 ⭐⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/increasing-triplet-subsequence/)
 
@@ -676,7 +676,7 @@ function increasingTriplet(nums: number[]): boolean {
   </CodeGroupItem>
 </CodeGroup>
 
-## 2022.1.13 至少是其他数字两倍的最大数
+## 2022.1.13 最大数 ⭐
 > :point_right: 
 [Leetcode 链接](https://leetcode-cn.com/problems/largest-number-at-least-twice-of-others/)
 
