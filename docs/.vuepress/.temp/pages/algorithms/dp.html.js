@@ -61,6 +61,18 @@ export const data = {
           "children": []
         }
       ]
+    },
+    {
+      "level": 2,
+      "title": "最长上升子序列",
+      "slug": "最长上升子序列",
+      "children": []
+    },
+    {
+      "level": 2,
+      "title": "最长递增子序列的个数",
+      "slug": "最长递增子序列的个数",
+      "children": []
     }
   ],
   "git": {

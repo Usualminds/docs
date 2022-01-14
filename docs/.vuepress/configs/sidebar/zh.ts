@@ -28,6 +28,7 @@ export const zh: SidebarConfig = {
             text: '文章',
             children: [
                 '/article/dp.md',
+                '/article/browser-finger.md',
             ],
         },
     ],

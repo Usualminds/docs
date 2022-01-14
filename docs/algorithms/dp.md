@@ -239,3 +239,83 @@ function lengthOfLongestSubstring(s: string): number {
     return max
 };
 ```
+## 最长上升子序列
+> :point_right: 
+[题目链接](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+
+给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
+
+子序列是由数组派生而来的序列，删除（或不删除）数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。
+
+::: tip 示例
+
+- 输入：nums = [10,9,2,5,3,7,101,18]
+- 输出：4
+- 解释：最长递增子序列是 [2,3,7,101]，因此长度为 4
+:::
+
+转移公式 `dp[i] = max(dp[i], dp[j] + 1), j<i`
+
+```ts
+function lengthOfLIS(nums: number[]): number {
+    let len = nums.length, dp = new Array(len).fill(1), max = 0
+
+    if (len === 0) return 0
+    
+    for (let i = 0; i < len; i++){
+        for (let j = 0; j < i; j++){
+            if (nums[i] > nums[j]) {
+                dp[i] = Math.max(dp[i], dp[j] + 1)
+            }
+        }
+
+        max = Math.max(max, dp[i])
+    }
+
+    return max
+};
+```
+
+
+## 最长递增子序列的个数
+> :point_right: 
+[题目链接](https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/)
+
+给定一个未排序的整数数组，找到最长递增子序列的个数。
+
+::: tip 示例
+
+- 输入：[1,3,5,4,7]
+- 输出：2
+- 解释：有两个最长递增子序列，分别是 [1, 3, 4, 7] 和[1, 3, 5, 7]。
+:::
+
+转移公式：`dp[i] = max(dp[i], dp[j] + 1), 0≤j<i && num[j]<num[i]`
+
+```ts
+function findNumberOfLIS(nums: number[]): number {
+    let len = nums.length, max = 0, res = 0, dp = new Array(len).fill(1), count = new Array(len).fill(1)
+
+    for (let i = 0; i < len; i++){
+        for (let j = 0; j < i; j++){
+            if (nums[i] > nums[j]) {
+                if (dp[i] < dp[j] + 1) {
+                    dp[i] = dp[j] + 1
+                    count[i] = count[j]
+                } else if (dp[i] === dp[j] + 1) {
+                    count[i] += count[j]
+                }
+            }
+        }
+
+        if (dp[i] > max) {
+            max = dp[i]
+            res = count[i]
+        } else if(max === dp[i]) {
+            res += count[i]
+        }
+    }
+
+    return res
+};
+```

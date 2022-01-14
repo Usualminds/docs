@@ -13,6 +13,8 @@ export const pagesComponents = {
   "v-abd8a642": defineAsyncComponent(() => import(/* webpackChunkName: "v-abd8a642" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/math.html.vue")),
   // path: /algorithms/tree.html
   "v-7f4aae09": defineAsyncComponent(() => import(/* webpackChunkName: "v-7f4aae09" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/tree.html.vue")),
+  // path: /article/browser-finger.html
+  "v-3c2b42b9": defineAsyncComponent(() => import(/* webpackChunkName: "v-3c2b42b9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/browser-finger.html.vue")),
   // path: /article/dp.html
   "v-54e17b9b": defineAsyncComponent(() => import(/* webpackChunkName: "v-54e17b9b" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/dp.html.vue")),
   // path: /leetcode/contest.html

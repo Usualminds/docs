@@ -54,9 +54,10 @@ export const themeData = {
           "text": "文章",
           "children": [
             {
-              "text": "动态规划",
+              "text": "算法",
               "children": [
-                "/article/dp.md"
+                "/article/dp.md",
+                "/article/browser-finger.md"
               ]
             }
           ]
@@ -92,7 +93,8 @@ export const themeData = {
           {
             "text": "文章",
             "children": [
-              "/article/dp.md"
+              "/article/dp.md",
+              "/article/browser-finger.md"
             ]
           }
         ]

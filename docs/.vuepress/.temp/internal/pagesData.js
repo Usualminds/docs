@@ -11,6 +11,8 @@ export const pagesData = {
   "v-abd8a642": () => import(/* webpackChunkName: "v-abd8a642" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/math.html.js").then(({ data }) => data),
   // path: /algorithms/tree.html
   "v-7f4aae09": () => import(/* webpackChunkName: "v-7f4aae09" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/tree.html.js").then(({ data }) => data),
+  // path: /article/browser-finger.html
+  "v-3c2b42b9": () => import(/* webpackChunkName: "v-3c2b42b9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/browser-finger.html.js").then(({ data }) => data),
   // path: /article/dp.html
   "v-54e17b9b": () => import(/* webpackChunkName: "v-54e17b9b" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/dp.html.js").then(({ data }) => data),
   // path: /leetcode/contest.html

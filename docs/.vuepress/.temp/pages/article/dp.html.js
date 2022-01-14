@@ -8,8 +8,8 @@ export const data = {
   "headers": [
     {
       "level": 2,
-      "title": "什么动态规划",
-      "slug": "什么动态规划",
+      "title": "简介",
+      "slug": "简介",
       "children": []
     },
     {
@@ -22,12 +22,37 @@ export const data = {
       "level": 2,
       "title": "常见题目",
       "slug": "常见题目",
-      "children": []
+      "children": [
+        {
+          "level": 3,
+          "title": "股票的最大利润 ⭐",
+          "slug": "股票的最大利润-⭐",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "最长上升子序列 ⭐⭐",
+          "slug": "最长上升子序列-⭐⭐",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "最长递增子序列的个数 ⭐⭐⭐",
+          "slug": "最长递增子序列的个数-⭐⭐⭐",
+          "children": []
+        }
+      ]
     },
     {
       "level": 2,
       "title": "总结",
       "slug": "总结",
+      "children": []
+    },
+    {
+      "level": 2,
+      "title": "链接",
+      "slug": "链接",
       "children": []
     }
   ],

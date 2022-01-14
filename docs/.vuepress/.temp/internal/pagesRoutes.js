@@ -7,6 +7,7 @@ const routeItems = [
   ["v-8114f962","/algorithms/linklist.html",{"title":"链表"},["/algorithms/linklist","/algorithms/linklist.md"]],
   ["v-abd8a642","/algorithms/math.html",{"title":"数学"},["/algorithms/math","/algorithms/math.md"]],
   ["v-7f4aae09","/algorithms/tree.html",{"title":"树"},["/algorithms/tree","/algorithms/tree.md"]],
+  ["v-3c2b42b9","/article/browser-finger.html",{"title":"浏览器指纹及其应用"},["/article/browser-finger","/article/browser-finger.md"]],
   ["v-54e17b9b","/article/dp.html",{"title":"动态规划"},["/article/dp","/article/dp.md"]],
   ["v-2e513634","/leetcode/contest.html",{"title":"周赛笔记"},["/leetcode/contest","/leetcode/contest.md"]],
   ["v-5266a414","/leetcode/february.html",{"title":"二月"},["/leetcode/february","/leetcode/february.md"]],
