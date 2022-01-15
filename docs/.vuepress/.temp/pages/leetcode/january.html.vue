@@ -649,4 +649,51 @@ arr = [6]</p>
 
     <span class="token keyword">return</span> <span class="token operator">-</span><span class="token number">1</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div></template>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><h2 id="_2022-1-15-计算力扣银行的钱-⭐" tabindex="-1"><a class="header-anchor" href="#_2022-1-15-计算力扣银行的钱-⭐" aria-hidden="true">#</a> 2022.1.15 计算力扣银行的钱 ⭐</h2>
+<p>Hercy 想要为购买第一辆车存钱。他 每天 都往力扣银行里存钱。</p>
+<p>最开始，他在周一的时候存入 1 块钱。从周二到周日，他每天都比前一天多存入 1 块钱。在接下来每一个周一，他都会比 前一个周一 多存入 1 块钱。</p>
+<p>给你 n ，请你返回在第 n 天结束的时候他在力扣银行总共存了多少块钱。</p>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<ul>
+<li>
+<p>示例 1：</p>
+<ul>
+<li>输入：n = 4</li>
+<li>输出：10</li>
+<li>解释：第 4 天后，总额为 1 + 2 + 3 + 4 = 10 。</li>
+</ul>
+</li>
+<li>
+<p>示例 2：</p>
+<ul>
+<li>输入：n = 10</li>
+<li>输出：37</li>
+<li>解释：第 10 天后，总额为 (1 + 2 + 3 + 4 + 5 + 6 + 7) + (2 + 3 + 4) = 37 。注意到第二个星期一，Hercy 存入 2 块钱。</li>
+</ul>
+</li>
+<li>
+<p>示例 3：</p>
+<ul>
+<li>输入：n = 20</li>
+<li>输出：96</li>
+<li>解释：第 20 天后，总额为 (1 + 2 + 3 + 4 + 5 + 6 + 7) + (2 + 3 + 4 + 5 + 6 + 7 + 8) + (3 + 4 + 5 + 6 + 7 + 8) = 96 。</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">totalMoney</span><span class="token punctuation">(</span>n<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> sum <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> week <span class="token operator">=</span> <span class="token number">1</span><span class="token punctuation">,</span> day <span class="token operator">=</span> <span class="token number">1</span>
+   
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span> i <span class="token operator">&lt;</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        sum <span class="token operator">+=</span> week <span class="token operator">+</span> day <span class="token operator">-</span> <span class="token number">1</span>
+        day<span class="token operator">++</span>
+        
+        <span class="token keyword">if</span> <span class="token punctuation">(</span>day <span class="token operator">===</span> <span class="token number">8</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+            day <span class="token operator">=</span> <span class="token number">1</span>
+            week<span class="token operator">++</span>
+        <span class="token punctuation">}</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> sum
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br></div></div></template>
