@@ -96,15 +96,21 @@ export const data = {
       "title": "2022.1.15 计算力扣银行的钱 ⭐",
       "slug": "_2022-1-15-计算力扣银行的钱-⭐",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "2022.1.16 链表随机节点 ⭐⭐",
+      "slug": "_2022-1-16-链表随机节点-⭐⭐",
+      "children": []
     }
   ],
   "git": {
-    "updatedTime": 1642040077000,
+    "updatedTime": 1642340899000,
     "contributors": [
       {
         "name": "Joe",
         "email": "me@qjidea.com",
-        "commits": 14
+        "commits": 16
       }
     ]
   },
