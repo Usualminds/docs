@@ -750,3 +750,68 @@ function totalMoney(n: number): number {
     return sum
 };
 ```
+
+## 2022.1.17 链表随机节点 ⭐⭐
+
+给你一个单链表，随机选择链表的一个节点，并返回相应的节点值。每个节点 被选中的概率一样 。
+
+实现 Solution 类：
+
+Solution(ListNode head) 使用整数数组初始化对象。
+int getRandom() 从链表中随机选择一个节点并返回该节点的值。链表中所有节点被选中的概率相等。
+
+::: tip 
+- 输入
+["Solution", "getRandom", "getRandom", "getRandom", "getRandom", "getRandom"]
+[[[1, 2, 3]], [], [], [], [], []]
+- 输出
+[null, 1, 3, 2, 2, 3]
+
+- 解释
+Solution solution = new Solution([1, 2, 3]);
+solution.getRandom(); // 返回 1
+solution.getRandom(); // 返回 3
+solution.getRandom(); // 返回 2
+solution.getRandom(); // 返回 2
+solution.getRandom(); // 返回 3
+:::
+
+```ts
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+class Solution {
+    public list: number[] = []
+
+    constructor(head: ListNode | null) {
+        this.init(head)
+    }
+
+    init(head: ListNode | null){
+        while(head){
+            const val = head.val
+            this.list.push(val)
+            head = head.next
+        }
+    }
+
+    getRandom(): number {
+        return this.list[Math.floor(Math.random() * this.list.length)]
+    }
+}
+
+/**
+ * Your Solution object will be instantiated and called as such:
+ * var obj = new Solution(head)
+ * var param_1 = obj.getRandom()
+ */
+```
