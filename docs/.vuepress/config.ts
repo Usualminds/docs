@@ -16,6 +16,11 @@ export default defineUserConfig<DefaultThemeOptions>({
     title: 'Daliy Knowledge',
     description: '前端 算法 数据结构',
 
+    plugins: [
+        [
+            '@renovamen/vuepress-plugin-katex'
+        ]
+    ],
     // 主题和它的配置
     theme: '@vuepress/theme-default',
     themeConfig: {

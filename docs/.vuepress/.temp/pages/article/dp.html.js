@@ -14,8 +14,8 @@ export const data = {
     },
     {
       "level": 2,
-      "title": "动态规划题解思路",
-      "slug": "动态规划题解思路",
+      "title": "题解思路",
+      "slug": "题解思路",
       "children": []
     },
     {
@@ -23,6 +23,12 @@ export const data = {
       "title": "常见题目",
       "slug": "常见题目",
       "children": [
+        {
+          "level": 3,
+          "title": "最大子序和",
+          "slug": "最大子序和",
+          "children": []
+        },
         {
           "level": 3,
           "title": "股票的最大利润 ⭐",
@@ -67,17 +73,4 @@ export const data = {
     ]
   },
   "filePathRelative": "article/dp.md"
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

@@ -111,27 +111,14 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1642342241000,
+    "updatedTime": 1642392016000,
     "contributors": [
       {
         "name": "Joe",
         "email": "me@qjidea.com",
-        "commits": 17
+        "commits": 18
       }
     ]
   },
   "filePathRelative": "leetcode/january.md"
-}
-
-if (import.meta.webpackHot) {
-  import.meta.webpackHot.accept()
-  if (__VUE_HMR_RUNTIME__.updatePageData) {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  }
-}
-
-if (import.meta.hot) {
-  import.meta.hot.accept(({ data }) => {
-    __VUE_HMR_RUNTIME__.updatePageData(data)
-  })
 }

@@ -1,9 +1,9 @@
 # 动态规划
 
 ## 简介
-动态规划（Dynamic programming，简称 DP）是美国数学家 [Richard Bellman](https://zh.wikipedia.org/wiki/%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E8%B2%9D%E7%88%BE%E6%9B%BC)在研究**决策过程和控制系统理**时创建的新方法。它在数学上属于运筹学的一个分支，在数学、管理科学、计算机科学、经济学和生物信息学中均有应用，核心是**通过把原问题分解为相对简单的子问题的方式**来求解复杂问题，主要应用是求解决策过程最优的数学方法。
+动态规划（Dynamic programming，简称 DP）是美国数学家 [Richard Bellman](https://zh.wikipedia.org/wiki/%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E8%B2%9D%E7%88%BE%E6%9B%BC)在研究**决策过程和控制系统理论**时创建的新方法。它在数学上属于运筹学的一个分支，在数学、管理科学、计算机科学、经济学和生物信息学中均有应用，核心是**通过把原问题分解为相对简单的子问题的方式**来求解复杂问题，主要应用是求解决策过程最优的数学方法。
 
-简单来讲，动态规划是一种算法思想，其核心是把问题分解为子问题，通过求解子问题进而解决当前问题。实际中，并非所有问题都可以通过动态规划来求解，通过动态规划解决对问题，对问题和其分解对子问题都有一定场景要求的，动态规划适用于有**重叠子问题**和**最优子结构**性质的问题，这类问题使用动态规划所耗时间往往比朴素解法更少。
+简单来讲，动态规划是一种算法思想，其核心是把问题分解为子问题，通过求解子问题进而解决当前问题。实际中，并非所有问题都可以通过动态规划来求解，通过动态规划解决的问题，对问题和其分解对子问题都有一定场景要求的，动态规划适用于有**重叠子问题**和**最优子结构**性质的问题，这类问题使用动态规划所耗时间往往比朴素解法更少。
 
 如下图，我们对动态规划问题从**应用场景**、**解决方法**和**常见示例题目**三个方面来展开。
 
@@ -12,28 +12,27 @@
 > [动态规划 Wiki](https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92)
 
 ## 题解思路
-动态规划问题的数学表达式可以简单的抽象为如下
+动态规划问题的数学表达式可以简单的抽象为如下: `dp[y] = f(dp[x]),x<y`，一般常见解题思路，主要包含以下四步，其中最核心的是确定**转移方程**
 
-行内公式：
-
-一般常见解题思路，主要包含以下四步，其中最核心的是确定**转移方程**
 - 状态定义
 - 转移方程
 - 初始值
 - 返回值
 
+我们以以下题目为入手来了解动态规划的常见解题思路
+
 ## 常见题目
-动态规划常见的几种类型题目，⭐代表题目难度
+动态规划常见的几种类型题目，⭐ 代表题目难度
 
 ### 最大子序和
 > :point_right: 
-[Wiki 链接](https://leetcode-cn.com/problems/maximum-subarray/)
+[Leetcode 链接](https://leetcode-cn.com/problems/maximum-subarray/)
 
 给你一个整数数组 nums ，请你找出一个具有最大和的连续子数组（子数组最少包含一个元素），返回其最大和。
 
 子数组 是数组中的一个连续部分。
 
-::: tip 
+::: tip 用例
 - 示例 1:
   - 输入: nums = [-2,1,-3,4,-1,2,1,-5,4]
   - 输出: 6
@@ -44,13 +43,21 @@
   - 输出: 1
 :::
 
+#### 思路分析
+- 状态定义，本题核心是分析什么是**最大和的连续子数组**，这里我们可以用 `f(n)` 表示第 n 个数结尾的最大和的连续子数组
+- 转移方程分析，显而易见，我们的问题就是求 `[0, n]` 这个区间里面 `f(n)` 的最大值，应用动态规划的划分子问题的方法，对 `f(n)` 来讲，其最大值可以通过比较 `nums[n]` 和 `nums[n] + f(n-1)`， 取两者中较大值即可，从而，我们可以得出其转移方程为：
+`f(n) = max{(f(n-1) + nums[n], nums[n])}`
+- 初始值分析，我们可以使用数组中第一个数来暂时表示最大值 `max`，随后，通过循环数组中所有项，代入转移方程，不断更新 `max` 取值即可
+- 返回值即为 `max`
+
+#### 题解 
 ```ts
 function maxSubArray(nums: number[]): number {
     let max = nums[0], dp = [nums[0]], len = nums.length
 
-    for (let i = 1; i < len; i++) {
-        dp[i] = Math.max(0, dp[i - 1]) + nums[i]
-        max = Math.max(max, dp[i])
+    for (let n = 1; n < len; n++) {
+        dp[n] = Math.max(0, dp[n - 1]) + nums[n]
+        max = Math.max(max, dp[n])
     }
 
     return max
@@ -58,6 +65,9 @@ function maxSubArray(nums: number[]): number {
 ```
 
 ### 股票的最大利润 ⭐
+
+[Leetcode 链接](https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/)
+
 假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖该股票一次可能获得的最大利润是多少？
 
 ::: tip 
@@ -74,41 +84,47 @@ function maxSubArray(nums: number[]): number {
 
 :::
 
-#### 暴力法
-```js 
-function maxProfit(prices: number[]): number {
-        let maxprofit = 0;
-        for (let i = 0; i < prices.length - 1; i++) {
-            for (let j = i + 1; j < prices.length; j++) {
-                let profit = prices[j] - prices[i];
-                if (profit > maxprofit) {
-                    maxprofit = profit;
-                }
-            }
-        }
-        return maxprofit;
-    }
-}
-```
-
-#### DP 
-
+#### 思路分析
+和上题类似，我们首先思考🤔，如何获取**最大利润**？按照常规思路，自然是**最低点买入，最高点卖出**
+- 状态定义，我们可以用 `f(n)` 表示前 n 天的最大利润，`min` 表示前 n 天的最低价格
+- 转移方程分析，可以预见的是，在 `[0, n]` 这个区间里面，`f(n)`的最大值就是第 n-1 天的利润，第 n 天价格和前 n 天的最低价格 min 的较大值，即 `f(n-1)` 和 `prices[n] - min` 两者中的较大值 ，从而，我们可以得出其转移方程为：
+`f(n) = max{(f(n-1), prices[n] - min)}`
+- 初始值分析，最小值 min 直接使用 第一天的股票价格即可，max 赋值为 0，通过循环更新
+- 返回值分析，返回值为 max 
 ```ts
 function maxProfit(prices: number[]): number {
     let min = prices[0], max = 0
 
-    for (let i = 0; i < prices.length; i++) {
-        min = Math.min(min, prices[i])
-        max = Math.max(max, prices[i] - min)
+    for (let n = 0; n < prices.length; n++) {
+        min = Math.min(min, prices[n])
+        max = Math.max(max, prices[n] - min)
     }
 
     return max
 };
 ```
 
+当然，本题也可以通过朴素循环求解，这里就不分析了，贴下代码
+#### 暴力法
+```js 
+function maxProfit(prices: number[]): number {
+        let max = 0;
+        for (let i = 0; i < prices.length - 1; i++) {
+            for (let j = i + 1; j < prices.length; j++) {
+                let profit = prices[j] - prices[i];
+                if (profit > max) {
+                    max = profit;
+                }
+            }
+        }
+        return max;
+    }
+}
+```
+
 ### 最长上升子序列 ⭐⭐
 > :point_right: 
-[题目链接](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
+[Leetcode 链接](https://leetcode-cn.com/problems/longest-increasing-subsequence/)
 
 给你一个整数数组 nums ，找到其中最长严格递增子序列的长度。
 
@@ -121,8 +137,13 @@ function maxProfit(prices: number[]): number {
 - 解释：最长递增子序列是 [2,3,7,101]，因此长度为 4
 :::
 
-转移公式 `dp[i] = max(dp[i], dp[j] + 1), j<i`
-
+#### 思路分析
+做了两道题目之后，你对动态规划有没有些感觉了呢😜，我们接着来看这道经典的动态规划题，如何获取**最长严格递增子序列**？常规思路分析就是**数组中后一个数比前面每一个都要大**，一旦出现小的，连续性就不存在了
+- 状态定义，我们可以用 `f(n)` 表示前 n 个上升子序列
+- 转移方程分析，什么情况下我们可以确定数组中后一个数比前面每一个都要大？这里可以预见的是，使用双重循环，`[0, n]` 这个区间为外层循环，`[0, m]` 这个区间为内层循环，且 m< n, 如果第 n 个数为上升子序列，则前 n 个数势必比任何一个 `[f(0), f(m)]`的取值要大，所以其转移方程为：
+`f(n) = max{(f(n), f(m)+1)}, m<n`
+- 初始值分析，最大值 max 赋值为 0，通过循环更新，dp 为长度为数组长度的新数组，其初始值均为 1
+- 返回值分析，返回值为 max 
 ```ts
 function lengthOfLIS(nums: number[]): number {
     let len = nums.length, dp = new Array(len).fill(1), max = 0
@@ -143,6 +164,7 @@ function lengthOfLIS(nums: number[]): number {
 };
 ```
 
+> 这道题时间复杂度已经是 O(n^2) 了，思考下，有没有其他更优的解法呢？
 
 ### 最长递增子序列的个数 ⭐⭐⭐
 > :point_right: 
@@ -156,9 +178,20 @@ function lengthOfLIS(nums: number[]): number {
 - 输出：2
 - 解释：有两个最长递增子序列，分别是 [1, 3, 4, 7] 和[1, 3, 5, 7]。
 :::
+#### 思路分析
+这道题目是上一题的变形，上一题求解了**最长递增子序列**，那**最长递增子序列**是否只有一个呢？当然不是了，有几个，正是本题的求解目的
 
-转移公式：`dp[i] = max(dp[i], dp[j] + 1), 0≤j<i && num[j]<num[i]`
+首先考虑下，这道题和上道题不同的地方在哪里，就是要在**求解最长递增子序列的同时，记录其个数**，那要怎么记录这个**个数**，就是本题的关键了，对于上个题目，我们给出的转移方程是
+`f(n) = max{(f(n), f(m)+1)}, m<n`，
+那对于有多少个这样的最长子序列，我们只需要将符合
+`f(n)=f(m) + 1`
+的组合挑选出来即可，所以给予之前的做法，我们只需要在对应条件内，再进行判断即可
 
+- 状态定义，我们可以用 `f(n)` 表示前 n 个上升子序列
+- 转移方程分析，什么情况下我们可以确定数组中后一个数比前面每一个都要大？这里可以预见的是，使用双重循环，`[0, n]` 这个区间为外层循环，`[0, m]` 这个区间为内层循环，且 m< n, 如果第 n 个数为上升子序列，则前 n 个数势必比任何一个 `[f(0), f(m)]`的取值要大，所以其转移方程为：
+`f(n) = max{(f(n), f(m)+1)}, m<n`，判断条件 `f(n)=f(m) + 1`
+- 初始值分析，最大值 max 赋值为 0，通过循环更新，dp 为长度为数组长度的新数组，其初始值均为 1，count 为长度为数组长度的新数组，其初始值均为 1
+- 返回值分析，返回值为 count
 ```ts
 function findNumberOfLIS(nums: number[]): number {
     let len = nums.length, max = 0, res = 0, dp = new Array(len).fill(1), count = new Array(len).fill(1)
@@ -187,5 +220,8 @@ function findNumberOfLIS(nums: number[]): number {
 };
 ```
 ## 总结
+本期动态规划通过四个常见题目，简要介绍了动态规划问题的常见解题思路，从状态定义、转移方程、初始值和返回值四方面进行了分析，其中**转移方程**是最核心的，而转移方程的确立来自对问题和子问题的梳理和分解，当你有了一个正确的转移方程，就已经成功了一大半，再考虑好相关边界取值，基本就大功告成了。
+
+当然，动态规划可不止这些问题，比如：矩阵运算、前缀和、背包和路径压缩等问题，下一期我们将介绍进阶版本的动态规划，敬请期待。
 
 ## 链接
