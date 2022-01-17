@@ -102,15 +102,21 @@ export const data = {
       "title": "2022.1.16 链表随机节点 ⭐⭐",
       "slug": "_2022-1-16-链表随机节点-⭐⭐",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "2022.1.17 统计元音字母序列的数目 ⭐⭐⭐",
+      "slug": "_2022-1-17-统计元音字母序列的数目-⭐⭐⭐",
+      "children": []
     }
   ],
   "git": {
-    "updatedTime": 1642340899000,
+    "updatedTime": 1642342241000,
     "contributors": [
       {
         "name": "Joe",
         "email": "me@qjidea.com",
-        "commits": 16
+        "commits": 17
       }
     ]
   },

@@ -763,4 +763,44 @@ solution.getRandom(); // 返回 3</p>
  * var obj = new Solution(head)
  * var param_1 = obj.getRandom()
  */</span>
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div></template>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br><span class="line-number">22</span><br><span class="line-number">23</span><br><span class="line-number">24</span><br><span class="line-number">25</span><br><span class="line-number">26</span><br><span class="line-number">27</span><br><span class="line-number">28</span><br><span class="line-number">29</span><br><span class="line-number">30</span><br><span class="line-number">31</span><br><span class="line-number">32</span><br><span class="line-number">33</span><br><span class="line-number">34</span><br><span class="line-number">35</span><br><span class="line-number">36</span><br><span class="line-number">37</span><br></div></div><h2 id="_2022-1-17-统计元音字母序列的数目-⭐⭐⭐" tabindex="-1"><a class="header-anchor" href="#_2022-1-17-统计元音字母序列的数目-⭐⭐⭐" aria-hidden="true">#</a> 2022.1.17 统计元音字母序列的数目 ⭐⭐⭐</h2>
+<blockquote>
+<p>👉 <a href="https://leetcode-cn.com/problems/count-vowels-permutation/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+</blockquote>
+<p>给你一个整数 n，请你帮忙统计一下我们可以按下述规则形成多少个长度为 n 的字符串：</p>
+<p>字符串中的每个字符都应当是小写元音字母（'a', 'e', 'i', 'o', 'u'）
+每个元音 'a' 后面都只能跟着 'e'
+每个元音 'e' 后面只能跟着 'a' 或者是 'i'
+每个元音 'i' 后面 不能 再跟着另一个 'i'
+每个元音 'o' 后面只能跟着 'i' 或者是 'u'
+每个元音 'u' 后面只能跟着 'a'
+由于答案可能会很大，所以请你返回 模 10^9 + 7 之后的结果。</p>
+<div class="custom-container tip"><p class="custom-container-title">提示</p>
+<ul>
+<li>示例 1：
+<ul>
+<li>输入：n = 1</li>
+<li>输出：5</li>
+<li>解释：所有可能的字符串分别是：&quot;a&quot;, &quot;e&quot;, &quot;i&quot; , &quot;o&quot; 和 &quot;u&quot;。</li>
+</ul>
+</li>
+<li>示例 2：
+<ul>
+<li>输入：n = 2</li>
+<li>输出：10</li>
+<li>解释：所有可能的字符串分别是：&quot;ae&quot;, &quot;ea&quot;, &quot;ei&quot;, &quot;ia&quot;, &quot;ie&quot;, &quot;io&quot;, &quot;iu&quot;, &quot;oi&quot;, &quot;ou&quot; 和 &quot;ua&quot;。</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">countVowelPermutation</span><span class="token punctuation">(</span>n<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> mod <span class="token operator">=</span> <span class="token number">10</span> <span class="token operator">**</span> <span class="token number">9</span> <span class="token operator">+</span> <span class="token number">7</span>
+    <span class="token keyword">const</span> <span class="token function-variable function">add</span> <span class="token operator">=</span> <span class="token punctuation">(</span><span class="token operator">...</span>nums<span class="token punctuation">)</span> <span class="token operator">=></span> nums<span class="token punctuation">.</span><span class="token function">reduce</span><span class="token punctuation">(</span><span class="token punctuation">(</span>pre<span class="token punctuation">,</span> cur<span class="token punctuation">)</span> <span class="token operator">=></span> pre <span class="token operator">+</span> cur<span class="token punctuation">)</span> <span class="token operator">%</span> mod
+    <span class="token keyword">let</span> <span class="token punctuation">[</span>a<span class="token punctuation">,</span>e<span class="token punctuation">,</span>i<span class="token punctuation">,</span>o<span class="token punctuation">,</span>u<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">,</span><span class="token number">1</span><span class="token punctuation">]</span>
+    
+    <span class="token keyword">while</span><span class="token punctuation">(</span><span class="token operator">--</span>n<span class="token punctuation">)</span>
+        <span class="token punctuation">(</span><span class="token punctuation">[</span>a<span class="token punctuation">,</span>e<span class="token punctuation">,</span>i<span class="token punctuation">,</span>o<span class="token punctuation">,</span>u<span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token function">add</span><span class="token punctuation">(</span>e<span class="token operator">+</span>i<span class="token operator">+</span>u<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">,</span> <span class="token function">add</span><span class="token punctuation">(</span>e<span class="token operator">+</span>o<span class="token punctuation">)</span><span class="token punctuation">,</span>i<span class="token punctuation">,</span> <span class="token function">add</span><span class="token punctuation">(</span>o<span class="token operator">+</span>i<span class="token punctuation">)</span><span class="token punctuation">]</span><span class="token punctuation">)</span>
+
+    <span class="token keyword">return</span> <span class="token function">add</span><span class="token punctuation">(</span>a<span class="token punctuation">,</span>e<span class="token punctuation">,</span>i<span class="token punctuation">,</span>o<span class="token punctuation">,</span>u<span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br></div></div></template>
