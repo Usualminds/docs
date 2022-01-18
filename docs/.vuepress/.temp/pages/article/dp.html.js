@@ -14,6 +14,31 @@ export const data = {
     },
     {
       "level": 2,
+      "title": "应用场景",
+      "slug": "应用场景",
+      "children": [
+        {
+          "level": 3,
+          "title": "重叠子问题",
+          "slug": "重叠子问题",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "最优子结构",
+          "slug": "最优子结构",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "无后效性",
+          "slug": "无后效性",
+          "children": []
+        }
+      ]
+    },
+    {
+      "level": 2,
       "title": "题解思路",
       "slug": "题解思路",
       "children": []
@@ -63,14 +88,27 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1642148393000,
+    "updatedTime": 1642430099000,
     "contributors": [
       {
         "name": "Joe",
         "email": "me@qjidea.com",
-        "commits": 2
+        "commits": 4
       }
     ]
   },
   "filePathRelative": "article/dp.md"
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updatePageData) {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ data }) => {
+    __VUE_HMR_RUNTIME__.updatePageData(data)
+  })
 }

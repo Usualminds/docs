@@ -2,20 +2,92 @@
 <h2 id="简介" tabindex="-1"><a class="header-anchor" href="#简介" aria-hidden="true">#</a> 简介</h2>
 <p>动态规划（Dynamic programming，简称 DP）是美国数学家 <a href="https://zh.wikipedia.org/wiki/%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E8%B2%9D%E7%88%BE%E6%9B%BC" target="_blank" rel="noopener noreferrer">Richard Bellman<ExternalLinkIcon/></a>在研究<strong>决策过程和控制系统理论</strong>时创建的新方法。它在数学上属于运筹学的一个分支，在数学、管理科学、计算机科学、经济学和生物信息学中均有应用，核心是<strong>通过把原问题分解为相对简单的子问题的方式</strong>来求解复杂问题，主要应用是求解决策过程最优的数学方法。</p>
 <p>简单来讲，动态规划是一种算法思想，其核心是把问题分解为子问题，通过求解子问题进而解决当前问题。实际中，并非所有问题都可以通过动态规划来求解，通过动态规划解决的问题，对问题和其分解对子问题都有一定场景要求的，动态规划适用于有<strong>重叠子问题</strong>和<strong>最优子结构</strong>性质的问题，这类问题使用动态规划所耗时间往往比朴素解法更少。</p>
-<p>如下图，我们对动态规划问题从<strong>应用场景</strong>、<strong>解决方法</strong>和<strong>常见示例题目</strong>三个方面来展开。</p>
-<p><img src="@source/article/dp.png" alt=""></p>
+<p>如下图，我们对动态规划问题从<strong>应用场景</strong>、<strong>题解思路</strong>和<strong>常见示例题目</strong>三个方面来展开。</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyhru3tasoj31he0tsad7.jpg" alt=""></p>
 <blockquote>
 <p><a href="https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92" target="_blank" rel="noopener noreferrer">动态规划 Wiki<ExternalLinkIcon/></a></p>
 </blockquote>
+<h2 id="应用场景" tabindex="-1"><a class="header-anchor" href="#应用场景" aria-hidden="true">#</a> 应用场景</h2>
+<h3 id="重叠子问题" tabindex="-1"><a class="header-anchor" href="#重叠子问题" aria-hidden="true">#</a> 重叠子问题</h3>
+<p>重叠子问题关注的是一个问题被分解为多个子问题时，<strong>子问题和子问题之间的关联</strong>。子问题会被重复计算，特别是我们使用递归自上向下对问题进行求解时，那动态规划是如何处理和优化这些子问题呢？我们以最简单的<a href="https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/" target="_blank" rel="noopener noreferrer">斐波那契数列<ExternalLinkIcon/></a>为例来说明。</p>
+<div class="custom-container tip"><p class="custom-container-title">斐波那契数列</p>
+<p>写一个函数，输入 n ，求斐波那契（Fibonacci）数列的第 n 项（即 F(N)）。斐波那契数列的定义如下：
+<br><strong>F(0) = 0,F(1) = 1</strong>
+<br><strong>F(N) = F(N - 1) + F(N - 2), 其中 N &gt; 1.</strong></p>
+<ul>
+<li>
+<p>示例 1：</p>
+<ul>
+<li>输入：n = 2</li>
+<li>输出：1</li>
+</ul>
+</li>
+<li>
+<p>示例 2：</p>
+<ul>
+<li>输入：n = 5</li>
+<li>输出：5</li>
+</ul>
+</li>
+</ul>
+</div>
+<h4 id="自上而下" tabindex="-1"><a class="header-anchor" href="#自上而下" aria-hidden="true">#</a> 自上而下</h4>
+<p>通过我们可以通过自上而下的递归方法来处理该问题，代码如下</p>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+    <span class="token comment">// n = 0, f(n) = 0;</span>
+    <span class="token comment">// n = 1, f(n) = 1;</span>
+    <span class="token keyword">if</span> <span class="token punctuation">(</span>n <span class="token operator">&lt;</span> <span class="token number">2</span><span class="token punctuation">)</span> <span class="token keyword">return</span> n
+
+    <span class="token keyword">return</span> <span class="token function">fib</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token function">fib</span><span class="token punctuation">(</span>n <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br></div></div><p>这样通过递归来解决，代码看起来很简洁，但是仔细分析下，当 n 取值较大时，这其中的重复计算可就太多了，如下，可以简单分解下</p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyhru4mpmxj31aa0sa75k.jpg" alt=""></p>
+<p>可以看到，<strong>f(n-2)</strong>、<strong>f(n-3)</strong> 等均进行了重复计算，可想而知，当数据量较大时，重复计算会更多，所以，递归实现代码很简单，计算却尤为耗费性能，可以尝试计算 n 取值为 100,看下计算时间。
+那么，使用动态规划可以怎么求解这个问题呢</p>
+<h4 id="自下而上" tabindex="-1"><a class="header-anchor" href="#自下而上" aria-hidden="true">#</a> 自下而上</h4>
+<p>我们可以从最简单的、规模最小的 <strong>f(0)</strong>、<strong>f(1)</strong> 开始计算，直到求解 <strong>f(n)</strong>，所以动态规划一般是不采用递归的方式，而是经由循环来完成计算的，看下代码</p>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Array</span></span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span>
+
+    <span class="token comment">// n = 0, f(n) = 0;</span>
+    <span class="token comment">// n = 1, f(n) = 1;</span>
+    dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span><span class="token punctuation">{</span>
+        dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">]</span><span class="token operator">+</span>dp<span class="token punctuation">[</span>i<span class="token operator">-</span><span class="token number">2</span><span class="token punctuation">]</span>
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> dp<span class="token punctuation">[</span>n<span class="token punctuation">]</span>
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br></div></div><p>可以看出，这种自下而上的解决方法，每次计算时都会用到上次的计算结果，从而可以规避大量的子问题重复计算</p>
+<div class="custom-container warning"><p class="custom-container-title">数组最大索引越界</p>
+<p>针对本题，可能会超过数组的索引边界，所以需要额外处理下</p>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">fib</span><span class="token punctuation">(</span>n<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span> <span class="token punctuation">{</span>
+    <span class="token keyword">let</span> dp <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name"><span class="token builtin">Array</span></span><span class="token punctuation">(</span>n<span class="token punctuation">)</span><span class="token punctuation">.</span><span class="token function">fill</span><span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">)</span><span class="token punctuation">,</span> mod <span class="token operator">=</span> <span class="token number">1000000007</span>
+
+    dp<span class="token punctuation">[</span><span class="token number">0</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">,</span> dp<span class="token punctuation">[</span><span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token number">1</span>
+
+    <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token keyword">let</span> i <span class="token operator">=</span> <span class="token number">2</span><span class="token punctuation">;</span> i <span class="token operator">&lt;=</span> n<span class="token punctuation">;</span> i<span class="token operator">++</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+        dp<span class="token punctuation">[</span>i<span class="token punctuation">]</span> <span class="token operator">=</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">1</span><span class="token punctuation">]</span> <span class="token operator">%</span> mod <span class="token operator">+</span> dp<span class="token punctuation">[</span>i <span class="token operator">-</span> <span class="token number">2</span><span class="token punctuation">]</span> <span class="token operator">%</span> mod
+    <span class="token punctuation">}</span>
+
+    <span class="token keyword">return</span> dp<span class="token punctuation">[</span>n<span class="token punctuation">]</span> <span class="token operator">%</span> mod
+<span class="token punctuation">}</span><span class="token punctuation">;</span>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br></div></div></div>
+<h3 id="最优子结构" tabindex="-1"><a class="header-anchor" href="#最优子结构" aria-hidden="true">#</a> 最优子结构</h3>
+<p>最优子结构关注的是当一个问题被分解为多个子问题时，<strong>子问题和原问题之间的关联</strong>。即问题的最优解所包含的子问题的解也是最优的，也就是说我们可以通过求解每个子问题的最优解来最后决定该问题的最优解</p>
+<h3 id="无后效性" tabindex="-1"><a class="header-anchor" href="#无后效性" aria-hidden="true">#</a> 无后效性</h3>
+<p>子问题的解一旦确定，就不受其后问题的影响。具体来讲，就是子问题的解一旦确定，就不再改变</p>
 <h2 id="题解思路" tabindex="-1"><a class="header-anchor" href="#题解思路" aria-hidden="true">#</a> 题解思路</h2>
 <p>动态规划问题的数学表达式可以简单的抽象为如下: <code>dp[y] = f(dp[x]),x&lt;y</code>，一般常见解题思路，主要包含以下四步，其中最核心的是确定<strong>转移方程</strong></p>
 <ul>
-<li>状态定义</li>
-<li>转移方程</li>
-<li>初始值</li>
-<li>返回值</li>
+<li>状态定义：定义动态规划过程中涉及的变量状态</li>
+<li>转移方程：归纳和抽象出子问题对应的数学方程</li>
+<li>初始值：初始化时变量的取值</li>
+<li>返回值：返回求解后所需要的值</li>
 </ul>
-<p>我们以以下题目为入手来了解动态规划的常见解题思路</p>
+<p>我们以如下题目为入手来了解动态规划的常见解题思路</p>
 <h2 id="常见题目" tabindex="-1"><a class="header-anchor" href="#常见题目" aria-hidden="true">#</a> 常见题目</h2>
 <p>动态规划常见的几种类型题目，⭐ 代表题目难度</p>
 <h3 id="最大子序和" tabindex="-1"><a class="header-anchor" href="#最大子序和" aria-hidden="true">#</a> 最大子序和</h3>
