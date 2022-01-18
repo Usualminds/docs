@@ -853,3 +853,56 @@ function countVowelPermutation(n: number): number {
     return add(a,e,i,o,u)
 };
 ```
+
+## 2022.1.18 最小时间差 ⭐
+> :point_right: [Leetcode 链接](https://leetcode-cn.com/problems/minimum-time-difference/)
+
+给定一个 24 小时制（小时:分钟 "HH:MM"）的时间列表，找出列表中任意两个时间的最小时间差并以分钟数表示。
+
+::: tip 
+- 示例 1：
+    - 输入：timePoints = ["23:59","00:00"]
+    - 输出：1
+- 示例 2：
+    - 输入：timePoints = ["00:00","23:59","00:00"]
+    - 输出：0
+:::
+
+> [抽屉原理](https://zh.wikipedia.org/wiki/%E9%B4%BF%E5%B7%A2%E5%8E%9F%E7%90%86)
+
+``` ts
+function findMinDifference(timePoints: string[]): number {
+  let res = [], len = timePoints.length
+  
+  // 抽屉原理
+  if(len > 24* 60) return 0
+
+  // 格式化处理时间为分钟数
+  for (let i = 0; i < len; i++) {
+    let ele = timePoints[i].replace(/:/g, '')
+    let h = +(ele.charAt(0) + ele.charAt(1)), m = +(ele.charAt(2) + ele.charAt(3))
+    res.push(h*60 + m)
+  }
+
+  // 排序
+  res.sort((a, b) => a - b)
+
+  // 计算差值
+  let min = res[1] - res[0]
+
+  for (let i = 1; i < res.length; i++){
+    let temp = res[i] - res[i - 1]
+    if (temp < min) {
+      min = temp
+    }
+  }
+
+  // 排序后，只需要计算收尾
+  let between = (res[0] - 0) + ((24 * 60) - res[res.length - 1])
+
+  // 计算最小值
+  min = Math.min(between, min)
+
+  return min
+};
+```
