@@ -1,5 +1,5 @@
 # 动态规划
-
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gyi52opgo2j31bi0hcmzl.jpg)
 ## 简介
 动态规划（Dynamic programming，简称 DP）是美国数学家 [Richard Bellman](https://zh.wikipedia.org/wiki/%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E8%B2%9D%E7%88%BE%E6%9B%BC)在研究**决策过程和控制系统理论**时创建的新方法。它在数学上属于运筹学的一个分支，在数学、管理科学、计算机科学、经济学和生物信息学中均有应用，核心是**通过把原问题分解为相对简单的子问题的方式**来求解复杂问题，主要应用是求解决策过程最优的数学方法。
 

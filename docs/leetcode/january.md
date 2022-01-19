@@ -906,3 +906,39 @@ function findMinDifference(timePoints: string[]): number {
   return min
 };
 ```
+
+## 2022.1.19  存在重复元素 II ⭐
+> :point_right: [Leetcode 链接](https://leetcode-cn.com/problems/contains-duplicate-ii//)
+
+给你一个整数数组 nums 和一个整数 k ，判断数组中是否存在两个 不同的索引 i 和 j ，满足 nums[i] == nums[j] 且 abs(i - j) <= k 。如果存在，返回 true ；否则，返回 false 。
+
+::: tip 
+- 示例 1：
+    - 输入：nums = [1,2,3,1], k = 3
+    - 输出：true
+- 示例 2：
+    - 输入：nums = [1,2,3,1,2,3], k = 2
+    - 输出：false
+:::
+
+> [抽屉原理](https://zh.wikipedia.org/wiki/%E9%B4%BF%E5%B7%A2%E5%8E%9F%E7%90%86)
+
+```ts
+function containsNearbyDuplicate(nums: number[], k: number): boolean {
+  let map = new Map(), len = nums.length
+
+  for (let i = 0; i < len; i++) {
+    let num = nums[i]
+    if (map.has(num)) {
+      let index = map.get(num)
+      let dis = Math.abs(index - i)
+
+      if (dis <= k) return true
+    } 
+
+    map.set(num, i)
+  }
+
+  return false
+};
+```

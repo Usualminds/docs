@@ -5,6 +5,7 @@
     "author": "Joe <me@qjidea.com>",
     "license": "MIT",
     "scripts": {
+        "preinstall": "npx only-allow pnpm",
         "dev": "vuepress dev docs",
         "build": "vuepress build docs"
     },
@@ -12,6 +13,9 @@
         "vuepress": "^2.0.0-beta.33"
     },
     "dependencies": {
-        "@renovamen/vuepress-plugin-katex": "^0.2.0"
+        "-": "^0.0.1",
+        "@renovamen/vuepress-plugin-katex": "^0.2.0",
+        "g": "^2.0.1",
+        "pnpm": "^6.27.0"
     }
 }

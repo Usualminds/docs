@@ -27,6 +27,7 @@ export const zh: SidebarConfig = {
         {
             text: '文章',
             children: [
+                '/article/pnpm.md',
                 '/article/dp.md',
                 '/article/browser-finger.md',
             ],

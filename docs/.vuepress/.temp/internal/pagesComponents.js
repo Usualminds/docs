@@ -17,6 +17,8 @@ export const pagesComponents = {
   "v-3c2b42b9": defineAsyncComponent(() => import(/* webpackChunkName: "v-3c2b42b9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/browser-finger.html.vue")),
   // path: /article/dp.html
   "v-54e17b9b": defineAsyncComponent(() => import(/* webpackChunkName: "v-54e17b9b" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/dp.html.vue")),
+  // path: /article/pnpm.html
+  "v-6dead58c": defineAsyncComponent(() => import(/* webpackChunkName: "v-6dead58c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/pnpm.html.vue")),
   // path: /leetcode/contest.html
   "v-2e513634": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e513634" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/contest.html.vue")),
   // path: /leetcode/february.html

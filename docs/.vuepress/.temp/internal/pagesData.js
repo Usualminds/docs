@@ -15,6 +15,8 @@ export const pagesData = {
   "v-3c2b42b9": () => import(/* webpackChunkName: "v-3c2b42b9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/browser-finger.html.js").then(({ data }) => data),
   // path: /article/dp.html
   "v-54e17b9b": () => import(/* webpackChunkName: "v-54e17b9b" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/dp.html.js").then(({ data }) => data),
+  // path: /article/pnpm.html
+  "v-6dead58c": () => import(/* webpackChunkName: "v-6dead58c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/pnpm.html.js").then(({ data }) => data),
   // path: /leetcode/contest.html
   "v-2e513634": () => import(/* webpackChunkName: "v-2e513634" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/contest.html.js").then(({ data }) => data),
   // path: /leetcode/february.html

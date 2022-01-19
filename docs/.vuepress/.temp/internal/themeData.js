@@ -56,6 +56,7 @@ export const themeData = {
             {
               "text": "算法",
               "children": [
+                "/article/pnpm.md",
                 "/article/dp.md",
                 "/article/browser-finger.md"
               ]
@@ -93,6 +94,7 @@ export const themeData = {
           {
             "text": "文章",
             "children": [
+              "/article/pnpm.md",
               "/article/dp.md",
               "/article/browser-finger.md"
             ]

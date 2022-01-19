@@ -1,4 +1,5 @@
 <template><h1 id="动态规划" tabindex="-1"><a class="header-anchor" href="#动态规划" aria-hidden="true">#</a> 动态规划</h1>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyi52opgo2j31bi0hcmzl.jpg" alt=""></p>
 <h2 id="简介" tabindex="-1"><a class="header-anchor" href="#简介" aria-hidden="true">#</a> 简介</h2>
 <p>动态规划（Dynamic programming，简称 DP）是美国数学家 <a href="https://zh.wikipedia.org/wiki/%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E8%B2%9D%E7%88%BE%E6%9B%BC" target="_blank" rel="noopener noreferrer">Richard Bellman<ExternalLinkIcon/></a>在研究<strong>决策过程和控制系统理论</strong>时创建的新方法。它在数学上属于运筹学的一个分支，在数学、管理科学、计算机科学、经济学和生物信息学中均有应用，核心是<strong>通过把原问题分解为相对简单的子问题的方式</strong>来求解复杂问题，主要应用是求解决策过程最优的数学方法。</p>
 <p>简单来讲，动态规划是一种算法思想，其核心是把问题分解为子问题，通过求解子问题进而解决当前问题。实际中，并非所有问题都可以通过动态规划来求解，通过动态规划解决的问题，对问题和其分解对子问题都有一定场景要求的，动态规划适用于有<strong>重叠子问题</strong>和<strong>最优子结构</strong>性质的问题，这类问题使用动态规划所耗时间往往比朴素解法更少。</p>
