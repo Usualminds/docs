@@ -1,5 +1,5 @@
 # pnpm
-
+![](./assets/pnpm/pnpm.svg)
 ## 背景
 
 ## pnpm 解决了什么问题

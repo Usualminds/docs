@@ -1,26 +1,12 @@
 lockfileVersion: 5.3
 
 specifiers:
-  '-': ^0.0.1
-  '@renovamen/vuepress-plugin-katex': ^0.2.0
-  g: ^2.0.1
-  pnpm: ^6.27.0
   vuepress: ^2.0.0-beta.33
-
-dependencies:
-  '-': 0.0.1
-  '@renovamen/vuepress-plugin-katex': 0.2.0
-  g: 2.0.1
-  pnpm: 6.27.0
 
 devDependencies:
   vuepress: 2.0.0-beta.33
 
 packages:
-
-  /-/0.0.1:
-    resolution: {integrity: sha512-3HfneK3DGAm05fpyj20sT3apkNcvPpCuccOThOPdzz8sY7GgQGe0l93XH9bt+YzibcTIgUAIMoyVJI740RtgyQ==}
-    dev: false
 
   /@babel/parser/7.16.8:
     resolution: {integrity: sha512-i7jDUfrVBWc+7OKcBzEe5n7fbv3i2fWtxKzzCvOjnzSxMfWMigAhtfJ7qzZNGFNMsCCd67+uz553dYKWXPvCKw==}
@@ -48,12 +34,6 @@ packages:
       '@nodelib/fs.scandir': 2.1.5
       fastq: 1.13.0
     dev: true
-
-  /@renovamen/vuepress-plugin-katex/0.2.0:
-    resolution: {integrity: sha512-v9UG7gOWDoF6XZp56gWmcMlgzQqN/1xqg7D03hb4gJ2ATQJHUmnIBijNS3AqoM3kCRLk6z54SgfP1h9FNMZaRA==}
-    dependencies:
-      katex: 0.13.24
-    dev: false
 
   /@types/debug/4.1.7:
     resolution: {integrity: sha512-9AonUzyTjXXhEOa0DnqpzZi6VHlqKMswga9EXjpXnnqxwLtdvPPtlO8evrI5D9S6asFRCQ6v+wpiUKbw+vKqyg==}
@@ -620,11 +600,6 @@ packages:
     resolution: {integrity: sha512-dOy+3AuW3a2wNbZHIuMZpTcgjGuLU/uBL/ubcZF9OXbDo8ff4O8yVp5Bf0efS8uEoYo5q4Fx7dY9OgQGXgAsQA==}
     dev: true
 
-  /commander/8.3.0:
-    resolution: {integrity: sha512-OkTL9umf+He2DZkUq8f8J9of7yL6RJKI24dVITBmNfZBmri9zYZQrKkuXiKhyfPSu8tUhnVBB1iKXevvnlR4Ww==}
-    engines: {node: '>= 12'}
-    dev: false
-
   /connect-history-api-fallback/1.6.0:
     resolution: {integrity: sha512-e54B99q/OUoH64zYYRf3HBP5z24G38h5D3qXu23JGRoigpX5Ss4r9ZnDk3g0Z8uQC2x2lPaJ+UlWBc1ZWBWdLg==}
     engines: {node: '>=0.8'}
@@ -943,10 +918,6 @@ packages:
     resolution: {integrity: sha512-yIovAzMX49sF8Yl58fSCWJ5svSLuaibPxXQJFLmBObTuCr0Mf1KiPopGM9NiFjiYBCbfaa2Fh6breQ6ANVTI0A==}
     dev: true
 
-  /g/2.0.1:
-    resolution: {integrity: sha1-C1lj69DKcOO8jGdmk0oCGCHIuFc=}
-    dev: false
-
   /get-stream/6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
     engines: {node: '>=10'}
@@ -1092,13 +1063,6 @@ packages:
     optionalDependencies:
       graceful-fs: 4.2.9
     dev: true
-
-  /katex/0.13.24:
-    resolution: {integrity: sha512-jZxYuKCma3VS5UuxOx/rFV1QyGSl3Uy/i0kTJF3HgQ5xMinCQVF8Zd4bMY/9aI9b9A2pjIBOsjSSm68ykTAr8w==}
-    hasBin: true
-    dependencies:
-      commander: 8.3.0
-    dev: false
 
   /kind-of/6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
@@ -1276,12 +1240,6 @@ packages:
     resolution: {integrity: sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==}
     engines: {node: '>=8.6'}
     dev: true
-
-  /pnpm/6.27.0:
-    resolution: {integrity: sha512-auoErIp8BCwfne9P65YQDsJVPI8S/9WgN8hsXwgE/0qukdS7Yk8+dTCyR9H+t1xywOrt1k1fgojMHZEMRLLdTw==}
-    engines: {node: '>=12.17'}
-    hasBin: true
-    dev: false
 
   /postcss-csso/6.0.0_postcss@8.4.5:
     resolution: {integrity: sha512-LsrU+LVR0mNIYauoTEbYVC81i+yXcGWa9kqW6Lvm+gYUZTaNTJmJT6Dbv+fqT8gOnwXAH1RV+5RXvAVoRtwO+g==}

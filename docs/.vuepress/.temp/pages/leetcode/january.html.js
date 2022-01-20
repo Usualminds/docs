@@ -120,15 +120,21 @@ export const data = {
       "title": "2022.1.19  存在重复元素 II ⭐",
       "slug": "_2022-1-19-存在重复元素-ii-⭐",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "2022.1.20 石子游戏 IX ⭐⭐⭐",
+      "slug": "_2022-1-20-石子游戏-ix-⭐⭐⭐",
+      "children": []
     }
   ],
   "git": {
-    "updatedTime": 1642507762000,
+    "updatedTime": 1642586261000,
     "contributors": [
       {
         "name": "Joe",
         "email": "me@qjidea.com",
-        "commits": 19
+        "commits": 20
       }
     ]
   },
