@@ -39,12 +39,14 @@ import {
   toHandlerKey,
   toNumber,
   toRawType
-} from "./chunk-YV7C26G7.js";
+} from "./chunk-2QK56M3A.js";
 import {
+  init_define_EXTERNAL_LINK_ICON_LOCALES,
   init_define_MZ_ZOOM_OPTIONS
-} from "./chunk-FCVWRIDD.js";
+} from "./chunk-UTIXEKTT.js";
 
 // node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
+init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 function warn(msg, ...args) {
   console.warn(`[Vue warn] ${msg}`, ...args);
@@ -174,7 +176,7 @@ var ReactiveEffect = class {
     if (!this.active) {
       return this.fn();
     }
-    if (!effectStack.includes(this)) {
+    if (!effectStack.length || !effectStack.includes(this)) {
       try {
         effectStack.push(activeEffect = this);
         enableTracking();
@@ -408,6 +410,8 @@ function createGetter(isReadonly2 = false, shallow = false) {
       return !isReadonly2;
     } else if (key === "__v_isReadonly") {
       return isReadonly2;
+    } else if (key === "__v_isShallow") {
+      return shallow;
     } else if (key === "__v_raw" && receiver === (isReadonly2 ? shallow ? shallowReadonlyMap : readonlyMap : shallow ? shallowReactiveMap : reactiveMap).get(target)) {
       return target;
     }
@@ -440,9 +444,14 @@ var shallowSet = createSetter(true);
 function createSetter(shallow = false) {
   return function set2(target, key, value, receiver) {
     let oldValue = target[key];
+    if (isReadonly(oldValue) && isRef(oldValue)) {
+      return false;
+    }
     if (!shallow && !isReadonly(value)) {
-      value = toRaw(value);
-      oldValue = toRaw(oldValue);
+      if (!isShallow(value)) {
+        value = toRaw(value);
+        oldValue = toRaw(oldValue);
+      }
       if (!isArray(target) && isRef(oldValue) && !isRef(value)) {
         oldValue.value = value;
         return true;
@@ -511,7 +520,7 @@ var shallowReadonlyHandlers = extend({}, readonlyHandlers, {
 });
 var toShallow = (value) => value;
 var getProto = (v) => Reflect.getPrototypeOf(v);
-function get$1(target, key, isReadonly2 = false, isShallow = false) {
+function get$1(target, key, isReadonly2 = false, isShallow3 = false) {
   target = target["__v_raw"];
   const rawTarget = toRaw(target);
   const rawKey = toRaw(key);
@@ -520,7 +529,7 @@ function get$1(target, key, isReadonly2 = false, isShallow = false) {
   }
   !isReadonly2 && track(rawTarget, "get", rawKey);
   const { has: has2 } = getProto(rawTarget);
-  const wrap = isShallow ? toShallow : isReadonly2 ? toReadonly : toReactive;
+  const wrap = isShallow3 ? toShallow : isReadonly2 ? toReadonly : toReactive;
   if (has2.call(rawTarget, key)) {
     return wrap(target.get(key));
   } else if (has2.call(rawTarget, rawKey)) {
@@ -602,19 +611,19 @@ function clear() {
   }
   return result;
 }
-function createForEach(isReadonly2, isShallow) {
+function createForEach(isReadonly2, isShallow3) {
   return function forEach(callback, thisArg) {
     const observed = this;
     const target = observed["__v_raw"];
     const rawTarget = toRaw(target);
-    const wrap = isShallow ? toShallow : isReadonly2 ? toReadonly : toReactive;
+    const wrap = isShallow3 ? toShallow : isReadonly2 ? toReadonly : toReactive;
     !isReadonly2 && track(rawTarget, "iterate", ITERATE_KEY);
     return target.forEach((value, key) => {
       return callback.call(thisArg, wrap(value), wrap(key), observed);
     });
   };
 }
-function createIterableMethod(method, isReadonly2, isShallow) {
+function createIterableMethod(method, isReadonly2, isShallow3) {
   return function(...args) {
     const target = this["__v_raw"];
     const rawTarget = toRaw(target);
@@ -622,7 +631,7 @@ function createIterableMethod(method, isReadonly2, isShallow) {
     const isPair = method === "entries" || method === Symbol.iterator && targetIsMap;
     const isKeyOnly = method === "keys" && targetIsMap;
     const innerIterator = target[method](...args);
-    const wrap = isShallow ? toShallow : isReadonly2 ? toReadonly : toReactive;
+    const wrap = isShallow3 ? toShallow : isReadonly2 ? toReadonly : toReactive;
     !isReadonly2 && track(rawTarget, "iterate", isKeyOnly ? MAP_KEY_ITERATE_KEY : ITERATE_KEY);
     return {
       next() {
@@ -777,7 +786,7 @@ function getTargetType(value) {
   return value["__v_skip"] || !Object.isExtensible(value) ? 0 : targetTypeMap(toRawType(value));
 }
 function reactive(target) {
-  if (target && target["__v_isReadonly"]) {
+  if (isReadonly(target)) {
     return target;
   }
   return createReactiveObject(target, false, mutableHandlers, mutableCollectionHandlers, reactiveMap);
@@ -821,6 +830,9 @@ function isReactive(value) {
 }
 function isReadonly(value) {
   return !!(value && value["__v_isReadonly"]);
+}
+function isShallow(value) {
+  return !!(value && value["__v_isShallow"]);
 }
 function isProxy(value) {
   return isReactive(value) || isReadonly(value);
@@ -883,22 +895,22 @@ function createRef(rawValue, shallow) {
   return new RefImpl(rawValue, shallow);
 }
 var RefImpl = class {
-  constructor(value, _shallow) {
-    this._shallow = _shallow;
+  constructor(value, __v_isShallow) {
+    this.__v_isShallow = __v_isShallow;
     this.dep = void 0;
     this.__v_isRef = true;
-    this._rawValue = _shallow ? value : toRaw(value);
-    this._value = _shallow ? value : toReactive(value);
+    this._rawValue = __v_isShallow ? value : toRaw(value);
+    this._value = __v_isShallow ? value : toReactive(value);
   }
   get value() {
     trackRefValue(this);
     return this._value;
   }
   set value(newVal) {
-    newVal = this._shallow ? newVal : toRaw(newVal);
+    newVal = this.__v_isShallow ? newVal : toRaw(newVal);
     if (hasChanged(newVal, this._rawValue)) {
       this._rawValue = newVal;
-      this._value = this._shallow ? newVal : toReactive(newVal);
+      this._value = this.__v_isShallow ? newVal : toReactive(newVal);
       triggerRefValue(this, newVal);
     }
   }
@@ -975,21 +987,22 @@ var ComputedRefImpl = class {
   constructor(getter, _setter, isReadonly2, isSSR) {
     this._setter = _setter;
     this.dep = void 0;
-    this._dirty = true;
     this.__v_isRef = true;
+    this._dirty = true;
     this.effect = new ReactiveEffect(getter, () => {
       if (!this._dirty) {
         this._dirty = true;
         triggerRefValue(this);
       }
     });
-    this.effect.active = !isSSR;
+    this.effect.computed = this;
+    this.effect.active = this._cacheable = !isSSR;
     this["__v_isReadonly"] = isReadonly2;
   }
   get value() {
     const self = toRaw(this);
     trackRefValue(self);
-    if (self._dirty) {
+    if (self._dirty || !self._cacheable) {
       self._dirty = false;
       self._value = self.effect.run();
     }
@@ -1024,6 +1037,7 @@ var tick = Promise.resolve();
 _a = "__v_isReadonly";
 
 // node_modules/@vue/runtime-core/dist/runtime-core.esm-bundler.js
+init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var stack = [];
 function pushWarningContext(vnode) {
@@ -1146,7 +1160,7 @@ var ErrorTypeStrings = {
   [11]: "app warnHandler",
   [12]: "ref function",
   [13]: "async component loader",
-  [14]: "scheduler flush. This is likely a Vue internals bug. Please open an issue at https://new-issue.vuejs.org/?repo=vuejs/vue-next"
+  [14]: "scheduler flush. This is likely a Vue internals bug. Please open an issue at https://new-issue.vuejs.org/?repo=vuejs/core"
 };
 function callWithErrorHandling(fn, instance, type, args) {
   let res;
@@ -2296,7 +2310,7 @@ function doWatch(source, cb, { immediate, deep, flush, onTrack, onTrigger } = EM
   let isMultiSource = false;
   if (isRef(source)) {
     getter = () => source.value;
-    forceTrigger = !!source._shallow;
+    forceTrigger = isShallow(source);
   } else if (isReactive(source)) {
     getter = () => source;
     deep = true;
@@ -3020,7 +3034,7 @@ function matches(pattern, name) {
   if (isArray(pattern)) {
     return pattern.some((p2) => matches(p2, name));
   } else if (isString(pattern)) {
-    return pattern.split(",").indexOf(name) > -1;
+    return pattern.split(",").includes(name);
   } else if (pattern.test) {
     return pattern.test(name);
   }
@@ -3231,7 +3245,7 @@ function applyOptions(instance) {
       const set2 = !isFunction(opt) && isFunction(opt.set) ? opt.set.bind(publicThis) : true ? () => {
         warn2(`Write operation failed: computed property "${key}" is readonly.`);
       } : NOOP;
-      const c = computed({
+      const c = computed2({
         get: get2,
         set: set2
       });
@@ -3549,7 +3563,7 @@ function updateProps(instance, rawProps, rawPrevProps, optimized) {
     }
     if (attrs !== rawCurrentProps) {
       for (const key in attrs) {
-        if (!rawProps || !hasOwn(rawProps, key)) {
+        if (!rawProps || !hasOwn(rawProps, key) && true) {
           delete attrs[key];
           hasAttrsChanged = true;
         }
@@ -5914,7 +5928,7 @@ function mergeProps(...args) {
       } else if (isOn(key)) {
         const existing = ret[key];
         const incoming = toMerge[key];
-        if (existing !== incoming && !(isArray(existing) && existing.includes(incoming))) {
+        if (incoming && existing !== incoming && !(isArray(existing) && existing.includes(incoming))) {
           ret[key] = existing ? [].concat(existing, incoming) : incoming;
         }
       } else if (key !== "") {
@@ -6654,6 +6668,9 @@ var useSSRContext = () => {
     return ctx;
   }
 };
+function isShallow2(value) {
+  return !!(value && value["__v_isShallow"]);
+}
 function initCustomFormatter() {
   if (typeof window === "undefined") {
     return;
@@ -6682,7 +6699,7 @@ function initCustomFormatter() {
         return [
           "div",
           {},
-          ["span", vueStyle, "Reactive"],
+          ["span", vueStyle, isShallow2(obj) ? "ShallowReactive" : "Reactive"],
           "<",
           formatValue(obj),
           `>${isReadonly(obj) ? ` (readonly)` : ``}`
@@ -6691,7 +6708,7 @@ function initCustomFormatter() {
         return [
           "div",
           {},
-          ["span", vueStyle, "Readonly"],
+          ["span", vueStyle, isShallow2(obj) ? "ShallowReadonly" : "Readonly"],
           "<",
           formatValue(obj),
           ">"
@@ -6815,7 +6832,7 @@ function initCustomFormatter() {
     }
   }
   function genRefFlag(v) {
-    if (v._shallow) {
+    if (isShallow2(v)) {
       return `ShallowRef`;
     }
     if (v.effect) {
@@ -6853,7 +6870,7 @@ function isMemoSame(cached, memo) {
   }
   return true;
 }
-var version = "3.2.27";
+var version = "3.2.28";
 var _ssrUtils = {
   createComponentInstance,
   setupComponent,
@@ -6867,6 +6884,7 @@ var resolveFilter = null;
 var compatUtils = null;
 
 // node_modules/@vue/runtime-dom/dist/runtime-dom.esm-bundler.js
+init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var svgNS = "http://www.w3.org/2000/svg";
 var doc = typeof document !== "undefined" ? document : null;
@@ -7143,7 +7161,7 @@ function patchStopImmediatePropagation(e, value) {
       originalStop.call(e);
       e._stopped = true;
     };
-    return value.map((fn) => (e2) => !e2._stopped && fn(e2));
+    return value.map((fn) => (e2) => !e2._stopped && fn && fn(e2));
   } else {
     return value;
   }
@@ -8249,6 +8267,7 @@ export {
   shallowReadonly,
   isReactive,
   isReadonly,
+  isShallow,
   isProxy,
   toRaw,
   markRaw,
@@ -8373,4 +8392,4 @@ export {
   createSSRApp,
   initDirectivesForSSR
 };
-//# sourceMappingURL=chunk-JLYU7R2I.js.map
+//# sourceMappingURL=chunk-VFKDAJSJ.js.map

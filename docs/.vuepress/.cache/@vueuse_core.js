@@ -24,22 +24,27 @@ import {
   watch,
   watchEffect,
   watchSyncEffect
-} from "./chunk-JLYU7R2I.js";
-import "./chunk-YV7C26G7.js";
+} from "./chunk-VFKDAJSJ.js";
+import "./chunk-2QK56M3A.js";
 import {
+  init_define_EXTERNAL_LINK_ICON_LOCALES,
   init_define_MZ_ZOOM_OPTIONS
-} from "./chunk-FCVWRIDD.js";
+} from "./chunk-UTIXEKTT.js";
 
 // dep:@vueuse_core
+init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
 // node_modules/@vueuse/core/index.mjs
+init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
 // node_modules/@vueuse/shared/index.mjs
+init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 
 // node_modules/vue-demi/lib/index.mjs
+init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 var isVue2 = false;
 var isVue3 = true;
@@ -1891,9 +1896,10 @@ function useClipboard(options = {}) {
     copy
   };
 }
+var _global = globalThis || void 0;
 var globalKey = "__vueuse_ssr_handlers__";
-globalThis[globalKey] = globalThis[globalKey] || {};
-var handlers = globalThis[globalKey];
+_global[globalKey] = _global[globalKey] || {};
+var handlers = _global[globalKey];
 function getSSRHandler(key, fallback) {
   return handlers[key] || fallback;
 }
@@ -2685,6 +2691,8 @@ function useDraggable(target, options = {}) {
   const end = (e) => {
     var _a22;
     if (!filterEvent(e))
+      return;
+    if (!pressedDelta.value)
       return;
     pressedDelta.value = void 0;
     (_a22 = options.onEnd) == null ? void 0 : _a22.call(options, position.value, e);
@@ -5876,7 +5884,7 @@ function useWebSocket(url, options = {}) {
   if (immediate)
     _init();
   if (autoClose) {
-    useEventListener(window, "beforeunload", close);
+    useEventListener(window, "beforeunload", () => close());
     tryOnScopeDispose(close);
   }
   const open = () => {
@@ -5937,8 +5945,8 @@ var jobRunner = (userFunc) => (e) => {
 var depsParser = (deps) => {
   if (deps.length === 0)
     return "";
-  const depsString = deps.map((dep) => `${dep}`).toString();
-  return `importScripts('${depsString}')`;
+  const depsString = deps.map((dep) => `'${dep}'`).toString();
+  return `importScripts(${depsString})`;
 };
 var createWorkerBlobUrl = (fn, deps) => {
   const blobCode = `${depsParser(deps)}; onmessage=(${jobRunner})(${fn})`;

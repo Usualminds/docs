@@ -1,8 +1,10 @@
 import {
+  init_define_EXTERNAL_LINK_ICON_LOCALES,
   init_define_MZ_ZOOM_OPTIONS
-} from "./chunk-FCVWRIDD.js";
+} from "./chunk-UTIXEKTT.js";
 
 // node_modules/@vue/shared/dist/shared.esm-bundler.js
+init_define_EXTERNAL_LINK_ICON_LOCALES();
 init_define_MZ_ZOOM_OPTIONS();
 function makeMap(str, expectsLowerCase) {
   const map = Object.create(null);
@@ -298,4 +300,4 @@ export {
   toNumber,
   getGlobalThis
 };
-//# sourceMappingURL=chunk-YV7C26G7.js.map
+//# sourceMappingURL=chunk-2QK56M3A.js.map

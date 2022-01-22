@@ -10,7 +10,26 @@ export const data = {
       "level": 2,
       "title": "背景",
       "slug": "背景",
-      "children": []
+      "children": [
+        {
+          "level": 3,
+          "title": "npm 发展",
+          "slug": "npm-发展",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "幻影依赖",
+          "slug": "幻影依赖",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "NPM 分身",
+          "slug": "npm-分身",
+          "children": []
+        }
+      ]
     },
     {
       "level": 2,
@@ -63,12 +82,12 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1642586261000,
+    "updatedTime": 1642650334000,
     "contributors": [
       {
         "name": "Joe",
         "email": "me@qjidea.com",
-        "commits": 1
+        "commits": 2
       }
     ]
   },

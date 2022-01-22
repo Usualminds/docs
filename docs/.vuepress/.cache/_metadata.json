@@ -1,6 +1,6 @@
 {
-  "hash": "469ef5cc",
-  "browserHash": "c09d0397",
+  "hash": "4e90b65c",
+  "browserHash": "9210ad30",
   "optimized": {
     "vue": {
       "file": "/Users/apple/Documents/work/docs/docs/.vuepress/.cache/vue.js",
@@ -10,6 +10,11 @@
     "vue-router": {
       "file": "/Users/apple/Documents/work/docs/docs/.vuepress/.cache/vue-router.js",
       "src": "/Users/apple/Documents/work/docs/node_modules/vue-router/dist/vue-router.esm-bundler.js",
+      "needsInterop": false
+    },
+    "@vue/devtools-api": {
+      "file": "/Users/apple/Documents/work/docs/docs/.vuepress/.cache/@vue_devtools-api.js",
+      "src": "/Users/apple/Documents/work/docs/node_modules/@vue/devtools-api/lib/esm/index.js",
       "needsInterop": false
     },
     "@vueuse/core": {

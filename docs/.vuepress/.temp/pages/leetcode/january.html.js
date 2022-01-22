@@ -126,15 +126,21 @@ export const data = {
       "title": "2022.1.20 石子游戏 IX ⭐⭐⭐",
       "slug": "_2022-1-20-石子游戏-ix-⭐⭐⭐",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "2022.1.21  跳跃游戏 IV ⭐⭐⭐",
+      "slug": "_2022-1-21-跳跃游戏-iv-⭐⭐⭐",
+      "children": []
     }
   ],
   "git": {
-    "updatedTime": 1642586261000,
+    "updatedTime": 1642650334000,
     "contributors": [
       {
         "name": "Joe",
         "email": "me@qjidea.com",
-        "commits": 20
+        "commits": 21
       }
     ]
   },

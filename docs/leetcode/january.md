@@ -994,3 +994,104 @@ function stoneGameIX(stones: number[]): boolean {
     return Math.abs(count2 - count3) > 2
 };
 ```
+
+## 2022.1.21  跳跃游戏 IV ⭐⭐⭐
+> :point_right: [Leetcode 链接](https://leetcode-cn.com/problems/jump-game-iv/)
+
+给你一个整数数组 arr ，你一开始在数组的第一个元素处（下标为 0）。
+
+每一步，你可以从下标 i 跳到下标：
+
+i + 1 满足：i + 1 < arr.length
+i - 1 满足：i - 1 >= 0
+j 满足：arr[i] == arr[j] 且 i != j
+请你返回到达数组最后一个元素的下标处所需的 最少操作次数 。
+
+注意：任何时候你都不能跳到数组外面
+
+::: tip 
+- 示例 1：
+    - 输入：arr = [100,-23,-23,404,100,23,23,23,3,404]
+    - 输出：3
+    - 解释：那你需要跳跃 3 次，下标依次为 0 --> 4 --> 3 --> 9 。下标 9 为数组的最后一个元素的下标
+
+- 示例 2：
+    - 输入：arr = [7,6,9,6,9,6,9,7]
+    - 输出：1
+    - 解释：你可以直接从下标 0 处跳到下标 7 处，也就是数组的最后一个元素处。
+:::
+
+
+```ts
+// 待研究
+function minJumps(arr: number[]): number {
+    if (arr.length === 1) {
+        return 0;
+    }
+    const map = new Map<number, number[]>();
+    for (let i = 0; i < arr.length; i++) {
+        if (map.has(arr[i])) {
+            map.get(arr[i]).push(i);
+        } else {
+            map.set(arr[i], [i]);
+        }
+    }
+    const getNext = (index: number) => {
+        const res = [...map.get(arr[index])];
+        if (index > 0) {
+            res.push(index - 1);
+        }
+        if (index < arr.length - 1) {
+            res.push(index + 1);
+        }
+        return res;
+    }
+    // 三个参数，分别标书当前被遍历的队列，当前队列的所属map以及另外一个队列的所属map
+    const update = (queue: number[], cur: Map<number, number>, other: Map<number, number>) => {
+        const size = queue.length;
+        // 遍历队列当前层次的所有节点
+        for (let i = 0; i < size; i++) {
+            // 出队
+            const index = queue.shift();
+            // 取出当前节点的遍历层数
+            const step = cur.get(index);
+            // 找到当前节点的所有满足调条件的子节点
+            for (let nextIndex of getNext(index)) {
+                // 重复出现
+                if (nextIndex === index || cur.has(nextIndex)) {
+                    continue;
+                }
+                // 两个队列对接上
+                if (other.has(nextIndex)) {
+                    return step + 1 + other.get(nextIndex);
+                } else {
+                    // 入队
+                    cur.set(nextIndex, step + 1);
+                    queue.push(nextIndex);
+                }
+            }
+        }
+        return -1;
+    }
+    const bfsPlus = () => {
+        const queue1 = [0];
+        const queue2 = [arr.length - 1];
+        const map1 = new Map<number, number>();
+        const map2 = new Map<number, number>();
+        map1.set(0, 0);
+        map2.set(arr.length - 1, 0);
+        while (queue1.length && queue2.length) {
+            let t = -1;
+            if (queue1.length <= queue2.length) {
+                t = update(queue1, map1, map2);
+            } else {
+                t = update(queue2, map2, map1);
+            }
+            if (t !== -1) {
+                return t;
+            }
+        }
+    }
+    return bfsPlus();
+};
+```
