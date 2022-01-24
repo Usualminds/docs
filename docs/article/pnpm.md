@@ -10,25 +10,59 @@
 
 在 `npm2` 发展阶段，安装依赖是相对比较直接的，它会直接按照配置文件 `package.json` 中的依赖项去下载相关依赖包，而依赖包的组织形式则是按照树形结构去排列的。由于不同的包的依赖关系在版本上差异较大，依赖关系相对复杂，所以 `npm2` 直接按照配置去下载并组织依赖的方式，是简单明晰的做法，保证了各个依赖的独立性，在依赖变更时，相互并不影响，其关系可以通过下图来描述：
 
-![](./assets/pnpm/npm2.png)
+![](./assets/pnpm/node_modules_npm2.png)
 
 从上图中，我们可以看到
-- `A`、`B`、`C` 包相互独立
-- `A`、`B`、`C` 包可能会依赖相同的包，比如 **`D@1.0`**
-- `A`、`B`、`C` 包可能会存在较深的依赖层级，比如 **`C package`**
-- 
+1. `A`、`B`、`C` 包相互独立
+2. `A`、`B`、`C` 包可能会依赖相同的包，比如 **`D@1.0`**
+3. `A`、`B`、`C` 包可能会存在较深的依赖层级，比如 **`C package`**
 
-`npm ls --depth=0`
+其中 `2` 和 `3` 的负面影响会随着项目复杂度上升，可能会导致的几个问题
+- 较大的冗余。多次下载的相同的依赖包 **`D@1.0`**，无法实现共享
+- 较深层级的依赖树。
+  - `node_modules` 依赖包路径过长，超出操作系统最长路径限制（ `windows`：`260` 字符，`macos`：`1024` 字符），参见：
+    - [Too many dependencies break the Windows file system](https://github.com/npm/npm/issues/3697) 
+    - [Maximum Path Length Limitation](https://docs.microsoft.com/en-us/windows/win32/fileio/maximum-file-path-limitation?tabs=cmd)
+    - [Why does the 260 character path length limit exist in Windows?](https://stackoverflow.com/questions/1880321/why-does-the-260-character-path-length-limit-exist-in-windows)
+  - 太深的层级导致文件查找复杂度上升，严重影响性能，增加耗时 
 
+> Note: 通过 `npm ls --depth=n` 查看项目相关依赖层级
 
+#### npm3
+为解决 `npm2` 中存在的冗余和依赖树问题，`npm3` 对依赖项进行了[依赖扁平化讨论和处理](https://github.com/npm/cli/blob/latest/changelogs/CHANGELOG-3.md)
 
-> [npm2 npm3 yarn 的故事](https://int64ago.org/2016/10/15/npm2-npm3-yarn-%E7%9A%84%E6%95%85%E4%BA%8B/)
+![](./assets/pnpm/npm3-flat.jpg)
 
-### 幻影依赖
+扁平化具体来讲就是依赖不在按照树型进行安装，而是安装将依赖安装在同级目录下，`npm install` 安装依赖时，会按照配置文件 `package.json` 里的依赖顺序进行解析，遇到新包就把它放在第一层级的目录，后面如果遇到第一级目录已有的包，会先进行依赖版本判断，如果版本一样则忽略，否则会按照 `npm2` 的方式依次挂在依赖包目录下,这样处理的原理遵循了 [`Nodejs`的依赖解析规则](https://nodejs.org/api/modules.html#all-together)：**当前目录下没有找到`node_modules`，它将递归解析父目录下的`node_modules`**。
 
-https://rushjs.io/pages/advanced/phantom_deps/
-### NPM 分身
-https://rushjs.io/pages/advanced/npm_doppelgangers/
+使用 `npm3` 安装依赖后如下图：
+
+![](./assets/pnpm/node_modules_npm3.png)
+
+这种扁平化处理方式一定程度上缓解了冗余和依赖树问题，同时 `npm3` 还支持动态安装更新包，如果依赖有更新，可以通过 `npm dedupe` 命令对依赖树进行优化。
+
+但是 `npm3` 也存在部分问题，比如：
+
+- [phantom_deps(幻影依赖)](https://rushjs.io/pages/advanced/phantom_deps/)。`npm3` 不会以确定的方式安装依赖项。举例来说：我们在 `NodeJS` 中 `require()` 的函数，不需要考虑配置文件 `package.json`。这可能会导致依赖版本不兼容，并且开发者不容易发现；另外，由于[`Nodejs`的依赖解析规则](https://nodejs.org/api/modules.html#all-together)，还会导致幻影 `node_modules` ，即依赖向上查找，可能会越过代码目录自身的 `node_modules` 。如下：
+
+```json
+- my-monorepo/
+  - package.json
+  - node_modules/
+    - semver/
+    - ...
+  - my-monorepo/my-library/
+    - package.json
+    - lib/
+      - index.js
+    - node_modules/
+      - brace-expansion
+      - minimatch
+      - ...
+```
+`my-monorepo/my-library/lib/index.js` 可能使用的是`my-monorepo/node_modules` 中的依赖，而非自身目录 `my-monorepo/my-library/node_modules`
+
+- [npm doppelgangers(npm 分身)](https://rushjs.io/pages/advanced/npm_doppelgangers/)。简单来讲，npm 分身是指同一个依赖的不同版本会出现在 `node_modules` 中，比如项目中同时依赖了 `A@1.0.0` 和 `A@2.0.0`，无论是扁平化处理`A@1.0.0` 或 `A@2.0.0`，另一个依赖还是会被重复，如果这样的分身较多，就会导致
 
 
 `pnpm` 指 `performant`（高性能的） npm，如其所言 `Fast, disk space efficient package manager`
@@ -103,6 +137,6 @@ https://pnpm.io/zh/feature-comparison
 ## pnpm 的局限
 
 ## 参考资料
-
+- [npm2 npm3 yarn 的故事](https://int64ago.org/2016/10/15/npm2-npm3-yarn-的故事/)
 https://pnpm.io/zh/community
 https://pnpm.io/zh/blog

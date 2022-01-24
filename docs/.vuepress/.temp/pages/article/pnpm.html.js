@@ -16,18 +16,6 @@ export const data = {
           "title": "npm 发展",
           "slug": "npm-发展",
           "children": []
-        },
-        {
-          "level": 3,
-          "title": "幻影依赖",
-          "slug": "幻影依赖",
-          "children": []
-        },
-        {
-          "level": 3,
-          "title": "NPM 分身",
-          "slug": "npm-分身",
-          "children": []
         }
       ]
     },
@@ -82,12 +70,12 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1642650334000,
+    "updatedTime": 1642856043000,
     "contributors": [
       {
         "name": "Joe",
         "email": "me@qjidea.com",
-        "commits": 2
+        "commits": 3
       }
     ]
   },
