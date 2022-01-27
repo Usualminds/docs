@@ -10,11 +10,23 @@ export const data = {
       "level": 2,
       "title": "背景",
       "slug": "背景",
+      "children": []
+    },
+    {
+      "level": 2,
+      "title": "npm 发展",
+      "slug": "npm-发展",
       "children": [
         {
           "level": 3,
-          "title": "npm 发展",
-          "slug": "npm-发展",
+          "title": "npm2",
+          "slug": "npm2",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "npm3",
+          "slug": "npm3",
           "children": []
         },
         {
@@ -27,26 +39,39 @@ export const data = {
     },
     {
       "level": 2,
-      "title": "pnpm 解决了什么问题",
-      "slug": "pnpm-解决了什么问题",
+      "title": "pnpm 简介",
+      "slug": "pnpm-简介",
       "children": []
     },
     {
       "level": 2,
-      "title": "pnpm 使用方法",
-      "slug": "pnpm-使用方法",
+      "title": "pnpm 效果",
+      "slug": "pnpm-效果",
       "children": []
     },
     {
       "level": 2,
       "title": "pnpm 的原理",
       "slug": "pnpm-的原理",
-      "children": []
+      "children": [
+        {
+          "level": 3,
+          "title": "基于硬链接的 node_modules",
+          "slug": "基于硬链接的-node-modules",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "基于依赖解析的软链接(symlinks)",
+          "slug": "基于依赖解析的软链接-symlinks",
+          "children": []
+        }
+      ]
     },
     {
       "level": 2,
-      "title": "pnpm、npm yarn 工具链效果对比",
-      "slug": "pnpm、npm-yarn-工具链效果对比",
+      "title": "pnpm 使用方法",
+      "slug": "pnpm-使用方法",
       "children": [
         {
           "level": 3,
@@ -76,12 +101,12 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1643270702000,
+    "updatedTime": 1643274966000,
     "contributors": [
       {
         "name": "Joe",
         "email": "me@qjidea.com",
-        "commits": 5
+        "commits": 6
       }
     ]
   },
