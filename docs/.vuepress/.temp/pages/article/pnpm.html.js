@@ -16,6 +16,12 @@ export const data = {
           "title": "npm 发展",
           "slug": "npm-发展",
           "children": []
+        },
+        {
+          "level": 3,
+          "title": "npm5",
+          "slug": "npm5",
+          "children": []
         }
       ]
     },
@@ -70,12 +76,12 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1642856043000,
+    "updatedTime": 1643021652000,
     "contributors": [
       {
         "name": "Joe",
         "email": "me@qjidea.com",
-        "commits": 3
+        "commits": 4
       }
     ]
   },

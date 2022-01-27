@@ -57,9 +57,11 @@
       - ...
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br></div></div><p><code>my-monorepo/my-library/lib/index.js</code> 可能使用的是<code>my-monorepo/node_modules</code> 中的依赖，而非自身目录 <code>my-monorepo/my-library/node_modules</code></p>
 <ul>
-<li><a href="https://rushjs.io/pages/advanced/npm_doppelgangers/" target="_blank" rel="noopener noreferrer">npm doppelgangers(npm 分身)<ExternalLinkIcon/></a>。简单来讲，npm 分身是指同一个依赖的不同版本会出现在 <code>node_modules</code> 中，比如项目中同时依赖了 <code>A@1.0.0</code> 和 <code>A@2.0.0</code>，无论是扁平化处理<code>A@1.0.0</code> 或 <code>A@2.0.0</code>，另一个依赖还是会被重复，如果这样的分身较多，就会导致</li>
+<li><a href="https://rushjs.io/pages/advanced/npm_doppelgangers/" target="_blank" rel="noopener noreferrer">npm doppelgangers(npm 分身)<ExternalLinkIcon/></a>。简单来讲，npm 分身是指同一个依赖的不同版本会出现在 <code>node_modules</code> 中，比如项目中同时依赖了 <code>A@1.0.0</code> 和 <code>A@2.0.0</code>，无论是扁平化处理<code>A@1.0.0</code> 或 <code>A@2.0.0</code>，另一个依赖还是会被重复，如果这样的分身较多，就会导致一些潜在问题，比如扩展包大小变大、相关类型校验交叉等</li>
 </ul>
-<p><code>pnpm</code> 指 <code>performant</code>（高性能的） npm，如其所言 <code>Fast, disk space efficient package manager</code></p>
+<h3 id="npm5" tabindex="-1"><a class="header-anchor" href="#npm5" aria-hidden="true">#</a> npm5</h3>
+<p>npm5 通过添加
+<code>pnpm</code> 指 <code>performant</code>（高性能的） npm，如其所言 <code>Fast, disk space efficient package manager</code></p>
 <p><img src="@source/article/assets/pnpm/pnpm-front.jpeg" alt=""></p>
 <h2 id="pnpm-解决了什么问题" tabindex="-1"><a class="header-anchor" href="#pnpm-解决了什么问题" aria-hidden="true">#</a> pnpm 解决了什么问题</h2>
 <blockquote>
