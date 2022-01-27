@@ -40,7 +40,7 @@
 <p>这种扁平化处理方式一定程度上缓解了冗余和依赖树问题，同时 <code>npm3</code> 还支持动态安装更新包，如果依赖有更新，可以通过 <code>npm dedupe</code> 命令对依赖树进行优化。</p>
 <p>但是 <code>npm3</code> 也存在部分问题，比如：</p>
 <ul>
-<li><a href="https://rushjs.io/pages/advanced/phantom_deps/" target="_blank" rel="noopener noreferrer">phantom_deps(幻影依赖)<ExternalLinkIcon/></a>。<code>npm3</code> 不会以确定的方式安装依赖项。举例来说：我们在 <code>NodeJS</code> 中 <code>require()</code> 的函数，不需要考虑配置文件 <code>package.json</code>。这可能会导致依赖版本不兼容，并且开发者不容易发现；另外，由于<a href="https://nodejs.org/api/modules.html#all-together" target="_blank" rel="noopener noreferrer"><code>Nodejs</code>的依赖解析规则<ExternalLinkIcon/></a>，还会导致幻影 <code>node_modules</code> ，即依赖向上查找，可能会越过代码目录自身的 <code>node_modules</code> 。如下：</li>
+<li><a href="https://rushjs.io/pages/advanced/phantom_deps/" target="_blank" rel="noopener noreferrer">phantom_deps(幻影依赖)<ExternalLinkIcon/></a>。<strong><code>npm3</code>不会以确定的方式安装依赖项</strong>。举例来说：我们在 <code>NodeJS</code> 中 <code>require()</code> 的函数，不需要考虑配置文件 <code>package.json</code>。这可能会导致依赖版本不兼容，并且开发者不容易发现；另外，由于<a href="https://nodejs.org/api/modules.html#all-together" target="_blank" rel="noopener noreferrer"><code>Nodejs</code>的依赖解析规则<ExternalLinkIcon/></a>，这还会导致幻影 <code>node_modules</code> ，即依赖向上查找，可能会越过代码目录自身的 <code>node_modules</code> 。如下：</li>
 </ul>
 <div class="language-json ext-json line-numbers-mode"><pre v-pre class="language-json"><code>- my-monorepo/
   - package.json
@@ -60,8 +60,9 @@
 <li><a href="https://rushjs.io/pages/advanced/npm_doppelgangers/" target="_blank" rel="noopener noreferrer">npm doppelgangers(npm 分身)<ExternalLinkIcon/></a>。简单来讲，npm 分身是指同一个依赖的不同版本会出现在 <code>node_modules</code> 中，比如项目中同时依赖了 <code>A@1.0.0</code> 和 <code>A@2.0.0</code>，无论是扁平化处理<code>A@1.0.0</code> 或 <code>A@2.0.0</code>，另一个依赖还是会被重复，如果这样的分身较多，就会导致一些潜在问题，比如扩展包大小变大、相关类型校验交叉等</li>
 </ul>
 <h3 id="npm5" tabindex="-1"><a class="header-anchor" href="#npm5" aria-hidden="true">#</a> npm5</h3>
-<p>npm5 通过添加
-<code>pnpm</code> 指 <code>performant</code>（高性能的） npm，如其所言 <code>Fast, disk space efficient package manager</code></p>
+<p>npm5 通过添加 <code>lock</code> 文件来记录依赖树信息，进行依赖锁定,从而唯一确定 <code>node_modules</code> 的结构,这样处理可以保证团队成员使用同一份<code>node_modules</code>依赖结构。但是，我们平铺式的算法的复杂性、幻影依赖和分身问题仍然没有解决。</p>
+<h1 id="" tabindex="-1"><a class="header-anchor" href="#" aria-hidden="true">#</a> </h1>
+<p><code>pnpm</code> 指 <code>performant</code>（高性能的） npm，如其所言 <code>Fast, disk space efficient package manager</code></p>
 <p><img src="@source/article/assets/pnpm/pnpm-front.jpeg" alt=""></p>
 <h2 id="pnpm-解决了什么问题" tabindex="-1"><a class="header-anchor" href="#pnpm-解决了什么问题" aria-hidden="true">#</a> pnpm 解决了什么问题</h2>
 <blockquote>

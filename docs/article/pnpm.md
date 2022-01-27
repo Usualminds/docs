@@ -43,7 +43,7 @@
 
 但是 `npm3` 也存在部分问题，比如：
 
-- [phantom_deps(幻影依赖)](https://rushjs.io/pages/advanced/phantom_deps/)。`npm3` 不会以确定的方式安装依赖项。举例来说：我们在 `NodeJS` 中 `require()` 的函数，不需要考虑配置文件 `package.json`。这可能会导致依赖版本不兼容，并且开发者不容易发现；另外，由于[`Nodejs`的依赖解析规则](https://nodejs.org/api/modules.html#all-together)，还会导致幻影 `node_modules` ，即依赖向上查找，可能会越过代码目录自身的 `node_modules` 。如下：
+- [phantom_deps(幻影依赖)](https://rushjs.io/pages/advanced/phantom_deps/)。**`npm3`不会以确定的方式安装依赖项**。举例来说：我们在 `NodeJS` 中 `require()` 的函数，不需要考虑配置文件 `package.json`。这可能会导致依赖版本不兼容，并且开发者不容易发现；另外，由于[`Nodejs`的依赖解析规则](https://nodejs.org/api/modules.html#all-together)，这还会导致幻影 `node_modules` ，即依赖向上查找，可能会越过代码目录自身的 `node_modules` 。如下：
 
 ```json
 - my-monorepo/
@@ -65,7 +65,11 @@
 - [npm doppelgangers(npm 分身)](https://rushjs.io/pages/advanced/npm_doppelgangers/)。简单来讲，npm 分身是指同一个依赖的不同版本会出现在 `node_modules` 中，比如项目中同时依赖了 `A@1.0.0` 和 `A@2.0.0`，无论是扁平化处理`A@1.0.0` 或 `A@2.0.0`，另一个依赖还是会被重复，如果这样的分身较多，就会导致一些潜在问题，比如扩展包大小变大、相关类型校验交叉等
 
 ### npm5
-npm5 通过添加
+npm5 通过添加 `lock` 文件来记录依赖树信息，进行依赖锁定,从而唯一确定 `node_modules` 的结构,这样处理可以保证团队成员使用同一份`node_modules`依赖结构。但是，我们平铺式的算法的复杂性、幻影依赖和分身问题仍然没有解决。
+
+#
+
+
 `pnpm` 指 `performant`（高性能的） npm，如其所言 `Fast, disk space efficient package manager`
 
 ![](./assets/pnpm/pnpm-front.jpeg)
