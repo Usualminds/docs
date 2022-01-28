@@ -31,13 +31,13 @@
 ### npm3
 为解决 `npm2` 中存在的冗余和依赖树问题，`npm3` 对依赖项进行了[依赖扁平化讨论和处理](https://github.com/npm/cli/blob/latest/changelogs/CHANGELOG-3.md)
 
-![](./assets/pnpm/npm3-flat.jpg)
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gyt34wicfwj31ka0emjvk.jpg)
 
 扁平化具体来讲就是依赖不在按照树型进行安装，而是安装将依赖安装在同级目录下，`npm install` 安装依赖时，会按照配置文件 `package.json` 里的依赖顺序进行解析，遇到新包就把它放在第一层级的目录，后面如果遇到第一级目录已有的包，会先进行依赖版本判断，如果版本一样则忽略，否则会按照 `npm2` 的方式依次挂在依赖包目录下,这样处理的原理遵循了[`Nodejs`的依赖解析规则](https://nodejs.org/api/modules.html#all-together)：**当前目录下没有找到`node_modules`，它将递归解析父目录下的`node_modules`**。
 
 使用 `npm3` 安装依赖后如下图：
 
-![](./assets/pnpm/node_modules_npm3.png)
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gyt34x0kxwj31me0hggng.jpg)
 
 这种扁平化处理方式一定程度上缓解了冗余和依赖树问题，同时 `npm3` 还支持动态安装更新包，如果依赖有更新，可以通过 `npm dedupe` 命令对依赖树进行优化。
 
@@ -72,7 +72,7 @@ npm5 通过添加 `lock` 文件来记录依赖树信息，进行依赖锁定,从
 
 `pnpm` 指 `performant npm`（高性能的 npm），如 [pnpm 官网](https://pnpm.io/)所言，它是**快速的，节省磁盘空间的包管理工具**，同时，它也较好地支持了 `workspace` 和 `monorepos`。
 
-![](./assets/pnpm/pnpm-front.jpeg)
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gyt34xkxo6j31hc0u0jwy.jpg)
 
 举例来说，如果项目中，你使用了某个依赖项的多个版本，那么 `pnpm` 只会将有差异的文件添加到仓库。如果某个依赖包有 100 个文件，而它的新版本只改变了其中 1 个文件。那么 `pnpm update` 时只会添加 1 个新文件，而不会复制整个新版本的所有包。此外。所有文件都会存储在硬盘上的某一位置。 当软件包被被安装时，其中的文件会硬链接到这一位置，而不会占用额外的磁盘空间。同时，项目中允许共享同一版本的依赖。接下来我们先了解下 `pnpm` 的使用效果
 
@@ -106,9 +106,9 @@ node_modules
                 ├── index.js
                 └── package.json
 ```
-`node_modules` 下面的唯一文件夹叫做 `.pnpm`, `.pnpm` 下面是一个 `<PACKAGE_NAME＠VERSION>` 文件夹，而在其下面 `<PACKAGE_NAME>` 的文件夹是一个基于内容可寻址存储的硬链接。
+`node_modules` 下面的唯一文件夹叫做 `.pnpm`, `.pnpm` 下面是一个 `<PACKAGE_NAME＠VERSION>` 文件夹，而在其下面 `<PACKAGE_NAME>` 的文件夹是一个基于内容可寻址存储的硬链接。同时，我们也可以通过 `pnpm root` 命令来打印当前项目中存放模块（modules）的有效目录
 
-### 基于依赖解析的软链接(symlinks)
+### 基于依赖解析的软链接 symlinks
 观察以下依赖结构
 ```file
 node_modules
@@ -147,12 +147,15 @@ node_modules
 通过**基于硬链接的`node_modules`**和**基于依赖解析的软链接**原理，我们了解到，当我们在相同操作系统下第二次安装同一个依赖包时，我们需要做的仅仅是创建一个该依赖包对应的硬链接，对于同一个依赖包的不同版本，也只有不同的部分会被重新保存起来，而具体有没有 `pnpm` 是在哪里判断的呢？全局的 `pnpm` 索引文件在 `～/.pnpm-store/v3/files`。基于此，使用硬链接让依赖包的安装速度非常快，同时也去除了冗余，节省较大磁盘空间。
 
 > [symlinks 符号连接](https://zh.wikipedia.org/wiki/%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5)
-## pnpm 使用方法
+
+## pnpm 使用
+pnpm 的具体使用这里我们不展开介绍了，可以查看官网[使用方法](https://pnpm.io/zh/pnpm-cli)和[CLI 命令](https://pnpm.io/zh/cli/add)即可。这里只提几个有意思的点
 
 https://divriots.com/blog/switching-to-pnpm
 
-#### ci 持续集成
-在 GitHub Actions 上，您可以像这样使用 pnpm 安装和缓存您的依赖项 .github/workflows/NAME.yml）
+### CI 集成
+在 `GitHub Actions` 上，你可以像这样使用 `pnpm` 安装和缓存您的依赖项 `.github/workflows/NAME.yml`
+
 ```yml
 name: pnpm Example Workflow
 on:
@@ -176,10 +179,49 @@ jobs:
     - name: Install dependencies
       run: pnpm install
 ```
+`pnpm` 除了在开发体验方面的优越表现，在项目集成方面也毫不逊色，对于较大型项目从 `npm 或 yarn`到`pnpm`迁移过程后，也得到了极大的优化，具体可以参考本篇最佳实践 [A story of how we migrated to pnpm](https://divriots.com/blog/switching-to-pnpm)
 
-#### 只允许 pnpm
-当您在项目中使用 pnpm 时，您不希望被其他人意外运行 npm install 或 yarn。 为了防止开发人员使用其他的包管理器，您可以将下面的这个 preinstall 脚本添加到您的 package.json：
+<table>
+<thead>
+<tr>
+<th align="none"></th>
+<th align="none">Without cache</th>
+<th align="none">With cache</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="none">yarn 2 (without dedupe)</td>
+<td align="none">6min 31s</td>
+<td align="none">1min 11s</td>
+</tr>
+<tr>
+<td align="none">yarn 3 (without dedupe)</td>
+<td align="none">4min 50s</td>
+<td align="none">57s</td>
+</tr>
+<tr>
+<td align="none">yarn 3</td>
+<td align="none">4min 1s</td>
+<td align="none">50s</td>
+</tr>
+<tr>
+<td align="none">yarn 3 (optimized)</td>
+<td align="none">1min 10</td>
+<td align="none">45s</td>
+</tr>
+<tr>
+<td align="none">pnpm</td>
+<td align="none">58s</td>
+<td align="none">24s</td>
+</tr>
+</tbody>
+</table>
 
+### pnpm 前置
+
+项目中使用 `pnpm` 时，如果你不希望项目内其他人使用 `npm i` 或 `yarn`这类包管理器，可以在 `package.json` 配置文件中添加预安装 `preinstall` 配置项，从而规范使用统一的包管理器。
+ 
 ```json
 {
     "scripts": {
@@ -188,22 +230,19 @@ jobs:
 }
 ```
 
+### 管理 NodeJS 版本
+在以前的多个项目切换中，你可能需要切换不同的 `NodeJS` 版本，也许用到了像 `nvm` 或 [Volta](https://volta.sh/) 这样的 `NodeJS` 版本管理器，而 `pnpm` 从 `v6.12.0` 版本后支持了 [pnpm env](https://pnpm.io/zh/cli/env) 命令，你可以使用它来安装并指定使用哪个版本的 `NodeJS` 。是不是方便了很多。
 
-### 时间
-https://pnpm.io/zh/benchmarks
+### monorepo 支持
+因为`pnpm` 对 `monorepos` 的大力支持，像 `Vue`、`Vite` 这些项目也转而使用了它。使用`pnpm run` 结合 `--filter` 、 `--recursive` 和 `--parallel` 选项，可以指定特定包，并高速执行相关命令。这样做的好处是之前要另外安装 `lerna` 这种 `monorepo` 管理工具的场景，现在 `pnpm` 可以包揽了。详细文章可以参考这里[pnpm vs Lerna: filtering in a multi-package repository](https://medium.com/pnpm/pnpm-vs-lerna-filtering-in-a-multi-package-repository-1f68bc644d6a)
 
-#### 官方
+## 总结
+本文从 `pnpm` 的出现背景开始，简要介绍了 `npm` 的发展过程及存在的问题，继而对 `pnpm` 及其效果进行了简介，重点讲述了 `pnpm` 的实现原理，并从应用侧选择了四个点展开。`pnpm` 作为新一代包管理器，自身有不少优越的表现，它通过硬链接和软链接的方式，解决了 `npm` 幻影依赖和分身问题，并且较好地解决了依赖包复用问题，从而高效快速地实现了依赖包的安装，需要特别注意的是 `pnpm` 严格遵循了 `Nodejs` 依赖解析规则，规避了之前任意依赖包的访问修改问题。
 
+当然，`pnpm` 使用过程中也存在一些问题，包括 `Vue` 官方在迁移过程中，也处理过部分问题。另外，这里也包括一些包的兼容性问题，包自身实现了模块解析，但 `pnpm` 也提供了相关解决方法 
 
-#### ci 提速
-[我们如何迁移到 pnpm 的故事](https://divriots.com/blog/switching-to-pnpm)
-
-### 功能
-https://pnpm.io/zh/feature-comparison
-
-## pnpm 的局限
+综上，`pnpm` 是一个功能全面，性能优越的包管理器，快来使用 `pnpm` 吧。
 
 ## 参考资料
-- [npm2 npm3 yarn 的故事](https://int64ago.org/2016/10/15/npm2-npm3-yarn-的故事/)
-https://pnpm.io/zh/community
-https://pnpm.io/zh/blog
+- [npm 存在的问题以及 pnpm 是怎么处理的](https://www.yuexunjiang.me/blog/problems-with-npm-and-how-pnpm-handles-them/)
+- [npm/yarn 的设计缺陷，以及 pnpm 是如何改进的](https://xingyahao.com/c/pnpm-npm-yarn.html)

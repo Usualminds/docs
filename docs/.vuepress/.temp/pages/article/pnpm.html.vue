@@ -33,10 +33,10 @@
 </blockquote>
 <h3 id="npm3" tabindex="-1"><a class="header-anchor" href="#npm3" aria-hidden="true">#</a> npm3</h3>
 <p>为解决 <code>npm2</code> 中存在的冗余和依赖树问题，<code>npm3</code> 对依赖项进行了<a href="https://github.com/npm/cli/blob/latest/changelogs/CHANGELOG-3.md" target="_blank" rel="noopener noreferrer">依赖扁平化讨论和处理<ExternalLinkIcon/></a></p>
-<p><img src="@source/article/assets/pnpm/npm3-flat.jpg" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyt34wicfwj31ka0emjvk.jpg" alt=""></p>
 <p>扁平化具体来讲就是依赖不在按照树型进行安装，而是安装将依赖安装在同级目录下，<code>npm install</code> 安装依赖时，会按照配置文件 <code>package.json</code> 里的依赖顺序进行解析，遇到新包就把它放在第一层级的目录，后面如果遇到第一级目录已有的包，会先进行依赖版本判断，如果版本一样则忽略，否则会按照 <code>npm2</code> 的方式依次挂在依赖包目录下,这样处理的原理遵循了<a href="https://nodejs.org/api/modules.html#all-together" target="_blank" rel="noopener noreferrer"><code>Nodejs</code>的依赖解析规则<ExternalLinkIcon/></a>：<strong>当前目录下没有找到<code>node_modules</code>，它将递归解析父目录下的<code>node_modules</code></strong>。</p>
 <p>使用 <code>npm3</code> 安装依赖后如下图：</p>
-<p><img src="@source/article/assets/pnpm/node_modules_npm3.png" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyt34x0kxwj31me0hggng.jpg" alt=""></p>
 <p>这种扁平化处理方式一定程度上缓解了冗余和依赖树问题，同时 <code>npm3</code> 还支持动态安装更新包，如果依赖有更新，可以通过 <code>npm dedupe</code> 命令对依赖树进行优化。</p>
 <p>但是 <code>npm3</code> 也存在部分问题，比如：</p>
 <ul>
@@ -64,7 +64,7 @@
 <h2 id="pnpm-简介" tabindex="-1"><a class="header-anchor" href="#pnpm-简介" aria-hidden="true">#</a> pnpm 简介</h2>
 <p>前文我们大致梳理了 <code>npm</code> 的发展和遗留问题。而 <code>pnpm</code> 比较巧妙地解决了它们，并且极大地提升了依赖包管理的效率。</p>
 <p><code>pnpm</code> 指 <code>performant npm</code>（高性能的 npm），如 <a href="https://pnpm.io/" target="_blank" rel="noopener noreferrer">pnpm 官网<ExternalLinkIcon/></a>所言，它是<strong>快速的，节省磁盘空间的包管理工具</strong>，同时，它也较好地支持了 <code>workspace</code> 和 <code>monorepos</code>。</p>
-<p><img src="@source/article/assets/pnpm/pnpm-front.jpeg" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyt34xkxo6j31hc0u0jwy.jpg" alt=""></p>
 <p>举例来说，如果项目中，你使用了某个依赖项的多个版本，那么 <code>pnpm</code> 只会将有差异的文件添加到仓库。如果某个依赖包有 100 个文件，而它的新版本只改变了其中 1 个文件。那么 <code>pnpm update</code> 时只会添加 1 个新文件，而不会复制整个新版本的所有包。此外。所有文件都会存储在硬盘上的某一位置。 当软件包被被安装时，其中的文件会硬链接到这一位置，而不会占用额外的磁盘空间。同时，项目中允许共享同一版本的依赖。接下来我们先了解下 <code>pnpm</code> 的使用效果</p>
 <h2 id="pnpm-效果" tabindex="-1"><a class="header-anchor" href="#pnpm-效果" aria-hidden="true">#</a> pnpm 效果</h2>
 <blockquote>
@@ -90,8 +90,8 @@
             └── foo -&gt; &lt;store&gt;/foo
                 ├── index.js
                 └── package.json
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><code>node_modules</code> 下面的唯一文件夹叫做 <code>.pnpm</code>, <code>.pnpm</code> 下面是一个 <code>&lt;PACKAGE_NAME＠VERSION&gt;</code> 文件夹，而在其下面 <code>&lt;PACKAGE_NAME&gt;</code> 的文件夹是一个基于内容可寻址存储的硬链接。</p>
-<h3 id="基于依赖解析的软链接-symlinks" tabindex="-1"><a class="header-anchor" href="#基于依赖解析的软链接-symlinks" aria-hidden="true">#</a> 基于依赖解析的软链接(symlinks)</h3>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br></div></div><p><code>node_modules</code> 下面的唯一文件夹叫做 <code>.pnpm</code>, <code>.pnpm</code> 下面是一个 <code>&lt;PACKAGE_NAME＠VERSION&gt;</code> 文件夹，而在其下面 <code>&lt;PACKAGE_NAME&gt;</code> 的文件夹是一个基于内容可寻址存储的硬链接。同时，我们也可以通过 <code>pnpm root</code> 命令来打印当前项目中存放模块（modules）的有效目录</p>
+<h3 id="基于依赖解析的软链接-symlinks" tabindex="-1"><a class="header-anchor" href="#基于依赖解析的软链接-symlinks" aria-hidden="true">#</a> 基于依赖解析的软链接 symlinks</h3>
 <p>观察以下依赖结构</p>
 <div class="language-file ext-file line-numbers-mode"><pre v-pre class="language-file"><code>node_modules
 ├── foo -&gt; ./.pnpm/foo@1.0.0/node_modules/foo
@@ -124,10 +124,11 @@
 <blockquote>
 <p><a href="https://zh.wikipedia.org/wiki/%E7%AC%A6%E5%8F%B7%E9%93%BE%E6%8E%A5" target="_blank" rel="noopener noreferrer">symlinks 符号连接<ExternalLinkIcon/></a></p>
 </blockquote>
-<h2 id="pnpm-使用方法" tabindex="-1"><a class="header-anchor" href="#pnpm-使用方法" aria-hidden="true">#</a> pnpm 使用方法</h2>
+<h2 id="pnpm-使用" tabindex="-1"><a class="header-anchor" href="#pnpm-使用" aria-hidden="true">#</a> pnpm 使用</h2>
+<p>pnpm 的具体使用这里我们不展开介绍了，可以查看官网<a href="https://pnpm.io/zh/pnpm-cli" target="_blank" rel="noopener noreferrer">使用方法<ExternalLinkIcon/></a>和<a href="https://pnpm.io/zh/cli/add" target="_blank" rel="noopener noreferrer">CLI 命令<ExternalLinkIcon/></a>即可。这里只提几个有意思的点</p>
 <p>https://divriots.com/blog/switching-to-pnpm</p>
-<h4 id="ci-持续集成" tabindex="-1"><a class="header-anchor" href="#ci-持续集成" aria-hidden="true">#</a> ci 持续集成</h4>
-<p>在 GitHub Actions 上，您可以像这样使用 pnpm 安装和缓存您的依赖项 .github/workflows/NAME.yml）</p>
+<h3 id="ci-集成" tabindex="-1"><a class="header-anchor" href="#ci-集成" aria-hidden="true">#</a> CI 集成</h3>
+<p>在 <code>GitHub Actions</code> 上，你可以像这样使用 <code>pnpm</code> 安装和缓存您的依赖项 <code>.github/workflows/NAME.yml</code></p>
 <div class="language-yaml ext-yml line-numbers-mode"><pre v-pre class="language-yaml"><code><span class="token key atrule">name</span><span class="token punctuation">:</span> pnpm Example Workflow
 <span class="token key atrule">on</span><span class="token punctuation">:</span>
   <span class="token key atrule">push</span><span class="token punctuation">:</span>
@@ -149,25 +150,61 @@
         <span class="token key atrule">cache</span><span class="token punctuation">:</span> <span class="token string">'pnpm'</span>
     <span class="token punctuation">-</span> <span class="token key atrule">name</span><span class="token punctuation">:</span> Install dependencies
       <span class="token key atrule">run</span><span class="token punctuation">:</span> pnpm install
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><h4 id="只允许-pnpm" tabindex="-1"><a class="header-anchor" href="#只允许-pnpm" aria-hidden="true">#</a> 只允许 pnpm</h4>
-<p>当您在项目中使用 pnpm 时，您不希望被其他人意外运行 npm install 或 yarn。 为了防止开发人员使用其他的包管理器，您可以将下面的这个 preinstall 脚本添加到您的 package.json：</p>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div><p><code>pnpm</code> 除了在开发体验方面的优越表现，在项目集成方面也毫不逊色，对于较大型项目从 <code>npm 或 yarn</code>到<code>pnpm</code>迁移过程后，也得到了极大的优化，具体可以参考本篇最佳实践 <a href="https://divriots.com/blog/switching-to-pnpm" target="_blank" rel="noopener noreferrer">A story of how we migrated to pnpm<ExternalLinkIcon/></a></p>
+<table>
+<thead>
+<tr>
+<th align="none"></th>
+<th align="none">Without cache</th>
+<th align="none">With cache</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="none">yarn 2 (without dedupe)</td>
+<td align="none">6min 31s</td>
+<td align="none">1min 11s</td>
+</tr>
+<tr>
+<td align="none">yarn 3 (without dedupe)</td>
+<td align="none">4min 50s</td>
+<td align="none">57s</td>
+</tr>
+<tr>
+<td align="none">yarn 3</td>
+<td align="none">4min 1s</td>
+<td align="none">50s</td>
+</tr>
+<tr>
+<td align="none">yarn 3 (optimized)</td>
+<td align="none">1min 10</td>
+<td align="none">45s</td>
+</tr>
+<tr>
+<td align="none">pnpm</td>
+<td align="none">58s</td>
+<td align="none">24s</td>
+</tr>
+</tbody>
+</table>
+<h3 id="pnpm-前置" tabindex="-1"><a class="header-anchor" href="#pnpm-前置" aria-hidden="true">#</a> pnpm 前置</h3>
+<p>项目中使用 <code>pnpm</code> 时，如果你不希望项目内其他人使用 <code>npm i</code> 或 <code>yarn</code>这类包管理器，可以在 <code>package.json</code> 配置文件中添加预安装 <code>preinstall</code> 配置项，从而规范使用统一的包管理器。</p>
 <div class="language-json ext-json line-numbers-mode"><pre v-pre class="language-json"><code><span class="token punctuation">{</span>
     <span class="token property">"scripts"</span><span class="token operator">:</span> <span class="token punctuation">{</span>
         <span class="token property">"preinstall"</span><span class="token operator">:</span> <span class="token string">"npx only-allow pnpm"</span>
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="时间" tabindex="-1"><a class="header-anchor" href="#时间" aria-hidden="true">#</a> 时间</h3>
-<p>https://pnpm.io/zh/benchmarks</p>
-<h4 id="官方" tabindex="-1"><a class="header-anchor" href="#官方" aria-hidden="true">#</a> 官方</h4>
-<h4 id="ci-提速" tabindex="-1"><a class="header-anchor" href="#ci-提速" aria-hidden="true">#</a> ci 提速</h4>
-<p><a href="https://divriots.com/blog/switching-to-pnpm" target="_blank" rel="noopener noreferrer">我们如何迁移到 pnpm 的故事<ExternalLinkIcon/></a></p>
-<h3 id="功能" tabindex="-1"><a class="header-anchor" href="#功能" aria-hidden="true">#</a> 功能</h3>
-<p>https://pnpm.io/zh/feature-comparison</p>
-<h2 id="pnpm-的局限" tabindex="-1"><a class="header-anchor" href="#pnpm-的局限" aria-hidden="true">#</a> pnpm 的局限</h2>
+</code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="管理-nodejs-版本" tabindex="-1"><a class="header-anchor" href="#管理-nodejs-版本" aria-hidden="true">#</a> 管理 NodeJS 版本</h3>
+<p>在以前的多个项目切换中，你可能需要切换不同的 <code>NodeJS</code> 版本，也许用到了像 <code>nvm</code> 或 <a href="https://volta.sh/" target="_blank" rel="noopener noreferrer">Volta<ExternalLinkIcon/></a> 这样的 <code>NodeJS</code> 版本管理器，而 <code>pnpm</code> 从 <code>v6.12.0</code> 版本后支持了 <a href="https://pnpm.io/zh/cli/env" target="_blank" rel="noopener noreferrer">pnpm env<ExternalLinkIcon/></a> 命令，你可以使用它来安装并指定使用哪个版本的 <code>NodeJS</code> 。是不是方便了很多。</p>
+<h3 id="monorepo-支持" tabindex="-1"><a class="header-anchor" href="#monorepo-支持" aria-hidden="true">#</a> monorepo 支持</h3>
+<p>因为<code>pnpm</code> 对 <code>monorepos</code> 的大力支持，像 <code>Vue</code>、<code>Vite</code> 这些项目也转而使用了它。使用<code>pnpm run</code> 结合 <code>--filter</code> 、 <code>--recursive</code> 和 <code>--parallel</code> 选项，可以指定特定包，并高速执行相关命令。这样做的好处是之前要另外安装 <code>lerna</code> 这种 <code>monorepo</code> 管理工具的场景，现在 <code>pnpm</code> 可以包揽了。详细文章可以参考这里<a href="https://medium.com/pnpm/pnpm-vs-lerna-filtering-in-a-multi-package-repository-1f68bc644d6a" target="_blank" rel="noopener noreferrer">pnpm vs Lerna: filtering in a multi-package repository<ExternalLinkIcon/></a></p>
+<h2 id="总结" tabindex="-1"><a class="header-anchor" href="#总结" aria-hidden="true">#</a> 总结</h2>
+<p>本文从 <code>pnpm</code> 的出现背景开始，简要介绍了 <code>npm</code> 的发展过程及存在的问题，继而对 <code>pnpm</code> 及其效果进行了简介，重点讲述了 <code>pnpm</code> 的实现原理，并从应用侧选择了四个点展开。<code>pnpm</code> 作为新一代包管理器，自身有不少优越的表现，它通过硬链接和软链接的方式，解决了 <code>npm</code> 幻影依赖和分身问题，并且较好地解决了依赖包复用问题，从而高效快速地实现了依赖包的安装，需要特别注意的是 <code>pnpm</code> 严格遵循了 <code>Nodejs</code> 依赖解析规则，规避了之前任意依赖包的访问修改问题。</p>
+<p>当然，<code>pnpm</code> 使用过程中也存在一些问题，包括 <code>Vue</code> 官方在迁移过程中，也处理过部分问题。另外，这里也包括一些包的兼容性问题，包自身实现了模块解析，但 <code>pnpm</code> 也提供了相关解决方法</p>
+<p>综上，<code>pnpm</code> 是一个功能全面，性能优越的包管理器，快来使用 <code>pnpm</code> 吧。</p>
 <h2 id="参考资料" tabindex="-1"><a class="header-anchor" href="#参考资料" aria-hidden="true">#</a> 参考资料</h2>
 <ul>
-<li><a href="https://int64ago.org/2016/10/15/npm2-npm3-yarn-%E7%9A%84%E6%95%85%E4%BA%8B/" target="_blank" rel="noopener noreferrer">npm2 npm3 yarn 的故事<ExternalLinkIcon/></a>
-https://pnpm.io/zh/community
-https://pnpm.io/zh/blog</li>
+<li><a href="https://www.yuexunjiang.me/blog/problems-with-npm-and-how-pnpm-handles-them/" target="_blank" rel="noopener noreferrer">npm 存在的问题以及 pnpm 是怎么处理的<ExternalLinkIcon/></a></li>
+<li><a href="https://xingyahao.com/c/pnpm-npm-yarn.html" target="_blank" rel="noopener noreferrer">npm/yarn 的设计缺陷，以及 pnpm 是如何改进的<ExternalLinkIcon/></a></li>
 </ul>
 </template>

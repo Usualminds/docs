@@ -62,7 +62,7 @@ export const data = {
         },
         {
           "level": 3,
-          "title": "基于依赖解析的软链接(symlinks)",
+          "title": "基于依赖解析的软链接 symlinks",
           "slug": "基于依赖解析的软链接-symlinks",
           "children": []
         }
@@ -70,27 +70,39 @@ export const data = {
     },
     {
       "level": 2,
-      "title": "pnpm 使用方法",
-      "slug": "pnpm-使用方法",
+      "title": "pnpm 使用",
+      "slug": "pnpm-使用",
       "children": [
         {
           "level": 3,
-          "title": "时间",
-          "slug": "时间",
+          "title": "CI 集成",
+          "slug": "ci-集成",
           "children": []
         },
         {
           "level": 3,
-          "title": "功能",
-          "slug": "功能",
+          "title": "pnpm 前置",
+          "slug": "pnpm-前置",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "管理 NodeJS 版本",
+          "slug": "管理-nodejs-版本",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "monorepo 支持",
+          "slug": "monorepo-支持",
           "children": []
         }
       ]
     },
     {
       "level": 2,
-      "title": "pnpm 的局限",
-      "slug": "pnpm-的局限",
+      "title": "总结",
+      "slug": "总结",
       "children": []
     },
     {
@@ -101,12 +113,12 @@ export const data = {
     }
   ],
   "git": {
-    "updatedTime": 1643274966000,
+    "updatedTime": 1643293620000,
     "contributors": [
       {
         "name": "Joe",
         "email": "me@qjidea.com",
-        "commits": 6
+        "commits": 7
       }
     ]
   },
