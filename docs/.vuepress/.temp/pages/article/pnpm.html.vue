@@ -1,11 +1,11 @@
 <template><h1 id="pnpm" tabindex="-1"><a class="header-anchor" href="#pnpm" aria-hidden="true">#</a> pnpm</h1>
-<p><img src="@source/article/assets/pnpm/pnpm.svg" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gytctrc7i6j306904gmx1.jpg" alt=""></p>
 <h2 id="背景" tabindex="-1"><a class="header-anchor" href="#背景" aria-hidden="true">#</a> 背景</h2>
 <p>如果你从事过前端方面的工作和开发，相信你对 <code>npm</code> 和 <code>yarn</code> 这样的工具已经再熟悉不过了。作为包管理工具，<code>npm</code> 已经有了长足的<a href="https://github.com/npm/cli/blob/latest/changelogs/CHANGELOG-1.md" target="_blank" rel="noopener noreferrer">历史<ExternalLinkIcon/></a>。一个项目初始化过程都需要通过 <code>npm install</code> 命令安装相关的依赖到 <code>node_modules</code> 目录下,对于较大型的前端项目，<code>node_modules</code> 的大小很多时候是超乎我们想象的。而 <code>npm</code> 在版本更新迭代的过程中，也一直在优化这个问题，下面我们就简要聊聊 <code>npm</code> 的发展历程。</p>
 <h2 id="npm-发展" tabindex="-1"><a class="header-anchor" href="#npm-发展" aria-hidden="true">#</a> npm 发展</h2>
 <h3 id="npm2" tabindex="-1"><a class="header-anchor" href="#npm2" aria-hidden="true">#</a> npm2</h3>
 <p>在 <code>npm2</code> 发展阶段，安装依赖是相对比较直接的，它会直接按照配置文件 <code>package.json</code> 中的依赖项去下载相关依赖包，而依赖包的组织形式则是按照树形结构去排列的。由于不同的包的依赖关系在版本上差异较大，依赖关系相对复杂，所以 <code>npm2</code> 直接按照配置去下载并组织依赖的方式，是简单明晰的做法，保证了各个依赖的独立性，在依赖变更时，相互并不影响，其关系可以通过下图来描述：</p>
-<p><img src="@source/article/assets/pnpm/node_modules_npm2.png" alt=""></p>
+<p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gytcts9cvlj316c0no75z.jpg" alt=""></p>
 <p>从上图中，我们可以看到</p>
 <ol>
 <li><code>A</code>、<code>B</code>、<code>C</code> 包相互独立</li>
@@ -198,11 +198,12 @@
     <span class="token punctuation">}</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br></div></div><h3 id="管理-nodejs-版本" tabindex="-1"><a class="header-anchor" href="#管理-nodejs-版本" aria-hidden="true">#</a> 管理 NodeJS 版本</h3>
-<p>在以前，如果你同时支撑了多个项目，而且需要在其中切换中，你可能需要切换不同的 <code>NodeJS</code> 版本，也许你会用到像 <code>nvm</code> 或 <a href="https://volta.sh/" target="_blank" rel="noopener noreferrer">Volta<ExternalLinkIcon/></a> 这样的 <code>NodeJS</code> 版本管理器，而 <code>pnpm</code> 从 <code>v6.12.0</code> 版本后支持了 <a href="https://pnpm.io/zh/cli/env" target="_blank" rel="noopener noreferrer">pnpm env<ExternalLinkIcon/></a> 命令，你可以使用它来安装并指定使用哪个版本的 <code>NodeJS</code> ，是不是方便了很多。</p>
+<p>在以前，如果你同时支撑了多个项目，而且需要在其中切换，你可能需要切换不同的 <code>NodeJS</code> 版本，也许你会用到像 <code>nvm</code> 或 <a href="https://volta.sh/" target="_blank" rel="noopener noreferrer">Volta<ExternalLinkIcon/></a> 这样的 <code>NodeJS</code> 版本管理器，而 <code>pnpm</code> 从 <code>v6.12.0</code> 版本后支持了 <a href="https://pnpm.io/zh/cli/env" target="_blank" rel="noopener noreferrer">pnpm env<ExternalLinkIcon/></a> 命令，你可以使用它来安装并指定使用哪个版本的 <code>NodeJS</code> ，是不是方便了很多。</p>
 <h3 id="monorepo-支持" tabindex="-1"><a class="header-anchor" href="#monorepo-支持" aria-hidden="true">#</a> monorepo 支持</h3>
 <p>因为<code>pnpm</code> 对 <code>monorepos</code> 的大力支持，像 <code>Vue</code>、<code>Vite</code> 这些开源项目也转而使用了它。使用<code>pnpm run</code> 结合 <code>--filter</code> 、 <code>--recursive</code> 和 <code>--parallel</code> 选项，可以指定特定包，并高速执行相关命令。这样做的好处是之前要另外安装 <code>lerna</code> 这种 <code>monorepo</code> 管理工具的场景，现在 <code>pnpm</code> 可以包揽了。详细文章可以参考这里 <a href="https://medium.com/pnpm/pnpm-vs-lerna-filtering-in-a-multi-package-repository-1f68bc644d6a" target="_blank" rel="noopener noreferrer">pnpm vs Lerna: filtering in a multi-package repository<ExternalLinkIcon/></a></p>
 <h2 id="总结" tabindex="-1"><a class="header-anchor" href="#总结" aria-hidden="true">#</a> 总结</h2>
-<p>本文从 <code>pnpm</code> 的出现背景开始，简要介绍了 <code>npm</code> 的发展过程及存在的问题，继而对 <code>pnpm</code> 及其效果进行了简介，重点讲述了 <code>pnpm</code> 的实现原理，并从应用侧选择了四个点展开。<code>pnpm</code> 作为新一代包管理器，自身有不少优越的表现，它通过硬链接和软链接的方式，解决了 <code>npm</code> 幻影依赖和分身问题，并且较好地解决了依赖包复用问题，从而实现了依赖包高效快速的安装，需要特别注意的是 <code>pnpm</code> 严格遵循了 <code>Nodejs</code> 依赖解析规则，规避了之前任意依赖包的访问修改问题。</p>
+<p>本文从 <code>pnpm</code> 的出现背景开始，简要介绍了 <code>npm</code> 的发展过程及存在的问题，继而对 <code>pnpm</code> 及其效果进行了简介，重点讲述了 <code>pnpm</code> 的实现原理，并从应用侧选择了四个点展开。</p>
+<p><code>pnpm</code> 作为新一代包管理器，自身有不少优越的表现，它通过硬链接和软链接的方式，解决了 <code>npm</code> 幻影依赖和分身问题，并且较好地解决了依赖包复用问题，从而实现了依赖包高效快速的安装。需要特别注意的是 <code>pnpm</code> 严格遵循了 <code>Nodejs</code> 依赖解析规则，规避了之前任意依赖包的访问修改问题。</p>
 <p>当然，<code>pnpm</code> 使用过程中也存在一些问题，包括 <code>Vue</code> 官方在迁移过程中，也处理过部分问题。另外，一些包也存在兼容性问题，由于包自己实现了模块解析，并没有遵循相关规范。但 <code>pnpm</code> 也提供了相关解决方法。具体参考 <a href="https://pnpm.io/faq#pnpm-does-not-work-with-your-project-here" target="_blank" rel="noopener noreferrer">pnpm FAQ<ExternalLinkIcon/></a></p>
 <p>综上，<code>pnpm</code> 是一个功能全面，性能优越的包管理器，快来体验 <code>pnpm</code> 吧。</p>
 <h2 id="参考资料" tabindex="-1"><a class="header-anchor" href="#参考资料" aria-hidden="true">#</a> 参考资料</h2>

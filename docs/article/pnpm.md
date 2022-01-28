@@ -1,5 +1,5 @@
 # pnpm
-![](./assets/pnpm/pnpm.svg)
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gytctrc7i6j306904gmx1.jpg)
 
 ## 背景
 如果你从事过前端方面的工作和开发，相信你对 `npm` 和 `yarn` 这样的工具已经再熟悉不过了。作为包管理工具，`npm` 已经有了长足的[历史](https://github.com/npm/cli/blob/latest/changelogs/CHANGELOG-1.md)。一个项目初始化过程都需要通过 `npm install` 命令安装相关的依赖到 `node_modules` 目录下,对于较大型的前端项目，`node_modules` 的大小很多时候是超乎我们想象的。而 `npm` 在版本更新迭代的过程中，也一直在优化这个问题，下面我们就简要聊聊 `npm` 的发展历程。
@@ -10,7 +10,7 @@
 
 在 `npm2` 发展阶段，安装依赖是相对比较直接的，它会直接按照配置文件 `package.json` 中的依赖项去下载相关依赖包，而依赖包的组织形式则是按照树形结构去排列的。由于不同的包的依赖关系在版本上差异较大，依赖关系相对复杂，所以 `npm2` 直接按照配置去下载并组织依赖的方式，是简单明晰的做法，保证了各个依赖的独立性，在依赖变更时，相互并不影响，其关系可以通过下图来描述：
 
-![](./assets/pnpm/node_modules_npm2.png)
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gytcts9cvlj316c0no75z.jpg)
 
 从上图中，我们可以看到
 1. `A`、`B`、`C` 包相互独立
@@ -231,13 +231,15 @@ jobs:
 ```
 
 ### 管理 NodeJS 版本
-在以前，如果你同时支撑了多个项目，而且需要在其中切换中，你可能需要切换不同的 `NodeJS` 版本，也许你会用到像 `nvm` 或 [Volta](https://volta.sh/) 这样的 `NodeJS` 版本管理器，而 `pnpm` 从 `v6.12.0` 版本后支持了 [pnpm env](https://pnpm.io/zh/cli/env) 命令，你可以使用它来安装并指定使用哪个版本的 `NodeJS` ，是不是方便了很多。
+在以前，如果你同时支撑了多个项目，而且需要在其中切换，你可能需要切换不同的 `NodeJS` 版本，也许你会用到像 `nvm` 或 [Volta](https://volta.sh/) 这样的 `NodeJS` 版本管理器，而 `pnpm` 从 `v6.12.0` 版本后支持了 [pnpm env](https://pnpm.io/zh/cli/env) 命令，你可以使用它来安装并指定使用哪个版本的 `NodeJS` ，是不是方便了很多。
 
 ### monorepo 支持
 因为`pnpm` 对 `monorepos` 的大力支持，像 `Vue`、`Vite` 这些开源项目也转而使用了它。使用`pnpm run` 结合 `--filter` 、 `--recursive` 和 `--parallel` 选项，可以指定特定包，并高速执行相关命令。这样做的好处是之前要另外安装 `lerna` 这种 `monorepo` 管理工具的场景，现在 `pnpm` 可以包揽了。详细文章可以参考这里 [pnpm vs Lerna: filtering in a multi-package repository](https://medium.com/pnpm/pnpm-vs-lerna-filtering-in-a-multi-package-repository-1f68bc644d6a)
 
 ## 总结
-本文从 `pnpm` 的出现背景开始，简要介绍了 `npm` 的发展过程及存在的问题，继而对 `pnpm` 及其效果进行了简介，重点讲述了 `pnpm` 的实现原理，并从应用侧选择了四个点展开。`pnpm` 作为新一代包管理器，自身有不少优越的表现，它通过硬链接和软链接的方式，解决了 `npm` 幻影依赖和分身问题，并且较好地解决了依赖包复用问题，从而实现了依赖包高效快速的安装，需要特别注意的是 `pnpm` 严格遵循了 `Nodejs` 依赖解析规则，规避了之前任意依赖包的访问修改问题。
+本文从 `pnpm` 的出现背景开始，简要介绍了 `npm` 的发展过程及存在的问题，继而对 `pnpm` 及其效果进行了简介，重点讲述了 `pnpm` 的实现原理，并从应用侧选择了四个点展开。
+
+`pnpm` 作为新一代包管理器，自身有不少优越的表现，它通过硬链接和软链接的方式，解决了 `npm` 幻影依赖和分身问题，并且较好地解决了依赖包复用问题，从而实现了依赖包高效快速的安装。需要特别注意的是 `pnpm` 严格遵循了 `Nodejs` 依赖解析规则，规避了之前任意依赖包的访问修改问题。
 
 当然，`pnpm` 使用过程中也存在一些问题，包括 `Vue` 官方在迁移过程中，也处理过部分问题。另外，一些包也存在兼容性问题，由于包自己实现了模块解析，并没有遵循相关规范。但 `pnpm` 也提供了相关解决方法。具体参考 [pnpm FAQ](https://pnpm.io/faq#pnpm-does-not-work-with-your-project-here)
 
