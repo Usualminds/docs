@@ -14,6 +14,7 @@ const routeItems = [
   ["v-5266a414","/leetcode/february.html",{"title":"二月"},["/leetcode/february","/leetcode/february.md"]],
   ["v-7ada4160","/leetcode/january.html",{"title":"一月"},["/leetcode/january","/leetcode/january.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
+  ["v-6c743ed9","/article/qrcode.html",{"title":""},["/article/qrcode","/article/qrcode.md"]],
 ]
 
 export const pagesRoutes = routeItems.reduce(
