@@ -3,11 +3,11 @@ import {
   isFunction,
   isPromise,
   isString
-} from "./chunk-2QK56M3A.js";
+} from "./chunk-QPDIRRFM.js";
 import {
   init_define_EXTERNAL_LINK_ICON_LOCALES,
   init_define_MZ_ZOOM_OPTIONS
-} from "./chunk-UTIXEKTT.js";
+} from "./chunk-Q7R4G5Z5.js";
 
 // dep:@vuepress_shared
 init_define_EXTERNAL_LINK_ICON_LOCALES();
@@ -67,7 +67,7 @@ var resolveHeadIdentifier = ([tag, attrs, content]) => {
 
 // node_modules/@vuepress/shared/lib/esm/utils/dedupeHead.js
 var dedupeHead = (head) => {
-  const identifierSet = new Set();
+  const identifierSet = /* @__PURE__ */ new Set();
   const result = [];
   head.forEach((item) => {
     const identifier = resolveHeadIdentifier(item);

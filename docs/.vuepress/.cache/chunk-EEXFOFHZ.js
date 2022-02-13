@@ -14,6 +14,7 @@ import {
   includeBooleanAttr,
   invokeArrayFns,
   isArray,
+  isBuiltInDirective,
   isFunction,
   isGloballyWhitelisted,
   isHTMLTag,
@@ -39,11 +40,11 @@ import {
   toHandlerKey,
   toNumber,
   toRawType
-} from "./chunk-2QK56M3A.js";
+} from "./chunk-QPDIRRFM.js";
 import {
   init_define_EXTERNAL_LINK_ICON_LOCALES,
   init_define_MZ_ZOOM_OPTIONS
-} from "./chunk-UTIXEKTT.js";
+} from "./chunk-Q7R4G5Z5.js";
 
 // node_modules/@vue/reactivity/dist/reactivity.esm-bundler.js
 init_define_EXTERNAL_LINK_ICON_LOCALES();
@@ -52,7 +53,6 @@ function warn(msg, ...args) {
   console.warn(`[Vue warn] ${msg}`, ...args);
 }
 var activeEffectScope;
-var effectScopeStack = [];
 var EffectScope = class {
   constructor(detached = false) {
     this.active = true;
@@ -66,33 +66,34 @@ var EffectScope = class {
   run(fn) {
     if (this.active) {
       try {
-        this.on();
+        activeEffectScope = this;
         return fn();
       } finally {
-        this.off();
+        activeEffectScope = this.parent;
       }
     } else if (true) {
       warn(`cannot run an inactive effect scope.`);
     }
   }
   on() {
-    if (this.active) {
-      effectScopeStack.push(this);
-      activeEffectScope = this;
-    }
+    activeEffectScope = this;
   }
   off() {
-    if (this.active) {
-      effectScopeStack.pop();
-      activeEffectScope = effectScopeStack[effectScopeStack.length - 1];
-    }
+    activeEffectScope = this.parent;
   }
   stop(fromParent) {
     if (this.active) {
-      this.effects.forEach((e) => e.stop());
-      this.cleanups.forEach((cleanup) => cleanup());
+      let i, l;
+      for (i = 0, l = this.effects.length; i < l; i++) {
+        this.effects[i].stop();
+      }
+      for (i = 0, l = this.cleanups.length; i < l; i++) {
+        this.cleanups[i]();
+      }
       if (this.scopes) {
-        this.scopes.forEach((e) => e.stop(true));
+        for (i = 0, l = this.scopes.length; i < l; i++) {
+          this.scopes[i].stop(true);
+        }
       }
       if (this.parent && !fromParent) {
         const last = this.parent.scopes.pop();
@@ -108,8 +109,7 @@ var EffectScope = class {
 function effectScope(detached) {
   return new EffectScope(detached);
 }
-function recordEffectScope(effect2, scope) {
-  scope = scope || activeEffectScope;
+function recordEffectScope(effect2, scope = activeEffectScope) {
   if (scope && scope.active) {
     scope.effects.push(effect2);
   }
@@ -156,11 +156,10 @@ var finalizeDepMarkers = (effect2) => {
     deps.length = ptr;
   }
 };
-var targetMap = new WeakMap();
+var targetMap = /* @__PURE__ */ new WeakMap();
 var effectTrackDepth = 0;
 var trackOpBit = 1;
 var maxMarkerBits = 30;
-var effectStack = [];
 var activeEffect;
 var ITERATE_KEY = Symbol(true ? "iterate" : "");
 var MAP_KEY_ITERATE_KEY = Symbol(true ? "Map key iterate" : "");
@@ -170,33 +169,40 @@ var ReactiveEffect = class {
     this.scheduler = scheduler;
     this.active = true;
     this.deps = [];
+    this.parent = void 0;
     recordEffectScope(this, scope);
   }
   run() {
     if (!this.active) {
       return this.fn();
     }
-    if (!effectStack.length || !effectStack.includes(this)) {
-      try {
-        effectStack.push(activeEffect = this);
-        enableTracking();
-        trackOpBit = 1 << ++effectTrackDepth;
-        if (effectTrackDepth <= maxMarkerBits) {
-          initDepMarkers(this);
-        } else {
-          cleanupEffect(this);
-        }
-        return this.fn();
-      } finally {
-        if (effectTrackDepth <= maxMarkerBits) {
-          finalizeDepMarkers(this);
-        }
-        trackOpBit = 1 << --effectTrackDepth;
-        resetTracking();
-        effectStack.pop();
-        const n = effectStack.length;
-        activeEffect = n > 0 ? effectStack[n - 1] : void 0;
+    let parent = activeEffect;
+    let lastShouldTrack = shouldTrack;
+    while (parent) {
+      if (parent === this) {
+        return;
       }
+      parent = parent.parent;
+    }
+    try {
+      this.parent = activeEffect;
+      activeEffect = this;
+      shouldTrack = true;
+      trackOpBit = 1 << ++effectTrackDepth;
+      if (effectTrackDepth <= maxMarkerBits) {
+        initDepMarkers(this);
+      } else {
+        cleanupEffect(this);
+      }
+      return this.fn();
+    } finally {
+      if (effectTrackDepth <= maxMarkerBits) {
+        finalizeDepMarkers(this);
+      }
+      trackOpBit = 1 << --effectTrackDepth;
+      activeEffect = this.parent;
+      shouldTrack = lastShouldTrack;
+      this.parent = void 0;
     }
   }
   stop() {
@@ -244,31 +250,23 @@ function pauseTracking() {
   trackStack.push(shouldTrack);
   shouldTrack = false;
 }
-function enableTracking() {
-  trackStack.push(shouldTrack);
-  shouldTrack = true;
-}
 function resetTracking() {
   const last = trackStack.pop();
   shouldTrack = last === void 0 ? true : last;
 }
 function track(target, type, key) {
-  if (!isTracking()) {
-    return;
+  if (shouldTrack && activeEffect) {
+    let depsMap = targetMap.get(target);
+    if (!depsMap) {
+      targetMap.set(target, depsMap = /* @__PURE__ */ new Map());
+    }
+    let dep = depsMap.get(key);
+    if (!dep) {
+      depsMap.set(key, dep = createDep());
+    }
+    const eventInfo = true ? { effect: activeEffect, target, type, key } : void 0;
+    trackEffects(dep, eventInfo);
   }
-  let depsMap = targetMap.get(target);
-  if (!depsMap) {
-    targetMap.set(target, depsMap = new Map());
-  }
-  let dep = depsMap.get(key);
-  if (!dep) {
-    depsMap.set(key, dep = createDep());
-  }
-  const eventInfo = true ? { effect: activeEffect, target, type, key } : void 0;
-  trackEffects(dep, eventInfo);
-}
-function isTracking() {
-  return shouldTrack && activeEffect !== void 0;
 }
 function trackEffects(dep, debuggerEventExtraInfo) {
   let shouldTrack2 = false;
@@ -444,7 +442,7 @@ var shallowSet = createSetter(true);
 function createSetter(shallow = false) {
   return function set2(target, key, value, receiver) {
     let oldValue = target[key];
-    if (isReadonly(oldValue) && isRef(oldValue)) {
+    if (isReadonly(oldValue) && isRef(oldValue) && !isRef(value)) {
       return false;
     }
     if (!shallow && !isReadonly(value)) {
@@ -764,10 +762,10 @@ function checkIdentityKeys(target, has2, key) {
     console.warn(`Reactive ${type} contains both the raw and reactive versions of the same object${type === `Map` ? ` as keys` : ``}, which can lead to inconsistencies. Avoid differentiating between the raw and reactive versions of an object and only use the reactive version if possible.`);
   }
 }
-var reactiveMap = new WeakMap();
-var shallowReactiveMap = new WeakMap();
-var readonlyMap = new WeakMap();
-var shallowReadonlyMap = new WeakMap();
+var reactiveMap = /* @__PURE__ */ new WeakMap();
+var shallowReactiveMap = /* @__PURE__ */ new WeakMap();
+var readonlyMap = /* @__PURE__ */ new WeakMap();
+var shallowReadonlyMap = /* @__PURE__ */ new WeakMap();
 function targetTypeMap(rawType) {
   switch (rawType) {
     case "Object":
@@ -848,19 +846,16 @@ function markRaw(value) {
 var toReactive = (value) => isObject(value) ? reactive(value) : value;
 var toReadonly = (value) => isObject(value) ? readonly(value) : value;
 function trackRefValue(ref2) {
-  if (isTracking()) {
+  if (shouldTrack && activeEffect) {
     ref2 = toRaw(ref2);
-    if (!ref2.dep) {
-      ref2.dep = createDep();
-    }
     if (true) {
-      trackEffects(ref2.dep, {
+      trackEffects(ref2.dep || (ref2.dep = createDep()), {
         target: ref2,
         type: "get",
         key: "value"
       });
     } else {
-      trackEffects(ref2.dep);
+      trackEffects(ref2.dep || (ref2.dep = createDep()));
     }
   }
 }
@@ -880,7 +875,7 @@ function triggerRefValue(ref2, newVal) {
   }
 }
 function isRef(r) {
-  return Boolean(r && r.__v_isRef === true);
+  return !!(r && r.__v_isRef === true);
 }
 function ref(value) {
   return createRef(value, false);
@@ -1303,7 +1298,7 @@ function flushPreFlushCbs(seen, parentJob = null) {
     activePreFlushCbs = [...new Set(pendingPreFlushCbs)];
     pendingPreFlushCbs.length = 0;
     if (true) {
-      seen = seen || new Map();
+      seen = seen || /* @__PURE__ */ new Map();
     }
     for (preFlushIndex = 0; preFlushIndex < activePreFlushCbs.length; preFlushIndex++) {
       if (checkRecursiveUpdates(seen, activePreFlushCbs[preFlushIndex])) {
@@ -1327,7 +1322,7 @@ function flushPostFlushCbs(seen) {
     }
     activePostFlushCbs = deduped;
     if (true) {
-      seen = seen || new Map();
+      seen = seen || /* @__PURE__ */ new Map();
     }
     activePostFlushCbs.sort((a, b) => getId(a) - getId(b));
     for (postFlushIndex = 0; postFlushIndex < activePostFlushCbs.length; postFlushIndex++) {
@@ -1345,7 +1340,7 @@ function flushJobs(seen) {
   isFlushPending = false;
   isFlushing = true;
   if (true) {
-    seen = seen || new Map();
+    seen = seen || /* @__PURE__ */ new Map();
   }
   flushPreFlushCbs(seen);
   queue.sort((a, b) => getId(a) - getId(b));
@@ -1387,7 +1382,7 @@ function checkRecursiveUpdates(seen, fn) {
   }
 }
 var isHmrUpdating = false;
-var hmrDirtyComponents = new Set();
+var hmrDirtyComponents = /* @__PURE__ */ new Set();
 if (true) {
   getGlobalThis().__VUE_HMR_RUNTIME__ = {
     createRecord: tryWrap(createRecord),
@@ -1395,7 +1390,7 @@ if (true) {
     reload: tryWrap(reload)
   };
 }
-var map = new Map();
+var map = /* @__PURE__ */ new Map();
 function registerHMR(instance) {
   const id = instance.type.__hmrId;
   let record = map.get(id);
@@ -1414,7 +1409,7 @@ function createRecord(id, initialDef) {
   }
   map.set(id, {
     initialDef: normalizeClassComponent(initialDef),
-    instances: new Set()
+    instances: /* @__PURE__ */ new Set()
   });
   return true;
 }
@@ -2463,7 +2458,7 @@ function traverse(value, seen) {
   if (!isObject(value) || value["__v_skip"]) {
     return value;
   }
-  seen = seen || new Set();
+  seen = seen || /* @__PURE__ */ new Set();
   if (seen.has(value)) {
     return value;
   }
@@ -2490,7 +2485,7 @@ function useTransitionState() {
     isMounted: false,
     isLeaving: false,
     isUnmounting: false,
-    leavingVNodes: new Map()
+    leavingVNodes: /* @__PURE__ */ new Map()
   };
   onMounted(() => {
     state.isMounted = true;
@@ -2592,7 +2587,7 @@ function getLeavingNodesForType(state, vnode) {
   const { leavingVNodes } = state;
   let leavingVNodesCache = leavingVNodes.get(vnode.type);
   if (!leavingVNodesCache) {
-    leavingVNodesCache = Object.create(null);
+    leavingVNodesCache = /* @__PURE__ */ Object.create(null);
     leavingVNodes.set(vnode.type, leavingVNodesCache);
   }
   return leavingVNodesCache;
@@ -2883,8 +2878,8 @@ var KeepAliveImpl = {
     if (!sharedContext.renderer) {
       return slots.default;
     }
-    const cache = new Map();
-    const keys = new Set();
+    const cache = /* @__PURE__ */ new Map();
+    const keys = /* @__PURE__ */ new Set();
     let current = null;
     if (true) {
       instance.__v_cache = cache;
@@ -3126,7 +3121,7 @@ function onErrorCaptured(hook, target = currentInstance) {
   injectHook("ec", hook, target);
 }
 function createDuplicateChecker() {
-  const cache = Object.create(null);
+  const cache = /* @__PURE__ */ Object.create(null);
   return (type, key) => {
     if (cache[key]) {
       warn2(`${type} property "${key}" is already defined in ${cache[key]}.`);
@@ -3478,14 +3473,14 @@ function mergeAsArray(to, from) {
   return to ? [...new Set([].concat(to, from))] : from;
 }
 function mergeObjectOptions(to, from) {
-  return to ? extend(extend(Object.create(null), to), from) : from;
+  return to ? extend(extend(/* @__PURE__ */ Object.create(null), to), from) : from;
 }
 function mergeWatchOptions(to, from) {
   if (!to)
     return from;
   if (!from)
     return to;
-  const merged = extend(Object.create(null), to);
+  const merged = extend(/* @__PURE__ */ Object.create(null), to);
   for (const key in from) {
     merged[key] = mergeAsArray(to[key], from[key]);
   }
@@ -3495,7 +3490,7 @@ function initProps(instance, rawProps, isStateful, isSSR = false) {
   const props = {};
   const attrs = {};
   def(attrs, InternalObjectKey, 1);
-  instance.propsDefaults = Object.create(null);
+  instance.propsDefaults = /* @__PURE__ */ Object.create(null);
   setFullProps(instance, rawProps, props, attrs);
   for (const key in instance.propsOptions[0]) {
     if (!(key in props)) {
@@ -3910,7 +3905,6 @@ var updateSlots = (instance, children, optimized) => {
     }
   }
 };
-var isBuiltInDirective = makeMap("bind,cloak,else-if,else,for,html,if,model,on,once,pre,show,slot,text,memo");
 function validateDirectiveName(name) {
   if (isBuiltInDirective(name)) {
     warn2("Do not use built-in directive ids as custom directive id: " + name);
@@ -3982,10 +3976,10 @@ function createAppContext() {
     mixins: [],
     components: {},
     directives: {},
-    provides: Object.create(null),
-    optionsCache: new WeakMap(),
-    propsCache: new WeakMap(),
-    emitsCache: new WeakMap()
+    provides: /* @__PURE__ */ Object.create(null),
+    optionsCache: /* @__PURE__ */ new WeakMap(),
+    propsCache: /* @__PURE__ */ new WeakMap(),
+    emitsCache: /* @__PURE__ */ new WeakMap()
   };
 }
 var uid = 0;
@@ -3996,7 +3990,7 @@ function createAppAPI(render2, hydrate2) {
       rootProps = null;
     }
     const context = createAppContext();
-    const installedPlugins = new Set();
+    const installedPlugins = /* @__PURE__ */ new Set();
     let isMounted = false;
     const app = context.app = {
       _uid: uid++,
@@ -4308,7 +4302,7 @@ function createHydrationFunctions(rendererInternals) {
     optimized = optimized || !!vnode.dynamicChildren;
     const { type, props, patchFlag, shapeFlag, dirs } = vnode;
     const forcePatchValue = type === "input" && dirs || type === "option";
-    if (forcePatchValue || patchFlag !== -1) {
+    if (true) {
       if (dirs) {
         invokeDirectiveHook(vnode, null, parentComponent, "created");
       }
@@ -5139,7 +5133,7 @@ function baseCreateRenderer(options, createHydrationFns) {
     } else {
       const s1 = i;
       const s2 = i;
-      const keyToNewIndexMap = new Map();
+      const keyToNewIndexMap = /* @__PURE__ */ new Map();
       for (i = s2; i <= e2; i++) {
         const nextChild = c2[i] = optimized ? cloneIfMounted(c2[i]) : normalizeVNode(c2[i]);
         if (nextChild.key != null) {
@@ -6045,7 +6039,7 @@ var getPublicInstance = (i) => {
     return getExposeProxy(i) || i.proxy;
   return getPublicInstance(i.parent);
 };
-var publicPropertiesMap = extend(Object.create(null), {
+var publicPropertiesMap = extend(/* @__PURE__ */ Object.create(null), {
   $: (i) => i,
   $el: (i) => i.vnode.el,
   $data: (i) => i.data,
@@ -6129,8 +6123,10 @@ var PublicInstanceProxyHandlers = {
     const { data, setupState, ctx } = instance;
     if (setupState !== EMPTY_OBJ && hasOwn(setupState, key)) {
       setupState[key] = value;
+      return true;
     } else if (data !== EMPTY_OBJ && hasOwn(data, key)) {
       data[key] = value;
+      return true;
     } else if (hasOwn(instance.props, key)) {
       warn2(`Attempting to mutate prop "${key}". Props are readonly.`, instance);
       return false;
@@ -6154,6 +6150,14 @@ var PublicInstanceProxyHandlers = {
   has({ _: { data, setupState, accessCache, ctx, appContext, propsOptions } }, key) {
     let normalizedProps;
     return !!accessCache[key] || data !== EMPTY_OBJ && hasOwn(data, key) || setupState !== EMPTY_OBJ && hasOwn(setupState, key) || (normalizedProps = propsOptions[0]) && hasOwn(normalizedProps, key) || hasOwn(ctx, key) || hasOwn(publicPropertiesMap, key) || hasOwn(appContext.config.globalProperties, key);
+  },
+  defineProperty(target, key, descriptor) {
+    if (descriptor.get != null) {
+      this.set(target, key, descriptor.get(), null);
+    } else if (descriptor.value != null) {
+      this.set(target, key, descriptor.value, null);
+    }
+    return Reflect.defineProperty(target, key, descriptor);
   }
 };
 if (true) {
@@ -6352,7 +6356,7 @@ function setupStatefulComponent(instance, isSSR) {
       warn2(`"compilerOptions" is only supported when using a build of Vue that includes the runtime compiler. Since you are using a runtime-only build, the options should be passed via your build tool config instead.`);
     }
   }
-  instance.accessCache = Object.create(null);
+  instance.accessCache = /* @__PURE__ */ Object.create(null);
   instance.proxy = markRaw(new Proxy(instance.ctx, PublicInstanceProxyHandlers));
   if (true) {
     exposePropsOnRenderContext(instance);
@@ -6870,7 +6874,7 @@ function isMemoSame(cached, memo) {
   }
   return true;
 }
-var version = "3.2.28";
+var version = "3.2.31";
 var _ssrUtils = {
   createComponentInstance,
   setupComponent,
@@ -6929,7 +6933,7 @@ var nodeOps = {
   },
   insertStaticContent(content, parent, anchor, isSVG, start, end) {
     const before = anchor ? anchor.previousSibling : parent.lastChild;
-    if (start && end) {
+    if (start && (start === end || start.nextSibling)) {
       while (true) {
         parent.insertBefore(start.cloneNode(true), anchor);
         if (start === end || !(start = start.nextSibling))
@@ -7285,7 +7289,7 @@ var VueElement = class extends BaseClass {
           const opt = props[key];
           if (opt === Number || opt && opt.type === Number) {
             this._props[key] = toNumber(this._props[key]);
-            (numberProps || (numberProps = Object.create(null)))[key] = true;
+            (numberProps || (numberProps = /* @__PURE__ */ Object.create(null)))[key] = true;
           }
         }
       }
@@ -7600,7 +7604,7 @@ function validateDuration(val) {
 }
 function addTransitionClass(el, cls) {
   cls.split(/\s+/).forEach((c) => c && el.classList.add(c));
-  (el._vtc || (el._vtc = new Set())).add(cls);
+  (el._vtc || (el._vtc = /* @__PURE__ */ new Set())).add(cls);
 }
 function removeTransitionClass(el, cls) {
   cls.split(/\s+/).forEach((c) => c && el.classList.remove(c));
@@ -7699,8 +7703,8 @@ function toMs(s) {
 function forceReflow() {
   return document.body.offsetHeight;
 }
-var positionMap = new WeakMap();
-var newPositionMap = new WeakMap();
+var positionMap = /* @__PURE__ */ new WeakMap();
+var newPositionMap = /* @__PURE__ */ new WeakMap();
 var TransitionGroupImpl = {
   name: "TransitionGroup",
   props: extend({}, TransitionPropsValidators, {
@@ -8392,4 +8396,4 @@ export {
   createSSRApp,
   initDirectivesForSSR
 };
-//# sourceMappingURL=chunk-VFKDAJSJ.js.map
+//# sourceMappingURL=chunk-EEXFOFHZ.js.map

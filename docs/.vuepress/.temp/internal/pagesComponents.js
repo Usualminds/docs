@@ -19,6 +19,8 @@ export const pagesComponents = {
   "v-54e17b9b": defineAsyncComponent(() => import(/* webpackChunkName: "v-54e17b9b" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/dp.html.vue")),
   // path: /article/pnpm.html
   "v-6dead58c": defineAsyncComponent(() => import(/* webpackChunkName: "v-6dead58c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/pnpm.html.vue")),
+  // path: /article/qrcode.html
+  "v-6c743ed9": defineAsyncComponent(() => import(/* webpackChunkName: "v-6c743ed9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/qrcode.html.vue")),
   // path: /leetcode/contest.html
   "v-2e513634": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e513634" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/contest.html.vue")),
   // path: /leetcode/february.html
@@ -27,6 +29,4 @@ export const pagesComponents = {
   "v-7ada4160": defineAsyncComponent(() => import(/* webpackChunkName: "v-7ada4160" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/january.html.vue")),
   // path: /404.html
   "v-3706649a": defineAsyncComponent(() => import(/* webpackChunkName: "v-3706649a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/404.html.vue")),
-  // path: /article/qrcode.html
-  "v-6c743ed9": defineAsyncComponent(() => import(/* webpackChunkName: "v-6c743ed9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/qrcode.html.vue")),
 }

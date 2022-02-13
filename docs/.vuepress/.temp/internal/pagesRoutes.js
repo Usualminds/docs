@@ -10,11 +10,11 @@ const routeItems = [
   ["v-3c2b42b9","/article/browser-finger.html",{"title":"浏览器指纹及其应用"},["/article/browser-finger","/article/browser-finger.md"]],
   ["v-54e17b9b","/article/dp.html",{"title":"动态规划"},["/article/dp","/article/dp.md"]],
   ["v-6dead58c","/article/pnpm.html",{"title":"pnpm"},["/article/pnpm","/article/pnpm.md"]],
+  ["v-6c743ed9","/article/qrcode.html",{"title":""},["/article/qrcode","/article/qrcode.md"]],
   ["v-2e513634","/leetcode/contest.html",{"title":"周赛笔记"},["/leetcode/contest","/leetcode/contest.md"]],
   ["v-5266a414","/leetcode/february.html",{"title":"二月"},["/leetcode/february","/leetcode/february.md"]],
   ["v-7ada4160","/leetcode/january.html",{"title":"一月"},["/leetcode/january","/leetcode/january.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
-  ["v-6c743ed9","/article/qrcode.html",{"title":""},["/article/qrcode","/article/qrcode.md"]],
 ]
 
 export const pagesRoutes = routeItems.reduce(
