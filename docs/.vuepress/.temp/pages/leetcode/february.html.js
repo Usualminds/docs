@@ -8,8 +8,8 @@ export const data = {
   "headers": [
     {
       "level": 2,
-      "title": "2022.2.1",
-      "slug": "_2022-2-1",
+      "title": "2022.2.15 矩阵中的幸运数 ⭐",
+      "slug": "_2022-2-15-矩阵中的幸运数-⭐",
       "children": []
     }
   ],
