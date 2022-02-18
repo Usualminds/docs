@@ -55,6 +55,7 @@ export const zh: NavbarConfig = [
             {
                 text: '算法',
                 children: [
+                    '/article/project.md',
                     '/article/pnpm.md',
                     '/article/dp.md',
                     '/article/browser-finger.md',
