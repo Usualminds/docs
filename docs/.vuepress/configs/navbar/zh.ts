@@ -63,4 +63,15 @@ export const zh: NavbarConfig = [
             }
         ]
     },
+    {
+        text: '答题',
+        children: [
+            {
+                text: '题目',
+                children: [
+                    '/test/finpoints.md',
+                ]
+            }
+        ]
+    },
 ]

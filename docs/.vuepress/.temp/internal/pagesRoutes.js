@@ -15,6 +15,7 @@ const routeItems = [
   ["v-2e513634","/leetcode/contest.html",{"title":"周赛笔记"},["/leetcode/contest","/leetcode/contest.md"]],
   ["v-5266a414","/leetcode/february.html",{"title":"二月"},["/leetcode/february","/leetcode/february.md"]],
   ["v-7ada4160","/leetcode/january.html",{"title":"一月"},["/leetcode/january","/leetcode/january.md"]],
+  ["v-2e8b206f","/test/finpoints.html",{"title":"Finpoints Assessment"},["/test/finpoints","/test/finpoints.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]
 

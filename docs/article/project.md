@@ -4,6 +4,32 @@
 
 ### Vue
 
+#### 响应式计算和侦听 ⭐⭐⭐
+[](https://v3.cn.vuejs.org/guide/reactivity-computed-watchers.html#%E8%AE%A1%E7%AE%97%E5%80%BC)
+
+待研究
+
+
+#### reactive 不能解构
+
+
+#### ref & reactive
+```ts
+let obj = reactive({
+    count: 1,
+})
+
+const count = ref(0)
+
+watchEffect(() => console.log( count.value, obj))
+// -> logs 0; Proxy 1
+
+setTimeout(() => {
+    count.value++, (obj.count = 3)
+    // -> logs 1; Proxy 3
+}, 1000)
+```
+
 ### Vue Router
 
 #### setup 中访问路由和当前路由
@@ -94,6 +120,52 @@ const UserProfileEdit = () =>
 
 
 ### Vuex VS Pina
+
+#### Pina
+##### store 使用
+**不能对 `store` 进行解构**，因为它是用 `reactive` 包裹的对象，这意味着不需要 `.value` 在 `getter` 之后编写
+```ts
+export default defineComponent({
+  setup() {
+    const store = useStore()
+    // ❌ This won't work because it breaks reactivity
+    // it's the same as destructuring from `props`
+    const { name, doubleCount } = store
+
+    name // "eduardo"
+    doubleCount // 2
+
+    return {
+      // will always be "eduardo"
+      name,
+      // will always be 2
+      doubleCount,
+      // this one will be reactive
+      doubleValue: computed(() => store.doubleCount),
+      }
+  },
+})
+```
+
+为了确保其响应性，可以使用 `storeToRefs()`
+```ts
+import { storeToRefs } from 'pinia'
+
+export default defineComponent({
+  setup() {
+    const store = useStore()
+    // `name` and `doubleCount` are reactive refs
+    // This will also create refs for properties added by plugins
+    // but skip any action or non reactive (non ref/reactive) property
+    const { name, doubleCount } = storeToRefs(store)
+
+    return {
+      name,
+      doubleCount
+    }
+  },
+})
+```
 
 
 ## Typescript

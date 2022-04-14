@@ -63,6 +63,17 @@ export const themeData = {
               ]
             }
           ]
+        },
+        {
+          "text": "答题",
+          "children": [
+            {
+              "text": "题目",
+              "children": [
+                "/test/finpoints.md"
+              ]
+            }
+          ]
         }
       ],
       "selectLanguageName": "简体中文",

@@ -27,6 +27,8 @@ export const pagesData = {
   "v-5266a414": () => import(/* webpackChunkName: "v-5266a414" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/february.html.js").then(({ data }) => data),
   // path: /leetcode/january.html
   "v-7ada4160": () => import(/* webpackChunkName: "v-7ada4160" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/january.html.js").then(({ data }) => data),
+  // path: /test/finpoints.html
+  "v-2e8b206f": () => import(/* webpackChunkName: "v-2e8b206f" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/test/finpoints.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
 }
