@@ -96,8 +96,9 @@ export const themeData = {
           {
             "text": "每日一题",
             "children": [
-              "/leetcode/january.md",
+              "/leetcode/april.md",
               "/leetcode/february.md",
+              "/leetcode/january.md",
               "/leetcode/contest.md"
             ]
           }

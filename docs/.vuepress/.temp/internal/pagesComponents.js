@@ -3,6 +3,14 @@ import { defineAsyncComponent } from 'vue'
 export const pagesComponents = {
   // path: /
   "v-8daa1a0e": defineAsyncComponent(() => import(/* webpackChunkName: "v-8daa1a0e" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/index.html.vue")),
+  // path: /leetcode/april.html
+  "v-66154a18": defineAsyncComponent(() => import(/* webpackChunkName: "v-66154a18" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/april.html.vue")),
+  // path: /leetcode/contest.html
+  "v-2e513634": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e513634" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/contest.html.vue")),
+  // path: /leetcode/february.html
+  "v-5266a414": defineAsyncComponent(() => import(/* webpackChunkName: "v-5266a414" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/february.html.vue")),
+  // path: /leetcode/january.html
+  "v-7ada4160": defineAsyncComponent(() => import(/* webpackChunkName: "v-7ada4160" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/january.html.vue")),
   // path: /article/browser-finger.html
   "v-3c2b42b9": defineAsyncComponent(() => import(/* webpackChunkName: "v-3c2b42b9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/browser-finger.html.vue")),
   // path: /article/dp.html
@@ -13,12 +21,8 @@ export const pagesComponents = {
   "v-1ace5e52": defineAsyncComponent(() => import(/* webpackChunkName: "v-1ace5e52" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/project.html.vue")),
   // path: /article/qrcode.html
   "v-6c743ed9": defineAsyncComponent(() => import(/* webpackChunkName: "v-6c743ed9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/qrcode.html.vue")),
-  // path: /leetcode/contest.html
-  "v-2e513634": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e513634" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/contest.html.vue")),
-  // path: /leetcode/february.html
-  "v-5266a414": defineAsyncComponent(() => import(/* webpackChunkName: "v-5266a414" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/february.html.vue")),
-  // path: /leetcode/january.html
-  "v-7ada4160": defineAsyncComponent(() => import(/* webpackChunkName: "v-7ada4160" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/january.html.vue")),
+  // path: /test/finpoints.html
+  "v-2e8b206f": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e8b206f" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/test/finpoints.html.vue")),
   // path: /algorithms/dp.html
   "v-5699a55b": defineAsyncComponent(() => import(/* webpackChunkName: "v-5699a55b" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/dp.html.vue")),
   // path: /algorithms/graph.html
