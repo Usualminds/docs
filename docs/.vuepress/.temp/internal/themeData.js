@@ -12,13 +12,14 @@ export const themeData = {
             {
               "text": "Vue",
               "children": [
-                "/zh/vue/cli.md"
+                "/theroy/vue/compiler.md",
+                "/theroy/vue/component.md"
               ]
             },
             {
               "text": "React",
               "children": [
-                "/react"
+                "/theroy/react/"
               ]
             }
           ]
@@ -80,6 +81,26 @@ export const themeData = {
       "selectLanguageText": "选择语言",
       "selectLanguageAriaLabel": "选择语言",
       "sidebar": {
+        "/theroy/": [
+          {
+            "text": "框架",
+            "children": [
+              {
+                "text": "Vue",
+                "children": [
+                  "/theroy/vue/compiler.md",
+                  "/theroy/vue/component.md"
+                ]
+              },
+              {
+                "text": "React",
+                "children": [
+                  "/theroy/react/"
+                ]
+              }
+            ]
+          }
+        ],
         "/algorithms/": [
           {
             "text": "算法",

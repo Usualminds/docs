@@ -1,6 +1,26 @@
 import type { SidebarConfig } from '@vuepress/theme-default'
 
 export const zh: SidebarConfig = {
+    '/theroy/': [
+        {
+            text: '框架',
+            children: [
+                {
+                    text: 'Vue',
+                    children: [
+                        '/theroy/vue/compiler.md',
+                        '/theroy/vue/component.md',
+                    ],
+                },
+                {
+                    text: 'React',
+                    children: [
+                        '/theroy/react/',
+                    ],
+                },
+            ],
+        },
+    ],
     '/algorithms/': [
         {
             text: '算法',

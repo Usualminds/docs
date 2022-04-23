@@ -11,13 +11,14 @@ export const zh: NavbarConfig = [
             {
                 text: 'Vue',
                 children: [
-                    '/zh/vue/cli.md',
+                    '/theroy/vue/compiler.md',
+                    '/theroy/vue/component.md',
                 ],
             },
             {
                 text: 'React',
                 children: [
-                    '/react',
+                    '/theroy/react/',
                 ],
             },
         ],
