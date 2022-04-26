@@ -8,6 +8,7 @@ export const zh: SidebarConfig = {
                 {
                     text: 'Vue',
                     children: [
+                        '/theroy/vue/renderer.md',
                         '/theroy/vue/compiler.md',
                         '/theroy/vue/component.md',
                     ],

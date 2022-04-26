@@ -40,3 +40,51 @@ function stackFlat(arrs: []) :[]{
 ```
   </CodeGroupItem>
 </CodeGroup>
+
+## 2022.4.25 中序遍历 ⭐
+
+中序遍历（中->左->右）的三种解法
+
+#### 递归
+
+```ts
+// O(n)
+function inorderTraversal(root: TreeNode | null): number[] {
+    const res = []
+
+    let inorder = (root) => {
+        if(!root) return
+
+        inorder(root.left)
+
+        res.push(root.val)
+
+        inorder(root.right)
+    }
+
+    inorder(root)
+
+    return res
+};
+```
+#### 迭代
+
+```ts
+// O(n)
+function inorderTraversal(root: TreeNode | null): number[] {
+    const res = [],stack = []
+
+    while(root || stack.length){
+        while(root){
+            stack.push(root)
+            root = root.left
+        }
+
+        root = stack.pop()
+        res.push(root.val)
+        root = root.right
+    }
+
+    return res
+};
+```
