@@ -88,3 +88,154 @@ function inorderTraversal(root: TreeNode | null): number[] {
     return res
 };
 ```
+
+## 2022.4.26 链表相交 ⭐
+
+> :point_right: 
+[Leetcode 链接](https://leetcode-cn.com/problems/intersection-of-two-linked-lists/)
+
+给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 
+
+#### 双指针
+```ts
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): ListNode | null {
+    if(headA === null || headB === null) return null
+
+    let you = headA, she = headB
+
+    while(you !== she){
+        you = you === null ? headB : you.next
+        she = she === null ? headA : she.next
+    }
+
+    return you
+};
+```
+
+#### 集合
+```ts
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function getIntersectionNode(headA: ListNode | null, headB: ListNode | null): ListNode | null {
+    let temp = headA, set = new Set()
+
+    while(temp !== null){
+        set.add(temp)
+        temp = temp.next
+    }
+
+    temp = headB
+
+    while(temp !== null){
+        if(set.has(temp)) return temp
+
+        temp = temp.next
+    }
+
+    return null
+};
+
+```
+
+## 2022.4.27 翻转二叉树 ⭐
+> :point_right: 
+[Leetcode 链接](https://leetcode-cn.com/problems/invert-binary-tree/)
+
+给你一棵二叉树的根节点 root ，翻转这棵二叉树，并返回其根节点。
+
+```ts
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     val: number
+ *     left: TreeNode | null
+ *     right: TreeNode | null
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.left = (left===undefined ? null : left)
+ *         this.right = (right===undefined ? null : right)
+ *     }
+ * }
+ */
+
+function invertTree(root: TreeNode | null): TreeNode | null {
+    if(root === null) return null
+
+    let right = invertTree(root.right)
+    let left = invertTree(root.left)
+
+    root.right = left
+    root.left = right
+
+    return root
+};
+```
+
+
+## 2022.4.28 求解二叉树直径 ⭐
+> :point_right: 
+[Leetcode 链接](https://leetcode-cn.com/problems/diameter-of-binary-tree/)
+
+给定一棵二叉树，你需要计算它的直径长度。一棵二叉树的直径长度是任意两个结点路径长度中的最大值。这条路径可能穿过也可能不穿过根结点。
+
+
+
+```ts
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     val: number
+ *     left: TreeNode | null
+ *     right: TreeNode | null
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.left = (left===undefined ? null : left)
+ *         this.right = (right===undefined ? null : right)
+ *     }
+ * }
+ */
+
+function diameterOfBinaryTree(root: TreeNode | null): number {
+    return dfs(root).length - 1
+};
+
+interface Data {
+    depth: number,
+    length: number
+}
+
+function dfs(root: TreeNode | null): Data{
+    if(!root) return {
+        depth: 0, length: 0
+    }
+
+    let left = dfs(root.left), right = dfs(root.right)
+
+    return {
+        depth: Math.max(left.depth, right.depth) + 1,
+        length: Math.max(left.length, right.length, left.depth+right.depth+1)
+    }
+}
+```
