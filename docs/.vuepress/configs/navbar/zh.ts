@@ -11,6 +11,7 @@ export const zh: NavbarConfig = [
             {
                 text: 'Vue',
                 children: [
+                    '/theroy/vue/reactive.md',
                     '/theroy/vue/renderer.md',
                     '/theroy/vue/compiler.md',
                     '/theroy/vue/component.md',
