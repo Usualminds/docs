@@ -1,6 +1,30 @@
 import type { SidebarConfig } from '@vuepress/theme-default'
 
 export const zh: SidebarConfig = {
+    '/base/': [{
+        text: '基础',
+        children: [
+            {
+                text: 'Javascript',
+                children: [
+                    '/base/js/basic.md',
+                    '/base/js/type.md'
+                ],
+            },
+            {
+                text: 'CSS',
+                children: [
+                    '/base/css/basic.md'
+                ],
+            },
+            {
+                text: 'H5',
+                children: [
+                    '/base/h5/basic.md'
+                ],
+            },
+        ]
+    }],
     '/theroy/': [
         {
             text: '框架',

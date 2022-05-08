@@ -17,11 +17,15 @@ const routeItems = [
   ["v-5266a414","/leetcode/february.html",{"title":"二月"},["/leetcode/february","/leetcode/february.md"]],
   ["v-7ada4160","/leetcode/january.html",{"title":"一月"},["/leetcode/january","/leetcode/january.md"]],
   ["v-2e8b206f","/test/finpoints.html",{"title":"Finpoints Assessment"},["/test/finpoints","/test/finpoints.md"]],
+  ["v-0efe085c","/base/css/basic.html",{"title":"CSS"},["/base/css/basic","/base/css/basic.md"]],
+  ["v-3b195be8","/base/h5/basic.html",{"title":"H5"},["/base/h5/basic","/base/h5/basic.md"]],
+  ["v-15b51428","/base/js/basic.html",{"title":"基础"},["/base/js/basic","/base/js/basic.md"]],
+  ["v-3f2b753e","/base/js/type.html",{"title":"类型"},["/base/js/type","/base/js/type.md"]],
+  ["v-1ef6020a","/theroy/react/",{"title":"React"},["/theroy/react/index.html","/theroy/react/index.md"]],
   ["v-b27afcf4","/theroy/vue/compiler.html",{"title":"编译器"},["/theroy/vue/compiler","/theroy/vue/compiler.md"]],
   ["v-971a54e0","/theroy/vue/component.html",{"title":"组件"},["/theroy/vue/component","/theroy/vue/component.md"]],
   ["v-f5170928","/theroy/vue/reactive.html",{"title":"响应式"},["/theroy/vue/reactive","/theroy/vue/reactive.md"]],
   ["v-d9afb83c","/theroy/vue/renderer.html",{"title":"渲染器"},["/theroy/vue/renderer","/theroy/vue/renderer.md"]],
-  ["v-1ef6020a","/theroy/react/",{"title":"React"},["/theroy/react/index.html","/theroy/react/index.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]
 

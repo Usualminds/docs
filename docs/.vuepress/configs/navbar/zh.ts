@@ -2,6 +2,31 @@ import type { NavbarConfig } from '@vuepress/theme-default'
 
 export const zh: NavbarConfig = [
     {
+        text: '基础',
+        link: '/base/js/basic.md',
+        children: [
+            {
+                text: 'Javascript',
+                children: [
+                    '/base/js/basic.md',
+                    '/base/js/type.md'
+                ],
+            },
+            {
+                text: 'CSS',
+                children: [
+                    '/base/css/basic.md'
+                ],
+            },
+            {
+                text: 'H5',
+                children: [
+                    '/base/h5/basic.md'
+                ],
+            },
+        ]
+    },
+    {
         text: '算法',
         link: '/algorithms/tree.md',
     },
