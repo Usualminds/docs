@@ -20,6 +20,7 @@ const routeItems = [
   ["v-0efe085c","/base/css/basic.html",{"title":"CSS"},["/base/css/basic","/base/css/basic.md"]],
   ["v-3b195be8","/base/h5/basic.html",{"title":"H5"},["/base/h5/basic","/base/h5/basic.md"]],
   ["v-15b51428","/base/js/basic.html",{"title":"基础"},["/base/js/basic","/base/js/basic.md"]],
+  ["v-60351610","/base/js/prototype.html",{"title":"原型和原型链"},["/base/js/prototype","/base/js/prototype.md"]],
   ["v-3f2b753e","/base/js/type.html",{"title":"类型"},["/base/js/type","/base/js/type.md"]],
   ["v-1ef6020a","/theroy/react/",{"title":"React"},["/theroy/react/index.html","/theroy/react/index.md"]],
   ["v-b27afcf4","/theroy/vue/compiler.html",{"title":"编译器"},["/theroy/vue/compiler","/theroy/vue/compiler.md"]],

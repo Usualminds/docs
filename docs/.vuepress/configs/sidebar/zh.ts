@@ -8,7 +8,8 @@ export const zh: SidebarConfig = {
                 text: 'Javascript',
                 children: [
                     '/base/js/basic.md',
-                    '/base/js/type.md'
+                    '/base/js/type.md',
+                    '/base/js/prototype.md',
                 ],
             },
             {

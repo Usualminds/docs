@@ -10,7 +10,8 @@ export const themeData = {
               "text": "Javascript",
               "children": [
                 "/base/js/basic.md",
-                "/base/js/type.md"
+                "/base/js/type.md",
+                "/base/js/prototype.md"
               ]
             },
             {
@@ -116,7 +117,8 @@ export const themeData = {
                 "text": "Javascript",
                 "children": [
                   "/base/js/basic.md",
-                  "/base/js/type.md"
+                  "/base/js/type.md",
+                  "/base/js/prototype.md"
                 ]
               },
               {

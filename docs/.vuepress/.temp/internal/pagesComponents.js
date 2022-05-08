@@ -39,6 +39,8 @@ export const pagesComponents = {
   "v-3b195be8": defineAsyncComponent(() => import(/* webpackChunkName: "v-3b195be8" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/h5/basic.html.vue")),
   // path: /base/js/basic.html
   "v-15b51428": defineAsyncComponent(() => import(/* webpackChunkName: "v-15b51428" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/basic.html.vue")),
+  // path: /base/js/prototype.html
+  "v-60351610": defineAsyncComponent(() => import(/* webpackChunkName: "v-60351610" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/prototype.html.vue")),
   // path: /base/js/type.html
   "v-3f2b753e": defineAsyncComponent(() => import(/* webpackChunkName: "v-3f2b753e" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/type.html.vue")),
   // path: /theroy/react/

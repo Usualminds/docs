@@ -9,7 +9,8 @@ export const zh: NavbarConfig = [
                 text: 'Javascript',
                 children: [
                     '/base/js/basic.md',
-                    '/base/js/type.md'
+                    '/base/js/type.md',
+                    '/base/js/prototype.md',
                 ],
             },
             {
