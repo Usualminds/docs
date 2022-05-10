@@ -94,12 +94,236 @@ function shuffle(arr){
     let _arr = arr.slice()
 
     for(let i=0;i<_arr.length;i++){
-        let el = _arr[i], random=getRandom(0,i)
+        let el = _arr[i], random = getRandom(0,i)
         
         _arr[i] = _arr[random]
         _arr[random] = el
     }
 
     return _arr
+}
+```
+## 实现 instanceof
+```js
+function myInstanceof(L, R){
+    let RP = R.prototype
+    L = L.__proto__
+
+    while(true){
+        if(L === null) return false
+
+        if(L === RP) return true
+
+        L = L.__proto__
+    }
+}
+
+// test case
+myInstanceof([], Object)    // true
+```
+
+## 实现 new
+```js
+function myNew(constructor, ...args){
+    let obj = Object.create(constructor.prototype)
+
+    let res = constructor.apply(obj, args)
+
+    return res instanceof Object ? res : obj
+}
+
+
+// test case
+function Person(age, name){
+    this.age = age
+    this.name = name
+
+    console.log('Person name & age', this)
+}
+
+let person = myNew(Person, [12, 'joe'])
+
+person.__proto__ === Person.prototype
+person.constructor === Person
+```
+
+## call & apply & bind
+
+```js
+function myCall(ctx, ...args){
+    ctx = ctx || window
+
+    let caller = Symbol('caller')
+    ctx[caller] = this
+
+    let res = ctx[caller](...args)
+    delete ctx.caller
+
+    return res
+}
+
+// test case
+function Parent(age){
+  this.age = age;
+}
+
+// 定义子
+function Child(age,name){
+    Parent.myCall(this,age);
+    this.name = name
+}
+
+let child = new Child(12,'Lee')
+console.log(child);
+```
+
+## 自增函数
+
+```js
+let count = (function (){
+    let num = 0
+
+    return function(){
+        return num++
+    }
+})()
+
+// test case
+count() // 0 
+count() // 1 
+count() // 2 
+```
+
+## sleep 
+```js
+function sleepEs5(cb, delay){
+    if(typeof cb === 'function'){
+        setTimeout(cb, delay)
+    }
+}
+
+function sleep(delay){
+    return new Promise((resolve) => {
+        setTimeout(resolve, delay)
+    })
+}
+
+sleep(3000).then(()=> {
+    console.log('ok')
+})
+```
+
+## forEach
+
+```js
+arr.forEach(function(currentValue, currentIndex, arr) {}, thisArg)
+
+//currentValue  必需。当前元素
+//currentIndex  可选。当前元素的索引
+//arr           可选。当前元素所属的数组对象。
+//thisArg       可选参数。当执行回调函数时，用作 this 的值。
+
+Array.prototype._forEach = function(fn, thisArgs){
+    let arr = Array.prototype.slice.call(this)
+
+    for(let i=0;i<arr.length;i++){
+        fn.call(thisArgs, arr[i], i, arr)
+    }
+}
+
+let arr = [1,2,3,4]
+
+arr._forEach((item, index, arr) => {
+    console.log(item, index, arr)
+})
+```
+
+## filter 
+
+```js
+Array.prototype._filter = function(fn, thisArgs){
+    let arr = Array.prototype.slice.call(this)
+    let res = []
+
+    for(let i=0;i<arr.length;i++){
+        fn.call(thisArgs, arr[i], i, arr) && res.push(arr[i])
+    }
+
+    return res
+}
+
+let arr = [1,2,3,4]
+arr._filter((i) => i > 2)   [3,4]
+```
+
+## map
+```js
+Array.prototype._map = function(fn, thisArgs){
+    let res = []
+    thisArgs = thisArgs ?? []
+
+    this.reduce((pre, cur, index, arr) => {
+        res.push(fn.call(thisArgs,cur, index, arr))
+    }, [])
+
+    return res
+}
+
+let arr = [1,2,3,4]
+arr.map((item) => item + 1) // [2,3,4,5]
+```
+
+## promise
+```js
+// promise 的三种组状态
+const STATUS = {
+    PENDING: 'PENDING',
+    FULLFIlLED: 'FULLFIlLED',
+    REJECTED: 'REJECTED',
+}
+
+class Promise {
+    constructor(run){
+        // init status is pending
+        this.status = STATUS.PENDING
+
+        // success & fail results
+        this.value = undefined
+        this.reason = undefined
+
+        // callbacks
+        this.onFullfilledCallbacks = []
+        this.onRejectedCallbacks = []
+
+        const resolve = value =>{
+            if(this.status === STATUS.PENDING){
+                this.status = STATUS.FULLFILED
+                this.value = value
+
+                this.onFullfilledCallbacks.forEach((fn) => fn(this.value))
+            }
+        }
+
+        const reject = value => {
+            if(this.status === STATUS.PENDING){
+               this.status = STATUS.REJECTED
+               this.reason = value
+
+                this.onRejectedCallbacks.forEach((fn) => fn(this.reason))
+            }
+        }
+
+        try {
+            run(resolve, reject)
+        } catch(e){
+            reject(e)
+        }
+    }
+
+    then(fullfill, reject){
+        
+    }
+
+
 }
 ```
