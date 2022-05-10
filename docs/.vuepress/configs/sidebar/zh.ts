@@ -10,6 +10,10 @@ export const zh: SidebarConfig = {
                     '/base/js/basic.md',
                     '/base/js/type.md',
                     '/base/js/prototype.md',
+                    '/base/js/this.md',
+                    '/base/js/event.md',
+                    '/base/js/code.md',
+                    '/base/js/others.md',
                 ],
             },
             {

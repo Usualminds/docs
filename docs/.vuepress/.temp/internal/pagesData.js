@@ -37,8 +37,16 @@ export const pagesData = {
   "v-3b195be8": () => import(/* webpackChunkName: "v-3b195be8" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/h5/basic.html.js").then(({ data }) => data),
   // path: /base/js/basic.html
   "v-15b51428": () => import(/* webpackChunkName: "v-15b51428" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/basic.html.js").then(({ data }) => data),
+  // path: /base/js/code.html
+  "v-45ece32a": () => import(/* webpackChunkName: "v-45ece32a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/code.html.js").then(({ data }) => data),
+  // path: /base/js/event.html
+  "v-72cffb00": () => import(/* webpackChunkName: "v-72cffb00" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/event.html.js").then(({ data }) => data),
+  // path: /base/js/others.html
+  "v-23ad1216": () => import(/* webpackChunkName: "v-23ad1216" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/others.html.js").then(({ data }) => data),
   // path: /base/js/prototype.html
   "v-60351610": () => import(/* webpackChunkName: "v-60351610" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/prototype.html.js").then(({ data }) => data),
+  // path: /base/js/this.html
+  "v-0260974c": () => import(/* webpackChunkName: "v-0260974c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/this.html.js").then(({ data }) => data),
   // path: /base/js/type.html
   "v-3f2b753e": () => import(/* webpackChunkName: "v-3f2b753e" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/type.html.js").then(({ data }) => data),
   // path: /theroy/react/
