@@ -320,10 +320,126 @@ class Promise {
         }
     }
 
-    then(fullfill, reject){
-        
+    then(onFullfilled, onRejected){
+        onFullfilled = typeof onFullfilled === 'function' ? onFullfilled : value => value
+        onRejected = typeof onRejected === 'function' ? onRejected : reason => {
+            throw new Error(reason instanceof Error ? reason.message : reason)
+        }
+
+        const self = this
+
+        return new Promise((resolve, reject) => {
+            if(self.status === STATUS.PENDING){
+                self.onFullfilledCallbacks.push(() => {
+                    try {
+                        setTimeout(() => {
+                            const res = onFullfilled(self.value)
+
+                            res intanceof Promise ? res.then((resolve, reject)) : resolve(res) 
+                        })
+                    } catch(e) {
+                        reject(e)
+                    }
+                })
+
+                self.onRejectedCallbacks.push(() => {
+                    try {
+                            setTimeout(() => {
+                                const res = onRejected(self.reason)
+
+                                res instanceof Promise ? res.then((resolve, reject)) : reject(res)
+                    } catch(e){
+                        reject(e)
+                    }
+                )}
+
+            } else if (self.status === STATUS.FULFILLED){
+                try {
+                        setTimeout(() => {
+                            const res = onFullfilled(self.value)
+
+                            res intanceof Promise ? res.then((resolve, reject)) : resolve(res) 
+                    })
+                } catch(e) {
+                        reject(e)
+                    }
+            } else if((self.status === STATUS.REJECTED){
+                setTimeout(()=> {
+                    try{
+                        const res = onFullfilled(self.reason)
+
+                        res instanceof  Promise ? res.then(resolve,reject) : reject(res)
+                    }catch(e){
+                        reject(e)
+                    }
+                })
+            }
+        })
+            
+    },
+
+    catch(onRejected){
+        return this.then(null,onRejected)
     }
 
+    static resolve(value) {
+        if(value of Promise){
+            return value
+        } else {
+            return new Promise((resolve,reject) => resolve(value))
+        }
+    }
 
+    staic reject(value){
+        return new Promise((resolve,reject) => {
+            reject(value)
+        })
+    }
+}
+
+Promise.prototype.finally = function(cb){
+    this.then(value => {
+        return Promise.resolve((cb())).then(() => {
+            return value 
+        })
+    }, err => {
+        return Promise.resolve(cb()).then(()=> {
+            throw error
+        })
+    }
+    )
+}
+```
+
+## Promise 实现网络超时判断
+```js
+const upload = (url, params) => {
+    return Promise.race([
+        uploadPrommise(url, params),
+        uploadSetTiemout(100)
+    ])
+}
+
+function uploadPrommise(url, params){
+    return new Promise((resolve,reject) =>  {
+        fetch(url,{
+            headers: {'Content-Type': 'multipart/form-data'}, // 以formData形式上传文件
+            withCredentials: true
+        }).then((data) => {
+            if(data.code === 200){
+                resolve(data)
+            } else {
+                reject(data)
+            }
+        })
+    })
+}
+
+function uploadSetTiemout(delay){
+    return new Promise((resolve, reject) => {
+        setTimeout(()=> {
+            reject({timeoutMsg: '上传超时'})
+        }, delay)
+    })
 }
 ```
