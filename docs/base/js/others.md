@@ -162,3 +162,118 @@ function flat(arr){
 let arr = [1,2,[1,2,3,[1,2,3,4,45]]]
 flat(arr) //  [1, 2, 1, 2, 3, 1, 2, 3, 4, 45]
 ```
+
+## 定时器场景
+
+写一个 `mySetInterVal(fn, a, b)`,每次间隔 `a,a+b,a+2b` 的时间，然后写一个 `myClear`，停止上面的 `mySetInterVal`
+
+```js
+function mySetInterVal(fn,a,b){
+  this.a = a
+  this.b = b
+  this.time = 0
+  this.handle = -1
+
+  this.start = () => {
+    this.handle = setTimeout(() => {
+      fn()
+      this.time++
+      this.start()
+      console.log( this.a + this.time * this.b);
+    }, this.a + this.b * this.time)
+  }
+
+  this.stop = () => {
+    clearTimeout(this.handle)
+    this.time = 0
+  }
+} 
+
+// test case 
+let a = new mySetInterVal(() => {console.log('123')},1000, 2000 );
+a.start();
+a.stop();
+```
+## 数组转为树
+```js
+let list = [
+  { id: 1, name: '部门A', parentId: 0 },
+  { id: 3, name: '部门C', parentId: 1 },
+  { id: 4, name: '部门D', parentId: 1 },
+  { id: 5, name: '部门E', parentId: 2 },
+  { id: 6, name: '部门F', parentId: 3 },
+  { id: 7, name: '部门G', parentId: 2 },
+  { id: 8, name: '部门H', parentId: 4 }
+];
+
+function convert(list){
+  let map = list.reduce((pre, cur) => {
+    pre[cur.id] = cur
+
+    return pre
+  },[])
+
+  let results = []
+  for(let key in map){
+    let ele = map[key]
+
+    if(ele.parentId === 0) {
+      results.push(ele)
+    } else {
+      let parent = map[ele.parentId]
+      if(parent) {
+        parent.children = parent.children ?? []
+        parent.children.push(ele)
+      }
+    }
+  }
+
+  return results
+}
+
+console.log(convert(list))
+```
+
+## 输出一个随机的 16 进制颜色
+```js
+let color = '#'+ Math.random().toString(16).substr(-6); 
+document.body.style.backgroundColor = color;
+```
+
+## trim
+
+```js
+Function.prototype.trim = function(){
+  return this.replace(/^\s+/,'').replace(/\s+$/,'')
+}
+```
+
+## 随机
+```js
+let a = []
+for(let i=0;i<100;i++){
+  a[i] = i+1
+}
+
+a.sort(()=>0.5-Math.random())
+
+console.log(a)
+```
+
+## 字符串排序
+```js
+let s = "kadfjkajfkhgofqnmvc";
+
+console.log(Array.from(s).sort().join(""))
+```
+
+## 随机字符串
+```js
+function randomString(length) {
+  let str = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+  let result = '';
+  for (let i = length; i > 0; --i) 
+    result += str[Math.floor(Math.random() * str.length)];
+  return result;
+}
+```
