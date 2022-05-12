@@ -443,3 +443,415 @@ function uploadSetTiemout(delay){
     })
 }
 ```
+
+## 批量请求函数
+
+- 要求最大并发数 maxNum
+- 每当有一个请求返回，就留下一个空位，可以增加新的请求
+- 所有请求完成后，结果按照 urls 里面的顺序依次打出
+
+```js
+function mutilyRequest(urls, limit){
+    let length = urls.length
+    let count = 0
+    let results = Array(length).fill(false)
+
+    return new Promise((resolve, reject) => {
+        while(count < limit){
+            next()
+        }
+
+        function next(){
+            let current = count++
+
+            if(current >= length){
+                !results.includes(false) && resolve(results)
+                return 
+            }
+
+            let url = urls[current]
+
+            console.log(`current request starting, url is: ${url}, this is ${current} request`)
+
+            request(url).then(data => {
+                results[current] = data
+
+                console.log(`current request ${current}: ${url} has finished`)
+
+                if(current < length){
+                    next()
+                }
+            }).catch((e) => {
+                results[current] = e
+
+                console.log(`current request ${current}: ${url} error`)
+
+                if(current<length){
+                    next()
+                }
+            })
+        }
+    })
+}
+
+function request(url){
+    return new Promise((resolve, reject) => {
+        let res
+        fetch(url,{
+            headers: {
+                'connect-src' : self
+            }
+        }).then(data => {
+            res = data
+        })
+        resolve(`current request is', ${url}, res is : ${res}`)
+        // fetch(url)
+    })
+}
+
+let urls = [
+    'https://cat-fact.herokuapp.com/facts',
+    'https://cat-fact.herokuapp.com/facts',
+    'https://cat-fact.herokuapp.com/facts',
+    '3',
+    'https://cat-fact.herokuapp.com/facts',
+    '5',
+    'https://cat-fact.herokuapp.com/facts',
+    '7',
+]
+
+mutilyRequest(urls, 3).then((res) => {
+    console.log('res: ', res)
+})
+```
+
+## Vue 双向绑定
+- 对象，包含复杂对象
+- 值类型
+- 数组,改造原型
+
+TODO: 
+
+```js
+function defineReactive(data, key, value) {
+    Object.defineProperty(data, key, {
+        get: function(val){
+            return value
+        },
+
+        set: function(newVal){
+            observer(value)
+
+            if(value == newVal) {
+                return
+            }
+
+            val = newVal
+        }
+    })
+}
+
+// const originArrayPrototype = Array.prototype
+// const newArrayObj = Object.create(originArrayPrototype)
+
+// ['push','shift','unshift','pop'].forEach((name) => {
+//     console.log('update', name)
+//         newArrayObj[name] = function(){
+//         console.log('update', name)
+//         originArrayPrototype[name].call(this,...arguments)
+//     }
+// })
+
+
+function observer(target){
+    if(typeof target !== 'object' || target === null){
+        return target
+    }
+
+    // if(target instanceof Array){
+    //     target.__proto__ = newArrayObj
+    // }
+
+    for(let key in target){
+        defineReactive(target, key, target[key])
+    }
+}
+
+let obj = {
+    num: 1
+}
+
+observer(obj)
+
+obj.num = 3
+```
+
+## 虚拟 dom 过程( html 转为 json 格式)
+```js
+const str1 = '<div>1<span>2<a>3</a>4</span>5<span>6<a>7</a>8<a>9</a>10</span>11</div>';
+function Dom2JSON(str) {
+    str = str.split('<').map(x => x.split('>'));
+    let res = [],stack = [],temp = {},cur = {},key = 0;
+    // 获取树形结构
+    for(let i = 1;i < str.length; i++) {
+        if (str[i][0].indexOf('/') === -1) {
+            temp = {};
+            temp['key'] = key++;
+            temp['tag'] = str[i][0];
+            temp['value'] = str[i][1];
+            temp['children'] = [];
+            temp['parent'] = stack.length === 0 ? 0 : stack[0]['key'];
+            stack.unshift(temp);
+        } else {
+            cur = stack.shift();
+            // 当前元素为根元素时栈为空
+            stack.length !== 0 && (stack[0]['value'] = stack[0]['value'] + cur['value'] + str[i][1]);
+            res.unshift(cur);
+        }
+    }
+    // 使得遍历时索引与key值匹配
+    res = res.sort((x, y) => x['key'] - y['key']);
+    for (let i = res.length - 1;i > 0;i--) {
+        temp = {};
+        temp['tag'] = res[i]['tag'];
+        temp['value'] = res[i]['value'];
+        temp['children'] = res[i]['children'];
+        res[res[i]['parent']]['children'].unshift(temp);
+    }
+    res = res[0];
+    delete res['parent'];
+    delete res['key'];
+    return JSON.parse(JSON.stringify(res));
+}
+
+console.log(Dom2JSON(str1));
+```
+
+## 实现一个 ajax
+
+```js
+const ajax = (url, options = {
+    method: 'GET',
+    aysnc: true,
+    data: null
+}) => {
+    return new Promise((resolve, reject) => {
+        let xhr = new XMLHttpRequest()
+
+        xhr.onreadystatechange = () => {
+            if(xhr.readState === 4){
+                if(xhr.status === 200){
+                    resolve(JSON.parse(xhr.resonseText))
+                } else if(xhr.status > 400) (
+                    reject('xhr error occured')
+                )
+            }
+        }
+
+        const { method, async, data } = options
+
+        xhr.open(method,url, async)
+
+        xhr.send(data)
+    })
+}
+
+ajax('https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/send/bcd.json')
+```
+
+## 红绿灯
+3s 打印 red，2s 打印 green，1s 打印 yellow
+```js
+async function setColor(color, time){
+    return new Promise((resolve) => {
+        setTimeout(()=> {
+            console.log(color)
+            resolve()
+        }, time)
+    })
+}
+
+async function getter(){
+    await setColor('red', 1000)
+    await setColor('green', 2000)
+    await setColor('yellow', 3000)
+}
+```
+
+## 柯里化
+```js
+function cury(fn, ...args){
+    // 判断参数的长度是否已经满足函数所需参数的长度 够了就执行，否则新增参数然后返回函数
+    return fn.length <= args.length ? fn(...args) : cury.bind(null, fn, ...args)
+}
+
+let add = cury((a,b,c) => a+b+c)
+
+// test case
+console.log(add(1,2,3))
+console.log(add(1,2)(3))
+console.log(add(1)(2)(3))
+```
+
+## 设计模式
+
+#### 单例模式
+```js
+class Single {
+    constructor(name){
+        this.name = name
+        this.instance = null
+    }
+
+    static getInstance(){
+        if(!this.instance){
+            this.instance = new Single(name)
+        }
+
+        return this.instance
+    }
+}
+
+let a = Single.getInstance('a')
+let b = Single.getInstance('b')
+
+console.log(a === b)
+```
+
+#### 观察者模式
+```js
+// 四种状态：sub, pub, remove, removeAll
+class Event {
+    constructor(){
+        this.events = {}
+    }
+
+    sub(name, callback){
+        if(!this.events[name]){
+            this.events[name] = [callback]
+        } else {
+            this.events[name].push(callback)
+        }
+    }
+
+    pub(name){
+        if(this.events[name]){
+            this.events[name].forEach((callback) => callback())
+        }
+    }
+
+    remove(name, callback){
+        if(this.events[name]){
+            this.events[name] = this.events[name].filter((fn) => fn !== callback)
+        }
+    }
+
+    removeAll(name){
+        if(this.events[name]){
+            this.events[name] = []
+        }
+    }
+}
+
+// test case 
+let events = new Event()
+
+function logger(){
+    console.log(...arguments)
+}
+
+function getTime(){ return new Date()}
+
+function makeArray(){
+    return Array(10).fill(false)
+}
+
+events.sub('logger', logger)
+events.sub('logger', getTime)
+events.sub('makeArray', makeArray)
+
+events.pub('logger')
+events.pub('makeArray')
+
+events.remove('makeArray', makeArray)
+
+events.sub('makeArray', makeArray)
+
+events.removeAll('logger')
+
+console.log(events)
+```
+
+## 发布订阅模式
+- on
+- emit
+- remove
+- once
+
+```js
+class EventEmitter {
+    constructor(){
+        this.events = {}
+    }
+
+    on(name, cb){
+        if(!this.events[name]){
+            this.events[name] = [cb]
+        } else {
+            this.events[name].push(cb)
+        }
+    }
+
+    emit(name){
+        this.events[name] && this.events[name].forEach(fn => fn())
+    }
+
+    remove(name, cb){
+        if(this.events[name]){
+            this.events[name] = this.events[name].filter(fn => fn !== cb)
+        }
+    }
+
+    once(name, cb) {
+        let fn = () => {
+            cb()
+            this.remove(name, cb)
+        }
+
+        this.on(name, fn)
+    }
+}
+
+// test case
+
+let em = new EventEmitter();
+let workday = 0;
+
+em.on("work", function() {
+    workday++;
+    console.log("work everyday");
+});
+
+em.once("love", function() {
+    console.log("just love you");
+});
+
+function makeMoney() {
+    console.log("make one million money");
+}
+
+em.on("money",makeMoney)
+
+
+let time = setInterval(() => {
+    em.emit("work");
+    em.remove("money",makeMoney);
+    em.emit("money");
+    em.emit("love");
+    if (workday === 5) {
+        console.log("have a rest")
+        clearInterval(time);
+    }
+}, 1);
+```
+
