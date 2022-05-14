@@ -277,3 +277,35 @@ function randomString(length) {
   return result;
 }
 ```
+
+## 在页面插入 10000 个元素，如何进行优化
+```js
+let container = document.getElementById('container')
+let fragment = document.createDocumentFragment()
+	for(let i = 0; i < 10000; i++){
+		let li = document.createElement('li')
+    li.innerHTML = 'hello world'
+
+    // 所有构造的节点加入文档片段
+	  fragment.appendChild(li)
+  }
+
+  // 节点构造完成，将文档对象添加到页面中
+	container.appendChild(fragment);
+```
+
+## Object.is 和 === 的区别
+
+Object 在严格等于的基础上修复了一些特殊情况下的失误，具体来说就是 +0 和 -0，NaN 和 NaN。
+
+```js
+function is(x, y) {
+  if (x === y) {
+    //运行到1/x === 1/y的时候x和y都为0，但是1/+0 = +Infinity， 1/-0 = -Infinity, 是不一样的
+    return x !== 0 || y !== 0 || 1 / x === 1 / y;
+  } else {
+    //NaN===NaN是false,这是不对的，我们在这里做一个拦截，x !== x，那么一定是 NaN, y 同理
+    //两个都是NaN的时候返回true
+    return x !== x && y !== y;
+  }
+  ```

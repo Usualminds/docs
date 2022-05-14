@@ -17,6 +17,12 @@ export const zh: SidebarConfig = {
                 ],
             },
             {
+                text: 'Typescript',
+                children: [
+                    '/base/ts/basic.md'
+                ],
+            },
+            {
                 text: 'CSS',
                 children: [
                     '/base/css/basic.md'

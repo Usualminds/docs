@@ -19,6 +19,12 @@ export const themeData = {
               ]
             },
             {
+              "text": "Typescript",
+              "children": [
+                "/base/ts/basic.md"
+              ]
+            },
+            {
               "text": "CSS",
               "children": [
                 "/base/css/basic.md"
@@ -127,6 +133,12 @@ export const themeData = {
                   "/base/js/event.md",
                   "/base/js/code.md",
                   "/base/js/others.md"
+                ]
+              },
+              {
+                "text": "Typescript",
+                "children": [
+                  "/base/ts/basic.md"
                 ]
               },
               {
