@@ -499,4 +499,224 @@ let bb: B = {
 ```
 
 ## 类型别名
+接口声明能够为对象类型命名，类型别名声明能为 typescript 任何类型命名。
+
+类型和接口的几个区别：
+- 类型别名表示非对象类型（特别是联合类型），接口表示对象类型
+- 接口可以继承其它接口或者类，类型别名不可以
+- 接口名会显示在编译器和代码提示中不同,接口提示更加具体友好
+- 接口可以合并声明，类型别名不可以
+```ts
+type StringType = string
+type BooleanType = true | false
+type Point = { x: number; y: number; z?: number }
+type Numeric = number | bigint
+
+
+type T0 = { name: T0 }
+type T1 = () => T1
+type T2 = new () => T2
+
+type T3 = T3[]
+type T4 = Array<T4>
+type T5 = [number, T5]
+
+interface C<T> {
+    name: T;
+}
+
+type T6 = C<T6>
+class D<T>{
+    name: T | undefined
+}
+type T7 = D<T7>
+
+type Json =
+    | string
+    | number
+    | boolean
+    | null
+    | { [property: string]: Json }
+    | Json[]
+const data: Json = {
+    name: 'Joe',
+    version: { main: 3 }
+}
+
+function test(value: Numeric) {
+    const bar: boolean = value
+}
+
+// 声明合并行为，相同接口合并声明
+interface CCC {
+    name: string
+}
+interface CCC {
+    age: number
+}
+let user: CCC = {
+    name: 'Joe',
+    age: 6
+}
+```
+
+## 类
+类本质上还是函数，是一种语法糖。类的构造函数也可以重载
+
+### 初始化
+- 声明初始化
+- 构造函数初始化
+```ts
+class Circle {
+    radius: number;
+
+    // 声明初始化
+    readonly length: number = 10;
+
+    private _distance: number = 0;
+
+    #last_distance: number // 私有属性
+
+    constructor() {
+        // 构造函数初始化
+        this.radius = 0
+        this.#last_distance = 10
+    }
+
+    area(): number {
+        return Math.PI * this.radius * this.radius
+    }
+
+    // get & set 的方法属性必须相同，均为 public or private
+    get() {
+        return this._distance
+    }
+
+    set(value: number) {
+        if (value < 0) return
+        this._distance = value
+    }
+
+    [prop: number]: string
+}
+
+const circle = new Circle()
+circle.radius
+
+circle.radius = -10
+circle.radius   // 0
+
+circle.radius = 100
+circle.radius   // 100
+
+circle.area()
+circle.get()
+```
+
+### 继承
+类单继承，一个类可以继承一个基类,但可以实行多个接口,同理，接口可以继承多个接口
+```ts
+class Animal {
+    heigth: number;
+    name: string
+
+    constructor() {
+        this.heigth = 100
+    }
+
+    switchName() {
+        this.heigth = this.heigth > 100 ? 60 : 200
+        this.name = this.heigth > 100 ? 'High' : 'Low'
+    }
+}
+
+class Cat extends Animal {
+    // 静态成员
+    static version: string = '1.0'
+
+    // 构造函数继承
+    constructor() {
+        super()
+    }
+    switchName() {
+        super.switchName()
+        console.log(`this name is: ${this.name}`)
+    }
+}
+
+let cat = new Cat()
+
+cat.switchName()    // 'High'
+cat.switchName()    // 'Low'
+Cat.version
+// 实现
+
+interface EE {
+    name: string;
+    seq: number
+}
+interface FF {
+    time: Date
+}
+
+// 接口多个继承
+interface GG extends EE, FF {
+
+}
+
+// 类多个实现
+class HH implements EE, FF {
+    name = 'Joe'
+    seq = 1
+    time = new Date()
+}
+```
+
+### 实例化
+实例化顺序
+- 初始化基类属性
+- 调用基类构造函数
+- 初始化派生类属性
+- 调用派生类构造函数
+
+### 抽象类
+抽象类不可以被实例化，即不能通过 new 来创建实例，且抽象类中不能包含具体实现，抽象类适合作为基类
+```ts
+abstract class Base {
+    name: string
+
+    // 抽象成员只能声明
+    abstract getAbsName(): string
+
+    // 非抽象成员可以实现代码
+    getName(): string {
+        return ''
+    }
+}
+```
+
+### this
+```ts
+
+class Counter {
+    private count: number = 0
+
+    public add(): this {
+        this.count++
+        return this
+    }
+
+    public min(): this {
+        this.count--
+        return this
+    }
+
+    public getSum(): number {
+        return this.count
+    }
+}
+
+let counter = new Counter()
+counter.add().add().min().add().getSum()
+```
 
