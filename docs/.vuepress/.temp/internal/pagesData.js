@@ -35,6 +35,10 @@ export const pagesData = {
   "v-0efe085c": () => import(/* webpackChunkName: "v-0efe085c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/css/basic.html.js").then(({ data }) => data),
   // path: /base/h5/basic.html
   "v-3b195be8": () => import(/* webpackChunkName: "v-3b195be8" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/h5/basic.html.js").then(({ data }) => data),
+  // path: /base/ts/basic.html
+  "v-4643b6f6": () => import(/* webpackChunkName: "v-4643b6f6" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/ts/basic.html.js").then(({ data }) => data),
+  // path: /base/ts/grammer.html
+  "v-6b381d61": () => import(/* webpackChunkName: "v-6b381d61" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/ts/grammer.html.js").then(({ data }) => data),
   // path: /base/js/basic.html
   "v-15b51428": () => import(/* webpackChunkName: "v-15b51428" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/basic.html.js").then(({ data }) => data),
   // path: /base/js/code.html
@@ -49,8 +53,6 @@ export const pagesData = {
   "v-0260974c": () => import(/* webpackChunkName: "v-0260974c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/this.html.js").then(({ data }) => data),
   // path: /base/js/type.html
   "v-3f2b753e": () => import(/* webpackChunkName: "v-3f2b753e" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/type.html.js").then(({ data }) => data),
-  // path: /base/ts/basic.html
-  "v-4643b6f6": () => import(/* webpackChunkName: "v-4643b6f6" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/ts/basic.html.js").then(({ data }) => data),
   // path: /theroy/react/
   "v-1ef6020a": () => import(/* webpackChunkName: "v-1ef6020a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/theroy/react/index.html.js").then(({ data }) => data),
   // path: /theroy/vue/compiler.html

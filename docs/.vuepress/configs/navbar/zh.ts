@@ -20,7 +20,8 @@ export const zh: NavbarConfig = [
             {
                 text: 'Typescript',
                 children: [
-                    '/base/ts/basic.md'
+                    '/base/ts/basic.md',
+                    '/base/ts/grammer.md'
                 ],
             },
             {

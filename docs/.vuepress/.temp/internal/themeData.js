@@ -21,7 +21,8 @@ export const themeData = {
             {
               "text": "Typescript",
               "children": [
-                "/base/ts/basic.md"
+                "/base/ts/basic.md",
+                "/base/ts/grammer.md"
               ]
             },
             {
@@ -138,7 +139,8 @@ export const themeData = {
               {
                 "text": "Typescript",
                 "children": [
-                  "/base/ts/basic.md"
+                  "/base/ts/basic.md",
+                  "/base/ts/grammer.md"
                 ]
               },
               {
