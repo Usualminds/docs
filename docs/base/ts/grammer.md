@@ -544,4 +544,25 @@ const nums = [1, 2] as const    // 数组长度为 2，不可变
 const total = add(...nums)
 ```
 
-## 类型细化
+## 类型断言
+```ts
+function assert(x: unknown): asserts x is T {}
+function assert(x: unknown): asserts x {}
+
+function assertIsNumber(x: unknown): asserts x is number {
+    if (typeof x !== 'number') {
+        throw new TypeError(`${x} should be a number`)
+    }
+}
+
+function f1(x: any, y: unknown) {
+    assertIsNumber(x)
+    assertIsNumber(y)
+
+    // do something
+    console.log('x is number')
+}
+
+f1('123', '')
+f1(123,12)
+```
