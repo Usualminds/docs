@@ -20,7 +20,8 @@ export const zh: SidebarConfig = {
                 text: 'Typescript',
                 children: [
                     '/base/ts/basic.md',
-                    '/base/ts/grammer.md'
+                    '/base/ts/grammer.md',
+                    '/base/ts/deep.md'
                 ],
             },
             {

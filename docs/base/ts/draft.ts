@@ -100,7 +100,7 @@ function foo(this: { name: string }) {
     this.name = 'Joe'
 
     // error: 不能将类型“1”分配给类型“string”
-    this.name = 1
+    // this.name = 1
 }
 
 interface A {
