@@ -27,4 +27,12 @@ typeof temp === 'number'
 - --target
 - --project
 - --help
-- 
+  
+`tsc init` 初始化 `tsconfig.json`
+
+## 三斜线指令
+必须放在代码文件首行，否则无效
+```ts
+/// <reference path=''>
+/// <reference lib=''>
+```
