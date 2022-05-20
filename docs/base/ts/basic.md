@@ -385,9 +385,23 @@ const abs: (x: number) => number = Math.abs
 // 对象类型
 const abs_:  {(x: number) : number} = Math.abs
 
-// let fn: (x: number, y: string) => string
+// 接口定义函数
+interface TestFunc {
+    (name: string): string
+}
 
-// function fn_ (x: number, y: string): string {  return '' }
+const func: TestFunc = (name: string) => {
+    return name
+}
+
+// 接口定义构造函数
+interface TestFuncConstructor {
+    new(name: string): string
+}
+
+function funcConstructor(ctr: TestFuncConstructor): string {
+    return new ctr('')
+}
 
 ```
 

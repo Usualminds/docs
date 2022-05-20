@@ -324,6 +324,7 @@ type bbbb = () => (bigint | number)
 > 只有 `string | number | symbol` 才可以作为对象的键
 
 ### 索引类型查询
+-  `keyof T`
 ```ts
 // one
 interface Focus {
@@ -370,6 +371,7 @@ type KeyofIC = keyof InterC //  "area" | "radius" | "width" | "height"
 ```
 
 ### 索引访问类型
+- `T[K]`
 ```ts
 const sbl: unique symbol = Symbol()
 
@@ -405,6 +407,8 @@ function f(circle: Circle) {
     const area = gerProperty(circle,'area') //  const area: () => number
     const radius = gerProperty(circle,'get')    //  const radius: number
 }
+
+
 ```
 
 ## 映射对象类型
@@ -447,6 +451,20 @@ type MappedObjectType = { [P in typeof s]: boolean }
 type Partial<T> = { [P in keyof T]?: T[P] }
 
 type Readonly<T> = {readonly [P in keyof T]: T[P]}
+
+// 修改类型对象的键
+type MapType<T> = {
+    [Key in keyof T 
+        as`${Key & string}${Key & string}`
+    ]: [
+    T[Key], T[Key],
+    ]
+}
+type DoubleKey = MapType<{'a': 1}>  
+// {
+//     aa: [1, 1];
+// }
+
 ```
 
 ### 同态映射对象类型
@@ -510,6 +528,43 @@ type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => i
 type Record<K extends keyof any, T> = {
     [P in K]: T;
 };
+```
+
+## infer 
+```ts
+// 提取类型的第一个元素
+type ArrayFirst<T extends unknown[]> = T extends [infer F, ...infer R] ? F : never
+
+type MyArray = ArrayFirst<[1, 2, 3]>    // 3
+
+// 提取类型的最后一个元素
+type LastArray<T extends unknown[]> = T extends [...unknown[], infer Last] ? Last: never
+
+type LastELe =  LastArray<[1,2,3]>  // 1
+
+// 模拟 shift
+type ShiftArr<Arr extends unknown[]> = 
+    Arr extends [] ? [] 
+        : Arr extends [unknown, ...infer Rest] ? Rest : never;
+
+type ShiftEle = ShiftArr<[1,2,3]>  // [2,3]
+
+
+// ReturnType
+type ReturnType<T extends (...args: any) => any> = T extends (...args: any) => infer R ? R : any
+
+// GetParameters
+type GetParameters<Func extends Function> = 
+    Func extends (...args: infer Args) => unknown ? Args : never;
+
+// Get Constructor Param
+type ConstructorParam<CT extends new (...args: any) => any> = CT extends new (...args: infer T) => any ? T: never
+
+interface CT {
+    new (name: string, age: unknown[]):string
+}
+
+type P = ConstructorParam<CT>
 ```
 
 ## 类型查询

@@ -36,3 +36,36 @@ typeof temp === 'number'
 /// <reference path=''>
 /// <reference lib=''>
 ```
+
+## 体操
+
+### StartWith
+```ts
+// 判断字符串是否以某个前缀开头，也是通过模式匹配
+type StartWith<Str extends string, Prefix extends string> = Str extends `${Prefix}${string}` ? true : false
+
+type Start = StartWith<'abc', 'a'>  // true
+type Start = StartWith<'bbc', 'a'>  // false
+```
+
+### Replace
+字符串可以匹配一个模式类型，提取想要的部分，自然也可以用这些再构成一个新的类型
+```ts
+type Replace<Str extends string, From extends string, To extends string> = Str extends `${infer Prefix}${ From }${ infer Suffix }` ? `${ Prefix } ${ To } ${ Suffix } `: Str
+
+type R = Replace<'abc is ?', '?', 'ok'>
+
+// type R = "abc is  ok  "
+```
+
+### Trim
+
+```ts
+type TrimRightStr<Str extends string> = Str extends `${infer Rest}${' ' | '\n' | '\r'}` ? TrimRightStr<Rest>: Str
+type TrimLefttStr<Str extends string> = Str extends `${' ' | '\n' | '\r'}${infer Rest}` ? TrimLefttStr<Rest>: Str
+
+type Trim<Str extends string> = TrimRightStr<TrimLefttStr<Str>>
+
+type OKTrim = Trim<'   000   '>
+// '000'
+```

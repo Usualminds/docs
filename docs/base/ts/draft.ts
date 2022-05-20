@@ -593,3 +593,57 @@ const zoo = [new Dog(), new Sheep()]
 
 let ae = undefined
 const ah = 0
+
+interface TestFunc {
+    (name: string): string
+}
+
+interface TestFuncConstructor {
+    new(name: string): string
+}
+
+
+const func: TestFunc = (name: string) => {
+    return name
+}
+function funcConstructor(ctr: TestFuncConstructor): string {
+    return new ctr('')
+}
+
+// 提取类型的一部分
+type ArrayFirst<T extends unknown[]> = T extends [infer F, ...infer R] ? F : never
+
+type MyArray = ArrayFirst<[1, 2, 3]>
+
+type MapType<T> = {
+    [Key in keyof T 
+        as`${Key & string}${Key & string}`
+    ]: [
+    T[Key], T[Key],
+]
+}
+
+// type MapType<T> = {
+//     [
+//     Key in keyof T 
+//             as`${Key & string}${Key & string}${Key & string}`
+//     ]: [T[Key], T[Key], T[Key]]
+// }
+
+// 
+
+type StartWith<Str extends string, Prefix extends string> = Str extends `${Prefix}${string}` ? true : false
+
+type Start = StartWith<'abc', 'a'>
+
+type Replace<Str extends string, From extends string, To extends string> = Str extends `${infer Prefix}${ From } ${ infer Suffix } ` ? `${ Prefix } ${ To } ${ Suffix } `: Str
+type R = Replace<'abc is ?', '?', 'ok'>
+
+type TrimRightStr<Str extends string> = Str extends `${ infer Rest } ${ ' ' | '\n' | '\r' } ` ? TrimRightStr<Rest>: Str
+type TrimLefttStr<Str extends string> = Str extends `${ ' ' | '\n' | '\r' } ${ infer Rest } ` ? TrimLefttStr<Rest>: Str
+
+type Trim<Str extends string> = TrimRightStr<TrimLefttStr<Str>>
+
+type OKTrim = Trim<' 000 '>
+
+type ConstructorParam<CT extends new (...args: any) => any> = CT extends new (...args: infer T) => any ? T: never
