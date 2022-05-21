@@ -647,3 +647,21 @@ type Trim<Str extends string> = TrimRightStr<TrimLefttStr<Str>>
 type OKTrim = Trim<' 000 '>
 
 type ConstructorParam<CT extends new (...args: any) => any> = CT extends new (...args: infer T) => any ? T: never
+
+type UppercaseKey<O extends object> = {
+    [Key in keyof O as Uppercase<Key & string>] : O[Key]
+}
+
+type keys = 'name' | 'age'
+
+type Test = Record<keyof keys, number>
+
+type FilterType<O extends Record<string, any>, T> = {
+    [Key in keyof O as T extends O[Key] ? Key : never] : O[Key]
+}
+
+type DeepPromise<T> = T extends Promise<infer P> ? DeepPromise<P> : T
+
+type SS = DeepPromise<Promise<Promise<Promise<string>>>>
+
+type ReverseArray<Arr extends unknown> = Arr extends [infer First, ...infer Rest] ? [...ReverseArray<Rest>, First] : Arr

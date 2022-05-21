@@ -69,3 +69,76 @@ type Trim<Str extends string> = TrimRightStr<TrimLefttStr<Str>>
 type OKTrim = Trim<'   000   '>
 // '000'
 ```
+
+## Uppercase
+```ts
+type UppercaseKey<O extends object> = {
+    [Key in keyof O as Uppercase<Key & string>] : O[Key]
+}
+
+
+type obj = {
+  readonly name: string;
+  age?: number;
+  gender: boolean;
+}
+
+type T = UppercaseKey<obj>
+
+// output
+// type T = {
+//     readonly NAME: string;
+//     AGE?: number | undefined;
+//     GENDER: boolean;
+// }
+```
+
+## Record
+```ts
+type Keys = 'name' | 'age'
+
+type Test = Record<Keys, number>
+
+// type Test = {
+//     name: number;
+//     age: number;
+// }
+
+type Record<K extends string | number | symbol, T> = { [P in K]: T; }
+```
+
+## Filter
+```ts
+
+type FilterType<O extends Record<string, any>, T> = {
+    [Key in keyof O as T extends O[Key] ? Key : never] : O[Key]
+}
+
+type StringType = FilterType<{
+    name: string,
+    age: number,
+    oters: number[]
+}, number[]>
+
+// type StringType = {
+//     oters: number[];
+// }
+```
+
+## Deep
+```ts
+type DeepPromise<T> = T extends Promise<infer P> ? DeepPromise<P> : T
+
+type SS = DeepPromise<Promise<Promise<Promise<string>>>>
+
+// number
+```
+
+## Reverse
+```ts
+type ReverseArray<Arr extends unknown> = Arr extends [infer First, ...infer Rest] ? [...ReverseArray<Rest>, First] : Arr
+
+type SS = ReverseArray<[1,3,6,'0']>
+
+// ['0',6,,3,1]
+```

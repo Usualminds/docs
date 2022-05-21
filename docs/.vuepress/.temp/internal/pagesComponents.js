@@ -37,10 +37,6 @@ export const pagesComponents = {
   "v-0efe085c": defineAsyncComponent(() => import(/* webpackChunkName: "v-0efe085c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/css/basic.html.vue")),
   // path: /base/h5/basic.html
   "v-3b195be8": defineAsyncComponent(() => import(/* webpackChunkName: "v-3b195be8" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/h5/basic.html.vue")),
-  // path: /base/ts/basic.html
-  "v-4643b6f6": defineAsyncComponent(() => import(/* webpackChunkName: "v-4643b6f6" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/ts/basic.html.vue")),
-  // path: /base/ts/grammer.html
-  "v-6b381d61": defineAsyncComponent(() => import(/* webpackChunkName: "v-6b381d61" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/ts/grammer.html.vue")),
   // path: /base/js/basic.html
   "v-15b51428": defineAsyncComponent(() => import(/* webpackChunkName: "v-15b51428" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/basic.html.vue")),
   // path: /base/js/code.html
@@ -55,6 +51,12 @@ export const pagesComponents = {
   "v-0260974c": defineAsyncComponent(() => import(/* webpackChunkName: "v-0260974c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/this.html.vue")),
   // path: /base/js/type.html
   "v-3f2b753e": defineAsyncComponent(() => import(/* webpackChunkName: "v-3f2b753e" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/js/type.html.vue")),
+  // path: /base/ts/basic.html
+  "v-4643b6f6": defineAsyncComponent(() => import(/* webpackChunkName: "v-4643b6f6" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/ts/basic.html.vue")),
+  // path: /base/ts/deep.html
+  "v-11c386fc": defineAsyncComponent(() => import(/* webpackChunkName: "v-11c386fc" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/ts/deep.html.vue")),
+  // path: /base/ts/grammer.html
+  "v-6b381d61": defineAsyncComponent(() => import(/* webpackChunkName: "v-6b381d61" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/ts/grammer.html.vue")),
   // path: /theroy/react/
   "v-1ef6020a": defineAsyncComponent(() => import(/* webpackChunkName: "v-1ef6020a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/theroy/react/index.html.vue")),
   // path: /theroy/vue/compiler.html
@@ -67,6 +69,4 @@ export const pagesComponents = {
   "v-d9afb83c": defineAsyncComponent(() => import(/* webpackChunkName: "v-d9afb83c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/theroy/vue/renderer.html.vue")),
   // path: /404.html
   "v-3706649a": defineAsyncComponent(() => import(/* webpackChunkName: "v-3706649a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/404.html.vue")),
-  // path: /base/ts/deep.html
-  "v-11c386fc": defineAsyncComponent(() => import(/* webpackChunkName: "v-11c386fc" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/ts/deep.html.vue")),
 }
