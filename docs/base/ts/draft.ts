@@ -665,3 +665,15 @@ type DeepPromise<T> = T extends Promise<infer P> ? DeepPromise<P> : T
 type SS = DeepPromise<Promise<Promise<Promise<string>>>>
 
 type ReverseArray<Arr extends unknown> = Arr extends [infer First, ...infer Rest] ? [...ReverseArray<Rest>, First] : Arr
+
+let Type = {}
+
+for(let i=0, type; type = ['String','Number','Array'][i++];){
+    (function (type: string) {
+        Type['is'+type] =function (obj:object) {
+            return Object.prototype.toString.call(obj) === '[object ' +type+']'
+        }
+    })(type)
+}
+
+Type.isArray([])

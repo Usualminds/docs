@@ -45,6 +45,10 @@ export const themeData = {
           "link": "/algorithms/tree.md"
         },
         {
+          "text": "设计模式",
+          "link": "/design/index.md"
+        },
+        {
           "text": "框架",
           "children": [
             {
@@ -215,6 +219,12 @@ export const themeData = {
               "/article/browser-finger.md"
             ]
           }
+        ],
+        "/design/": [
+          {
+            "text": "设计模式",
+            "link": "/design/index.md"
+          }
         ]
       },
       "editLinkText": "在 GitHub 上编辑此页",
@@ -262,4 +272,17 @@ export const themeData = {
   "openInNewWindow": "open in new window",
   "toggleDarkMode": "toggle dark mode",
   "toggleSidebar": "toggle sidebar"
+}
+
+if (import.meta.webpackHot) {
+  import.meta.webpackHot.accept()
+  if (__VUE_HMR_RUNTIME__.updateThemeData) {
+    __VUE_HMR_RUNTIME__.updateThemeData(themeData)
+  }
+}
+
+if (import.meta.hot) {
+  import.meta.hot.accept(({ themeData }) => {
+    __VUE_HMR_RUNTIME__.updateThemeData(themeData)
+  })
 }

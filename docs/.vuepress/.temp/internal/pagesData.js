@@ -9,6 +9,8 @@ export const pagesData = {
   "v-8114f962": () => import(/* webpackChunkName: "v-8114f962" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/linklist.html.js").then(({ data }) => data),
   // path: /algorithms/math.html
   "v-abd8a642": () => import(/* webpackChunkName: "v-abd8a642" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/math.html.js").then(({ data }) => data),
+  // path: /algorithms/sort.html
+  "v-7cac6c09": () => import(/* webpackChunkName: "v-7cac6c09" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/sort.html.js").then(({ data }) => data),
   // path: /algorithms/tree.html
   "v-7f4aae09": () => import(/* webpackChunkName: "v-7f4aae09" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/tree.html.js").then(({ data }) => data),
   // path: /article/browser-finger.html
@@ -21,6 +23,8 @@ export const pagesData = {
   "v-1ace5e52": () => import(/* webpackChunkName: "v-1ace5e52" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/project.html.js").then(({ data }) => data),
   // path: /article/qrcode.html
   "v-6c743ed9": () => import(/* webpackChunkName: "v-6c743ed9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/qrcode.html.js").then(({ data }) => data),
+  // path: /design/
+  "v-72582dd0": () => import(/* webpackChunkName: "v-72582dd0" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/design/index.html.js").then(({ data }) => data),
   // path: /leetcode/april.html
   "v-66154a18": () => import(/* webpackChunkName: "v-66154a18" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/april.html.js").then(({ data }) => data),
   // path: /leetcode/contest.html

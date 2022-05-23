@@ -142,3 +142,60 @@ type SS = ReverseArray<[1,3,6,'0']>
 
 // ['0',6,,3,1]
 ```
+
+## Include
+```ts
+type Euqal<A, B> = (A extends B ? true : false) & (B extends A ? true : false)
+
+type Include<Arr extends unknown[], Item> = Arr extends [infer Frist, ...infer Rest] ? Euqal<Frist, Item> extends true ? true : Include<Rest, Item> :false
+
+type Arr = Include<[1,2,3], 1>  // true
+type Arr1= Include<[1,2,3], 11> // false
+```
+
+## Removeitem
+```ts
+type Euqal<A, B> = (A extends B ? true : false) & (B extends A ? true : false)
+
+type RemoveItem<Arr extends unknown[], Item, Results extends unknown[] = []> = Arr extends [infer First, ...infer Rest] ? Euqal<First, Item> extends true ? RemoveItem<Rest,Item, Results> : RemoveItem<Rest,Item, [...Results,First]> : Results
+
+type Arr = RemoveItem<[1,2,3], 1>   // [2,3]
+```
+
+## ReplaceAll
+```ts
+type ReplaceAll<
+    Str extends string, 
+    From extends string, 
+    To extends string
+> = Str extends `${infer Left}${From}${infer Right}`
+        ? `${Left}${To}${ReplaceAll<Right, From, To>}`
+        : Str;
+```
+
+## String Union
+```ts
+type StringUnion<Str extends string> = Str extends `${infer First}${infer Rest}` ? First | StringUnion<Rest> : never
+
+type Str = StringUnion<'smile'>
+// 's' 'm' 'i' 'l' 'e'
+```
+
+## String Reverse
+```ts
+type StrReverse<Str extends string, Results extends string = ''> = Str extends `${infer First}${infer Rest}` ? StrReverse<Rest, `${First}${Results}`> : Results
+
+type Str = StrReverse<'smile'>
+// 'elims'
+```
+
+## Array Add
+```ts
+type BuildNewArray<Length extends number, Ele = unknown, Arr extends unknown[] = []> = Arr['length'] extends Length ? Arr : BuildNewArray<Length, Ele,[...Arr, Ele]>
+
+type Add<Num1 extends number, Num2 extends number> = 
+    [...BuildNewArray<Num1>,...BuildNewArray<Num2>]['length'];
+
+
+type AddResult = Add<32, 25>;
+```

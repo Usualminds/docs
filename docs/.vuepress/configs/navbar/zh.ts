@@ -44,6 +44,10 @@ export const zh: NavbarConfig = [
         link: '/algorithms/tree.md',
     },
     {
+        text: '设计模式',
+        link: '/design/index.md',
+    },
+    {
         text: '框架',
         children: [
             {

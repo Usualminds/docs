@@ -60,6 +60,7 @@ export const zh: SidebarConfig = {
             ],
         },
     ],
+
     '/algorithms/': [
         {
             text: '算法',
@@ -94,4 +95,10 @@ export const zh: SidebarConfig = {
             ],
         },
     ],
+    '/design/': [
+        {
+            text: '设计模式',
+            link: '/design/index.md',
+        },
+    ]
 }
