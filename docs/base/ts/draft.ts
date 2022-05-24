@@ -677,3 +677,5 @@ for(let i=0, type; type = ['String','Number','Array'][i++];){
 }
 
 Type.isArray([])
+
+type isAny<T> = 'any' extends ('ok' & T) ? true : false

@@ -28,14 +28,15 @@ const routeItems = [
   ["v-60351610","/base/js/prototype.html",{"title":"原型和原型链"},["/base/js/prototype","/base/js/prototype.md"]],
   ["v-0260974c","/base/js/this.html",{"title":"this"},["/base/js/this","/base/js/this.md"]],
   ["v-3f2b753e","/base/js/type.html",{"title":"类型"},["/base/js/type","/base/js/type.md"]],
+  ["v-4643b6f6","/base/ts/basic.html",{"title":"基础"},["/base/ts/basic","/base/ts/basic.md"]],
+  ["v-11c386fc","/base/ts/deep.html",{"title":"深入"},["/base/ts/deep","/base/ts/deep.md"]],
+  ["v-6b381d61","/base/ts/grammer.html",{"title":"进阶"},["/base/ts/grammer","/base/ts/grammer.md"]],
+  ["v-10763323","/base/ts/practise.html",{"title":"实战"},["/base/ts/practise","/base/ts/practise.md"]],
   ["v-1ef6020a","/theroy/react/",{"title":"React"},["/theroy/react/index.html","/theroy/react/index.md"]],
   ["v-b27afcf4","/theroy/vue/compiler.html",{"title":"编译器"},["/theroy/vue/compiler","/theroy/vue/compiler.md"]],
   ["v-971a54e0","/theroy/vue/component.html",{"title":"组件"},["/theroy/vue/component","/theroy/vue/component.md"]],
   ["v-f5170928","/theroy/vue/reactive.html",{"title":"响应式"},["/theroy/vue/reactive","/theroy/vue/reactive.md"]],
   ["v-d9afb83c","/theroy/vue/renderer.html",{"title":"渲染器"},["/theroy/vue/renderer","/theroy/vue/renderer.md"]],
-  ["v-4643b6f6","/base/ts/basic.html",{"title":"基础"},["/base/ts/basic","/base/ts/basic.md"]],
-  ["v-11c386fc","/base/ts/deep.html",{"title":"深入"},["/base/ts/deep","/base/ts/deep.md"]],
-  ["v-6b381d61","/base/ts/grammer.html",{"title":"进阶"},["/base/ts/grammer","/base/ts/grammer.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]
 

@@ -199,3 +199,33 @@ type Add<Num1 extends number, Num2 extends number> =
 
 type AddResult = Add<32, 25>;
 ```
+
+## Isany
+```ts
+type isAny<T> = 'any' extends ('ok' & T) ? true : false
+
+type test = isAny<any>
+```
+
+## isUnion
+```ts
+type isUnion<A, B=A> = A extends B ? [B] extends [A] ? false : true : never
+
+type test = isUnion<'a' | 'b'>
+type test1 = isUnion<'a'>
+```
+
+## isNever
+```ts
+type isNever<T> = [T] extends [never] ? true : false
+type ok = isNever<never>
+
+type ok1 = isNever<'never'>
+```
+
+## Index type
+```ts
+type IndexType =  keyof any
+
+// string | number | symbol
+```
