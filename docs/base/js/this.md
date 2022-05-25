@@ -46,6 +46,7 @@ console.log(bindPersonB()); // 10
 ```js
 Function.prototype.myBind = function(){
     const args = Array.prototype.slice.call(arguments)
+
     const t = args.shift()
 
     let self = this
@@ -53,6 +54,29 @@ Function.prototype.myBind = function(){
     return function(){
       return self.apply(t, args)
     }
+}
+
+// 进阶版
+Function.prototype.my_bind = function(ctx){
+    if(typeof this !== 'function'){
+        throw new TypeError('please bind cb function')
+    }
+
+    let args = Array.prototype.slice.call(arguments, 1)
+    let noop = function(){}
+    let self = this
+
+    let functionBind = function(){
+        return self.apply(this instanceof noop ? this: ctx, args.concat(Array.prototype.slice.call(arguments)))
+    }
+
+    if(this.prototype){
+        noop.prototype = this.prototype
+    }
+
+    functionBind.prototype = new noop()
+
+    return functionBind
 }
 ```
 

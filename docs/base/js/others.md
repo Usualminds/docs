@@ -83,6 +83,61 @@ function cloneDeep(obj, map = new WeakMap()) {
   return res;
 }
 
+function deepclone(obj, map = new WeakMap()){
+    // basic data
+    if(! (obj instanceof Object)) return obj
+
+    // date
+    if(obj instanceof Date) return new Date(obj)
+
+    // reg
+    if(obj instanceof RegExp) return new RegExp(obj.source, obj.flags)
+
+    // cache
+    if(map.get(obj)) return map.get(obj)
+
+    // function
+    if(obj instanceof Function){
+        return function(){
+            return obj.apply(this, [...arguments])
+        }
+    }
+
+    // constructor
+    const results = new obj.constructor()
+
+    console.log(results)
+
+    if(obj instanceof Object) {
+        map.set(obj, results)
+    }
+
+    // Map
+    if(obj instanceof Map){
+        obj.forEach((item, index) => {
+            map.set(deepclone(index, map), deepclone(item, map))
+        })
+    }
+
+    // Set
+    if(obj instanceof Set){
+        obj.forEach((item) => {
+            map.add(deepclone(item,map))
+        })
+    }
+
+    // all
+    Object.keys(obj).forEach((key) => {
+        if(obj[key] instanceof Object){
+            results[key] = deepclone(obj[key], map)
+        } else {
+            results[key] = obj[key]
+        }
+    })
+
+    return results
+}
+
 // test case
 const map = new Map();
 map.set({ a: 1 }, "1");
