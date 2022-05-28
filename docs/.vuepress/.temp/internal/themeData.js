@@ -43,7 +43,7 @@ export const themeData = {
         },
         {
           "text": "算法",
-          "link": "/algorithms/tree.md"
+          "link": "/algorithms/sort.md"
         },
         {
           "text": "设计模式",
@@ -192,6 +192,7 @@ export const themeData = {
           {
             "text": "算法",
             "children": [
+              "/algorithms/sort.md",
               "/algorithms/tree.md",
               "/algorithms/dp.md",
               "/algorithms/linklist.md",

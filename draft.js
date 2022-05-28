@@ -1,21 +1,16 @@
-function parseQuery(query) {
-    if (!query || !query.length)
-        return {};
-    var queryObj = {};
-    var querys = query.split('&');
-    querys.forEach(function (item) {
-        var _a = item.split('='), key = _a[0], value = _a[1];
-        if (queryObj[key]) {
-            if (Array.isArray(queryObj[key])) {
-                queryObj[key].push(value);
-            }
-            else {
-                queryObj[key] = [queryObj[key], value];
-            }
+var arr = [1, 3, 2, 5, 8, 4, 99, 87, 66];
+function quickSort(arr) {
+    if (arr.length <= 1) { return arr }
+    var left = [], right = [], index = Math.floor(arr.length / 2), middle = arr.splice(index, 1)[0];
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] < middle) {
+            left.push(arr[i]);
         }
         else {
-            queryObj[key] = value;
+            right.push(arr[i]);
         }
-    });
-    return queryObj;
+    }
+    console.log(left, right);
+    return quickSort(left).concat([middle], quickSort(right));
 }
+console.log(quickSort(arr));

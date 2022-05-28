@@ -1,31 +1,20 @@
-function parseQuery(query: string) {
-    if (!query || !query.length) return {}
+let arr = [1, 3, 2, 5, 8, 4, 99, 87, 66]
+function quickSort(arr: number[]): number[] {
+    if (arr.length <= 1) return arr
 
-    const queryObj = {}
+    let left = [], right = [], index = Math.floor(arr.length / 2), middle = arr.splice(index, 1)[0]
 
-    const querys = query.split('&')
-
-    querys.forEach((item) => {
-        const [key, value] = item.split('=')
-
-        if (queryObj[key]) {
-            if (Array.isArray(queryObj[key])) {
-                queryObj[key].push(value)
-            } else {
-                queryObj[key] = [queryObj[key], value]
-            }
-
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] < middle) {
+            left.push(arr[i])
         } else {
-            queryObj[key] = value
+            right.push(arr[i])
         }
+    }
 
-    })
-    return queryObj
+
+    return quickSort(left).concat([middle], quickSort(right))
 }
 
-interface T {
-    (ok: string): void
-    (ok: number): string
-}
 
-declare const func: T
+console.log(quickSort(arr))

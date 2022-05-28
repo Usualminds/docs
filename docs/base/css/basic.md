@@ -31,4 +31,11 @@
 - 不再支持 arguments.callee
 - 禁止 this 指向全局对象
 
+## position
+- static
+- absolute
+- fixed
+- relative
+- sticky
+
 
