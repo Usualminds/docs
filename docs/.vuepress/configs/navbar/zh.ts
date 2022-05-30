@@ -54,6 +54,7 @@ export const zh: NavbarConfig = [
             {
                 text: 'Vue',
                 children: [
+                    '/theroy/vue/nextTick.md',
                     '/theroy/vue/reactive.md',
                     '/theroy/vue/renderer.md',
                     '/theroy/vue/compiler.md',
@@ -115,6 +116,7 @@ export const zh: NavbarConfig = [
             {
                 text: '题目',
                 children: [
+                    '/test/shopee.md',
                     '/test/finpoints.md',
                 ]
             }

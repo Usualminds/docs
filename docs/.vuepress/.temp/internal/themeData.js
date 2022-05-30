@@ -55,6 +55,7 @@ export const themeData = {
             {
               "text": "Vue",
               "children": [
+                "/theroy/vue/nextTick.md",
                 "/theroy/vue/reactive.md",
                 "/theroy/vue/renderer.md",
                 "/theroy/vue/compiler.md",
@@ -116,6 +117,7 @@ export const themeData = {
             {
               "text": "题目",
               "children": [
+                "/test/shopee.md",
                 "/test/finpoints.md"
               ]
             }
@@ -173,6 +175,7 @@ export const themeData = {
               {
                 "text": "Vue",
                 "children": [
+                  "/theroy/vue/nextTick.md",
                   "/theroy/vue/reactive.md",
                   "/theroy/vue/renderer.md",
                   "/theroy/vue/compiler.md",

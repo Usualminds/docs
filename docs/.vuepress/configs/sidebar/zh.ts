@@ -46,6 +46,7 @@ export const zh: SidebarConfig = {
                 {
                     text: 'Vue',
                     children: [
+                        '/theroy/vue/nextTick.md',
                         '/theroy/vue/reactive.md',
                         '/theroy/vue/renderer.md',
                         '/theroy/vue/compiler.md',
