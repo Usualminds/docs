@@ -83,4 +83,6 @@ export const pagesComponents = {
   "v-d9afb83c": defineAsyncComponent(() => import(/* webpackChunkName: "v-d9afb83c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/theroy/vue/renderer.html.vue")),
   // path: /404.html
   "v-3706649a": defineAsyncComponent(() => import(/* webpackChunkName: "v-3706649a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/404.html.vue")),
+  // path: /test/huatai.html
+  "v-21cd0aa6": defineAsyncComponent(() => import(/* webpackChunkName: "v-21cd0aa6" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/test/huatai.html.vue")),
 }

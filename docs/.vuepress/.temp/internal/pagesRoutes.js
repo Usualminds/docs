@@ -42,6 +42,7 @@ const routeItems = [
   ["v-f5170928","/theroy/vue/reactive.html",{"title":"响应式"},["/theroy/vue/reactive","/theroy/vue/reactive.md"]],
   ["v-d9afb83c","/theroy/vue/renderer.html",{"title":"渲染器"},["/theroy/vue/renderer","/theroy/vue/renderer.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
+  ["v-21cd0aa6","/test/huatai.html",{"title":"HT"},["/test/huatai","/test/huatai.md"]],
 ]
 
 export const pagesRoutes = routeItems.reduce(

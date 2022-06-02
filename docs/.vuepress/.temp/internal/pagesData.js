@@ -81,4 +81,6 @@ export const pagesData = {
   "v-d9afb83c": () => import(/* webpackChunkName: "v-d9afb83c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/theroy/vue/renderer.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
+  // path: /test/huatai.html
+  "v-21cd0aa6": () => import(/* webpackChunkName: "v-21cd0aa6" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/test/huatai.html.js").then(({ data }) => data),
 }
