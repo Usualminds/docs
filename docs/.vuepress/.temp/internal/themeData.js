@@ -118,7 +118,9 @@ export const themeData = {
               "text": "题目",
               "children": [
                 "/test/shopee.md",
-                "/test/finpoints.md"
+                "/test/finpoints.md",
+                "/test/ht.md",
+                "/test/ft.md"
               ]
             }
           ]

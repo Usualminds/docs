@@ -118,6 +118,8 @@ export const zh: NavbarConfig = [
                 children: [
                     '/test/shopee.md',
                     '/test/finpoints.md',
+                    '/test/ht.md',
+                    '/test/ft.md',
                 ]
             }
         ]
