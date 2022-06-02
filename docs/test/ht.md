@@ -50,11 +50,14 @@ function lowestCommonAncestor(root: TreeNode | null, p: TreeNode | null, q: Tree
     }
 
     return null
-};
+}
 ```
-
 ## LRU
 请你设计并实现一个满足 `LRU-Least Recently Used` (最近最少使用)缓存约束的数据结构。
+- [vue-keep-alive](https://github.com/vuejs/vue/blob/dev/src/core/components/keep-alive.js)
+- [](https://juejin.cn/post/6844904183426973710)
+- [hashlru](https://github.com/dominictarr/hashlru/blob/master/index.js)
+- [quick-lru](https://github.com/sindresorhus/quick-lru/blob/main/index.js)
 ```ts
 class LRUCache {
     max: number = 0
