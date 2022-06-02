@@ -1,6 +1,25 @@
 # 排序
 [常见排序](https://zhuanlan.zhihu.com/p/42586566)
 
+## 中位数
+```ts
+function middle(arr){
+    let len = arr.length
+    return (arr[(len - 1) >> 1] + arr[len >> 1]) / 2
+}
+```
+
+## range
+`[min, max]`
+```ts
+function random(min,max){
+    min = Math.ceil(min)
+    max = Math.floor(max)
+    // [min,max)  = max - min
+    return Math.floor(Math.random() * (max - min + 1) + min)
+}
+
+```
 ## 冒泡排序
 简单排序算法。重复访问要排序的数组，每次比较两个元素，如果它们的顺序不对就进行交换。直到排序完成
 - 时间复杂度 `O(n^2)`
