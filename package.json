@@ -10,5 +10,9 @@
     },
     "devDependencies": {
         "vuepress": "^2.0.0-beta.35"
+    },
+    "dependencies": {
+        "install": "^0.13.0",
+        "npm": "^8.12.1"
     }
 }

@@ -1,21 +1,57 @@
-// 递归实现两个整数的乘积，要求不使用‘*’号（即乘号）
-
-function get(n) {
-    let arr = [], init = 1, startX = Math.ceil(n / 2), startY = Math.ceil(n / 2)
-
-    // init value
-    arr[startX, startY] = [init]
-
-    for (let i = 0; i < n; i++) {
-
-        for (let j = 0; j < n; j++) {
-            if (j === startX + 1) {
-                arr.push()
-            }
-        }
+const webdriver = require('selenium-webdriver');
+async function runTestWithCaps(capabilities) {
+    let driver = new webdriver.Builder()
+        .usingServer('http://fengjhone1:9EtoRfhYsA2z7rzqypSn@hub-cloud.browserstack.com/wd/hub')
+        .withCapabilities({
+            ...capabilities,
+            ...capabilities['browser'] && { browserName: capabilities['browser'] }  // Because NodeJS language binding requires browserName to be defined
+        })
+        .build();
+    await driver.get("http://www.google.com");
+    const inputField = await driver.findElement(webdriver.By.name("q"));
+    await inputField.sendKeys("BrowserStack", webdriver.Key.ENTER); // this submits on desktop browsers
+    try {
+        await driver.wait(webdriver.until.titleMatches(/BrowserStack/i), 5000);
+    } catch (e) {
+        await inputField.submit(); // this helps in mobile browsers
     }
-
+    try {
+        await driver.wait(webdriver.until.titleMatches(/BrowserStack/i), 5000);
+        console.log(await driver.getTitle());
+        await driver.executeScript(
+            'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed","reason": "Title contains BrowserStack!"}}'
+        );
+    } catch (e) {
+        await driver.executeScript(
+            'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed","reason": "Page could not load in time"}}'
+        );
+    }
+    await driver.quit();
 }
-
-
-console.log(getMultiply(2, 2))
+const capabilities1 = {
+    'browser': 'chrome',
+    'browser_version': 'latest',
+    'os': 'Windows',
+    'os_version': '10',
+    'build': 'browserstack-build-1',
+    'name': 'Parallel test 1'
+}
+const capabilities2 = {
+    'browser': 'firefox',
+    'browser_version': '98.0',
+    'os': 'Windows',
+    'os_version': '10',
+    'build': 'browserstack-build-1',
+    'name': 'Parallel test 2'
+}
+const capabilities3 = {
+    'browser': 'safari',
+    'browser_version': 'latest',
+    'os': 'OS X',
+    'os_version': 'Big Sur',
+    'build': 'browserstack-build-1',
+    'name': 'Parallel test 3'
+}
+runTestWithCaps(capabilities1);
+runTestWithCaps(capabilities2);
+runTestWithCaps(capabilities3);

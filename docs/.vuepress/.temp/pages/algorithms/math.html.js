@@ -11,6 +11,37 @@ export const data = {
       "title": "最大公约数",
       "slug": "最大公约数",
       "children": []
+    },
+    {
+      "level": 2,
+      "title": "Pow(x, n)",
+      "slug": "pow-x-n",
+      "children": [
+        {
+          "level": 3,
+          "title": "快速幂+递归",
+          "slug": "快速幂-递归",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "快速幂+迭代",
+          "slug": "快速幂-迭代",
+          "children": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "title": "递归乘法",
+      "slug": "递归乘法",
+      "children": []
+    },
+    {
+      "level": 2,
+      "title": "x 的平方根",
+      "slug": "x-的平方根",
+      "children": []
     }
   ],
   "git": {
