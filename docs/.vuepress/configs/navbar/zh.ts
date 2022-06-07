@@ -23,7 +23,8 @@ export const zh: NavbarConfig = [
                     '/base/ts/basic.md',
                     '/base/ts/grammer.md',
                     '/base/ts/deep.md',
-                    '/base/ts/practise.md'
+                    '/base/ts/practise.md',
+                    '/base/ts/ts_source_code.md'
                 ],
             },
             {

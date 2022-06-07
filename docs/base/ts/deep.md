@@ -9,6 +9,81 @@ typeof temp === 'number'
 ```
 类型层次：`never < null < undefined < string | booolean | ... < unkonwn < any`
 
+
+### 逆变
+子类型可以赋值给父类型，叫做协变（covariant）
+```ts
+interface Person {
+    name: string;
+    age: number;
+} 
+
+interface Guang {
+    name: string;
+    age: number;
+    hobbies: string[]
+}
+
+let person: Person = {
+    name: '',
+    age: 20
+};
+let guang: Guang = {
+    name: 'guang',
+    age: 20,
+    hobbies: ['play game', 'writing']
+};
+
+person = guang;
+```
+### 协变
+父类型可以赋值给子类型，叫做逆变（contravariant)。
+函数的参数有逆变的性质（而返回值是协变的，也就是子类型可以赋值给父类型
+```ts
+interface Person {
+    name: string;
+    age: number;
+} 
+
+interface Guang {
+    name: string;
+    age: number;
+    hobbies: string[]
+}
+
+let printHobbies: (guang: Guang) => void;
+
+printHobbies = (guang) => {
+    console.log(guang.hobbies);
+}
+
+let printName: (person: Person) => void;
+
+printName = (person) => {
+    console.log(person.name);
+}
+
+// ok
+printHobbies = printName;
+
+// invalid
+printName = printHobbies;
+```
+
+参数的位置是逆变的，返回值逆变
+```ts
+// return type invalid, because boolean is not sub type of void
+type Func = (name: string) => void
+
+let test:Func = (name:any) => boolean
+
+// parmas type valid, because any is parent type of string && undefined is sub type of void
+type Func = (name: string) => void
+
+let test:Func = (name:any) => undefined
+```
+
+
 ## 声明文件
 - 内部自带声明文件：`lib.d.ts`、`lib.dom.d.ts`
 - 第三方声明文件：`Jquery`，[`DefinitelyTyped`](https://github.com/DefinitelyTyped/DefinitelyTyped) 查找第三方声明文件
@@ -21,6 +96,7 @@ typeof temp === 'number'
 - `traceResolution`, 追踪编译过程日志
 
 ## tsc 编译
+tsc 没有做 polyfill 的处理，需要全量引入 core-js,babel 的 @babel/preset-env 会根据 targets 的配置按需引入 core-js
 - --watch
 - --build
 - --module
@@ -29,6 +105,19 @@ typeof temp === 'number'
 - --help
   
 `tsc init` 初始化 `tsconfig.json`
+
+## babel 编译
+优点
+- babel 编译 `ts` 代码的优点是可以通过插件支持更多的语言特性，而且生成的代码是按照 `targets` 的配置按需引入 `core-js` 的
+- 编译 ts 代码来生成体积更小的代码，不做类型检查编译速度也更快
+- 如果想做类型检查可以单独执行 tsc --noEmit
+  
+babel 不足
+- `const enum`（会作为 enum 处理）
+- `namespace` 的跨文件合并,因为是每个文件单独编译的（tsc 是整个项目一起编译）
+- 导出非 `const` 的值
+- 过时的 `export = import =` 的模块语法
+- 不做类型检查，也不会生成 d.ts 文件
 
 ## 三斜线指令
 必须放在代码文件首行，否则无效

@@ -10,8 +10,9 @@ function getMax(a: number, b: number): number {
 ```
 
 ## Pow(x, n)
-实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，xn ）
 [leetcode-50](https://leetcode.cn/problems/powx-n/)
+
+实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，xn ）
 
 ### 快速幂+递归
 ```ts
@@ -74,6 +75,7 @@ var multiply = function(A, B) {
 
 ## x 的平方根 
 [leetcode-69](https://leetcode.cn/problems/sqrtx/)
+
 给你一个非负整数 x ，计算并返回 x 的 算术平方根
 由于返回类型是整数，结果只保留 整数部分 ，小数部分将被 舍去
 
