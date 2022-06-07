@@ -75,24 +75,31 @@ export const zh: NavbarConfig = [
         link: '/leetcode/january.md'
     },
     {
-        text: '打包工具',
+        text: '工具',
+        link: '/utils/babel/basic.md',
         children: [
+            {
+                text: 'Babel',
+                children: [
+                    '/utils/babel/basic.md',
+                ],
+            },
             {
                 text: 'Vite',
                 children: [
-                    '/zh/reference/cli.md',
+                    '/utils/vite/basic.md',
                 ],
             },
             {
                 text: 'Webpack',
                 children: [
-                    '/webpack',
+                    '/utils/webpack/basic.md',
                 ],
             },
             {
                 text: 'Rollup',
                 children: [
-                    '/rollup',
+                    '/utils/rollup/basic.md',
                 ],
             },
         ],

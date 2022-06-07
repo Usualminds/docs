@@ -105,5 +105,36 @@ export const zh: SidebarConfig = {
             text: '设计模式',
             link: '/design/index.md',
         },
+    ],
+    '/utils/': [
+        {
+            text: '工具',
+            children: [
+                {
+                    text: 'Babel',
+                    children: [
+                        '/utils/babel/basic.md',
+                    ],
+                },
+                {
+                    text: 'Vite',
+                    children: [
+                        '/utils/vite/basic.md',
+                    ],
+                },
+                {
+                    text: 'Webpack',
+                    children: [
+                        '/utils/webpack/basic.md',
+                    ],
+                },
+                {
+                    text: 'Rollup',
+                    children: [
+                        '/utils/rollup/basic.md',
+                    ],
+                },
+            ],
+        },
     ]
 }
