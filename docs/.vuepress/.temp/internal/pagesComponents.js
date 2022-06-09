@@ -95,10 +95,10 @@ export const pagesComponents = {
   "v-adaab582": defineAsyncComponent(() => import(/* webpackChunkName: "v-adaab582" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/vite/basic.html.vue")),
   // path: /utils/webpack/basic.html
   "v-b53c7938": defineAsyncComponent(() => import(/* webpackChunkName: "v-b53c7938" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/webpack/basic.html.vue")),
-  // path: /utils/babel/src/node_modules/ansi-styles/
-  "v-777cc1a1": defineAsyncComponent(() => import(/* webpackChunkName: "v-777cc1a1" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/ansi-styles/index.html.vue")),
   // path: /utils/babel/src/node_modules/anymatch/
   "v-7f873bd0": defineAsyncComponent(() => import(/* webpackChunkName: "v-7f873bd0" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/anymatch/index.html.vue")),
+  // path: /utils/babel/src/node_modules/ansi-styles/
+  "v-777cc1a1": defineAsyncComponent(() => import(/* webpackChunkName: "v-777cc1a1" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/ansi-styles/index.html.vue")),
   // path: /utils/babel/src/node_modules/babel-plugin-dynamic-import-node/CHANGELOG.html
   "v-056241de": defineAsyncComponent(() => import(/* webpackChunkName: "v-056241de" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/babel-plugin-dynamic-import-node/CHANGELOG.html.vue")),
   // path: /utils/babel/src/node_modules/babel-plugin-dynamic-import-node/
@@ -179,12 +179,12 @@ export const pagesComponents = {
   "v-7af805bf": defineAsyncComponent(() => import(/* webpackChunkName: "v-7af805bf" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/get-intrinsic/index.html.vue")),
   // path: /utils/babel/src/node_modules/glob/
   "v-c3ab764e": defineAsyncComponent(() => import(/* webpackChunkName: "v-c3ab764e" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/glob/index.html.vue")),
+  // path: /utils/babel/src/node_modules/globals/
+  "v-4e0b82c6": defineAsyncComponent(() => import(/* webpackChunkName: "v-4e0b82c6" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/globals/index.html.vue")),
   // path: /utils/babel/src/node_modules/glob-parent/CHANGELOG.html
   "v-2d6fe11a": defineAsyncComponent(() => import(/* webpackChunkName: "v-2d6fe11a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/glob-parent/CHANGELOG.html.vue")),
   // path: /utils/babel/src/node_modules/glob-parent/
   "v-45580fe4": defineAsyncComponent(() => import(/* webpackChunkName: "v-45580fe4" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/glob-parent/index.html.vue")),
-  // path: /utils/babel/src/node_modules/globals/
-  "v-4e0b82c6": defineAsyncComponent(() => import(/* webpackChunkName: "v-4e0b82c6" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/globals/index.html.vue")),
   // path: /utils/babel/src/node_modules/has/
   "v-9af46d1a": defineAsyncComponent(() => import(/* webpackChunkName: "v-9af46d1a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/has/index.html.vue")),
   // path: /utils/babel/src/node_modules/has-flag/
@@ -295,10 +295,10 @@ export const pagesComponents = {
   "v-4f9650dc": defineAsyncComponent(() => import(/* webpackChunkName: "v-4f9650dc" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/unicode-canonical-property-names-ecmascript/index.html.vue")),
   // path: /utils/babel/src/node_modules/unicode-match-property-ecmascript/
   "v-034f2c20": defineAsyncComponent(() => import(/* webpackChunkName: "v-034f2c20" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/unicode-match-property-ecmascript/index.html.vue")),
-  // path: /utils/babel/src/node_modules/unicode-match-property-value-ecmascript/
-  "v-1c2c5d14": defineAsyncComponent(() => import(/* webpackChunkName: "v-1c2c5d14" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/unicode-match-property-value-ecmascript/index.html.vue")),
   // path: /utils/babel/src/node_modules/unicode-property-aliases-ecmascript/
   "v-78ee1f19": defineAsyncComponent(() => import(/* webpackChunkName: "v-78ee1f19" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/unicode-property-aliases-ecmascript/index.html.vue")),
+  // path: /utils/babel/src/node_modules/unicode-match-property-value-ecmascript/
+  "v-1c2c5d14": defineAsyncComponent(() => import(/* webpackChunkName: "v-1c2c5d14" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/unicode-match-property-value-ecmascript/index.html.vue")),
   // path: /utils/babel/src/node_modules/wrappy/
   "v-148f515e": defineAsyncComponent(() => import(/* webpackChunkName: "v-148f515e" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/wrappy/index.html.vue")),
   // path: /utils/babel/src/node_modules/@jridgewell/gen-mapping/
@@ -311,14 +311,16 @@ export const pagesComponents = {
   "v-f6decb3a": defineAsyncComponent(() => import(/* webpackChunkName: "v-f6decb3a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@jridgewell/sourcemap-codec/index.html.vue")),
   // path: /utils/babel/src/node_modules/@jridgewell/trace-mapping/
   "v-af2cc072": defineAsyncComponent(() => import(/* webpackChunkName: "v-af2cc072" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@jridgewell/trace-mapping/index.html.vue")),
+  // path: /utils/babel/src/node_modules/@nicolo-ribaudo/chokidar-2/
+  "v-db7d5712": defineAsyncComponent(() => import(/* webpackChunkName: "v-db7d5712" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@nicolo-ribaudo/chokidar-2/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/cli/
   "v-63bc9bf6": defineAsyncComponent(() => import(/* webpackChunkName: "v-63bc9bf6" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/cli/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/code-frame/
   "v-3b50b17b": defineAsyncComponent(() => import(/* webpackChunkName: "v-3b50b17b" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/code-frame/index.html.vue")),
-  // path: /utils/babel/src/node_modules/@babel/generator/
-  "v-c5a7a13a": defineAsyncComponent(() => import(/* webpackChunkName: "v-c5a7a13a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/generator/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/compat-data/
   "v-a5f374be": defineAsyncComponent(() => import(/* webpackChunkName: "v-a5f374be" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/compat-data/index.html.vue")),
+  // path: /utils/babel/src/node_modules/@babel/generator/
+  "v-c5a7a13a": defineAsyncComponent(() => import(/* webpackChunkName: "v-c5a7a13a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/generator/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/helper-annotate-as-pure/
   "v-78862945": defineAsyncComponent(() => import(/* webpackChunkName: "v-78862945" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/helper-annotate-as-pure/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/helper-builder-binary-assignment-operator-visitor/
@@ -407,14 +409,14 @@ export const pagesComponents = {
   "v-363777f0": defineAsyncComponent(() => import(/* webpackChunkName: "v-363777f0" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-proposal-unicode-property-regex/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/plugin-syntax-async-generators/
   "v-0fea8b07": defineAsyncComponent(() => import(/* webpackChunkName: "v-0fea8b07" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-syntax-async-generators/index.html.vue")),
-  // path: /utils/babel/src/node_modules/@babel/plugin-syntax-class-static-block/
-  "v-acb0b756": defineAsyncComponent(() => import(/* webpackChunkName: "v-acb0b756" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-syntax-class-static-block/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/plugin-syntax-class-properties/
   "v-f18d1da0": defineAsyncComponent(() => import(/* webpackChunkName: "v-f18d1da0" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-syntax-class-properties/index.html.vue")),
-  // path: /utils/babel/src/node_modules/@babel/plugin-syntax-dynamic-import/
-  "v-11acbc85": defineAsyncComponent(() => import(/* webpackChunkName: "v-11acbc85" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-syntax-dynamic-import/index.html.vue")),
+  // path: /utils/babel/src/node_modules/@babel/plugin-syntax-class-static-block/
+  "v-acb0b756": defineAsyncComponent(() => import(/* webpackChunkName: "v-acb0b756" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-syntax-class-static-block/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/plugin-syntax-export-namespace-from/
   "v-a430989e": defineAsyncComponent(() => import(/* webpackChunkName: "v-a430989e" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-syntax-export-namespace-from/index.html.vue")),
+  // path: /utils/babel/src/node_modules/@babel/plugin-syntax-dynamic-import/
+  "v-11acbc85": defineAsyncComponent(() => import(/* webpackChunkName: "v-11acbc85" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-syntax-dynamic-import/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/plugin-syntax-import-assertions/
   "v-07eaa6ed": defineAsyncComponent(() => import(/* webpackChunkName: "v-07eaa6ed" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-syntax-import-assertions/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/plugin-syntax-json-strings/
@@ -489,10 +491,10 @@ export const pagesComponents = {
   "v-3fe48666": defineAsyncComponent(() => import(/* webpackChunkName: "v-3fe48666" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-transform-shorthand-properties/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/plugin-transform-spread/
   "v-42ffc708": defineAsyncComponent(() => import(/* webpackChunkName: "v-42ffc708" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-transform-spread/index.html.vue")),
-  // path: /utils/babel/src/node_modules/@babel/plugin-transform-template-literals/
-  "v-661a2fe8": defineAsyncComponent(() => import(/* webpackChunkName: "v-661a2fe8" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-transform-template-literals/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/plugin-transform-sticky-regex/
   "v-0fca7218": defineAsyncComponent(() => import(/* webpackChunkName: "v-0fca7218" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-transform-sticky-regex/index.html.vue")),
+  // path: /utils/babel/src/node_modules/@babel/plugin-transform-template-literals/
+  "v-661a2fe8": defineAsyncComponent(() => import(/* webpackChunkName: "v-661a2fe8" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-transform-template-literals/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/plugin-transform-typeof-symbol/
   "v-09fd2a22": defineAsyncComponent(() => import(/* webpackChunkName: "v-09fd2a22" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/plugin-transform-typeof-symbol/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/plugin-transform-unicode-escapes/
@@ -511,8 +513,6 @@ export const pagesComponents = {
   "v-577c2f14": defineAsyncComponent(() => import(/* webpackChunkName: "v-577c2f14" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/traverse/index.html.vue")),
   // path: /utils/babel/src/node_modules/@babel/types/
   "v-f679dc06": defineAsyncComponent(() => import(/* webpackChunkName: "v-f679dc06" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@babel/types/index.html.vue")),
-  // path: /utils/babel/src/node_modules/@nicolo-ribaudo/chokidar-2/
-  "v-db7d5712": defineAsyncComponent(() => import(/* webpackChunkName: "v-db7d5712" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/@nicolo-ribaudo/chokidar-2/index.html.vue")),
   // path: /utils/babel/src/node_modules/babel-plugin-polyfill-corejs3/core-js-compat/
   "v-a6c19b24": defineAsyncComponent(() => import(/* webpackChunkName: "v-a6c19b24" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/src/node_modules/babel-plugin-polyfill-corejs3/core-js-compat/index.html.vue")),
   // path: /utils/babel/src/node_modules/core-js-compat/node_modules/semver/CHANGELOG.html
