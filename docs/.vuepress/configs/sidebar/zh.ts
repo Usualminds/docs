@@ -114,6 +114,7 @@ export const zh: SidebarConfig = {
                     text: 'Babel',
                     children: [
                         '/utils/babel/basic.md',
+                        '/utils/babel/mini-babel.md',
                     ],
                 },
                 {

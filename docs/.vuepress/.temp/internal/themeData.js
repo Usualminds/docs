@@ -252,7 +252,8 @@ export const themeData = {
               {
                 "text": "Babel",
                 "children": [
-                  "/utils/babel/basic.md"
+                  "/utils/babel/basic.md",
+                  "/utils/babel/mini-babel.md"
                 ]
               },
               {

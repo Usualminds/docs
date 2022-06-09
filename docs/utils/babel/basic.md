@@ -66,6 +66,11 @@ TODO: image && source
 
 ### generate
 
-generate 阶段会把 AST 打印成目标代码字符串，并且会生成 sourcemap。不同的 AST 对应的不同结构的字符串。比如 IfStatement 就可以打印成 if(test) {} 格式的代码。这样从 AST 根节点进行递归打印，就可以生成目标代码的字符串。
+`generate` 阶段会把 `AST` 打印成目标代码字符串，并且会生成 `sourcemap`。
 
-sourcemap 记录了源码到目标代码的转换关系，通过它我们可以找到目标代码中每一个节点对应的源码位置。
+`sourcemap` 记录了源码到目标代码的转换关系，通过它我们可以找到目标代码中每一个节点对应的源码位置。
+
+## AST 节点类型
+`AST` 是对源码的抽象，字面量、标识符、表达式、语句、模块语法、`class` 语法都有各自的 `AST`
+
+### Literal
