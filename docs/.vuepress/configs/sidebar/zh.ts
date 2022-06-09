@@ -136,5 +136,22 @@ export const zh: SidebarConfig = {
                 },
             ],
         },
+    ],
+    '/test/': [
+        {
+            text: '答题',
+            children: [
+                {
+                    text: '题目',
+                    children: [
+                        '/test/shopee.md',
+                        '/test/finpoints.md',
+                        '/test/mego.md',
+                        '/test/ht.md',
+                        '/test/ft.md',
+                    ]
+                }
+            ]
+        },
     ]
 }

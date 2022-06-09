@@ -1,4 +1,4 @@
-# Finpoints Assessment
+# Finpoints
 
 ## Web Network and Security
 - Why is HTTPS more secure than HTTP?
