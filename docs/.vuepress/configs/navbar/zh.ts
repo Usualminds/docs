@@ -43,7 +43,7 @@ export const zh: NavbarConfig = [
     },
     {
         text: '算法',
-        link: '/algorithms/sort.md',
+        link: '/algorithms/array.md',
     },
     {
         text: '设计模式',

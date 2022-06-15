@@ -9,7 +9,7 @@ export const data = {
     "actions": [
       {
         "text": "快速了解",
-        "link": "/zh/guide/getting-started.html",
+        "link": "/base/js/basic.html",
         "type": "primary"
       }
     ],

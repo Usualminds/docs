@@ -3,7 +3,7 @@ home: true
 title: 首页
 actions:
   - text: 快速了解
-    link: /zh/guide/getting-started.html
+    link: /base/js/basic.html
     type: primary
 features:
   - title: 数据结构
