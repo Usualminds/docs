@@ -44,12 +44,12 @@ export const data = {
   "excerpt": "",
   "headers": [],
   "git": {
-    "updatedTime": 1640575710000,
+    "updatedTime": 1655265497000,
     "contributors": [
       {
         "name": "Joe",
         "email": "me@qjidea.com",
-        "commits": 1
+        "commits": 2
       }
     ]
   },
