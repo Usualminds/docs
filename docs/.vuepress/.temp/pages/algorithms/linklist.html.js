@@ -8,6 +8,37 @@ export const data = {
   "headers": [
     {
       "level": 2,
+      "title": "数据结构",
+      "slug": "数据结构",
+      "children": []
+    },
+    {
+      "level": 2,
+      "title": "移除链表元素",
+      "slug": "移除链表元素",
+      "children": [
+        {
+          "level": 3,
+          "title": "递归",
+          "slug": "递归",
+          "children": []
+        },
+        {
+          "level": 3,
+          "title": "",
+          "slug": "",
+          "children": []
+        }
+      ]
+    },
+    {
+      "level": 2,
+      "title": "设计一个链表",
+      "slug": "设计一个链表",
+      "children": []
+    },
+    {
+      "level": 2,
       "title": "链表的中间结点",
       "slug": "链表的中间结点",
       "children": []

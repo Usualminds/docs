@@ -1,7 +1,141 @@
 
 # 链表
 
-链表
+## 数据结构
+```ts
+class ListNode {
+    val: number
+    next: ListNode | null
+    constructor(val?: number, next?: ListNode |null ){
+        this.val = val === undefined ? 0 : val
+        this.next = next === undefined ? null : next
+    }
+}
+```
+
+## 移除链表元素
+[👉 Leetcode 链接-203](https://leetcode.cn/problems/remove-linked-list-elements/)
+
+给你一个链表的头节点 head 和一个整数 val ，请你删除链表中所有满足 Node.val == val 的节点，并返回 新的头节点 。
+### 递归
+```ts
+function removeElements(head: ListNode | null, val: number): ListNode | null {
+    if(head === null) return head
+
+    head.next = removeElements(head.next, val)
+
+    return head.val === val ? head.next : head
+};
+```
+
+### 
+
+## 设计一个链表
+[👉 Leetcode 链接-707](https://leetcode.cn/problems/design-linked-list/)
+
+设计链表的实现。您可以选择使用单链表或双链表。单链表中的节点应该具有两个属性：val 和 next。val 是当前节点的值，next 是指向下一个节点的指针/引用。如果要使用双向链表，则还需要一个属性 prev 以指示链表中的上一个节点。假设链表中的所有节点都是 0-index 的。
+
+在链表类中实现这些功能：
+
+get(index)：获取链表中第 index 个节点的值。如果索引无效，则返回-1。
+addAtHead(val)：在链表的第一个元素之前添加一个值为 val 的节点。插入后，新节点将成为链表的第一个节点。
+addAtTail(val)：将值为 val 的节点追加到链表的最后一个元素。
+addAtIndex(index,val)：在链表中的第 index 个节点之前添加值为 val  的节点。如果 index 等于链表的长度，则该节点将附加到链表的末尾。如果 index 大于链表长度，则不会插入节点。如果index小于0，则在头部插入节点。
+deleteAtIndex(index)：如果索引 index 有效，则删除链表中的第 index 个节点。
+
+```ts
+class ListNode {
+    val: number
+    next: ListNode | null
+
+    constructor(val?: number, next?: ListNode | null) {
+        this.val = val === undefined ? 0 : val
+        this.next = next === undefined ? null : next
+    }
+}
+
+class MyLinkedList {
+    head: ListNode | null
+    size: number
+
+    constructor() {
+        this.size = 0
+        this.head = null
+    }
+
+    get(index: number): number {
+        if (index < 0 || index >= this.size) return -1
+
+        let node: ListNode = this.head
+
+        for (let i: number = 0; i < index; i++) {
+            node = node.next
+        }
+
+        return node.val
+    }
+
+    getNode(index: number): ListNode {
+        if (index < 0 || index >= this.size) return
+
+        let node: ListNode = this.head;
+        for (let i: number = 0; i < index; i++) {
+            node = node.next
+        }
+
+        return node
+    }
+
+    addAtHead(val: number): void {
+        const oldHead: ListNode = this.head;
+        this.head = new ListNode(val, oldHead);
+        this.size++;
+    }
+
+
+    addAtTail(val: number): void {
+        if (this.size === 0) {
+            this.size++
+            this.head = new ListNode(val, null)
+            return
+        }
+
+        const prevNode: ListNode = this.getNode(this.size - 1)
+        prevNode.next = new ListNode(val, null)
+
+        this.size++;
+    }
+
+    addAtIndex(index: number, val: number): void {
+        if (index > this.size) return
+
+        if (index <= 0) {
+            return this.addAtHead(val)
+        }
+        const prevNode: ListNode = this.getNode(index - 1)
+
+        const node: ListNode = prevNode.next
+        prevNode.next = new ListNode(val, node)
+
+        this.size++;
+    }
+
+    deleteAtIndex(index: number): void {
+        if (index < 0 || index >= this.size) return
+
+        if (index === 0) {
+            this.head = this.head.next
+            this.size--
+            return
+        }
+
+        const prevNode: ListNode = this.getNode(index - 1)
+        prevNode.next = prevNode.next.next
+
+        this.size--
+    }
+}
+```
 
 ## 链表的中间结点
 
