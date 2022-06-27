@@ -1,57 +1,131 @@
-const webdriver = require('selenium-webdriver');
-async function runTestWithCaps(capabilities) {
-    let driver = new webdriver.Builder()
-        .usingServer('http://fengjhone1:9EtoRfhYsA2z7rzqypSn@hub-cloud.browserstack.com/wd/hub')
-        .withCapabilities({
-            ...capabilities,
-            ...capabilities['browser'] && { browserName: capabilities['browser'] }  // Because NodeJS language binding requires browserName to be defined
-        })
-        .build();
-    await driver.get("http://www.google.com");
-    const inputField = await driver.findElement(webdriver.By.name("q"));
-    await inputField.sendKeys("BrowserStack", webdriver.Key.ENTER); // this submits on desktop browsers
-    try {
-        await driver.wait(webdriver.until.titleMatches(/BrowserStack/i), 5000);
-    } catch (e) {
-        await inputField.submit(); // this helps in mobile browsers
+const input = [
+    {
+        value: 110000,
+        label: '北京市',
+        parent: null,
+        children: [
+            110001,
+            110002
+        ]
+    },
+    {
+        value: 110001,
+        label: '东城区',
+        parent: 110000,
+        children: []
+    },
+    {
+        value: 110002,
+        label: '西城区',
+        parent: 110000,
+        children: []
+    },
+    {
+        value: 130000,
+        label: '河北省',
+        parent: null,
+        children: [
+            130100
+        ]
+    },
+    {
+        value: 130100,
+        label: '石家庄市',
+        parent: 130000,
+        children: [
+            130102,
+            130104
+        ]
+    },
+    {
+        value: 130102,
+        label: '长安区',
+        parent: 130100,
+        children: []
+    },
+    {
+        value: 130104,
+        label: '桥西区',
+        parent: 130100,
+        children: []
+    },
+];
+const output = [
+    {
+        value: 110000,
+        label: '北京市',
+        parent: null,
+        children: [
+            {
+                value: 110001,
+                label: '东城区',
+                parent: 110000,
+                children: []
+            },
+            {
+                value: 110002,
+                label: '西城区',
+                parent: 110000,
+                children: []
+            }
+        ]
+    },
+    {
+        value: 130000,
+        label: '河北省',
+        parent: null,
+        children: [
+            {
+                value: 130100,
+                label: '石家庄市',
+                parent: 130000,
+                children: [
+                    {
+                        value: 130102,
+                        label: '长安区',
+                        parent: 130100,
+                        children: []
+                    },
+                    {
+                        value: 130104,
+                        label: '桥西区',
+                        parent: 130100,
+                        children: []
+                    }
+                ]
+            },
+        ]
+    },
+];
+function createTree(input) {
+    input.forEach(item => {
+        let child = item.children
+        if (child.length !== 0) item.children = []
+    })
+
+    let map = input.reduce((pre, cur) => {
+        pre[cur.value] = cur
+
+        return pre
+    }, [])
+
+    let results = []
+    for (let key in map) {
+        let ele = map[key]
+
+        if (ele.parent === null) {
+            results.push(ele)
+        } else {
+            let parent = map[ele.parent]
+            if (parent) {
+                parent.children = parent.children ?? []
+                parent.children.push(ele)
+            }
+        }
     }
-    try {
-        await driver.wait(webdriver.until.titleMatches(/BrowserStack/i), 5000);
-        console.log(await driver.getTitle());
-        await driver.executeScript(
-            'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"passed","reason": "Title contains BrowserStack!"}}'
-        );
-    } catch (e) {
-        await driver.executeScript(
-            'browserstack_executor: {"action": "setSessionStatus", "arguments": {"status":"failed","reason": "Page could not load in time"}}'
-        );
-    }
-    await driver.quit();
+
+    return results
 }
-const capabilities1 = {
-    'browser': 'chrome',
-    'browser_version': 'latest',
-    'os': 'Windows',
-    'os_version': '10',
-    'build': 'browserstack-build-1',
-    'name': 'Parallel test 1'
-}
-const capabilities2 = {
-    'browser': 'firefox',
-    'browser_version': '98.0',
-    'os': 'Windows',
-    'os_version': '10',
-    'build': 'browserstack-build-1',
-    'name': 'Parallel test 2'
-}
-const capabilities3 = {
-    'browser': 'safari',
-    'browser_version': 'latest',
-    'os': 'OS X',
-    'os_version': 'Big Sur',
-    'build': 'browserstack-build-1',
-    'name': 'Parallel test 3'
-}
-runTestWithCaps(capabilities1);
-runTestWithCaps(capabilities2);
-runTestWithCaps(capabilities3);
+
+
+console.log(createTree(input))

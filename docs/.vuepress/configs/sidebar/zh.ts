@@ -69,6 +69,7 @@ export const zh: SidebarConfig = {
             text: '算法',
             children: [
                 '/algorithms/array.md',
+                '/algorithms/hash.md',
                 '/algorithms/sort.md',
                 '/algorithms/tree.md',
                 '/algorithms/dp.md',
