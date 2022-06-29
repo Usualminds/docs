@@ -156,5 +156,14 @@ export const zh: SidebarConfig = {
                 }
             ]
         },
+    ],
+    '/securities/': [
+        {
+            text: '证券',
+            children: [
+                '/securities/basic.md',
+                '/securities/law.md',
+            ]
+        }
     ]
 }

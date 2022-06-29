@@ -133,6 +133,13 @@ export const themeData = {
               ]
             }
           ]
+        },
+        {
+          "text": "证券",
+          "children": [
+            "/securities/basic.md",
+            "/securities/law.md"
+          ]
         }
       ],
       "selectLanguageName": "简体中文",
@@ -293,6 +300,15 @@ export const themeData = {
                   "/test/ft.md"
                 ]
               }
+            ]
+          }
+        ],
+        "//": [
+          {
+            "text": "证券",
+            "children": [
+              "/securities/basic.md",
+              "/securities/law.md"
             ]
           }
         ]

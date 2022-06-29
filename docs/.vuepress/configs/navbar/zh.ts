@@ -133,4 +133,11 @@ export const zh: NavbarConfig = [
             }
         ]
     },
+    {
+        text: '证券',
+        children: [
+            '/securities/basic.md',
+            '/securities/law.md',
+        ]
+    }
 ]

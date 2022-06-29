@@ -1,89 +1,31 @@
-class ListNode {
-    val: number
-    next: ListNode | null
+function fourSum(nums: number[], target: number): number[][] {
+    const len = nums.length
 
-    constructor(val?: number, next?: ListNode | null) {
-        this.val = val === undefined ? 0 : val
-        this.next = next === undefined ? null : next
-    }
-}
-class MyLinkedList {
-    head: ListNode
-    size: number
+    if (len < 4) return []
 
-    constructor() {
-        this.size = 0;
-        this.head = null
-    }
+    nums.sort((a, b) => a - b)
 
-    get(index: number): number {
-        if (index < 0 || index >= this.size) return -1
+    let res = []
 
-        let node: ListNode = this.head;
+    for (let i = 0; i < len - 3; i++) {
+        if (i === 0 || nums[i] !== nums[i - 1]) {
+            for (let j = i + 1; j < len - 2; j++) {
+                if (j === i + 1 || nums[j] !== nums[j - 1]) {
+                    let left = j + 1, right = len - 1
 
-        for (let i: number = 0; i < index; i++) {
-            node = node.next;
+                    while (left < right) {
+                        let sum = nums[i] + nums[j] + nums[left] + nums[right]
+
+                        if (sum < target) { left++; continue }
+                        if (sum > target) { right--; continue }
+                        res.push([nums[i], nums[j], nums[left], nums[right]]);
+                        while (left < right && nums[left] === nums[++left]);
+                        while (left < right && nums[right] === nums[--right]);
+                    }
+                }
+            }
         }
-
-        return node.val
     }
 
-    getNode(index: number): ListNode {
-        if (index < 0 || index >= this.size) return
-
-        let node: ListNode = this.head;
-        for (let i: number = 0; i < index; i++) {
-            node = node.next;
-        }
-        return node
-    }
-
-    addAtHead(val: number): void {
-        const oldHead: ListNode = this.head;
-        this.head = new ListNode(val, oldHead);
-        this.size++;
-    }
-
-
-    addAtTail(val: number): void {
-        if (this.size === 0) {
-            this.size++;
-            this.head = new ListNode(val, null);
-            return;
-        }
-
-        const prevNode: ListNode = this.getNode(this.size - 1)
-        prevNode.next = new ListNode(val, null)
-
-        this.size++;
-    }
-
-    addAtIndex(index: number, val: number): void {
-        if (index > this.size) return
-
-        if (index <= 0) {
-            return this.addAtHead(val)
-        }
-        const prevNode: ListNode = this.getNode(index - 1)
-
-        const node: ListNode = prevNode.next
-        prevNode.next = new ListNode(val, node)
-
-        this.size++;
-    }
-
-    deleteAtIndex(index: number): void {
-        if (index < 0 || index >= this.size) return
-
-        if (index === 0) {
-            this.head = this.head.next
-            this.size--
-            return
-        }
-
-        const prevNode: ListNode = this.getNode(index - 1)
-        prevNode.next = prevNode.next.next
-
-        this.size--;
-    }
-}
+    return res
+};
