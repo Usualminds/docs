@@ -303,7 +303,7 @@ export const themeData = {
             ]
           }
         ],
-        "//": [
+        "/securities/": [
           {
             "text": "证券",
             "children": [

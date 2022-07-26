@@ -6,7 +6,8 @@
     "license": "MIT",
     "scripts": {
         "dev": "vuepress dev docs",
-        "build": "vuepress build docs"
+        "build": "vuepress build docs",
+        "gen": "node docs/script/createPath.js"
     },
     "devDependencies": {
         "vuepress": "^2.0.0-beta.35"
