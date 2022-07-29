@@ -1,30 +1,29 @@
-function fourSum(nums: number[], target: number): number[][] {
-    const len = nums.length
+function convert(s: string, numRows: number): string {
+    if (numRows === 1) return s
 
-    if (len < 4) return []
+    const sLen = s.length
+    let len = Math.min(sLen, numRows), rows = []
 
-    nums.sort((a, b) => a - b)
+    for (let i = 0; i < len; i++) {
+        rows[i] = ''
+    }
 
-    let res = []
+    let start = 0, flag = false
 
-    for (let i = 0; i < len - 3; i++) {
-        if (i === 0 || nums[i] !== nums[i - 1]) {
-            for (let j = i + 1; j < len - 2; j++) {
-                if (j === i + 1 || nums[j] !== nums[j - 1]) {
-                    let left = j + 1, right = len - 1
+    for (let char of s) {
+        rows[start] += char
 
-                    while (left < right) {
-                        let sum = nums[i] + nums[j] + nums[left] + nums[right]
-
-                        if (sum < target) { left++; continue }
-                        if (sum > target) { right--; continue }
-                        res.push([nums[i], nums[j], nums[left], nums[right]]);
-                        while (left < right && nums[left] === nums[++left]);
-                        while (left < right && nums[right] === nums[--right]);
-                    }
-                }
-            }
+        if (start === 0 || start === numRows - 1) {
+            flag = !flag
         }
+
+        start += flag ? 1 : -1
+    }
+
+    let res = ''
+
+    for (let row of rows) {
+        res += row
     }
 
     return res
