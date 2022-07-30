@@ -111,6 +111,8 @@ export const themeData = {
             {
               "text": "算法",
               "children": [
+                "/article/string.md",
+                "/article/lru.md",
                 "/article/project.md",
                 "/article/pnpm.md",
                 "/article/dp.md",
@@ -242,6 +244,8 @@ export const themeData = {
           {
             "text": "文章",
             "children": [
+              "/article/string.md",
+              "/article/lru.md",
               "/article/project.md",
               "/article/pnpm.md",
               "/article/dp.md",
