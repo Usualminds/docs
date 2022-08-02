@@ -1,30 +1,20 @@
-function convert(s: string, numRows: number): string {
-    if (numRows === 1) return s
-
-    const sLen = s.length
-    let len = Math.min(sLen, numRows), rows = []
+function longestValidParentheses(s: string): number {
+    let stack = [-1], max = 0, len = s.length
 
     for (let i = 0; i < len; i++) {
-        rows[i] = ''
-    }
+        let char = s.charAt(i)
+        if (char === '(') {
+            stack.push(i)
+        } else {
+            stack.pop()
 
-    let start = 0, flag = false
-
-    for (let char of s) {
-        rows[start] += char
-
-        if (start === 0 || start === numRows - 1) {
-            flag = !flag
+            if (stack.length === 0) {
+                stack.push(i)
+            } else {
+                max = Math.max(max, i - stack[stack.length - 1])
+            }
         }
-
-        start += flag ? 1 : -1
     }
 
-    let res = ''
-
-    for (let row of rows) {
-        res += row
-    }
-
-    return res
+    return max
 };
