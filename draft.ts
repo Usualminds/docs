@@ -1,20 +1,20 @@
-function longestValidParentheses(s: string): number {
-    let stack = [-1], max = 0, len = s.length
+function minSubsequence(nums: number[]): number[] {
+    let res = [], sum = getSum(nums), len = nums.length, temp = 0
+
+    nums.sort((a, b) => b - a)
 
     for (let i = 0; i < len; i++) {
-        let char = s.charAt(i)
-        if (char === '(') {
-            stack.push(i)
-        } else {
-            stack.pop()
+        temp += nums[i]
+        res.push(nums[i])
 
-            if (stack.length === 0) {
-                stack.push(i)
-            } else {
-                max = Math.max(max, i - stack[stack.length - 1])
-            }
+        if (temp * 2 > sum) {
+            break
         }
     }
 
-    return max
+    return res
 };
+
+function getSum(nums: number[]) {
+    return nums.reduce((pre, cur) => pre + cur)
+}

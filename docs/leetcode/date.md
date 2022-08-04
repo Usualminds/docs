@@ -1,6 +1,38 @@
 # 日常
 
-## 有序队列
+## 非递增顺序的最小子序列
+[👉 Leetcode 链接-1403](https://leetcode.cn/problems/minimum-subsequence-in-non-increasing-order/)
+
+给你一个数组 nums，请你从中抽取一个子序列，满足该子序列的元素之和 严格 大于未包含在该子序列中的各元素之和。
+
+如果存在多个解决方案，只需返回 长度最小 的子序列。如果仍然有多个解决方案，则返回 元素之和最大 的子序列。
+
+与子数组不同的地方在于，「数组的子序列」不强调元素在原数组中的连续性，也就是说，它可以通过从数组中分离一些（也可能不分离）元素得到。
+
+```ts
+function minSubsequence(nums: number[]): number[] {
+    let res = [], sum = getSum(nums), len = nums.length, temp = 0
+
+    nums.sort((a, b) => b - a)
+
+    for (let i = 0; i < len; i++) {
+        temp += nums[i]
+        res.push(nums[i])
+
+        if (temp * 2 > sum) {
+            break
+        }
+    }
+
+    return res
+};
+
+function getSum(nums: number[]) {
+    return nums.reduce((pre, cur) => pre + cur)
+}
+```
+
+## 有序队列 ⭐⭐
 [👉 Leetcode 链接-899](https://leetcode.cn/problems/orderly-queue/)
 
 给定一个字符串 s 和一个整数 k 。你可以从 s 的前 k 个字母中选择一个，并把它加到字符串的末尾。
