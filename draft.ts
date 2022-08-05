@@ -1,20 +1,29 @@
-function minSubsequence(nums: number[]): number[] {
-    let res = [], sum = getSum(nums), len = nums.length, temp = 0
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     val: number
+ *     left: TreeNode | null
+ *     right: TreeNode | null
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.left = (left===undefined ? null : left)
+ *         this.right = (right===undefined ? null : right)
+ *     }
+ * }
+ */
 
-    nums.sort((a, b) => b - a)
+function addOneRow(root: TreeNode | null, val: number, depth: number): TreeNode | null {
+    if (!root) return null
 
-    for (let i = 0; i < len; i++) {
-        temp += nums[i]
-        res.push(nums[i])
+    if (depth === 1) return new TreeNode(val, root, null)
 
-        if (temp * 2 > sum) {
-            break
-        }
+    if (depth === 2) {
+        root.left = new TreeNode(val, root.left, null)
+        root.right = new TreeNode(val, null, root.right)
+    } else {
+        root.left = addOneRow(root.left, val, depth - 1)
+        root.right = addOneRow(root.right, val, depth - 1)
     }
 
-    return res
+    return root
 };
-
-function getSum(nums: number[]) {
-    return nums.reduce((pre, cur) => pre + cur)
-}
