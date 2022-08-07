@@ -13,7 +13,7 @@ const routeItems = [
   ["v-7f4aae09","/algorithms/tree.html",{"title":"树"},["/algorithms/tree","/algorithms/tree.md"]],
   ["v-3c2b42b9","/article/browser-finger.html",{"title":"浏览器指纹及其应用"},["/article/browser-finger","/article/browser-finger.md"]],
   ["v-54e17b9b","/article/dp.html",{"title":"动态规划"},["/article/dp","/article/dp.md"]],
-  ["v-66153c7c","/article/lru.html",{"title":"LRU"},["/article/lru","/article/lru.md"]],
+  ["v-66153c7c","/article/lru.html",{"title":"LRU 与 LFU 的应用"},["/article/lru","/article/lru.md"]],
   ["v-6dead58c","/article/pnpm.html",{"title":"pnpm"},["/article/pnpm","/article/pnpm.md"]],
   ["v-1ace5e52","/article/project.html",{"title":"SMJ 项目知识体系梳理"},["/article/project","/article/project.md"]],
   ["v-6c743ed9","/article/qrcode.html",{"title":""},["/article/qrcode","/article/qrcode.md"]],
