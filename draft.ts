@@ -1,29 +1,26 @@
-/**
- * Definition for a binary tree node.
- * class TreeNode {
- *     val: number
- *     left: TreeNode | null
- *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
- *         this.val = (val===undefined ? 0 : val)
- *         this.left = (left===undefined ? null : left)
- *         this.right = (right===undefined ? null : right)
- *     }
- * }
- */
+function exclusiveTime(n: number, logs: string[]): number[] {
+    const stack = [], ans = new Array(n).fill(0)
 
-function addOneRow(root: TreeNode | null, val: number, depth: number): TreeNode | null {
-    if (!root) return null
+    for (let log of logs) {
+        let logArray = log.split(':'), name = logArray[0], type = logArray[1], time = Number(logArray[2])
 
-    if (depth === 1) return new TreeNode(val, root, null)
+        if (type === 'start') {
+            if (stack.length) {
+                ans[stack[stack.length - 1][0]] += (time - stack[stack.length - 1][1])
+                stack[stack.length - 1][1] = time
+            }
+            stack.push([name, time])
+        } else {
+            let peek = stack.pop()
+            ans[peek[0]] += time - peek[1] + 1
 
-    if (depth === 2) {
-        root.left = new TreeNode(val, root.left, null)
-        root.right = new TreeNode(val, null, root.right)
-    } else {
-        root.left = addOneRow(root.left, val, depth - 1)
-        root.right = addOneRow(root.right, val, depth - 1)
+            if (stack.length) {
+                stack[stack.length - 1][1] = time + 1
+            }
+
+        }
+
     }
 
-    return root
+    return ans
 };
