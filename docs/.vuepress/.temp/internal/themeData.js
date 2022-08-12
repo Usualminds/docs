@@ -135,13 +135,6 @@ export const themeData = {
               ]
             }
           ]
-        },
-        {
-          "text": "证券",
-          "children": [
-            "/securities/basic.md",
-            "/securities/law.md"
-          ]
         }
       ],
       "selectLanguageName": "简体中文",
@@ -232,6 +225,7 @@ export const themeData = {
             "text": "每日一题",
             "children": [
               "/leetcode/date.md",
+              "/leetcode/smart.md",
               "/leetcode/june.md",
               "/leetcode/april.md",
               "/leetcode/february.md",
@@ -305,15 +299,6 @@ export const themeData = {
                   "/test/ft.md"
                 ]
               }
-            ]
-          }
-        ],
-        "/securities/": [
-          {
-            "text": "证券",
-            "children": [
-              "/securities/basic.md",
-              "/securities/law.md"
             ]
           }
         ]

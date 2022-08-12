@@ -84,6 +84,7 @@ export const zh: SidebarConfig = {
             text: '每日一题',
             children: [
                 '/leetcode/date.md',
+                '/leetcode/smart.md',
                 '/leetcode/june.md',
                 '/leetcode/april.md',
                 '/leetcode/february.md',
@@ -160,13 +161,4 @@ export const zh: SidebarConfig = {
             ]
         },
     ],
-    '/securities/': [
-        {
-            text: '证券',
-            children: [
-                '/securities/basic.md',
-                '/securities/law.md',
-            ]
-        }
-    ]
 }
