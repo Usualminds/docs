@@ -25,6 +25,8 @@ export const pagesData = {
   "v-54e17b9b": () => import(/* webpackChunkName: "v-54e17b9b" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/dp.html.js").then(({ data }) => data),
   // path: /article/lru.html
   "v-66153c7c": () => import(/* webpackChunkName: "v-66153c7c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/lru.html.js").then(({ data }) => data),
+  // path: /article/nim.html
+  "v-4c18bbf9": () => import(/* webpackChunkName: "v-4c18bbf9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/nim.html.js").then(({ data }) => data),
   // path: /article/pnpm.html
   "v-6dead58c": () => import(/* webpackChunkName: "v-6dead58c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/pnpm.html.js").then(({ data }) => data),
   // path: /article/project.html
@@ -91,6 +93,8 @@ export const pagesData = {
   "v-10763323": () => import(/* webpackChunkName: "v-10763323" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/ts/practise.html.js").then(({ data }) => data),
   // path: /base/ts/ts_source_code.html
   "v-291eec7d": () => import(/* webpackChunkName: "v-291eec7d" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/base/ts/ts_source_code.html.js").then(({ data }) => data),
+  // path: /theroy/react/
+  "v-1ef6020a": () => import(/* webpackChunkName: "v-1ef6020a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/theroy/react/index.html.js").then(({ data }) => data),
   // path: /theroy/vue/compiler.html
   "v-b27afcf4": () => import(/* webpackChunkName: "v-b27afcf4" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/theroy/vue/compiler.html.js").then(({ data }) => data),
   // path: /theroy/vue/component.html
@@ -101,8 +105,6 @@ export const pagesData = {
   "v-f5170928": () => import(/* webpackChunkName: "v-f5170928" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/theroy/vue/reactive.html.js").then(({ data }) => data),
   // path: /theroy/vue/renderer.html
   "v-d9afb83c": () => import(/* webpackChunkName: "v-d9afb83c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/theroy/vue/renderer.html.js").then(({ data }) => data),
-  // path: /theroy/react/
-  "v-1ef6020a": () => import(/* webpackChunkName: "v-1ef6020a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/theroy/react/index.html.js").then(({ data }) => data),
   // path: /utils/babel/basic.html
   "v-fa0a26f2": () => import(/* webpackChunkName: "v-fa0a26f2" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/basic.html.js").then(({ data }) => data),
   // path: /utils/babel/mini-babel.html
