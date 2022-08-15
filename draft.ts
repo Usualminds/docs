@@ -1,73 +1,66 @@
-class LFUCache {
+class MyCircularDeque {
+    private statck: number[]
+    private front: number
+    private end: number
     private max: number
-    private count: number
-    private times: Map<number, number>
-    private values: Map<number, number>
-    private map: Map<number, Set<number>>
 
-    constructor(capacity: number) {
-        this.max = capacity
-        this.count = 0
-        this.times = new Map()
-        this.values = new Map()
-        this.map = new Map()
+    constructor(k: number) {
+        this.max = k + 1
+        this.front = 0
+        this.end = 0
+        this.statck = []
     }
 
-    get(key: number): number {
-        if (this.values.has(key)) {
-            this.update(key)
-            return this.values.get(key)
-        }
+    insertFront(value: number): boolean {
+        if (this.isFull()) return false
 
-        return -1
+        this.front = (this.front - 1 + this.max) % this.max
+        this.statck[this.front] = value
+
+        return true
     }
 
-    put(key: number, value: number): void {
-        if (this.max === 0) return
+    insertLast(value: number): boolean {
+        if (this.isFull()) return false
 
-        if (this.values.has(key)) {
-            this.values.set(key, value)
-            this.update(key)
-        } else {
-            if (this.max === this.values.size) {
-                let minUse = this.map.get(this.count), minKey = minUse.keys().next().value
+        this.statck[this.end] = value
+        this.end = (this.end + 1) % this.max
 
-                minUse.delete(minKey)
-                this.values.delete(minKey)
-                this.times.delete(minKey)
-            }
-
-            this.values.set(key, value)
-
-            let countSet = this.map.get(1) || new Set()
-            countSet.add(key)
-
-            this.map.set(1, countSet)
-            this.times.set(key, 1)
-            this.count = 1
-        }
+        return true
     }
 
-    update(key: number): void {
-        let time = this.times.get(key), countSet = this.map.get(time)
+    deleteFront(): boolean {
+        if (this.isEmpty()) return false
 
-        if (this.count === time && countSet.size === 1) {
-            this.count += 1
-        }
+        this.front = (this.front + 1) % this.max
 
-        time++
-        countSet.delete(key)
-        countSet = this.map.get(time) || new Set()
-        countSet.add(key)
+        return true
+    }
 
-        this.map.set(time, countSet)
-        this.times.set(key, time)
+    deleteLast(): boolean {
+        if (this.isEmpty()) return false
+
+        this.end = (this.end - 1 + this.max) % this.max
+        return true
+    }
+
+    getFront(): number {
+        if (this.isEmpty()) return -1
+
+        return this.statck[this.front]
+    }
+
+    getRear(): number {
+        if (this.isEmpty()) return -1
+
+        return this.statck[(this.end - 1 + this.max) % this.max]
+    }
+
+    isEmpty(): boolean {
+        return this.front === this.end
+    }
+
+    isFull(): boolean {
+        return (this.end + 1) % this.max === this.front
     }
 }
-
-/**
- * Your LFUCache object will be instantiated and called as such:
- * var obj = new LFUCache(capacity)
- * var param_1 = obj.get(key)
- * obj.put(key,value)
- */
