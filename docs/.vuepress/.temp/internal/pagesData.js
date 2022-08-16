@@ -19,8 +19,6 @@ export const pagesData = {
   "v-f3fd7414": () => import(/* webpackChunkName: "v-f3fd7414" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/string.html.js").then(({ data }) => data),
   // path: /algorithms/tree.html
   "v-7f4aae09": () => import(/* webpackChunkName: "v-7f4aae09" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/algorithms/tree.html.js").then(({ data }) => data),
-  // path: /design/
-  "v-72582dd0": () => import(/* webpackChunkName: "v-72582dd0" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/design/index.html.js").then(({ data }) => data),
   // path: /article/browser-finger.html
   "v-3c2b42b9": () => import(/* webpackChunkName: "v-3c2b42b9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/browser-finger.html.js").then(({ data }) => data),
   // path: /article/dp.html
@@ -37,6 +35,10 @@ export const pagesData = {
   "v-6c743ed9": () => import(/* webpackChunkName: "v-6c743ed9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/qrcode.html.js").then(({ data }) => data),
   // path: /article/string.html
   "v-58180794": () => import(/* webpackChunkName: "v-58180794" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/string.html.js").then(({ data }) => data),
+  // path: /article/taicss.html
+  "v-82a0b5c0": () => import(/* webpackChunkName: "v-82a0b5c0" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/article/taicss.html.js").then(({ data }) => data),
+  // path: /design/
+  "v-72582dd0": () => import(/* webpackChunkName: "v-72582dd0" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/design/index.html.js").then(({ data }) => data),
   // path: /leetcode/april.html
   "v-66154a18": () => import(/* webpackChunkName: "v-66154a18" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/leetcode/april.html.js").then(({ data }) => data),
   // path: /leetcode/contest.html
@@ -105,16 +107,16 @@ export const pagesData = {
   "v-f5170928": () => import(/* webpackChunkName: "v-f5170928" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/theroy/vue/reactive.html.js").then(({ data }) => data),
   // path: /theroy/vue/renderer.html
   "v-d9afb83c": () => import(/* webpackChunkName: "v-d9afb83c" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/theroy/vue/renderer.html.js").then(({ data }) => data),
-  // path: /utils/rollup/basic.html
-  "v-76ae41ea": () => import(/* webpackChunkName: "v-76ae41ea" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/rollup/basic.html.js").then(({ data }) => data),
   // path: /utils/babel/basic.html
   "v-fa0a26f2": () => import(/* webpackChunkName: "v-fa0a26f2" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/basic.html.js").then(({ data }) => data),
   // path: /utils/babel/mini-babel.html
   "v-60a408c9": () => import(/* webpackChunkName: "v-60a408c9" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/babel/mini-babel.html.js").then(({ data }) => data),
-  // path: /utils/webpack/basic.html
-  "v-b53c7938": () => import(/* webpackChunkName: "v-b53c7938" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/webpack/basic.html.js").then(({ data }) => data),
+  // path: /utils/rollup/basic.html
+  "v-76ae41ea": () => import(/* webpackChunkName: "v-76ae41ea" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/rollup/basic.html.js").then(({ data }) => data),
   // path: /utils/vite/basic.html
   "v-adaab582": () => import(/* webpackChunkName: "v-adaab582" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/vite/basic.html.js").then(({ data }) => data),
+  // path: /utils/webpack/basic.html
+  "v-b53c7938": () => import(/* webpackChunkName: "v-b53c7938" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/utils/webpack/basic.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"/Users/apple/Documents/work/docs/docs/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
 }
