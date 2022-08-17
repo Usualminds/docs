@@ -1,5 +1,34 @@
 # 日常
 
+## 层数最深叶子节点的和 TODO: BFS DFS
+[👉 Leetcode 链接-](https://leetcode.cn/problems/deepest-leaves-sum/)
+
+给你一棵二叉树的根节点 root ，请你返回 层数最深的叶子节点的和 。
+
+```ts
+function deepestLeavesSum(root: TreeNode | null): number {
+    let maxLevel = -1;
+    let sum = 0;
+
+    const dfs = (node, level)=> {
+        if(!node) return
+
+        if(level > maxLevel) {
+            maxLevel = level
+            sum = node.val
+        } else if(level === maxLevel){
+            sum += node.val
+        }
+
+        dfs(node.left, level+1)
+        dfs(node.right, level+1)
+    }
+
+    dfs(root, 0)
+
+    return sum
+};
+```
 ## 设计循环双端队列 ⭐⭐
 [👉 Leetcode 链接-641](https://leetcode.cn/problems/design-circular-deque/)
 
