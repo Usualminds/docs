@@ -1,4 +1,7 @@
 # 日常
+## 最大相等频率 TODO:
+[👉 Leetcode 链接-1224](https://leetcode.cn/problems/maximum-equal-frequency/)
+
 
 ## 层数最深叶子节点的和 TODO: BFS DFS
 [👉 Leetcode 链接-](https://leetcode.cn/problems/deepest-leaves-sum/)
