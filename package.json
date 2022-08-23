@@ -5,11 +5,19 @@
     "author": "Joe <me@qjidea.com>",
     "license": "MIT",
     "scripts": {
+        "commit": "git-cz",
         "dev": "vuepress dev docs",
         "build": "vuepress build docs",
         "gen": "node docs/script/createPath.js"
     },
+    "config": {
+        "commitizen": {
+            "path": "node_modules/cz-conventional-changelog"
+        }
+    },
     "devDependencies": {
+        "commitizen": "^4.2.5",
+        "cz-conventional-changelog": "^3.3.0",
         "vuepress": "^2.0.0-beta.35"
     },
     "dependencies": {
