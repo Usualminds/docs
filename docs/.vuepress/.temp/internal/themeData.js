@@ -76,7 +76,7 @@ export const themeData = {
           "link": "/leetcode/january.md"
         },
         {
-          "text": "工具",
+          "text": "工程化",
           "link": "/utils/babel/basic.md",
           "children": [
             {
