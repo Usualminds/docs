@@ -1,6 +1,4 @@
-import { Vuepress } from '@vuepress/client/lib/components/Vuepress'
-
-const routeItems = [
+export const pagesRoutes = [
   ["v-8daa1a0e","/",{"title":"首页"},["/index.html","/README.md"]],
   ["v-3832d1d2","/algorithms/array.html",{"title":"数组"},["/algorithms/array","/algorithms/array.md"]],
   ["v-5699a55b","/algorithms/dp.html",{"title":"动态规划"},["/algorithms/dp","/algorithms/dp.md"]],
@@ -18,6 +16,7 @@ const routeItems = [
   ["v-6dead58c","/article/pnpm.html",{"title":"pnpm"},["/article/pnpm","/article/pnpm.md"]],
   ["v-1ace5e52","/article/project.html",{"title":"SMJ 项目知识体系梳理"},["/article/project","/article/project.md"]],
   ["v-6c743ed9","/article/qrcode.html",{"title":""},["/article/qrcode","/article/qrcode.md"]],
+  ["v-6d274793","/article/signature.html",{"title":"signature_pad"},["/article/signature","/article/signature.md"]],
   ["v-58180794","/article/string.html",{"title":"字符串"},["/article/string","/article/string.md"]],
   ["v-82a0b5c0","/article/taicss.html",{"title":"Tailwindcss 实现原理"},["/article/taicss","/article/taicss.md"]],
   ["v-72582dd0","/design/",{"title":"设计模式"},["/design/index.html","/design/index.md"]],
@@ -62,28 +61,3 @@ const routeItems = [
   ["v-b53c7938","/utils/webpack/basic.html",{"title":"Webpack"},["/utils/webpack/basic","/utils/webpack/basic.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
 ]
-
-export const pagesRoutes = routeItems.reduce(
-  (result, [name, path, meta, redirects]) => {
-    result.push(
-      {
-        name,
-        path,
-        component: Vuepress,
-        meta,
-      },
-      ...redirects.map((item) => ({
-        path: item,
-        redirect: path,
-      }))
-    )
-    return result
-  },
-  [
-    {
-      name: "404",
-      path: "/:catchAll(.*)",
-      component: Vuepress,
-    }
-  ]
-)

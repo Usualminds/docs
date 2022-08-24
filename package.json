@@ -1,36 +1,19 @@
 {
-    "name": "daliy-knowledge",
+    "name": "daily-knowledge",
     "version": "1.0.0",
     "main": "index.js",
     "author": "Joe <me@qjidea.com>",
     "license": "MIT",
     "scripts": {
-        "commit": "git-cz",
         "dev": "vuepress dev docs",
         "build": "vuepress build docs",
         "gen": "node docs/script/createPath.js"
     },
-    "config": {
-        "commitizen": {
-            "path": "node_modules/cz-conventional-changelog"
-        }
+    "dependencies": {
+        "vuepress": "^2.0.0-beta.50"
     },
     "devDependencies": {
-        "@commitlint/cli": "^17.0.3",
-        "@commitlint/config-conventional": "^17.0.3",
-        "commitizen": "^4.2.5",
-        "cz-conventional-changelog": "^3.3.0",
-        "husky": "^8.0.1",
-        "vuepress": "^2.0.0-beta.35"
-    },
-    "dependencies": {
-        "install": "^0.13.0",
-        "npm": "^8.12.1"
-    },
-    "husky": {
-        "hooks": {
-          "pre-commit": "npm run test", 
-          "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
-        }
+        "@vuepress/plugin-docsearch": "^2.0.0-beta.50",
+        "@vuepress/plugin-google-analytics": "^2.0.0-beta.50"
     }
 }

@@ -1,4 +1,4 @@
-<template><h1 id="浏览器指纹及其应用" tabindex="-1"><a class="header-anchor" href="#浏览器指纹及其应用" aria-hidden="true">#</a> 浏览器指纹及其应用</h1>
+<template><div><h1 id="浏览器指纹及其应用" tabindex="-1"><a class="header-anchor" href="#浏览器指纹及其应用" aria-hidden="true">#</a> 浏览器指纹及其应用</h1>
 <h2 id="背景" tabindex="-1"><a class="header-anchor" href="#背景" aria-hidden="true">#</a> 背景</h2>
 <p>伴随互联网的快速发展，Web 服务已呈现出极速增长的趋势， 人们在使用 Web 服务的同时，也面临着网络安全风险。根据中国信息通信研究院发布的<a href="http://www.caict.ac.cn/kxyj/qwfb/bps/202009/P020200916482039993423.pdf" target="_blank" rel="noopener noreferrer">《中国网络安全产业白皮书》<ExternalLinkIcon/></a>报告：我国网络安全产业呈现高速增长态势，2020 年产业规模预计为 1702 亿元。</p>
 <p><img src="https://files.mdnice.com/user/8106/0ed3dd69-93b3-4fe3-a49e-64061bd522c5.jpg" alt=""></p>
@@ -8,12 +8,12 @@
 <h2 id="浏览器指纹概述" tabindex="-1"><a class="header-anchor" href="#浏览器指纹概述" aria-hidden="true">#</a> 浏览器指纹概述</h2>
 <p>浏览器指纹是由<a href="https://www.eff.org/" target="_blank" rel="noopener noreferrer">电子前哨基金会（EFF）<ExternalLinkIcon/></a>首席科学家 <a href="https://www.xprize.org/about/people/peter-eckersley" target="_blank" rel="noopener noreferrer">Peter Eckersley<ExternalLinkIcon/></a> 在 2012 年提出，它利用浏览器自由传输的一些属性来生成和人类指纹一样具有标识作用的字符串。那么常见的浏览器指纹有哪些呢？可以参考如下表格数据，其中：</p>
 <ul>
-<li>指纹因子：指浏览器对外的公开属性，如 <code>userAgent</code> 可以通过 <code>navigator.userAgent</code> 获取; <code>colorDepth</code> 可以通过 <code>screen.colorDepth</code> 获取。</li>
+<li>指纹因子：指浏览器对外的公开属性，如 <code v-pre>userAgent</code> 可以通过 <code v-pre>navigator.userAgent</code> 获取; <code v-pre>colorDepth</code> 可以通过 <code v-pre>screen.colorDepth</code> 获取。</li>
 </ul>
 <p><img src="https://files.mdnice.com/user/8106/e33aabdd-dfe4-4d70-8a44-0242be356e72.jpg" alt=""></p>
 <ul>
-<li>稳定性：指刷新浏览器而指纹因子对应的取值不会发生改变。如 <code>colorDepth</code> 它表示屏幕的颜色深度，在谷歌浏览器中其取值为 24，刷新浏览器后其取值依然是 24。那么它就是<strong>稳定的</strong>指纹因子。</li>
-<li>独立性：指同一设备上使用不同浏览器，指纹因子的取值不会发生改变。如 <code>devicePixelRatio</code> 它表示当前显示设备的物理像素分辨率与 CSS 像素分辨率之比，其取值在同一设备上的谷歌浏览器、火狐浏览器、Edge 浏览器、IE 浏览器、Opera 浏览器和 Safari 浏览器均为同一个值。因此，<code>devicePixelRatio</code> 是<strong>独立的</strong>指纹因子。</li>
+<li>稳定性：指刷新浏览器而指纹因子对应的取值不会发生改变。如 <code v-pre>colorDepth</code> 它表示屏幕的颜色深度，在谷歌浏览器中其取值为 24，刷新浏览器后其取值依然是 24。那么它就是<strong>稳定的</strong>指纹因子。</li>
+<li>独立性：指同一设备上使用不同浏览器，指纹因子的取值不会发生改变。如 <code v-pre>devicePixelRatio</code> 它表示当前显示设备的物理像素分辨率与 CSS 像素分辨率之比，其取值在同一设备上的谷歌浏览器、火狐浏览器、Edge 浏览器、IE 浏览器、Opera 浏览器和 Safari 浏览器均为同一个值。因此，<code v-pre>devicePixelRatio</code> 是<strong>独立的</strong>指纹因子。</li>
 </ul>
 <table>
 <thead>
@@ -60,17 +60,17 @@
 <p>上面我们介绍了浏览器常见的指纹因子，但是如何度量浏览器中这些可以自由传输的指纹因子呢？了解过信息论的同学应该知道，我们可以通过信息熵来度量信息量，信息熵越高，则能传输越多的信息，熵越低，传输的信息越少。因此，可以将信息熵作为浏览器指纹标识程度的判据，举例来看，对于一个离散型随机变量 X，它的熵 H(X) 为：</p>
 <p>$$H(X) = -\sum_x{p(x)}\log_2{p(x)}$$</p>
 <h3 id="单个指纹因子熵值" tabindex="-1"><a class="header-anchor" href="#单个指纹因子熵值" aria-hidden="true">#</a> 单个指纹因子熵值</h3>
-<p>上述公式中，使用了以 2 为底的对数函数，其单位为比特。简单来讲，一个指纹因子的信息量可以通过它来量化。举个例子🌰：我们以指纹因子 <code>doNotTrack</code> 为例，它的取值结果有两种：</p>
+<p>上述公式中，使用了以 2 为底的对数函数，其单位为比特。简单来讲，一个指纹因子的信息量可以通过它来量化。举个例子🌰：我们以指纹因子 <code v-pre>doNotTrack</code> 为例，它的取值结果有两种：</p>
 <ul>
 <li>开启设置可标记为 1，关闭设置可标记为 0</li>
-<li>假设用户访问网站的统计结果中，设置了 <code>doNotTrack</code> 的概览为 10%, 未设置的概览为 90%。那么 <code>doNotTrack</code> 这一指纹因子对应的熵为：
+<li>假设用户访问网站的统计结果中，设置了 <code v-pre>doNotTrack</code> 的概览为 10%, 未设置的概览为 90%。那么 <code v-pre>doNotTrack</code> 这一指纹因子对应的熵为：
 $$H(X) = -{\frac{1}{10}}<em>\log_2^{\frac{1}{10}}-{\frac{9}{10}}</em>\log_2^{\frac{9}{10}}=0.469bit$$</li>
 </ul>
 <blockquote>
 <p>Note：点击<a href="http://home.ustc.edu.cn/~yang96/Elements_of_Information_Theory-second_edition.pdf" target="_blank" rel="noopener noreferrer">信息论基础<ExternalLinkIcon/></a>进行穿越复习。</p>
 </blockquote>
 <h3 id="多个指纹因子概率" tabindex="-1"><a class="header-anchor" href="#多个指纹因子概率" aria-hidden="true">#</a> 多个指纹因子概率</h3>
-<p>知道了如何计算单个指纹因子的信息熵，我们就可以进一步对浏览器的多个指纹因子进行信息熵的合并计算。根据 <a href="https://www.xprize.org/about/people/peter-eckersley" target="_blank" rel="noopener noreferrer">Peter Eckersley<ExternalLinkIcon/></a> 发布的论文 <a href="https://coveryourtracks.eff.org/static/browser-uniqueness.pdf" target="_blank" rel="noopener noreferrer">How Unique Is Your Web Browser<ExternalLinkIcon/></a> 结果表明：通过 <code>userAgent</code>、<code>fonts</code>、<code>screenResolution</code> 和 <code>plugins</code> 等八个指纹因子来生成浏览器指纹:</p>
+<p>知道了如何计算单个指纹因子的信息熵，我们就可以进一步对浏览器的多个指纹因子进行信息熵的合并计算。根据 <a href="https://www.xprize.org/about/people/peter-eckersley" target="_blank" rel="noopener noreferrer">Peter Eckersley<ExternalLinkIcon/></a> 发布的论文 <a href="https://coveryourtracks.eff.org/static/browser-uniqueness.pdf" target="_blank" rel="noopener noreferrer">How Unique Is Your Web Browser<ExternalLinkIcon/></a> 结果表明：通过 <code v-pre>userAgent</code>、<code v-pre>fonts</code>、<code v-pre>screenResolution</code> 和 <code v-pre>plugins</code> 等八个指纹因子来生成浏览器指纹:</p>
 <p><img src="https://files.mdnice.com/user/8106/58bf4ac5-1973-4cba-9a52-89276d9dd5d9.jpg" alt=""></p>
 <p>其统计结果显示这 8 个指纹因子至少包含 18.1 bit 的信息熵，通过自信息计算公式：</p>
 <p>$$I(e) = -\log_2{p(x)}$$</p>
@@ -107,4 +107,6 @@ $$H(X) = -{\frac{1}{10}}<em>\log_2^{\frac{1}{10}}-{\frac{9}{10}}</em>\log_2^{\fr
 <li><a href="https://hal.inria.fr/hal-01285470/file/beauty-sp16.pdf" target="_blank" rel="noopener noreferrer">Beauty and the Beast: Diverting modern web browsers
 to build unique browser fingerprints<ExternalLinkIcon/></a></li>
 </ul>
-</template>
+</div></template>
+
+
