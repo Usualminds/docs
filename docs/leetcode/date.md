@@ -1,4 +1,24 @@
 # 日常
+
+## 找到 K 个最接近的元素
+[👉 Leetcode 链接-658](https://leetcode.cn/problems/find-k-closest-elements/)
+```ts
+function findClosestElements(arr: number[], k: number, x: number): number[] {
+    const list = [...arr];
+        list.sort((a, b) => {
+            if (Math.abs(a - x) !== Math.abs(b - x)) {
+                return Math.abs(a - x) - Math.abs(b - x);
+            } else {
+                return a - b;
+            }
+        });
+        const ans = list.slice(0, k);
+        ans.sort((a, b) => a - b);
+        return ans;
+    
+};
+
+```
 ## 最大相等频率 TODO:
 [👉 Leetcode 链接-1224](https://leetcode.cn/problems/maximum-equal-frequency/)
 
