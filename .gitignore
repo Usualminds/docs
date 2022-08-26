@@ -1,4 +1,9 @@
 node_modules
+.temp
+.cache
+
+
+node_modules
 docs/utils/babel/src/node_modules
 
 .vscode

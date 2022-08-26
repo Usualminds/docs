@@ -1,19 +1,13 @@
 {
-    "name": "daily-knowledge",
-    "version": "1.0.0",
-    "main": "index.js",
-    "author": "Joe <me@qjidea.com>",
-    "license": "MIT",
-    "scripts": {
-        "dev": "vuepress dev docs",
-        "build": "vuepress build docs",
-        "gen": "node docs/script/createPath.js"
-    },
-    "dependencies": {
-        "vuepress": "^2.0.0-beta.50"
-    },
-    "devDependencies": {
-        "@vuepress/plugin-docsearch": "^2.0.0-beta.50",
-        "@vuepress/plugin-google-analytics": "^2.0.0-beta.50"
-    }
+  "name": "vuepress-starter",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.50"
+  }
 }
