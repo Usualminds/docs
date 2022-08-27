@@ -27,6 +27,8 @@ export const pagesComponents = {
   "v-54e17b9b": defineAsyncComponent(() => import(/* webpackChunkName: "v-54e17b9b" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/dp.html.vue")),
   // path: /article/lru.html
   "v-66153c7c": defineAsyncComponent(() => import(/* webpackChunkName: "v-66153c7c" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/lru.html.vue")),
+  // path: /article/nginx.html
+  "v-31cbe2f1": defineAsyncComponent(() => import(/* webpackChunkName: "v-31cbe2f1" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/nginx.html.vue")),
   // path: /article/nim.html
   "v-4c18bbf9": defineAsyncComponent(() => import(/* webpackChunkName: "v-4c18bbf9" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/nim.html.vue")),
   // path: /article/pnpm.html

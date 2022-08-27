@@ -25,6 +25,8 @@ export const pagesData = {
   "v-54e17b9b": () => import(/* webpackChunkName: "v-54e17b9b" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/dp.html.js").then(({ data }) => data),
   // path: /article/lru.html
   "v-66153c7c": () => import(/* webpackChunkName: "v-66153c7c" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/lru.html.js").then(({ data }) => data),
+  // path: /article/nginx.html
+  "v-31cbe2f1": () => import(/* webpackChunkName: "v-31cbe2f1" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/nginx.html.js").then(({ data }) => data),
   // path: /article/nim.html
   "v-4c18bbf9": () => import(/* webpackChunkName: "v-4c18bbf9" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/nim.html.js").then(({ data }) => data),
   // path: /article/pnpm.html

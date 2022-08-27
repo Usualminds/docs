@@ -97,6 +97,9 @@ export const zh: SidebarConfig = {
         {
             text: '文章',
             children: [
+                '/article/nginx.md',
+                '/article/taicss.md',
+                '/article/nim.md',
                 '/article/string.md',
                 '/article/lru.md',
                 '/article/project.md',

@@ -110,6 +110,7 @@ export const zh: NavbarConfig = [
             {
                 text: '算法',
                 children: [
+                    '/article/nginx.md',
                     '/article/taicss.md',
                     '/article/nim.md',
                     '/article/lru.md',

@@ -55,7 +55,7 @@
 ```
 从以上 `AST` 可以看出，其类型结构如下图：
 
-![](./assets/babel-type.png)
+![](https://tva1.sinaimg.cn/large/e6c9d24egy1h5kamlb7j4j21120igac7.jpg)
 
 > [AST 生成站点](https://astexplorer.net/)
 
