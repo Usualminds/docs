@@ -43,8 +43,18 @@ export const pagesComponents = {
   "v-58180794": defineAsyncComponent(() => import(/* webpackChunkName: "v-58180794" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/string.html.vue")),
   // path: /article/taicss.html
   "v-82a0b5c0": defineAsyncComponent(() => import(/* webpackChunkName: "v-82a0b5c0" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/taicss.html.vue")),
+  // path: /design/factory.html
+  "v-4cbc2b27": defineAsyncComponent(() => import(/* webpackChunkName: "v-4cbc2b27" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/factory.html.vue")),
   // path: /design/
   "v-72582dd0": defineAsyncComponent(() => import(/* webpackChunkName: "v-72582dd0" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/index.html.vue")),
+  // path: /design/proxy.html
+  "v-45923643": defineAsyncComponent(() => import(/* webpackChunkName: "v-45923643" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/proxy.html.vue")),
+  // path: /design/single.html
+  "v-74efbd0e": defineAsyncComponent(() => import(/* webpackChunkName: "v-74efbd0e" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/single.html.vue")),
+  // path: /design/strategy.html
+  "v-15e329a4": defineAsyncComponent(() => import(/* webpackChunkName: "v-15e329a4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/strategy.html.vue")),
+  // path: /design/watch.html
+  "v-a2ecdefc": defineAsyncComponent(() => import(/* webpackChunkName: "v-a2ecdefc" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/watch.html.vue")),
   // path: /leetcode/april.html
   "v-66154a18": defineAsyncComponent(() => import(/* webpackChunkName: "v-66154a18" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/leetcode/april.html.vue")),
   // path: /leetcode/contest.html

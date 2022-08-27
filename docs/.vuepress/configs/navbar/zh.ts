@@ -43,11 +43,50 @@ export const zh: NavbarConfig = [
     },
     {
         text: '算法',
-        link: '/algorithms/array.md',
+        children: [
+            {
+                text: "数组",
+                children: [
+                    '/algorithms/array.md',
+                    '/algorithms/hash.md',
+                    '/algorithms/sort.md',
+                    '/algorithms/tree.md',
+                    '/algorithms/dp.md',
+                    '/algorithms/linklist.md',
+                    '/algorithms/graph.md',
+                    '/algorithms/math.md',
+                ]
+            },
+            {
+                text: '每日一题',
+                children: [
+                    '/leetcode/date.md',
+                    '/leetcode/smart.md',
+                    '/leetcode/june.md',
+                    '/leetcode/april.md',
+                    '/leetcode/february.md',
+                    '/leetcode/january.md',
+                    '/leetcode/contest.md',
+                ],
+            },
+        ]
     },
     {
         text: '设计模式',
         link: '/design/index.md',
+        children: [
+            {
+                text: '设计模式',
+                children: [
+                    '/design/index.md',
+                    '/design/single.md',
+                    '/design/factory.md',
+                    '/design/proxy.md',
+                    '/design/strategy.md',
+                    '/design/watch.md',
+                ]
+            },
+        ]
     },
     {
         text: '框架',
@@ -69,10 +108,6 @@ export const zh: NavbarConfig = [
                 ],
             },
         ],
-    },
-    {
-        text: '每日一题',
-        link: '/leetcode/january.md'
     },
     {
         text: '工程化',

@@ -79,20 +79,6 @@ export const zh: SidebarConfig = {
             ],
         },
     ],
-    '/leetcode/': [
-        {
-            text: '每日一题',
-            children: [
-                '/leetcode/date.md',
-                '/leetcode/smart.md',
-                '/leetcode/june.md',
-                '/leetcode/april.md',
-                '/leetcode/february.md',
-                '/leetcode/january.md',
-                '/leetcode/contest.md',
-            ],
-        },
-    ],
     '/article/': [
         {
             text: '文章',
@@ -113,6 +99,14 @@ export const zh: SidebarConfig = {
         {
             text: '设计模式',
             link: '/design/index.md',
+            children: [
+                '/design/index.md',
+                '/design/single.md',
+                '/design/factory.md',
+                '/design/proxy.md',
+                '/design/strategy.md',
+                '/design/watch.md',
+            ]
         },
     ],
     '/utils/': [
