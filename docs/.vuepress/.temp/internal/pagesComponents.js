@@ -43,6 +43,10 @@ export const pagesComponents = {
   "v-58180794": defineAsyncComponent(() => import(/* webpackChunkName: "v-58180794" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/string.html.vue")),
   // path: /article/taicss.html
   "v-82a0b5c0": defineAsyncComponent(() => import(/* webpackChunkName: "v-82a0b5c0" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/taicss.html.vue")),
+  // path: /business/basic.html
+  "v-5d3438fe": defineAsyncComponent(() => import(/* webpackChunkName: "v-5d3438fe" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/business/basic.html.vue")),
+  // path: /business/law.html
+  "v-c4ae27e6": defineAsyncComponent(() => import(/* webpackChunkName: "v-c4ae27e6" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/business/law.html.vue")),
   // path: /design/factory.html
   "v-4cbc2b27": defineAsyncComponent(() => import(/* webpackChunkName: "v-4cbc2b27" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/factory.html.vue")),
   // path: /design/
@@ -69,10 +73,6 @@ export const pagesComponents = {
   "v-8d78f654": defineAsyncComponent(() => import(/* webpackChunkName: "v-8d78f654" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/leetcode/june.html.vue")),
   // path: /leetcode/smart.html
   "v-411ce191": defineAsyncComponent(() => import(/* webpackChunkName: "v-411ce191" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/leetcode/smart.html.vue")),
-  // path: /securities/basic.html
-  "v-c555e23a": defineAsyncComponent(() => import(/* webpackChunkName: "v-c555e23a" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/securities/basic.html.vue")),
-  // path: /securities/law.html
-  "v-ce60f022": defineAsyncComponent(() => import(/* webpackChunkName: "v-ce60f022" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/securities/law.html.vue")),
   // path: /test/finpoints.html
   "v-2e8b206f": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e8b206f" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/finpoints.html.vue")),
   // path: /test/ft.html

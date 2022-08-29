@@ -159,6 +159,17 @@ export const zh: NavbarConfig = [
         ]
     },
     {
+        text: '业务',
+        children: [
+            {
+                text: '基础业务',
+                children: [
+                    '/business/basic.md',
+                ]
+            }
+        ]
+    },
+    {
         text: '答题',
         children: [
             {

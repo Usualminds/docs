@@ -141,6 +141,19 @@ export const zh: SidebarConfig = {
             ],
         },
     ],
+    '/business/': [
+        {
+            text: '业务',
+            children: [
+                {
+                    text: '基础业务',
+                    children: [
+                        '/business/basic.md',
+                    ]
+                }
+            ]
+        },
+    ],
     '/test/': [
         {
             text: '答题',
