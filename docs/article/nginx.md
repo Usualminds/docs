@@ -245,7 +245,7 @@ location /mp4/ {
     limit_rate       50k;
 }
 ```
-#### 限制来自同一个地址的同时连接或请求的数量
+### 限制来自同一个地址的同时连接或请求的数量
 如果有恶意攻击者对 `Web` 应用发起流量攻击，短时间内使用脚本无限制地请求`Web` 应用地址，就会造成该应用带宽流量上升，无法响应其他正常用户的请求，这时候我们可以使用[ngx_http_limit_conn_module](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html)和[ngx_http_limit_req_module](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html)**针对同一个地址的同时连接和请求的数量进行限制**，可参考如下配置
 
 - 同一个地址的同时连接个数限制为 5
@@ -437,6 +437,15 @@ server {
 
 ## 为什么 Nginx 这么高效
 
+`Nginx` 性能的高效源自其架构设计的优势，主要包含以下几个点：
+
 ![nginx_arc](https://tva1.sinaimg.cn/large/e6c9d24egy1h5oxng6vmkj20vd0u0jtw.jpg)
+
+:::tip
+有兴趣可以参考关于 `NginX` 架构设计[Nginx Core Architecture](https://zh.booksc.org/book/61672853/b36b22)
+:::
+
+## 总结
+本文我们主要介绍了 `NginX` 是什么以及其优势，接下来，主要了解了 `NginX` 常见命令和配置。另外，介绍了几个 `NginX` 有意思的模块使用，包括：基于客户端 IP 地址的访问控制、响应速度限制、限制来自同一个地址的同时连接或请求的数量、基于 `IP` 的地理定位、`njs` 脚本语言。接着具体介绍了 `NginX` 反向代理和负载均衡。最后简要总结了 `NginX`  高性能的几个设计优势。如果你想了解更多关于 `NginX` 的特性，可以进一步去 [官网](https://nginx.org/en/)了解。
 ## 资料
 - [Nginx 性能优化功能](https://www.cnblogs.com/kevingrace/p/10018914.html)
