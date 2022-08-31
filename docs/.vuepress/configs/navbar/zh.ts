@@ -145,6 +145,7 @@ export const zh: NavbarConfig = [
             {
                 text: '算法',
                 children: [
+                    /* inject */
                     '/article/nginx.md',
                     '/article/taicss.md',
                     '/article/nim.md',
@@ -165,6 +166,17 @@ export const zh: NavbarConfig = [
                 text: '基础业务',
                 children: [
                     '/business/basic.md',
+                ]
+            }
+        ]
+    },
+    {
+        text: '香港',
+        children: [
+            {
+                text: '港交所',
+                children: [
+                    '/hk/basic.md',
                 ]
             }
         ]

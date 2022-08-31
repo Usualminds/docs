@@ -83,6 +83,7 @@ export const zh: SidebarConfig = {
         {
             text: '文章',
             children: [
+                /* injectSider */
                 '/article/nginx.md',
                 '/article/taicss.md',
                 '/article/nim.md',
@@ -150,7 +151,16 @@ export const zh: SidebarConfig = {
                     children: [
                         '/business/basic.md',
                     ]
-                }
+                },
+           
+            ]
+        },
+    ],
+    '/hk/': [
+        {
+            text: '港交所',
+            children: [
+                '/hk/basic.md',
             ]
         },
     ],
