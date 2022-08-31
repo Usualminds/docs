@@ -1,4 +1,25 @@
 # 日常
+
+## 验证栈序列
+[👉 Leetcode 链接-946](https://leetcode.cn/problems/validate-stack-sequences/)
+
+给定 pushed 和 popped 两个序列，每个序列中的 值都不重复，只有当它们可能是在最初空栈上进行的推入 push 和弹出 pop 操作序列的结果时，返回 true；否则，返回 false 。
+
+```ts
+function validateStackSequences(pushed: number[], popped: number[]): boolean {
+  let stack:number[] = [],len = pushed.length
+
+  for(let i=0,j=0;i<len;i++){
+      stack.push(pushed[i])
+      while(stack.length && stack[stack.length-1] === popped[j]){
+          stack.pop()
+          j++
+      }
+  }
+
+  return stack.length === 0
+};
+```
 ## 最大相等频率 TODO:
 [👉 Leetcode 链接-1224](https://leetcode.cn/problems/maximum-equal-frequency/)
 
