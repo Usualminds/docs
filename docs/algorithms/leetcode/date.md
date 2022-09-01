@@ -1,4 +1,4 @@
-# 日常
+# 每日一题
 
 ## 商品折扣后的最终价格
 [👉 Leetcode 链接-1475](https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/)

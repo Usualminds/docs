@@ -6,11 +6,15 @@
   "scripts": {
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
-    "gen": "plop --plopfile lib/index.js"
+    "gen": "plop --plopfile lib/index.js",
+    "md-lint": "zhlint docs/**/*.md",
+    "md-fix": "zhlint docs/**/*.md --fix"
   },
   "devDependencies": {
     "@vuepress/plugin-docsearch": "^2.0.0-beta.50",
+    "@vuepress/plugin-search": "^2.0.0-beta.50",
     "plop": "^3.1.1",
-    "vuepress": "^2.0.0-beta.50"
+    "vuepress": "^2.0.0-beta.50",
+    "zhlint": "^0.6.2"
   }
 }

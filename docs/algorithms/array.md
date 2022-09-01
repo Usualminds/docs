@@ -3,7 +3,7 @@
 ## 移除元素
 [👉 Leetcode 链接-27](https://leetcode.cn/problems/remove-element/)
 
-给你一个数组 nums 和一个值 val，你需要 原地 移除所有数值等于 val 的元素，并返回移除后数组的新长度。
+给你一个数组 nums 和一个值 val，你需要原地移除所有数值等于 val 的元素，并返回移除后数组的新长度。
 
 ### 简单解法
 ```ts
@@ -47,7 +47,7 @@ function removeElement(nums: number[], val: number): number {
 
 给定一个数组 nums，编写一个函数将所有 0 移动到数组的末尾，同时保持非零元素的相对顺序。
 
-请注意 ，必须在不复制数组的情况下原地对数组进行操作。
+请注意，必须在不复制数组的情况下原地对数组进行操作。
 
 ```ts
 /**
@@ -93,7 +93,7 @@ var moveZeroes = function(nums) {
 
 ## 比较含退格的字符串
 [👉 Leetcode 链接-844](https://leetcode.cn/problems/backspace-string-compare/)
-给定 s 和 t 两个字符串，当它们分别被输入到空白的文本编辑器后，如果两者相等，返回 true 。# 代表退格字符。
+给定 s 和 t 两个字符串，当它们分别被输入到空白的文本编辑器后，如果两者相等，返回 true。# 代表退格字符。
 
 注意：如果对空文本输入退格字符，文本继续为空。
 
@@ -126,9 +126,9 @@ function getString(s: string): string{
 ### 子数组
 [👉 Leetcode 链接- 209](https://leetcode.cn/problems/minimum-size-subarray-sum/)
 
-给定一个含有 n 个正整数的数组和一个正整数 target 。
+给定一个含有 n 个正整数的数组和一个正整数 target。
 
-找出该数组中满足其和 ≥ target 的长度最小的 连续子数组 [numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
+找出该数组中满足其和 ≥ target 的长度最小的连续子数组 [numsl，numsl+1， ..., numsr-1，numsr]，并返回其长度。如果不存在符合条件的子数组，返回 0。
 
 ```ts
 function minSubArrayLen(target: number, nums: number[]): number {
@@ -152,14 +152,14 @@ function minSubArrayLen(target: number, nums: number[]): number {
 ### 水果成篮
 [👉 Leetcode 链接-904](https://leetcode.cn/problems/fruit-into-baskets/)
 
-你正在探访一家农场，农场从左到右种植了一排果树。这些树用一个整数数组 fruits 表示，其中 fruits[i] 是第 i 棵树上的水果 种类 。
+你正在探访一家农场，农场从左到右种植了一排果树。这些树用一个整数数组 fruits 表示，其中 fruits[i] 是第 i 棵树上的水果种类。
 
 你想要尽可能多地收集水果。然而，农场的主人设定了一些严格的规矩，你必须按照要求采摘水果：
 
-你只有 两个 篮子，并且每个篮子只能装 单一类型 的水果。每个篮子能够装的水果总量没有限制。
-你可以选择任意一棵树开始采摘，你必须从 每棵 树（包括开始采摘的树）上 恰好摘一个水果 。采摘的水果应当符合篮子中的水果类型。每采摘一次，你将会向右移动到下一棵树，并继续采摘。
+你只有两个篮子，并且每个篮子只能装单一类型的水果。每个篮子能够装的水果总量没有限制。
+你可以选择任意一棵树开始采摘，你必须从每棵树 (包括开始采摘的树) 上恰好摘一个水果。采摘的水果应当符合篮子中的水果类型。每采摘一次，你将会向右移动到下一棵树，并继续采摘。
 一旦你走到某棵树前，但水果不符合篮子的水果类型，那么就必须停止采摘。
-给你一个整数数组 fruits ，返回你可以收集的水果的 最大 数目。
+给你一个整数数组 fruits，返回你可以收集的水果的最大数目。
 ```ts
 function totalFruit(fruits: number[]): number {
     let left = 0, subLen = 0, count = 0, container = [fruits[left]]
@@ -192,7 +192,7 @@ function totalFruit(fruits: number[]): number {
 ### 最小覆盖子串
 [👉 Leetcode 链接-76](https://leetcode.cn/problems/minimum-window-substring/)
 
-给你一个字符串 s 、一个字符串 t 。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 "" 。
+给你一个字符串 s、一个字符串 t。返回 s 中涵盖 t 所有字符的最小子串。如果 s 中不存在涵盖 t 所有字符的子串，则返回空字符串 “”。
 
 ```ts
 function minWindow(s: string, t: string): string {
@@ -243,7 +243,7 @@ function minWindow(s: string, t: string): string {
 ## 螺旋矩阵 I
 [👉 Leetcode 链接-54](https://leetcode.cn/problems/spiral-matrix/)
 
-给你一个 m 行 n 列的矩阵 matrix ，请按照 顺时针螺旋顺序 ，返回矩阵中的所有元素。
+给你一个 m 行 n 列的矩阵 matrix，请按照顺时针螺旋顺序，返回矩阵中的所有元素。
 ```ts
 function spiralOrder(matrix: number[][]): number[] {
     const rows = matrix.length, colunms = matrix[0].length
@@ -276,7 +276,7 @@ function spiralOrder(matrix: number[][]): number[] {
 ```
 
 ## 螺旋矩阵 II
-[👉 Leetcode 链接-59]([螺旋矩阵 II](https://leetcode.cn/problems/spiral-matrix-ii/))
+[👉 Leetcode 链接-59] ([螺旋矩阵 II](https://leetcode.cn/problems/spiral-matrix-ii/))
 
 ### 按层模拟
 ```ts
@@ -365,7 +365,7 @@ function generateMatrix(n: number): number[][] {
 ## 三数之和
 [👉 Leetcode 链接-15](https://leetcode.cn/problems/3sum/)
 
-给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c ，使得 a + b + c = 0 ？请你找出所有和为 0 且不重复的三元组。
+给你一个包含 n 个整数的数组 nums，判断 nums 中是否存在三个元素 a，b，c，使得 a + b + c = 0？请你找出所有和为 0 且不重复的三元组。
 
 注意：答案中不可以包含重复的三元组。
 
@@ -406,12 +406,12 @@ function threeSum(nums: number[]): number[][] {
 ## 四数之和
 [👉 Leetcode 链接-18](https://leetcode.cn/problems/4sum/)
 
-给你一个由 n 个整数组成的数组 nums ，和一个目标值 target 。请你找出并返回满足下述全部条件且不重复的四元组 [nums[a], nums[b], nums[c], nums[d]] （若两个四元组元素一一对应，则认为两个四元组重复）：
+给你一个由 n 个整数组成的数组 nums，和一个目标值 target。请你找出并返回满足下述全部条件且不重复的四元组 [nums[a]，nums[b]，nums[c]，nums[d]] (若两个四元组元素一一对应，则认为两个四元组重复)：
 
-0 <= a, b, c, d < n
+0 <= a，b，c，d < n
 a、b、c 和 d 互不相同
 nums[a] + nums[b] + nums[c] + nums[d] == target
-你可以按 任意顺序 返回答案 。
+你可以按任意顺序返回答案。
 
 ```ts
 function fourSum(nums: number[], target: number): number[][] {
