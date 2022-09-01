@@ -1,6 +1,6 @@
 # 浏览器指纹及其应用
 ## 背景
-伴随互联网的快速发展，Web 服务已呈现出极速增长的趋势， 人们在使用 Web 服务的同时，也面临着网络安全风险。根据中国信息通信研究院发布的[《中国网络安全产业白皮书》](http://www.caict.ac.cn/kxyj/qwfb/bps/202009/P020200916482039993423.pdf)报告：我国网络安全产业呈现高速增长态势，2020 年产业规模预计为 1702 亿元。
+伴随互联网的快速发展，Web 服务已呈现出极速增长的趋势，人们在使用 Web 服务的同时，也面临着网络安全风险。根据中国信息通信研究院发布的[《中国网络安全产业白皮书》](http://www.caict.ac.cn/kxyj/qwfb/bps/202009/P020200916482039993423.pdf)报告：我国网络安全产业呈现高速增长态势，2020 年产业规模预计为 1702 亿元。
 
 ![](https://files.mdnice.com/user/8106/0ed3dd69-93b3-4fe3-a49e-64061bd522c5.jpg)
 
@@ -12,8 +12,8 @@
 
 ## 浏览器指纹概述
 
-浏览器指纹是由[电子前哨基金会（EFF）](https://www.eff.org/)首席科学家 [Peter Eckersley](https://www.xprize.org/about/people/peter-eckersley) 在 2012 年提出，它利用浏览器自由传输的一些属性来生成和人类指纹一样具有标识作用的字符串。那么常见的浏览器指纹有哪些呢？可以参考如下表格数据，其中：
-- 指纹因子：指浏览器对外的公开属性，如 `userAgent` 可以通过 `navigator.userAgent` 获取; `colorDepth` 可以通过 `screen.colorDepth` 获取。
+浏览器指纹是由[电子前哨基金会 (EFF)](https://www.eff.org/) 首席科学家 [Peter Eckersley](https://www.xprize.org/about/people/peter-eckersley) 在 2012 年提出，它利用浏览器自由传输的一些属性来生成和人类指纹一样具有标识作用的字符串。那么常见的浏览器指纹有哪些呢？可以参考如下表格数据，其中：
+- 指纹因子：指浏览器对外的公开属性，如 `userAgent` 可以通过 `navigator.userAgent` 获取；`colorDepth` 可以通过 `screen.colorDepth` 获取。
 
 ![](https://files.mdnice.com/user/8106/e33aabdd-dfe4-4d70-8a44-0242be356e72.jpg)
 
@@ -68,26 +68,26 @@
 
 上面我们介绍了浏览器常见的指纹因子，但是如何度量浏览器中这些可以自由传输的指纹因子呢？了解过信息论的同学应该知道，我们可以通过信息熵来度量信息量，信息熵越高，则能传输越多的信息，熵越低，传输的信息越少。因此，可以将信息熵作为浏览器指纹标识程度的判据，举例来看，对于一个离散型随机变量 X，它的熵 H(X) 为：
 
-$$H(X) = -\sum_x{p(x)}\log_2{p(x)}$$
+$$H(X) = -\sum_x {p(x)}\log_2 {p(x)}$$
 
 ### 单个指纹因子熵值
 
-上述公式中，使用了以 2 为底的对数函数，其单位为比特。简单来讲，一个指纹因子的信息量可以通过它来量化。举个例子🌰：我们以指纹因子 `doNotTrack` 为例，它的取值结果有两种：
+上述公式中，使用了以 2 为底的对数函数，其单位为比特。简单来讲，一个指纹因子的信息量可以通过它来量化。举个例子 🌰：我们以指纹因子 `doNotTrack` 为例，它的取值结果有两种：
 - 开启设置可标记为 1，关闭设置可标记为 0
 - 假设用户访问网站的统计结果中，设置了 `doNotTrack` 的概览为 10%, 未设置的概览为 90%。那么 `doNotTrack` 这一指纹因子对应的熵为：
-$$H(X) = -{\frac{1}{10}}*\log_2^{\frac{1}{10}}-{\frac{9}{10}}*\log_2^{\frac{9}{10}}=0.469bit$$
+$$H(X) = -{\frac {1} {10}}*\log_2^{\frac {1} {10}}-{\frac {9} {10}}*\log_2^{\frac {9} {10}}=0.469bit$$
 
 >Note：点击[信息论基础](http://home.ustc.edu.cn/~yang96/Elements_of_Information_Theory-second_edition.pdf)进行穿越复习。
 
 ### 多个指纹因子概率
 
-知道了如何计算单个指纹因子的信息熵，我们就可以进一步对浏览器的多个指纹因子进行信息熵的合并计算。根据 [Peter Eckersley](https://www.xprize.org/about/people/peter-eckersley) 发布的论文 [How Unique Is Your Web Browser](https://coveryourtracks.eff.org/static/browser-uniqueness.pdf) 结果表明：通过 `userAgent`、`fonts`、`screenResolution` 和 `plugins` 等八个指纹因子来生成浏览器指纹:
+知道了如何计算单个指纹因子的信息熵，我们就可以进一步对浏览器的多个指纹因子进行信息熵的合并计算。根据 [Peter Eckersley](https://www.xprize.org/about/people/peter-eckersley) 发布的论文 [How Unique Is Your Web Browser](https://coveryourtracks.eff.org/static/browser-uniqueness.pdf) 结果表明：通过 `userAgent`、`fonts`、`screenResolution` 和 `plugins` 等八个指纹因子来生成浏览器指纹：
 
 ![](https://files.mdnice.com/user/8106/58bf4ac5-1973-4cba-9a52-89276d9dd5d9.jpg)
 
 其统计结果显示这 8 个指纹因子至少包含 18.1 bit 的信息熵，通过自信息计算公式：
 
-$$I(e) = -\log_2{p(x)}$$
+$$I(e) = -\log_2 {p(x)}$$
 
 我们可以推导出，其出现同一个指纹所需要的概率：
 
@@ -96,9 +96,9 @@ $$p(x) = 2^{-I(e)}$$
 通过计算可以得出：随机挑选一个浏览器，在 286777 个浏览器中才会出现与其相同的一个浏览器指纹。从而说明**浏览器指纹具有非常高的标识性**，而且伴随着指纹因子维度的增加，出现同一个浏览器指纹的概率会越来越低，其识别准确率也会越来越高。
 
 ### 指纹重复问题
-目前，云服务器和虚拟主机已相对普及了，随时可以克隆出多个一模一样的虚拟系统和设备，类似 [ghost 系统](https://baike.baidu.com/item/ghost%E7%B3%BB%E7%BB%9F/8452726)，它们在初始化状态下指纹大概率是相同的，这时我们怎么去识别这些”出厂设置“相同的设备呢？
+目前，云服务器和虚拟主机已相对普及了，随时可以克隆出多个一模一样的虚拟系统和设备，类似 [ghost 系统](https://baike.baidu.com/item/ghost%E7%B3%BB%E7%BB%9F/8452726)，它们在初始化状态下指纹大概率是相同的，这时我们怎么去识别这些”出厂设置 “相同的设备呢？
 
-上述我们提出的指纹识别是基于静态规则的识别，即只识别一次，但是真实的情况是一个设备的指纹是会随着时间发生变化的，它完全和使用者的习惯相关联，举例来说：如果今天你给自己的浏览器安装了一个插件，这时浏览器的指纹就会发生变化。因此，基于静态规则和动态追踪的关联机制可以实现对设备指纹指纹演变的长期追踪。有兴趣的童鞋可以参考 [FP-STALKER: Tracking Browser Fingerprint Evolutions](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8418634) 的研究结果：，一个浏览器可以被追踪的平均时间已经超过 **54.48** 天。在追踪过程中，对指纹数据集进行再分类，可以有效的规避这类问题。
+上述我们提出的指纹识别是基于静态规则的识别，即只识别一次，但是真实的情况是一个设备的指纹是会随着时间发生变化的，它完全和使用者的习惯相关联，举例来说：如果今天你给自己的浏览器安装了一个插件，这时浏览器的指纹就会发生变化。因此，基于静态规则和动态追踪的关联机制可以实现对设备指纹指纹演变的长期追踪。有兴趣的童鞋可以参考 [FP-STALKER：Tracking Browser Fingerprint Evolutions](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8418634) 的研究结果：，一个浏览器可以被追踪的平均时间已经超过 **54.48** 天。在追踪过程中，对指纹数据集进行再分类，可以有效的规避这类问题。
 
 ### 小结
 综上，我们可以通过计算出浏览器指纹因子对应的熵值，再结合自信息计算其出现概率，从而根据指纹取值和其概率推断出所在设备，了解了浏览器指纹生成原理。那么你也应该想了解它的应用场景有哪些吧，我们接着看。
@@ -107,7 +107,7 @@ $$p(x) = 2^{-I(e)}$$
 
 浏览器指纹常见的应用场景包含：
 #### 恶意爬虫的主动防御
-目前针对 Web 站点，网络上有各种自动化爬虫，进行数据采集，常见如刷票、点评、爬取隐私数据等，现阶段主要防御措施有：被动检测与防御、 IP 地址检测与封锁、浏览器指纹&主动防御等。
+目前针对 Web 站点，网络上有各种自动化爬虫，进行数据采集，常见如刷票、点评、爬取隐私数据等，现阶段主要防御措施有：被动检测与防御、IP 地址检测与封锁、浏览器指纹&主动防御等。
 
 #### 扫描器识别与拦截
 除了网络上等爬虫工具，还会有各种专业的 Web 漏洞扫描工具，如：[AWVS](https://www.acunetix.com/)、[APPScan](https://www.hcltechsw.com/products/appscan)、[Xray](https://xray.cool/) 等，扫描器在主动识别 Web 漏洞的同时，也会给线上 Web 服务带来潜在安全问题。针对扫描器的拦截，可以根据其浏览器指纹的特异性，在其扫描指定站点时，进行识别与拦截。
@@ -127,9 +127,9 @@ $$p(x) = 2^{-I(e)}$$
 - [xprize](https://www.xprize.org/about/mission)
 - [fingerprintjs](https://github.com/fingerprintjs/fingerprintjs)
 - [信息论基础](http://home.ustc.edu.cn/~yang96/Elements_of_Information_Theory-second_edition.pdf)
-- [How do trackers work?](https://coveryourtracks.eff.org/learn)
+- [How do trackers work？](https://coveryourtracks.eff.org/learn)
 - [基于 50 万个浏览器指纹的新发现](https://github.com/xitu/gold-miner/blob/master/article/2021/we-collected-500-000-browser-fingerprints-here-is-what-we-found.md)
-- [How Unique Is Your Web Browser?](https://coveryourtracks.eff.org/static/browser-uniqueness.pdf)
+- [How Unique Is Your Web Browser？](https://coveryourtracks.eff.org/static/browser-uniqueness.pdf)
 - [Learn how identifiable you are on the Internet](https://amiunique.org/)
-- [Beauty and the Beast: Diverting modern web browsers
+- [Beauty and the Beast：Diverting modern web browsers
 to build unique browser fingerprints](https://hal.inria.fr/hal-01285470/file/beauty-sp16.pdf)

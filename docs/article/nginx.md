@@ -2,7 +2,7 @@
 ## Nginx 是什么
 `Nginx`（即 `[engine x]`)，它是一个基于异步框架的网页服务器，同时，它也可以用作反向代理服务器、负载均衡服务器、邮件代理服务器和通用 `TCP/UDP` 代理服务器，最初由俄罗斯程序员 [Igor Sysoev](http://sysoev.ru/en/)编写实现。它在 [Yandex](http://www.yandex.ru/)、 [Mail.Ru](https://mail.ru/)等网站均有应用。
 
-根据权威机构 [Netcraft](https://www.netcraft.com/) 2022年8月26日发布的[最新调查数据](https://news.netcraft.com/archives/2022/08/26/august-2022-web-server-survey.html)显示，`Nginx` 服务和代理已经超越 `Apache`，在主流网站中市场份额中占有率最高。可参考下图：
+根据权威机构 [Netcraft](https://www.netcraft.com/) 2022 年 8 月 26 日发布的[最新调查数据](https://news.netcraft.com/archives/2022/08/26/august-2022-web-server-survey.html)显示，`Nginx` 服务和代理已经超越 `Apache`，在主流网站中市场份额中占有率最高。可参考下图：
 
 ![nginx_market](https://tva1.sinaimg.cn/large/e6c9d24egy1h5m8bpm5fnj21960kyq4s.jpg)
 ## 为什么使用 Nginx
@@ -14,7 +14,7 @@
 首先是 `Nginx` 的安装，可以从 [`Nginx`官网](https://nginx.org/en/download.html)下载安装，具体安装步骤这里就不展开讲了（如果需要自己开发或者自定义 `Nginx` 相关模块，可以选择从源码构建，需要安装`GCC`、`PCRE`、`zlib`、`OpenSSL`等相关库，这里先作为了解，不展开）
 
 ### Nginx 配置文件
-首先打开 `nginx.conf`，通过命令行 ` vi /usr/local/etc/nginx/nginx.conf` 查看配置项：
+首先打开 `nginx.conf`，通过命令行 `vi /usr/local/etc/nginx/nginx.conf` 查看配置项：
 
 ```shell
 #user  nobody;
