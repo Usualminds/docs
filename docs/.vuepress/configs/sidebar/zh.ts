@@ -78,6 +78,18 @@ export const zh: SidebarConfig = {
                 '/algorithms/math.md',
             ],
         },
+        {
+            text: 'Leetcode',
+            children: [
+                '/algorithms/leetcode/date.md',
+                '/algorithms/leetcode/smart.md',
+                '/algorithms/leetcode/june.md',
+                '/algorithms/leetcode/april.md',
+                '/algorithms/leetcode/february.md',
+                '/algorithms/leetcode/january.md',
+                '/algorithms/leetcode/contest.md',
+            ],
+        },
     ],
     '/article/': [
         {

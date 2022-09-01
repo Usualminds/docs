@@ -58,15 +58,15 @@ export const zh: NavbarConfig = [
                 ]
             },
             {
-                text: '每日一题',
+                text: 'Leetcode',
                 children: [
-                    '/leetcode/date.md',
-                    '/leetcode/smart.md',
-                    '/leetcode/june.md',
-                    '/leetcode/april.md',
-                    '/leetcode/february.md',
-                    '/leetcode/january.md',
-                    '/leetcode/contest.md',
+                    '/algorithms/leetcode/date.md',
+                    '/algorithms/leetcode/smart.md',
+                    '/algorithms/leetcode/june.md',
+                    '/algorithms/leetcode/april.md',
+                    '/algorithms/leetcode/february.md',
+                    '/algorithms/leetcode/january.md',
+                    '/algorithms/leetcode/contest.md',
                 ],
             },
         ]
