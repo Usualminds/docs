@@ -57,10 +57,6 @@ export const pagesComponents = {
   "v-15e329a4": defineAsyncComponent(() => import(/* webpackChunkName: "v-15e329a4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/strategy.html.vue")),
   // path: /design/watch.html
   "v-a2ecdefc": defineAsyncComponent(() => import(/* webpackChunkName: "v-a2ecdefc" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/watch.html.vue")),
-  // path: /hk/basic.html
-  "v-fdae50c4": defineAsyncComponent(() => import(/* webpackChunkName: "v-fdae50c4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/basic.html.vue")),
-  // path: /hk/trade.html
-  "v-33f38c28": defineAsyncComponent(() => import(/* webpackChunkName: "v-33f38c28" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/trade.html.vue")),
   // path: /leetcode/april.html
   "v-66154a18": defineAsyncComponent(() => import(/* webpackChunkName: "v-66154a18" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/leetcode/april.html.vue")),
   // path: /leetcode/contest.html
@@ -75,6 +71,10 @@ export const pagesComponents = {
   "v-8d78f654": defineAsyncComponent(() => import(/* webpackChunkName: "v-8d78f654" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/leetcode/june.html.vue")),
   // path: /leetcode/smart.html
   "v-411ce191": defineAsyncComponent(() => import(/* webpackChunkName: "v-411ce191" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/leetcode/smart.html.vue")),
+  // path: /hk/basic.html
+  "v-fdae50c4": defineAsyncComponent(() => import(/* webpackChunkName: "v-fdae50c4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/basic.html.vue")),
+  // path: /hk/trade.html
+  "v-33f38c28": defineAsyncComponent(() => import(/* webpackChunkName: "v-33f38c28" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/trade.html.vue")),
   // path: /test/finpoints.html
   "v-2e8b206f": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e8b206f" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/finpoints.html.vue")),
   // path: /test/ft.html

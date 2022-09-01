@@ -55,10 +55,6 @@ export const pagesData = {
   "v-15e329a4": () => import(/* webpackChunkName: "v-15e329a4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/strategy.html.js").then(({ data }) => data),
   // path: /design/watch.html
   "v-a2ecdefc": () => import(/* webpackChunkName: "v-a2ecdefc" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/watch.html.js").then(({ data }) => data),
-  // path: /hk/basic.html
-  "v-fdae50c4": () => import(/* webpackChunkName: "v-fdae50c4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/basic.html.js").then(({ data }) => data),
-  // path: /hk/trade.html
-  "v-33f38c28": () => import(/* webpackChunkName: "v-33f38c28" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/trade.html.js").then(({ data }) => data),
   // path: /leetcode/april.html
   "v-66154a18": () => import(/* webpackChunkName: "v-66154a18" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/leetcode/april.html.js").then(({ data }) => data),
   // path: /leetcode/contest.html
@@ -73,6 +69,10 @@ export const pagesData = {
   "v-8d78f654": () => import(/* webpackChunkName: "v-8d78f654" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/leetcode/june.html.js").then(({ data }) => data),
   // path: /leetcode/smart.html
   "v-411ce191": () => import(/* webpackChunkName: "v-411ce191" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/leetcode/smart.html.js").then(({ data }) => data),
+  // path: /hk/basic.html
+  "v-fdae50c4": () => import(/* webpackChunkName: "v-fdae50c4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/basic.html.js").then(({ data }) => data),
+  // path: /hk/trade.html
+  "v-33f38c28": () => import(/* webpackChunkName: "v-33f38c28" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/trade.html.js").then(({ data }) => data),
   // path: /test/finpoints.html
   "v-2e8b206f": () => import(/* webpackChunkName: "v-2e8b206f" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/finpoints.html.js").then(({ data }) => data),
   // path: /test/ft.html
