@@ -21,7 +21,7 @@ class C {
 ```
 
 ### Nullable
-包含 `undefined` 和 `null`， `--strictNullChecks` 为 false 时， 允许将 undefined 和 null 值赋给 string 类型等其它类型
+包含 `undefined` 和 `null`，`--strictNullChecks` 为 false 时，允许将 undefined 和 null 值赋给 string 类型等其它类型
 ```ts
 let a:string = undefined
 ```
@@ -98,11 +98,11 @@ const enum Direction {
 }
 ```
 
-### any & unknown 
-`any` 为顶端类型，是其它类型的父类型，可以跳过类型检查，`--noImplicitAny`, 开启，则进行隐式 `any` 转换,
-任何类型都可以赋值给 `any`, 同理， `any` 也可以赋值给任何类型， 除了 `never`
+### any & unknown
+`any` 为顶端类型，是其它类型的父类型，可以跳过类型检查，`--noImplicitAny`，开启，则进行隐式 `any` 转换，
+任何类型都可以赋值给 `any`，同理，`any` 也可以赋值给任何类型，除了 `never`
 
-`unknown` 为顶端类型，任何类型都可以赋值给 `any`,但 `unknown` 只能赋值为 `unknown` or `any`，可以理解为类型安全的 `any` 类型
+`unknown` 为顶端类型，任何类型都可以赋值给 `any`，但 `unknown` 只能赋值为 `unknown` or `any`，可以理解为类型安全的 `any` 类型
 ```ts
 let x: unknown
 
@@ -183,7 +183,7 @@ options.length
 
 ## 对象
 
-### Object 
+### Object
 `Object` 集成了很多基础的方法和属性，除了 null 和 undefined 以外，其它基础类型都可以赋值给它
 ```ts
 interface Object {
@@ -230,7 +230,7 @@ const obj: object = {
 // error: 类型“object”上不存在属性“name”
 obj.name
 ```
-描述 `ObjectConstructor`,即 `Object.create()` 方法
+描述 `ObjectConstructor`，即 `Object.create()` 方法
 ```ts
 interface ObjectConstructor {
     new(value?: any): Object;
@@ -516,9 +516,9 @@ let bb: B = {
 接口声明能够为对象类型命名，类型别名声明能为 typescript 任何类型命名。
 
 类型和接口的几个区别：
-- 类型别名表示非对象类型（特别是联合类型），接口表示对象类型
+- 类型别名表示非对象类型 (特别是联合类型)，接口表示对象类型
 - 接口可以继承其它接口或者类，类型别名不可以
-- 接口名会显示在编译器和代码提示中不同,接口提示更加具体友好
+- 接口名会显示在编译器和代码提示中不同，接口提示更加具体友好
 - 接口可以合并声明，类型别名不可以
 ```ts
 type StringType = string
@@ -628,7 +628,7 @@ circle.get()
 ```
 
 ### 继承
-类单继承，一个类可以继承一个基类,但可以实行多个接口,同理，接口可以继承多个接口
+类单继承，一个类可以继承一个基类，但可以实行多个接口，同理，接口可以继承多个接口
 ```ts
 class Animal {
     heigth: number;

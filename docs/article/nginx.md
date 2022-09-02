@@ -1,17 +1,17 @@
 # nginx
 ## Nginx 是什么
-`Nginx`（即 `[engine x]`)，它是一个基于异步框架的网页服务器，同时，它也可以用作反向代理服务器、负载均衡服务器、邮件代理服务器和通用 `TCP/UDP` 代理服务器，最初由俄罗斯程序员 [Igor Sysoev](http://sysoev.ru/en/)编写实现。它在 [Yandex](http://www.yandex.ru/)、 [Mail.Ru](https://mail.ru/)等网站均有应用。
+`Nginx` (即 `[engine x]`)，它是一个基于异步框架的网页服务器，同时，它也可以用作反向代理服务器、负载均衡服务器、邮件代理服务器和通用 `TCP/UDP` 代理服务器，最初由俄罗斯程序员 [Igor Sysoev](http://sysoev.ru/en/) 编写实现。它在 [Yandex](http://www.yandex.ru/)、[Mail.Ru](https://mail.ru/) 等网站均有应用。
 
 根据权威机构 [Netcraft](https://www.netcraft.com/) 2022 年 8 月 26 日发布的[最新调查数据](https://news.netcraft.com/archives/2022/08/26/august-2022-web-server-survey.html)显示，`Nginx` 服务和代理已经超越 `Apache`，在主流网站中市场份额中占有率最高。可参考下图：
 
 ![nginx_market](https://tva1.sinaimg.cn/large/e6c9d24egy1h5m8bpm5fnj21960kyq4s.jpg)
 ## 为什么使用 Nginx
-`Nginx` 最核心的是高性能，它可以让 `Web` 服务器在高并发压力下正常提高服务。基于事件驱动型设计、全异步的网络 `I/O` 处理机制、极少的进程间切换以及许多优化设计，使得 `Nginx` 天生善于处理高并发压力下的网络请求，同时`Nginx`降低了资源消耗，可以把服务器硬件资源发挥到极致。`Nginx` 的主要特性可概括如下：
+`Nginx` 最核心的是高性能，它可以让 `Web` 服务器在高并发压力下正常提高服务。基于事件驱动型设计、全异步的网络 `I/O` 处理机制、极少的进程间切换以及许多优化设计，使得 `Nginx` 天生善于处理高并发压力下的网络请求，同时 `Nginx` 降低了资源消耗，可以把服务器硬件资源发挥到极致。`Nginx` 的主要特性可概括如下：
 
 ![nginx_function](https://tva1.sinaimg.cn/large/e6c9d24egy1h5kapgx7nuj20u0124wgv.jpg)
 ## 如何使用
 ### Nginx 安装
-首先是 `Nginx` 的安装，可以从 [`Nginx`官网](https://nginx.org/en/download.html)下载安装，具体安装步骤这里就不展开讲了（如果需要自己开发或者自定义 `Nginx` 相关模块，可以选择从源码构建，需要安装`GCC`、`PCRE`、`zlib`、`OpenSSL`等相关库，这里先作为了解，不展开）
+首先是 `Nginx` 的安装，可以从 [`Nginx` 官网](https://nginx.org/en/download.html)下载安装，具体安装步骤这里就不展开讲了 (如果需要自己开发或者自定义 `Nginx` 相关模块，可以选择从源码构建，需要安装 `GCC`、`PCRE`、`zlib`、`OpenSSL` 等相关库，这里先作为了解，不展开)
 
 ### Nginx 配置文件
 首先打开 `nginx.conf`，通过命令行 `vi /usr/local/etc/nginx/nginx.conf` 查看配置项：
@@ -150,7 +150,7 @@ server {
 ```
 由于 `Nginx` 对配置文件有严格的缩紧语法要求，所以当我们更改了配置文件后，可以通过命令行：
 
-`nginx -t` 
+`nginx -t`
 
 对配置文件格式进行正确性检测，可以看到如下信息，表示配置文件语法正确无误：
 
@@ -235,9 +235,9 @@ location / {
     deny all;
 }
 ```
-通过以上配置，我们就可以实现访问 IP 白名单或者说黑名单，仅仅放行 `10.37.129.2`&`1192.168.31.246` 这两个 `IP`进行访问，其余 `IP` 一律返回 `403 Forbidden`，当然，也可以配置 `IP` 网段进行控制。
+通过以上配置，我们就可以实现访问 IP 白名单或者说黑名单，仅仅放行 `10.37.129.2`&`1192.168.31.246` 这两个 `IP` 进行访问，其余 `IP` 一律返回 `403 Forbidden`，当然，也可以配置 `IP` 网段进行控制。
 ### 响应速度限制
-结合 `IP` 地址的访问控制，更进一步，如果我们想要防止多个用户下载时占用过高的带宽，可以针对指定资源文件进行限速处理，比如我们针对 `mp4` 类型文件进行限制，当下载文件大小超过 `500k` 时，限制其下载速率为 `50k`，这里是不是可以联想到某知名网盘😂，可如下配置：
+结合 `IP` 地址的访问控制，更进一步，如果我们想要防止多个用户下载时占用过高的带宽，可以针对指定资源文件进行限速处理，比如我们针对 `mp4` 类型文件进行限制，当下载文件大小超过 `500k` 时，限制其下载速率为 `50k`，这里是不是可以联想到某知名网盘 😂，可如下配置：
 ```shell
 location /mp4/ {
     mp4;
@@ -246,7 +246,7 @@ location /mp4/ {
 }
 ```
 ### 限制来自同一个地址的同时连接或请求的数量
-如果有恶意攻击者对 `Web` 应用发起流量攻击，短时间内使用脚本无限制地请求`Web` 应用地址，就会造成该应用带宽流量上升，无法响应其他正常用户的请求，这时候我们可以使用[ngx_http_limit_conn_module](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html)和[ngx_http_limit_req_module](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html)**针对同一个地址的同时连接和请求的数量进行限制**，可参考如下配置
+如果有恶意攻击者对 `Web` 应用发起流量攻击，短时间内使用脚本无限制地请求 `Web` 应用地址，就会造成该应用带宽流量上升，无法响应其他正常用户的请求，这时候我们可以使用 [ngx_http_limit_conn_module](https://nginx.org/en/docs/http/ngx_http_limit_conn_module.html) 和 [ngx_http_limit_req_module](https://nginx.org/en/docs/http/ngx_http_limit_req_module.html) **针对同一个地址的同时连接和请求的数量进行限制**，可参考如下配置
 
 - 同一个地址的同时连接个数限制为 5
 ```shell
@@ -263,7 +263,7 @@ http {
     }
 }
 ```
-- 同一个地址的同时请求的数量限制为 5，即平均每秒不超过 5 个请求，并且突发不超过 50 个请求，这里的限制机制采用了 [leaky bucket(漏桶算法)](https://en.wikipedia.org/wiki/Leaky_bucket)算法完成。
+- 同一个地址的同时请求的数量限制为 5，即平均每秒不超过 5 个请求，并且突发不超过 50 个请求，这里的限制机制采用了 [leaky bucket (漏桶算法)](https://en.wikipedia.org/wiki/Leaky_bucket) 算法完成。
 ```shell
 http {
     limit_req_zone $binary_remote_addr zone=one:10m rate=5r/s;
@@ -344,13 +344,13 @@ http {
 ```
 
 :::tip
-更多 `njs` 示例，可以参考[njs-examples](https://github.com/nginx/njs-examples)
+更多 `njs` 示例，可以参考 [njs-examples](https://github.com/nginx/njs-examples)
 :::
 ### 反向代理
 我们日常使用最多的莫过于 `Nginx` 的反向代理了，通过[反向代理](https://zh.wikipedia.org/wiki/%E5%8F%8D%E5%90%91%E4%BB%A3%E7%90%86)，可以隐藏服务端真实调用地址，还可以作为应用层防火墙，为网站的攻击行为提供前置防护。
 反向代理这块主要配置分为：`proxy_pass`、`proxy_cache`、`proxy_ssl`、`proxy_buffer`。
-- `proxy_pass`主要涉及代理转发相关配置
-- `proxy_cache`主要用于定义缓存的共享内存区域相关配置
+- `proxy_pass` 主要涉及代理转发相关配置
+- `proxy_cache` 主要用于定义缓存的共享内存区域相关配置
 - `proxy_ssl` 主要用于 `HTTPS` 协议转发配置
 - `proxy_buffer` 主要用于缓冲区相关配置
 常用反向代理配置如下：
@@ -372,7 +372,7 @@ location /name/ {
 更多配置请查看 [http_proxy_module](https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_buffer_size)
 :::
 ### 负载均衡
-在微服务理念盛行的今天，[负载均衡](https://zh.wikipedia.org/wiki/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)的重要性更加凸显，负载均衡一般指在多个计算机（计算机集群）、网络连接、`CPU`、磁盘驱动器或其他资源中分配负载，以达到优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载。可以使用 `NginX` 作为高效的 `HTTP` 负载均衡器，将客户端请求分布到多个应用服务器，并通过 `NginX` 提高 `Web` 应用程序的性能、可扩展性和可靠性。
+在微服务理念盛行的今天，[负载均衡](https://zh.wikipedia.org/wiki/%E8%B4%9F%E8%BD%BD%E5%9D%87%E8%A1%A1)的重要性更加凸显，负载均衡一般指在多个计算机 (计算机集群)、网络连接、`CPU`、磁盘驱动器或其他资源中分配负载，以达到优化资源使用、最大化吞吐率、最小化响应时间、同时避免过载。可以使用 `NginX` 作为高效的 `HTTP` 负载均衡器，将客户端请求分布到多个应用服务器，并通过 `NginX` 提高 `Web` 应用程序的性能、可扩展性和可靠性。
 
 如果存在多个后端服务 `S1`、`S2`、`S3`，我们可以通过设置负载均衡来调节用户访问，如下：
 
@@ -393,8 +393,8 @@ server {
     }
 }
 ```
-请求使用加权循环平衡方法在服务器之间分配。在上面面的示例中，每 `7` 个请求将按的分配机制是：`5` 个请求到达 `backend.s1.com`， `1` 个请求到达 `backend.s2.com`，`1` 个请求到达 `backend.s3.com`。
-- [least_conn](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#least_conn): 即最少连接负载均衡。将请求传递到具有最少活动连接数的服务器，同时考虑服务器的权重。如果有多个这样的服务器，则使用加权循环平衡方法依次连接。配置如下：
+请求使用加权循环平衡方法在服务器之间分配。在上面面的示例中，每 `7` 个请求将按的分配机制是：`5` 个请求到达 `backend.s1.com`，`1` 个请求到达 `backend.s2.com`，`1` 个请求到达 `backend.s3.com`。
+- [least_conn](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#least_conn)：即最少连接负载均衡。将请求传递到具有最少活动连接数的服务器，同时考虑服务器的权重。如果有多个这样的服务器，则使用加权循环平衡方法依次连接。配置如下：
 ```shell
 upstream backend {
     #使用最少连接策略
@@ -410,7 +410,7 @@ server {
     }
 }
 ```
-- [ip_hash](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#ip_hash):基于客户端 `IP` 地址在服务器之间分配请求。客户端 `IPv4` 地址或整个 `IPv6` 地址的**前三个八位字节**用作散列密钥。该方法确保来自同一客户端的请求将始终传递到同一服务器，除非该服务器不可用。在后一种情况下，客户端请求将被传递到另一台服务器。这样做的好处是客户端绑定到特定的应用服务器，可以保持持久会话，同时解决动态网页 `Session` 共享的问题，也可以有效地管理缓存信息。
+- [ip_hash](https://nginx.org/en/docs/http/ngx_http_upstream_module.html#ip_hash)：基于客户端 `IP` 地址在服务器之间分配请求。客户端 `IPv4` 地址或整个 `IPv6` 地址的**前三个八位字节**用作散列密钥。该方法确保来自同一客户端的请求将始终传递到同一服务器，除非该服务器不可用。在后一种情况下，客户端请求将被传递到另一台服务器。这样做的好处是客户端绑定到特定的应用服务器，可以保持持久会话，同时解决动态网页 `Session` 共享的问题，也可以有效地管理缓存信息。
 相关配置如下：
 ```shell
 upstream backend {
@@ -427,7 +427,7 @@ server {
     }
 }
 ```
-除此之外，我们还可以给设置服务器的 `keepalive` 会话个数和会话有效时间、`max_fails`设置持续时间内与服务器通信的不成功尝试次数、`fail_timeout`设置与服务器通信不成功的次数等。
+除此之外，我们还可以给设置服务器的 `keepalive` 会话个数和会话有效时间、`max_fails` 设置持续时间内与服务器通信的不成功尝试次数、`fail_timeout` 设置与服务器通信不成功的次数等。
 :::tip
 更多配置请查看 [ngx_http_upstream_module](https://nginx.org/en/docs/http/ngx_http_upstream_module.html)
 :::
@@ -442,10 +442,10 @@ server {
 ![nginx_arc](https://tva1.sinaimg.cn/large/e6c9d24egy1h5oxng6vmkj20vd0u0jtw.jpg)
 
 :::tip
-有兴趣可以参考关于 `NginX` 架构设计[Nginx Core Architecture](https://zh.booksc.org/book/61672853/b36b22)
+有兴趣可以参考关于 `NginX` 架构设计 [Nginx Core Architecture](https://zh.booksc.org/book/61672853/b36b22)
 :::
 
 ## 总结
-本文我们主要介绍了 `NginX` 是什么以及其优势，接下来，主要了解了 `NginX` 常见命令和配置。另外，介绍了几个 `NginX` 有意思的模块使用，包括：基于客户端 IP 地址的访问控制、响应速度限制、限制来自同一个地址的同时连接或请求的数量、基于 `IP` 的地理定位、`njs` 脚本语言。接着具体介绍了 `NginX` 反向代理和负载均衡。最后简要总结了 `NginX`  高性能的几个设计优势。如果你想了解更多关于 `NginX` 的特性，可以进一步去 [官网](https://nginx.org/en/)了解。
+本文我们主要介绍了 `NginX` 是什么以及其优势，接下来，主要了解了 `NginX` 常见命令和配置。另外，介绍了几个 `NginX` 有意思的模块使用，包括：基于客户端 IP 地址的访问控制、响应速度限制、限制来自同一个地址的同时连接或请求的数量、基于 `IP` 的地理定位、`njs` 脚本语言。接着具体介绍了 `NginX` 反向代理和负载均衡。最后简要总结了 `NginX` 高性能的几个设计优势。如果你想了解更多关于 `NginX` 的特性，可以进一步去[官网](https://nginx.org/en/)了解。
 ## 资料
 - [Nginx 性能优化功能](https://www.cnblogs.com/kevingrace/p/10018914.html)

@@ -1,7 +1,7 @@
 # 深入
 
 ## 类型系统
-`Typescript` 并不总是可靠的，如下:
+`Typescript` 并不总是可靠的，如下：
 ```ts
 const temp: string = (1 as unknown) as string
 
@@ -11,7 +11,7 @@ typeof temp === 'number'
 
 
 ### 逆变
-子类型可以赋值给父类型，叫做协变（covariant）
+子类型可以赋值给父类型，叫做协变 (covariant)
 ```ts
 interface Person {
     name: string;
@@ -37,8 +37,8 @@ let guang: Guang = {
 person = guang;
 ```
 ### 协变
-父类型可以赋值给子类型，叫做逆变（contravariant)。
-函数的参数有逆变的性质（而返回值是协变的，也就是子类型可以赋值给父类型
+父类型可以赋值给子类型，叫做逆变 (contravariant)。
+函数的参数有逆变的性质 (而返回值是协变的，也就是子类型可以赋值给父类型
 ```ts
 interface Person {
     name: string;
@@ -93,7 +93,7 @@ let test:Func = (name:any) => undefined
 - baseUrl
 - paths
 - rootDirs
-- `traceResolution`, 追踪编译过程日志
+- `traceResolution`，追踪编译过程日志
 
 ## tsc 编译
 tsc 没有做 polyfill 的处理，需要全量引入 core-js,babel 的 @babel/preset-env 会根据 targets 的配置按需引入 core-js
@@ -113,8 +113,8 @@ tsc 没有做 polyfill 的处理，需要全量引入 core-js,babel 的 @babel/p
 - 如果想做类型检查可以单独执行 tsc --noEmit
   
 babel 不足
-- `const enum`（会作为 enum 处理）
-- `namespace` 的跨文件合并,因为是每个文件单独编译的（tsc 是整个项目一起编译）
+- `const enum` (会作为 enum 处理)
+- `namespace` 的跨文件合并，因为是每个文件单独编译的 (tsc 是整个项目一起编译)
 - 导出非 `const` 的值
 - 过时的 `export = import =` 的模块语法
 - 不做类型检查，也不会生成 d.ts 文件

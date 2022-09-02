@@ -1,7 +1,7 @@
 # Shopee
 
 ## instanceof
-所有的引用类型（数组、对象、函数），`__proto__` 属性值指向它的构造函数的 `prototype` 属性值, `null` 没有 `__proto__` 属性，
+所有的引用类型 (数组、对象、函数)，`__proto__` 属性值指向它的构造函数的 `prototype` 属性值，`null` 没有 `__proto__` 属性，
 ```ts
 // not new, throw error tip by instanceof
 function Person(name){
@@ -47,7 +47,7 @@ inherit(Student, Person)
 
 ```
 
-## sum(a)(b).count()
+## sum(a)(b)。count()
 
 ```ts
 function sum(){
@@ -155,7 +155,7 @@ var getKthFromEnd = function(head, k) {
 };
 ```
 
-## cache 
+## cache
 缓存函数
 ```ts
 function cache(func, ctx){

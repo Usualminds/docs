@@ -2,7 +2,7 @@
 
 ## 拷贝
 - 深拷贝：完全拷贝，互不影响，JSON.stringfy(obj)
-- 浅拷贝：拷贝的是引用地址，`for in`, `Object.assing({},obj)`,`{...obj}`
+- 浅拷贝：拷贝的是引用地址，`for in`，`Object.assing({},obj)`，`{...obj}`
 
 实现一个深拷贝
 
@@ -164,7 +164,7 @@ console.log(newObj);
 ::: 注意
 `JSON.stringfy(obj)` 的不足
 - obj 里有 date 对象无法被序列化和反序列化，而是转为 date 字符串
-- obj 里有 RegExp 对象,Error 对象序列化结果是空对象
+- obj 里有 RegExp 对象，Error 对象序列化结果是空对象
 - obj 里有 function,undefined 会被丢失
 - obj 里有 NaN,Infinity,-Infinity 序列化结果会变成 null
 
@@ -192,7 +192,7 @@ test();
 - 函数体内的 this 是定义时所在的对象决定的
 - 不可当作构造函数，因此箭头函数不可使用 new 命令
 - 不可使用 yield 命令，因此箭头函数不能用作 Generator 函数
-- 不可使用 Arguments 对象，此对象在函数体内不存在(可以使用...args)
+- 不可使用 Arguments 对象，此对象在函数体内不存在 (可以使用...args)
 - 返回对象时必须在对象外面加上括号
 
 ```js
@@ -220,7 +220,7 @@ flat(arr) //  [1, 2, 1, 2, 3, 1, 2, 3, 4, 45]
 
 ## 定时器场景
 
-写一个 `mySetInterVal(fn, a, b)`,每次间隔 `a,a+b,a+2b` 的时间，然后写一个 `myClear`，停止上面的 `mySetInterVal`
+写一个 `mySetInterVal(fn, a, b)`，每次间隔 `a,a+b,a+2b` 的时间，然后写一个 `myClear`，停止上面的 `mySetInterVal`
 
 ```js
 function mySetInterVal(fn,a,b){

@@ -1,6 +1,6 @@
 <template><div><h1 id="图论" tabindex="-1"><a class="header-anchor" href="#图论" aria-hidden="true">#</a> 图论</h1>
 <blockquote>
-<p>👉
+<p>：point_right：
 <a href="https://zh.wikipedia.org/wiki/%E5%9B%BE%E8%AE%BA/" target="_blank" rel="noopener noreferrer">Wiki 链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>图是由若干给定的顶点及连接两顶点的边所构成的图形，这种图形通常用来描述某些事物之间的某种特定关系。顶点用于代表事物，连接两顶点的边则用于表示两个事物间具有这种关系。</p>
@@ -8,7 +8,7 @@
 <ul>
 <li><strong>无向图</strong>：图中任意两个顶点之间的边都是没有方向的</li>
 <li><strong>有向图</strong>：图中任意两个顶点之间的边都是有方向的</li>
-<li><strong>加权图</strong>：图中的每条边都带有一个相关的权重。权重可以是任何一种度量，比如时间，距离，尺寸等。生活中最常见的「加权图」应该就是我们的地图</li>
+<li><strong>加权图</strong>：图中的每条边都带有一个相关的权重。权重可以是任何一种度量，比如时间，距离，尺寸等。生活中最常见的 “加权图” 应该就是我们的地图</li>
 </ul>
 <h2 id="算法" tabindex="-1"><a class="header-anchor" href="#算法" aria-hidden="true">#</a> 算法</h2>
 <h4 id="quick-find" tabindex="-1"><a class="header-anchor" href="#quick-find" aria-hidden="true">#</a> Quick Find</h4>

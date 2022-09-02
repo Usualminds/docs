@@ -1,14 +1,14 @@
 # 类型
-- 原始类型 7 种：`string`，`number`，`bigint`，`boolean`，`null`，`undefined`，`symbol`。栈结构 
+- 原始类型 7 种：`string`，`number`，`bigint`，`boolean`，`null`，`undefined`，`symbol`。栈结构
 - 引用类型：`object`、`array`、`date`。堆结构
 
 ## 判断类型的方法
 
 #### typeof
 
-`typeof`: 判断值类型数据、判断函数类型、只能判断是否是引用类型，无法深入判断。特殊类型 `typeof NaN
- = number`, `typeof null
- = object`, `typeof undefined = undefined`
+`typeof`：判断值类型数据、判断函数类型、只能判断是否是引用类型，无法深入判断。特殊类型 `typeof NaN
+ = number`， `typeof null
+ = object`，`typeof undefined = undefined`
 ```js
 function mytypeof(target){
   let ret = typeof(target)
@@ -33,7 +33,7 @@ function mytypeof(target){
 ```
 
 #### instanceof
-`instanceOf` 的原理很简单，例如 `a instanceOf b` 就是利用 `a` 的隐式原型 `__proto__` 顺着原型链向上查找，如果过程中查到隐式原型的值等于 `b` 的显示原型 `prototype` 就返回 `true`,否则返回 `false`，如果一直找不到等于 `null`，也返回 `false`
+`instanceOf` 的原理很简单，例如 `a instanceOf b` 就是利用 `a` 的隐式原型 `__proto__` 顺着原型链向上查找，如果过程中查到隐式原型的值等于 `b` 的显示原型 `prototype` 就返回 `true`，否则返回 `false`，如果一直找不到等于 `null`，也返回 `false`
 
 ```js
 function myInstanceof(L, R){
@@ -53,7 +53,7 @@ console.log(myInstanceof([],Array))
 ```
 
 #### coustructor
-`constructor` 判断类型的原理, `F` 作为构造函数，定义时的 `constructor` 遗传给了实例 `f`,所以 `f·constructor == F`
+`constructor` 判断类型的原理，`F` 作为构造函数，定义时的 `constructor` 遗传给了实例 `f`，所以 `f·constructor == F`
 
 ```js
 function F(){}
@@ -71,7 +71,7 @@ new Date().constructor == Date
 
 
 #### `Object.prototype.toString.call()`
-`toString()` 是 `Object` 的原型方法，调用该方法，默认返回当前对象的 `[[Class]]` 。这是一个内部属性，其格式为 `[object Xxx]` ，其中 `Xxx` 就是对象的类型。
+`toString()` 是 `Object` 的原型方法，调用该方法，默认返回当前对象的 `[[Class]]`。这是一个内部属性，其格式为 `[object Xxx]`，其中 `Xxx` 就是对象的类型。
 
 ```js
 Object.prototype.toString.call('') ;   // [object String]
@@ -100,7 +100,7 @@ Object.prototype.toString.call(window) ; //[object global] window
 - Number(false) = 0
 
 ###### Boolean
-`Boolean` 六种值转为 `false` (`undefined ,null ,'' ,NAN ,0,false`),其他的都是 `true`
+`Boolean` 六种值转为 `false` (`undefined ,null ,'' ,NAN ,0,false`)，其他的都是 `true`
 
 #### 隐式转换
 ```js

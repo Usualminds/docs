@@ -1,17 +1,17 @@
 
 # 树
 
-顾名思义，每个节点最多有两个“叉”，也就是两个子节点，分别是左子节点和右子节点。不过，二叉树并不要求每个节点都有两个子节点，有的节点只有左子节点，有的节点只有右子节点
+顾名思义，每个节点最多有两个 “叉”，也就是两个子节点，分别是左子节点和右子节点。不过，二叉树并不要求每个节点都有两个子节点，有的节点只有左子节点，有的节点只有右子节点
 
 
 ## 从上到下打印二叉树 I
-> :point_right: 
+> ：point_right： 
 [Leetcode 链接](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/)
 
 从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。
 
-例如:
-给定二叉树: `[3,9,20,null,null,15,7]`
+例如：
+给定二叉树：`[3,9,20,null,null,15,7]`
 
 ```js
     3
@@ -26,8 +26,8 @@
 ```
 
 ::: tip
-- 二叉树的 广度优先搜索（BFS）。
-- BFS 通常借助 队列 的先入先出特性来实现。
+- 二叉树的广度优先搜索 (BFS)。
+- BFS 通常借助队列的先入先出特性来实现。
 :::
 
 <CodeGroup>
@@ -76,13 +76,13 @@ function levelOrder(root: TreeNode | null): number[] {
 </CodeGroup>
 
 ## 从上到下打印二叉树 II
-> :point_right: 
+> ：point_right： 
 [Leetcode 链接](https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/)
 
 从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。
 
-例如:
-给定二叉树: `[3,9,20,null,null,15,7]`
+例如：
+给定二叉树：`[3,9,20,null,null,15,7]`
 ```js
     3
    / \
@@ -100,9 +100,9 @@ function levelOrder(root: TreeNode | null): number[] {
 ```
 
 ::: tip
-- 按层打印： 题目要求的二叉树的 从上至下 打印（即按层打印），又称为二叉树的 广度优先搜索（BFS）。BFS 通常借助 队列 的先入先出特性来实现。
+- 按层打印：题目要求的二叉树的从上至下打印 (即按层打印)，又称为二叉树的广度优先搜索 (BFS)。BFS 通常借助队列的先入先出特性来实现。
 
-- 每层打印到一行： 将本层全部节点打印到一行，并将下一层全部节点加入队列，以此类推，即可分为多行打印
+- 每层打印到一行：将本层全部节点打印到一行，并将下一层全部节点加入队列，以此类推，即可分为多行打印
 :::
 
 <CodeGroup>
@@ -152,14 +152,14 @@ function levelOrder(root: TreeNode | null): number[][] {
 ## 从上到下打印二叉树 III
 
 ## 树的子结构
-> :point_right: 
+> ：point_right： 
 [Leetcode 链接](https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/)
 
 输入两棵二叉树 A 和 B，判断 B 是不是 A 的子结构。(约定空树不是任意一个树的子结构)
 
-B 是 A 的子结构， 即 A 中有出现和 B 相同的结构和节点值。
+B 是 A 的子结构，即 A 中有出现和 B 相同的结构和节点值。
 
-给定的树 A:
+给定的树 A：
 ```js
      3
     / \
@@ -178,10 +178,10 @@ B 是 A 的子结构， 即 A 中有出现和 B 相同的结构和节点值。
 ::: tip
 - 示例 1：
 
-    - 输入：A = [1,2,3], B = [3,1]
+    - 输入：A = [1,2,3]，B = [3,1]
     - 输出：false
 - 示例 2：
-    - 输入：A = [3,4,5,1,2], B = [4,1]
+    - 输入：A = [3,4,5,1,2]，B = [4,1]
     - 输出：true
 :::
 
@@ -220,7 +220,7 @@ function walkTree(A: TreeNode | null, B: TreeNode | null): boolean {
 </CodeGroup>
 
 ## 二叉树的镜像
-> :point_right: 
+> ：point_right： 
 [Leetcode 链接](https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/)
 
 请完成一个函数，输入一个二叉树，该函数输出它的镜像。
@@ -291,7 +291,7 @@ function mirrorTree(root: TreeNode | null): TreeNode | null {
 </CodeGroup>
 
 ## 对称二叉树
-> :point_right: 
+> ：point_right： 
 [Leetcode 链接](https://leetcode-cn.com/problems/dui-cheng-de-er-cha-shu-lcof/)
 
 请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。
@@ -304,7 +304,7 @@ function mirrorTree(root: TreeNode | null): TreeNode | null {
  / \ / \
 3  4 4  3
 ```
-但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
+但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的：
 ```js
     1
    / \
@@ -326,7 +326,7 @@ function mirrorTree(root: TreeNode | null): TreeNode | null {
 ::: tip 题目分析
 
 对称树情况
-- 左子树的左节点 = 右子树的右节点， 左子树的右节点 = 右子树的左节点
+- 左子树的左节点 = 右子树的右节点，左子树的右节点 = 右子树的左节点
 
 返回条件
 - 左右子树都同时到达叶子节点，返回 true

@@ -10,13 +10,13 @@
 `Babel` 编译流程如下，主要包含三个步骤
 
 ![](./assets/babel-flow.svg)
-- `parse`: 把源码转成抽象语法树 `AST`
-- `transform`: 遍历 `AST`，调用各种 `transform` 插件对 `AST` 进行增删改
-- `generate`: 将转换后的 `AST` 打印生成代码，同时生成对应的 `Sourcemap`
+- `parse`：把源码转成抽象语法树 `AST`
+- `transform`：遍历 `AST`，调用各种 `transform` 插件对 `AST` 进行增删改
+- `generate`：将转换后的 `AST` 打印生成代码，同时生成对应的 `Sourcemap`
 ### parse
 源码字符串转换成机器能够理解的 `AST`，该过程分为词法分析、语法分析
 
-以 `let name = 'joe'` 为例，经过 `parse` 后，它的 `AST` (基于 [acorn](https://github.com/acornjs/acorn))结构如下：
+以 `let name = 'joe'` 为例，经过 `parse` 后，它的 `AST` (基于 [acorn](https://github.com/acornjs/acorn)) 结构如下：
 ```json
 {
   "type": "Program",
@@ -62,7 +62,7 @@
 ### transform
 
 `transform` 阶段是基于 `parse` 结果的操作，通过 `AST` 遍历，遍历过程中调用注册的相应的 `visitor` 函数，`visitor` 函数里可以对 AST 节点进行增删改，返回新的 `AST`
-TODO: image && source 
+TODO：image && source
 
 ### generate
 

@@ -57,6 +57,10 @@ export const pagesComponents = {
   "v-15e329a4": defineAsyncComponent(() => import(/* webpackChunkName: "v-15e329a4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/strategy.html.vue")),
   // path: /design/watch.html
   "v-a2ecdefc": defineAsyncComponent(() => import(/* webpackChunkName: "v-a2ecdefc" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/watch.html.vue")),
+  // path: /hk/basic.html
+  "v-fdae50c4": defineAsyncComponent(() => import(/* webpackChunkName: "v-fdae50c4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/basic.html.vue")),
+  // path: /hk/trade.html
+  "v-33f38c28": defineAsyncComponent(() => import(/* webpackChunkName: "v-33f38c28" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/trade.html.vue")),
   // path: /test/finpoints.html
   "v-2e8b206f": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e8b206f" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/finpoints.html.vue")),
   // path: /test/ft.html
@@ -81,10 +85,6 @@ export const pagesComponents = {
   "v-55ccc062": defineAsyncComponent(() => import(/* webpackChunkName: "v-55ccc062" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/algorithms/leetcode/june.html.vue")),
   // path: /algorithms/leetcode/smart.html
   "v-bfebb490": defineAsyncComponent(() => import(/* webpackChunkName: "v-bfebb490" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/algorithms/leetcode/smart.html.vue")),
-  // path: /hk/basic.html
-  "v-fdae50c4": defineAsyncComponent(() => import(/* webpackChunkName: "v-fdae50c4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/basic.html.vue")),
-  // path: /hk/trade.html
-  "v-33f38c28": defineAsyncComponent(() => import(/* webpackChunkName: "v-33f38c28" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/trade.html.vue")),
   // path: /base/css/basic.html
   "v-0efe085c": defineAsyncComponent(() => import(/* webpackChunkName: "v-0efe085c" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/css/basic.html.vue")),
   // path: /base/h5/basic.html

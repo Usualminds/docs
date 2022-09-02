@@ -11,7 +11,7 @@
 // 2,6,8
 ```
 ## 寻找最近公共祖先
-给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
+给定一个二叉树，找到该树中两个指定节点的最近公共祖先。
 
 > [leetcode-236](https://leetcode.cn/problems/lowest-common-ancestor-of-a-binary-tree/)
 ```ts
@@ -31,8 +31,7 @@
  * }
  */
 
-function lowestCommonAncestor(root: TreeNode | null, p: TreeNode | null, q: TreeNode | null): TreeNode | null {
-    if(root === null) return root
+function lowestCommonAncestor(root：TreeNode | null，p：TreeNode | null，q：TreeNode | null)：TreeNode | null {if(root === null) return root
 
     if(root === p || root === q) {
         return root

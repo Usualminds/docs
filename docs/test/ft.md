@@ -18,9 +18,9 @@ var multiply = function(A, B) {
 
 ## other
 两个人轮流抛硬币，规定第一个抛出正面的人可以吃到苹果，请问先抛的人能吃到苹果的概率多大？
-> 轮流制: 先抛的人吃到苹果的概率: 1/2 + 1/2^3 + 1/2^5 + ... 求得结果为 **2/3**
+> 轮流制：先抛的人吃到苹果的概率：1/2 + 1/2^3 + 1/2^5 + ... 求得结果为 **2/3**
 ## 数组
-查询数组中有没有比它前面元素都大,比它后面的元素都小的数
+查询数组中有没有比它前面元素都大，比它后面的元素都小的数
 ```ts
 function getIndexs(arr: number[]): number[]{
     let results: number[] = [], len = arr.length, right = [], min = arr[len - 1]
@@ -46,7 +46,7 @@ function getIndexs(arr: number[]): number[]{
     return results
 }
 
-const arr = [21, 11, 45, 56, 9, 66, 77, 89, 78, 68, 100, 120, 111]
+const arr = [21，11，45，56，9，66，77，89，78，68，100，120，111]
 console.log(getIndexs(arr))
 ```
 

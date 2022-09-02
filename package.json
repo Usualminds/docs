@@ -7,8 +7,8 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "gen": "plop --plopfile lib/index.js",
-    "md-lint": "zhlint docs/**/*.{md,markdown}",
-    "md-fix": "zhlint docs/**/*.{md,markdown} --fix"
+    "md-lint": "zhlint docs/{article,design,business,test,algorithms,hk,base/*,utils/*,theroy/*}/**/*.md'",
+    "md-fix": "zhlint 'docs/{article,design,business,test,algorithms,hk,base/*,utils/*,theroy/*}/**/*.md' --fix"
   },
   "devDependencies": {
     "@vuepress/plugin-docsearch": "^2.0.0-beta.50",

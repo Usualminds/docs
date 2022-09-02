@@ -3,11 +3,11 @@ JS 脚本 scrpit 包含**异步任务**和**同步任务**，首先同步任务�
 
 在宏任务执行完成前的一刻，渲染进程会触发 GUI 和 dom 的渲染。
 
-- 微任务包括：`process.nextTick`,`promise` ，`MutationObserver`。
+- 微任务包括：`process.nextTick`，`promise`，`MutationObserver`。
 
-- 宏任务包括：`script` ， `setTimeout` ，`setInterval` ，`setImmediate`，`I/O` ，`UI rendering`
+- 宏任务包括：`script`，`setTimeout`，`setInterval`，`setImmediate`，`I/O`，`UI rendering`
   
-> `process.nextTick()`要优于 `promise.then` 执行
+> `process.nextTick()` 要优于 `promise.then` 执行
 
 ## 场景
 

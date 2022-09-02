@@ -40,7 +40,7 @@ function flatten(arr){
 }
 ```
 
-## 防抖函数（debounce)
+## 防抖函数 (debounce)
 - 定义：每次事件触发则删除原来的定时器，建立新的定时器。跟王者荣耀的回城功能类似，你反复触发回城功能，那么只认最后一次，从最后一次触发开始计时
 
 - 场景：
@@ -61,7 +61,7 @@ function debounce(fn, delay){
 
 ```
 
-## 节流函数（throttle）
+## 节流函数 (throttle)
 - 定义：如果在定时器的时间范围内再次触发，则不予理睬，等当前定时器完成，才能启动下一个定时器任务。这就好比公交车，10 分钟一趟，10 分钟内有多少人在公交站等我不管，10 分钟一到我就要发车走人！
 - 场景
     - 拖拽场景：固定时间内只执行一次，防止超高频次触发位置变动
@@ -194,7 +194,7 @@ count() // 1
 count() // 2 
 ```
 
-## sleep 
+## sleep
 ```js
 function sleepEs5(cb, delay){
     if(typeof cb === 'function'){
@@ -238,7 +238,7 @@ arr._forEach((item, index, arr) => {
 })
 ```
 
-## filter 
+## filter
 
 ```js
 Array.prototype._filter = function(fn, thisArgs){
@@ -528,9 +528,9 @@ mutilyRequest(urls, 3).then((res) => {
 ## Vue 双向绑定
 - 对象，包含复杂对象
 - 值类型
-- 数组,改造原型
+- 数组，改造原型
 
-TODO: 
+TODO：
 
 ```js
 function defineReactive(data, key, value) {
@@ -586,7 +586,7 @@ observer(obj)
 obj.num = 3
 ```
 
-## 虚拟 dom 过程( html 转为 json 格式)
+## 虚拟 dom 过程 (html 转为 json 格式)
 ```js
 const str1 = '<div>1<span>2<a>3</a>4</span>5<span>6<a>7</a>8<a>9</a>10</span>11</div>';
 function Dom2JSON(str) {

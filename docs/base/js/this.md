@@ -1,10 +1,10 @@
 # this
 
 ## this 指向
-- 预编译过程中,`this` 指向全局对象 `window`;
-- 在严格模式下 `use strict`,为 `undefined`.
-- 对象的方法里调用,`this` 指向调用该方法的对象.谁调用它就指向谁
-- 构造函数里的 `this`,指向创建出来的实例
+- 预编译过程中，`this` 指向全局对象 `window`；
+- 在严格模式下 `use strict`，为 `undefined`。
+- 对象的方法里调用，`this` 指向调用该方法的对象。谁调用它就指向谁
+- 构造函数里的 `this`，指向创建出来的实例
 
 ## 改变 this 指向
 
@@ -80,11 +80,11 @@ Function.prototype.my_bind = function(ctx){
 }
 ```
 
-#### call 
+#### call
 
 - 语法 `function.call(this,args,...)`
 
-- 用法 使用 `call` 实现继承
+- 用法使用 `call` 实现继承
 
 ```js
 // 定义父
@@ -118,11 +118,11 @@ Function.prototype.myCall = function(ctx, ...args){
   return res
 }
 ```
-#### apply 
+#### apply
 
 - 语法 `function.apply(this,args)`
 
-- 用法 使用 `apply` 实现继承
+- 用法使用 `apply` 实现继承
 
 ```js
 // 定义父

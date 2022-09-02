@@ -5,7 +5,7 @@
 ### Vue
 
 #### 响应式计算和侦听 ⭐⭐⭐
-[](https://v3.cn.vuejs.org/guide/reactivity-computed-watchers.html#%E8%AE%A1%E7%AE%97%E5%80%BC)
+[计算值](https://v3.cn.vuejs.org/guide/reactivity-computed-watchers.html#%E8%AE%A1%E7%AE%97%E5%80%BC)
 
 待研究
 
@@ -33,7 +33,7 @@ setTimeout(() => {
 ### Vue Router
 
 #### setup 中访问路由和当前路由
-> :point_right: [Vue Router 和 组合式 API](https://router.vuejs.org/zh/guide/advanced/composition-api.html)
+> ：point_right：[Vue Router 和组合式 API](https://router.vuejs.org/zh/guide/advanced/composition-api.html)
 
 因为我们在 setup 里面没有访问 this，所以我们不能再直接访问 `this.$router` 或 `this.$route`。作为替代，我们使用 `useRouter` 函数：
 
@@ -59,7 +59,7 @@ export default {
 > **在模板中我们仍然可以访问 $router 和 $route，所以不需要在 setup 中返回 router 或 route**
 
 #### 导航守卫
-虽然你仍然可以通过 `setup` 函数来使用组件内的导航守卫，但 `Vue Router` 将更新和离开守卫作为 组合式 `API` 函数公开
+虽然你仍然可以通过 `setup` 函数来使用组件内的导航守卫，但 `Vue Router` 将更新和离开守卫作为组合式 `API` 函数公开
 
 ```ts
 import { onBeforeRouteLeave, onBeforeRouteUpdate } from 'vue-router'
@@ -116,9 +116,6 @@ const UserProfileEdit = () =>
 
 - `router.hasRoute()`：检查路由是否存在。
 - `router.getRoutes()`：获取一个包含所有路由记录的数组。
-
-
-
 ### Vuex VS Pina
 
 #### Pina
@@ -177,7 +174,7 @@ export default defineComponent({
 
 ### prettier eslint
 
-### CI 
+### CI
 
 
 ## 库相关

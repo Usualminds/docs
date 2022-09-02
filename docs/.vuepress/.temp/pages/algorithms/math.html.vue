@@ -5,9 +5,9 @@
     <span class="token keyword">let</span> r <span class="token operator">=</span> a <span class="token operator">%</span> b
     <span class="token keyword">return</span> <span class="token function">getMax</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> r<span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
-</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="pow-x-n" tabindex="-1"><a class="header-anchor" href="#pow-x-n" aria-hidden="true">#</a> Pow(x, n)</h2>
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="pow-x-n" tabindex="-1"><a class="header-anchor" href="#pow-x-n" aria-hidden="true">#</a> Pow(x，n)</h2>
 <p><a href="https://leetcode.cn/problems/powx-n/" target="_blank" rel="noopener noreferrer">leetcode-50<ExternalLinkIcon/></a></p>
-<p>实现 pow(x, n) ，即计算 x 的 n 次幂函数（即，xn ）</p>
+<p>实现 pow(x，n)，即计算 x 的 n 次幂函数 (即，xn)</p>
 <h3 id="快速幂-递归" tabindex="-1"><a class="header-anchor" href="#快速幂-递归" aria-hidden="true">#</a> 快速幂+递归</h3>
 <div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">myPow</span><span class="token punctuation">(</span>x<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">,</span>n<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span>n<span class="token operator">&lt;</span><span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">1</span> <span class="token operator">/</span> <span class="token function">getQuick</span><span class="token punctuation">(</span>x<span class="token punctuation">,</span><span class="token operator">-</span>n<span class="token punctuation">)</span>
@@ -60,8 +60,8 @@
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="x-的平方根" tabindex="-1"><a class="header-anchor" href="#x-的平方根" aria-hidden="true">#</a> x 的平方根</h2>
 <p><a href="https://leetcode.cn/problems/sqrtx/" target="_blank" rel="noopener noreferrer">leetcode-69<ExternalLinkIcon/></a></p>
-<p>给你一个非负整数 x ，计算并返回 x 的 算术平方根
-由于返回类型是整数，结果只保留 整数部分 ，小数部分将被 舍去</p>
+<p>给你一个非负整数 x，计算并返回 x 的算术平方根
+由于返回类型是整数，结果只保留整数部分，小数部分将被舍去</p>
 <ul>
 <li>二分法</li>
 <li>牛顿迭代</li>

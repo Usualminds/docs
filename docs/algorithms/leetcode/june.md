@@ -1,8 +1,8 @@
 # 六月
 ## URL 化
-URL 化。编写一种方法，将字符串中的空格全部替换为%20。假定该字符串尾部有足够的空间存放新增字符，并且知道字符串的“真实”长度。
+URL 化。编写一种方法，将字符串中的空格全部替换为%20。假定该字符串尾部有足够的空间存放新增字符，并且知道字符串的 “真实” 长度。
 
-- 来源：力扣（LeetCode）
+- 来源：力扣 (LeetCode)
 - 链接：https://leetcode.cn/problems/string-to-url-lcci
 ```ts
 function replaceSpaces(S: string, length: number): string { 
@@ -45,7 +45,7 @@ function trap(height: number[]): number {
 ```
 
 ## 缺失的第一个正数
-给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。
+给你一个未排序的整数数组 nums，请你找出其中没有出现的最小的正整数。
 
 请你实现时间复杂度为 O(n) 并且只使用常数级别额外空间的解决方案。
 ```ts

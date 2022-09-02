@@ -288,7 +288,7 @@ uc.area // number | string
 ```
 
 ## 交叉类型
-类型合并，遵循乘法分配律，即`A & (B | C) = (A & B) | （A & C）`
+类型合并，遵循乘法分配律，即 `A & (B | C) = (A & B) | （A & C）`
 ```ts
 // 原始型联合为 never
 type InterPrima = number & boolean & null
@@ -415,7 +415,7 @@ function f(circle: Circle) {
 通过映射对象类型，可以将已有的对象类型映射为新的对象类型，处理较为复杂的类型结构，同时实现部分 `typescript` 语法糖
 
 ### 声明
-`[P in K] : S`, 其中 `K` 必须是能够赋值给联合类型 `string | number | symbol`
+`[P in K] : S`，其中 `K` 必须是能够赋值给联合类型 `string | number | symbol`
 ```ts
 // 键名称：[P in K] 值类型：S； readonly 和 ？ 均为可选
 readonly [P in K]? : S
@@ -469,7 +469,7 @@ type DoubleKey = MapType<{'a': 1}>
 
 ### 同态映射对象类型
 同态映射对象类型和源对象类型有相同的属性集合。语法如下
-- 同态映射会拷贝源对象的 `readonly` 和 可选属性`?`
+- 同态映射会拷贝源对象的 `readonly` 和可选属性 `?`
 - 非同态映射拷贝则会丢失
 ```ts
 // 同态映射
@@ -482,7 +482,7 @@ type MOT = {
 }
 ```
 
-改进拷贝修饰符， `{[P in K]: X}`, **`K`为类型参数且有泛型约束`K extends keyof T`**，那么编译器也会将修饰符进行拷贝映射，如下：
+改进拷贝修饰符，`{[P in K]: X}`，**`K` 为类型参数且有泛型约束 `K extends keyof T`**，那么编译器也会将修饰符进行拷贝映射，如下：
 ```ts
 type Pick<T, K extends keyof T> = {
     [P in K] : T[P]
@@ -530,7 +530,7 @@ type Record<K extends keyof any, T> = {
 };
 ```
 
-## infer 
+## infer
 ```ts
 // 提取类型的第一个元素
 type ArrayFirst<T extends unknown[]> = T extends [infer F, ...infer R] ? F : never
