@@ -10,5 +10,6 @@ docs/utils/babel/src/node_modules
 .DS_Store
 *.log
 
-docs/.vuepress/.temp/*
+docs/.vuepress/.temp/
 docs/.vuepress/dist/
+docs/.vuepress/.cache/
