@@ -1,5 +1,45 @@
 # 每日一题
 
+## 长数对链 ⭐⭐
+[👉 Leetcode 链接-646](https://leetcode.cn/problems/maximum-length-of-pair-chain/)
+
+给出 n 个数对。 在每一个数对中，第一个数字总是比第二个数字小。
+
+现在，我们定义一种跟随关系，当且仅当 b < c 时，数对(c, d) 才可以跟在 (a, b) 后面。我们用这种形式来构造一个数对链。
+
+给定一个数对集合，找出能够形成的最长数对链的长度。你不需要用到所有的数对，你可以以任何顺序选择其中的一些数对来构造。
+:::tip 考点
+动态规划 ｜ 贪心
+:::
+```ts
+function findLongestChain(pairs: number[][]): number {
+    // pairs.sort((a,b) => a[0] -b[0])
+
+    // let len = pairs.length, dp = new Array(len).fill(1)
+
+    // for(let i=0;i<len;i++){
+    //     for(let j=0;j<i;j++){
+    //         if(pairs[i][0] > pairs[j][1]){
+    //             dp[i] = Math.max(dp[i], dp[j] + 1)
+    //         }
+    //     }
+    // }
+
+    // return dp[len -1]
+    pairs.sort((a,b) => a[1]-b[1])
+
+    let count = 0, cur = -Infinity
+
+    for(let item of pairs){
+        if(cur < item[0]){
+            cur = item[1]
+            count++
+        }
+    }
+
+    return count
+};
+```
 ## 商品折扣后的最终价格
 [👉 Leetcode 链接-1475](https://leetcode.cn/problems/final-prices-with-a-special-discount-in-a-shop/)
 
