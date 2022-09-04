@@ -177,6 +177,13 @@ export const zh: NavbarConfig = [
                     '/translation/we-collected-500-000-browser-fingerprints-here-is-what-we-found.md',
                     '/translation/will-webtransport-replace-webrtc-in-near-future.md',
                 ]
+            },
+            {
+                text: 'Webpack',
+                children: [
+                    '/translation/webpack/stylus-loader.md',
+                    '/translation/webpack/stats.md',
+                ]
             }
         ]
     },
