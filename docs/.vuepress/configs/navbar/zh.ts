@@ -160,25 +160,41 @@ export const zh: NavbarConfig = [
         ]
     },
     {
-        text: '业务',
+        text: '翻译',
         children: [
             {
-                text: '基础业务',
+                text: '前端',
                 children: [
-                    '/business/basic.md',
+                    '/translation/5-advanced-typescript-tips-to-make-you-a-better-programmer.md',
+                    '/translation/dependency-injection-in-typescript.md',
+                    '/translation/ensure-javascript-code-quality-with-husky-and-hooks.md',
+                    '/translation/how-to-become-a-google-developer-expert-gde-a-practical-guide.md',
+                    '/translation/improve-page-rendering-speed-using-only-css.md',
+                    '/translation/leave-javascript-aside-mint-is-a-great-language-for-building-web-apps.md',
+                    '/translation/new-in-devtools-92.md',
+                    '/translation/stage-3-review.md',
+                    '/translation/using-web-workers-to-speed-up-javascript-applications.md',
+                    '/translation/we-collected-500-000-browser-fingerprints-here-is-what-we-found.md',
+                    '/translation/will-webtransport-replace-webrtc-in-near-future.md',
                 ]
             }
         ]
     },
     {
-        text: '香港',
+        text: '业务',
         children: [
             {
-                text: '港交所',
+                text: '职业规划',
                 children: [
-                    '/hk/basic.md',
+                    '/business/basic.md',
                 ]
-            }
+            },
+            {
+                text: '香港',
+                children: [
+                    '/business/hk/basic.md',
+                ]
+            },
         ]
     },
     {

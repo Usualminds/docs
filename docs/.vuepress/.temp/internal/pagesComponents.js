@@ -57,10 +57,38 @@ export const pagesComponents = {
   "v-15e329a4": defineAsyncComponent(() => import(/* webpackChunkName: "v-15e329a4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/strategy.html.vue")),
   // path: /design/watch.html
   "v-a2ecdefc": defineAsyncComponent(() => import(/* webpackChunkName: "v-a2ecdefc" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/watch.html.vue")),
-  // path: /hk/basic.html
-  "v-fdae50c4": defineAsyncComponent(() => import(/* webpackChunkName: "v-fdae50c4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/basic.html.vue")),
-  // path: /hk/trade.html
-  "v-33f38c28": defineAsyncComponent(() => import(/* webpackChunkName: "v-33f38c28" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/hk/trade.html.vue")),
+  // path: /test/finpoints.html
+  "v-2e8b206f": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e8b206f" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/finpoints.html.vue")),
+  // path: /test/ft.html
+  "v-393919c7": defineAsyncComponent(() => import(/* webpackChunkName: "v-393919c7" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/ft.html.vue")),
+  // path: /test/ht.html
+  "v-b9f4df6e": defineAsyncComponent(() => import(/* webpackChunkName: "v-b9f4df6e" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/ht.html.vue")),
+  // path: /test/mego.html
+  "v-d3407b56": defineAsyncComponent(() => import(/* webpackChunkName: "v-d3407b56" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/mego.html.vue")),
+  // path: /test/shopee.html
+  "v-3631537f": defineAsyncComponent(() => import(/* webpackChunkName: "v-3631537f" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/shopee.html.vue")),
+  // path: /translation/5-advanced-typescript-tips-to-make-you-a-better-programmer.html
+  "v-007d48d6": defineAsyncComponent(() => import(/* webpackChunkName: "v-007d48d6" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/5-advanced-typescript-tips-to-make-you-a-better-programmer.html.vue")),
+  // path: /translation/dependency-injection-in-typescript.html
+  "v-7e9d3dcd": defineAsyncComponent(() => import(/* webpackChunkName: "v-7e9d3dcd" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/dependency-injection-in-typescript.html.vue")),
+  // path: /translation/ensure-javascript-code-quality-with-husky-and-hooks.html
+  "v-9e12da0e": defineAsyncComponent(() => import(/* webpackChunkName: "v-9e12da0e" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/ensure-javascript-code-quality-with-husky-and-hooks.html.vue")),
+  // path: /translation/how-to-become-a-google-developer-expert-gde-a-practical-guide.html
+  "v-9a6f5774": defineAsyncComponent(() => import(/* webpackChunkName: "v-9a6f5774" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/how-to-become-a-google-developer-expert-gde-a-practical-guide.html.vue")),
+  // path: /translation/improve-page-rendering-speed-using-only-css.html
+  "v-63f3f196": defineAsyncComponent(() => import(/* webpackChunkName: "v-63f3f196" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/improve-page-rendering-speed-using-only-css.html.vue")),
+  // path: /translation/leave-javascript-aside-mint-is-a-great-language-for-building-web-apps.html
+  "v-19343062": defineAsyncComponent(() => import(/* webpackChunkName: "v-19343062" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/leave-javascript-aside-mint-is-a-great-language-for-building-web-apps.html.vue")),
+  // path: /translation/new-in-devtools-92.html
+  "v-67c0f306": defineAsyncComponent(() => import(/* webpackChunkName: "v-67c0f306" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/new-in-devtools-92.html.vue")),
+  // path: /translation/stage-3-review.html
+  "v-392496e1": defineAsyncComponent(() => import(/* webpackChunkName: "v-392496e1" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/stage-3-review.html.vue")),
+  // path: /translation/using-web-workers-to-speed-up-javascript-applications.html
+  "v-56b9997e": defineAsyncComponent(() => import(/* webpackChunkName: "v-56b9997e" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/using-web-workers-to-speed-up-javascript-applications.html.vue")),
+  // path: /translation/we-collected-500-000-browser-fingerprints-here-is-what-we-found.html
+  "v-910e916a": defineAsyncComponent(() => import(/* webpackChunkName: "v-910e916a" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/we-collected-500-000-browser-fingerprints-here-is-what-we-found.html.vue")),
+  // path: /translation/will-webtransport-replace-webrtc-in-near-future.html
+  "v-28cd2406": defineAsyncComponent(() => import(/* webpackChunkName: "v-28cd2406" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/will-webtransport-replace-webrtc-in-near-future.html.vue")),
   // path: /algorithms/leetcode/april.html
   "v-2be29f1b": defineAsyncComponent(() => import(/* webpackChunkName: "v-2be29f1b" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/algorithms/leetcode/april.html.vue")),
   // path: /algorithms/leetcode/contest.html
@@ -75,16 +103,6 @@ export const pagesComponents = {
   "v-55ccc062": defineAsyncComponent(() => import(/* webpackChunkName: "v-55ccc062" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/algorithms/leetcode/june.html.vue")),
   // path: /algorithms/leetcode/smart.html
   "v-bfebb490": defineAsyncComponent(() => import(/* webpackChunkName: "v-bfebb490" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/algorithms/leetcode/smart.html.vue")),
-  // path: /test/finpoints.html
-  "v-2e8b206f": defineAsyncComponent(() => import(/* webpackChunkName: "v-2e8b206f" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/finpoints.html.vue")),
-  // path: /test/ft.html
-  "v-393919c7": defineAsyncComponent(() => import(/* webpackChunkName: "v-393919c7" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/ft.html.vue")),
-  // path: /test/ht.html
-  "v-b9f4df6e": defineAsyncComponent(() => import(/* webpackChunkName: "v-b9f4df6e" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/ht.html.vue")),
-  // path: /test/mego.html
-  "v-d3407b56": defineAsyncComponent(() => import(/* webpackChunkName: "v-d3407b56" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/mego.html.vue")),
-  // path: /test/shopee.html
-  "v-3631537f": defineAsyncComponent(() => import(/* webpackChunkName: "v-3631537f" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/test/shopee.html.vue")),
   // path: /base/css/basic.html
   "v-0efe085c": defineAsyncComponent(() => import(/* webpackChunkName: "v-0efe085c" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/css/basic.html.vue")),
   // path: /base/h5/basic.html
@@ -113,6 +131,10 @@ export const pagesComponents = {
   "v-10763323": defineAsyncComponent(() => import(/* webpackChunkName: "v-10763323" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/ts/practise.html.vue")),
   // path: /base/ts/ts_source_code.html
   "v-291eec7d": defineAsyncComponent(() => import(/* webpackChunkName: "v-291eec7d" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/ts/ts_source_code.html.vue")),
+  // path: /business/hk/basic.html
+  "v-74bb2421": defineAsyncComponent(() => import(/* webpackChunkName: "v-74bb2421" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/business/hk/basic.html.vue")),
+  // path: /business/hk/trade.html
+  "v-2785d8ab": defineAsyncComponent(() => import(/* webpackChunkName: "v-2785d8ab" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/business/hk/trade.html.vue")),
   // path: /theroy/react/
   "v-1ef6020a": defineAsyncComponent(() => import(/* webpackChunkName: "v-1ef6020a" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/theroy/react/index.html.vue")),
   // path: /theroy/vue/compiler.html

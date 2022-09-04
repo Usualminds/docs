@@ -7,6 +7,8 @@
     "dev": "vuepress dev docs",
     "build": "vuepress build docs",
     "gen": "plop --plopfile lib/index.js",
+    "copy": "node lib/sync/index.js",
+    "sync": "yarn build && yarn copy",
     "md-lint": "zhlint docs/{article,design,business,test,algorithms,hk,base/*,utils/*,theroy/*}/**/*.md'",
     "md-fix": "zhlint 'docs/{article,design,business,test,algorithms,hk,base/*,utils/*,theroy/*}/**/*.md' --fix"
   },
