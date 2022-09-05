@@ -1,6 +1,54 @@
 # 每日一题
 
-## tomorrow
+## 寻找重复的子树 ⭐⭐
+[👉 Leetcode 链接-652](https://leetcode.cn/problems/find-duplicate-subtrees/)
+
+给定一棵二叉树 root，返回所有重复的子树。
+
+对于同一类的重复子树，你只需要返回其中任意一棵的根结点即可。
+
+如果两棵树具有相同的结构和相同的结点值，则它们是重复的。
+
+![](https://assets.leetcode.com/uploads/2020/08/16/e1.jpg)
+
+```ts
+/**
+ * Definition for a binary tree node.
+ * class TreeNode {
+ *     val: number
+ *     left: TreeNode | null
+ *     right: TreeNode | null
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.left = (left===undefined ? null : left)
+ *         this.right = (right===undefined ? null : right)
+ *     }
+ * }
+ */
+let res: Array<TreeNode>;
+let map: Map<string, number>;
+function findDuplicateSubtrees(root: TreeNode | null): Array<TreeNode | null> {
+  res = new Array<TreeNode>();
+  map = new Map<string, number>();
+
+  dfs(root);
+
+  return res;
+}
+
+function dfs(root: TreeNode | null): string {
+  if (!root) return " ";
+  let key = root.val + "_";
+  key += dfs(root.left);
+  key += dfs(root.right);
+
+  if (!map.has(key)) map.set(key, 1);
+  else map.set(key, map.get(key) + 1);
+
+  if (map.get(key) === 2) res.push(root);
+  return key;
+}
+```
 ## 长数对链 ⭐⭐
 [👉 Leetcode 链接-646](https://leetcode.cn/problems/maximum-length-of-pair-chain/)
 

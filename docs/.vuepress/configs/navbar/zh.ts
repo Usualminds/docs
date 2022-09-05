@@ -146,6 +146,7 @@ export const zh: NavbarConfig = [
                 text: '算法',
                 children: [
                     /* inject */
+                    '/article/apple-grow.md',
                     '/article/nginx.md',
                     '/article/taicss.md',
                     '/article/nim.md',
