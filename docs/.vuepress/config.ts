@@ -16,15 +16,7 @@ export default defineUserConfig({
     ],
     lang: 'en-US',
     title: 'Daily Knowledge',
-    description: '静言思之 前端 算法 数据结构',
-
-    locales: {
-        '/zh/': {
-            lang: 'zh-CN',
-            title: '你好',
-            description: '它将会在 /zh/ 子路径下生效',
-          }
-    },
+    description: '前端 算法 数据结构 工程化',
 
     theme: defaultTheme({
         locales: {
@@ -55,9 +47,6 @@ export default defineUserConfig({
                 openInNewWindow: '在新窗口打开',
                 toggleColorMode: '切换颜色模式',
                 toggleSidebar: '切换侧边栏',
-            },
-            '/zh/': {
-                selectLanguageName: '简体中文',
             },
         },
     }),
