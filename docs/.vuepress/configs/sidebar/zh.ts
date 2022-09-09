@@ -79,6 +79,12 @@ export const zh: SidebarConfig = {
             ],
         },
         {
+            text: '数据库',
+            children: [
+                '/algorithms/sql/basic.md',
+            ],
+        },
+        {
             text: 'Leetcode',
             children: [
                 '/algorithms/leetcode/date.md',
