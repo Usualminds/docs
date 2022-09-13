@@ -1,4 +1,79 @@
 # 每日一题
+
+## 最大交换
+[👉 Leetcode 链接-670](https://leetcode.cn/problems/maximum-swap/)
+
+
+给定一个非负整数，你至多可以交换一次数字中的任意两位。返回你能得到的最大值。
+
+> 给定数字的范围是 [0, 108]
+
+- 示例 1 :
+
+    - 输入: 2736
+    - 输出: 7236
+    - 解释: 交换数字 2 和数字 7。
+
+- 示例 2 :
+
+    - 输入: 9973
+    - 输出: 9973
+    - 解释: 不需要交换
+
+:::tip 考点
+贪心算法
+:::
+### 暴力解法
+```ts
+var maximumSwap = function(num) {
+    let numStr = String(num), arr = [...numStr], len = numStr.length, max = num
+
+    for(let i=0;i<len;i++){
+        for(let j=i+1;j<len;j++){
+            swap(arr,i,j)
+            max = Math.max(max,parseInt(arr.join('')))
+            swap(arr,i,j)
+        }
+    }
+
+    return max
+};
+
+function swap(arr,i,j){
+    let temp = arr[i]
+    arr[i] = arr[j]
+    arr[j] = temp
+}
+```
+### 贪心解法 ⭐⭐
+```ts
+/**
+ * @param {number} num
+ * @return {number}
+ */
+var maximumSwap = function(num) {
+    let numStr = String(num), arr = [...numStr], len = arr.length
+    let maxIndex = len - 1, sid1 = -1, sid2 = -1
+
+    // 从右向左遍历找最大的数字，记录索引，同时如果左边的数字比右边的小，也记录其索引
+    for(let i=len-1;i>=0;i--){
+        if(arr[i] > arr[maxIndex]) {
+            maxIndex = i
+        } else if(arr[i] < arr[maxIndex]) {
+            sid1 = i
+            sid2 = maxIndex
+        }
+    }
+
+    // 存在左边的数字比右边的小，交换右边最大的数字位置到左边
+    if(sid1 > -1) {
+        [arr[sid1],arr[sid2]] = [arr[sid2], arr[sid1]]
+        return parseInt(arr.join(''))
+    }
+
+    return num
+};
+```
 ## 雇佣 K 名工人的最低成本 ⭐⭐⭐
 [👉 Leetcode 链接-857](https://leetcode.cn/problems/minimum-cost-to-hire-k-workers/)
 
