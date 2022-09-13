@@ -45,10 +45,10 @@
     <span class="token keyword">return</span> res
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="递归乘法" tabindex="-1"><a class="header-anchor" href="#递归乘法" aria-hidden="true">#</a> 递归乘法</h2>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
- * <span class="token keyword">@param</span> <span class="token punctuation">{</span>number<span class="token punctuation">}</span> A
- * <span class="token keyword">@param</span> <span class="token punctuation">{</span>number<span class="token punctuation">}</span> B
- * <span class="token keyword">@return</span> <span class="token punctuation">{</span>number<span class="token punctuation">}</span>
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
+ * @param {number} A
+ * @param {number} B
+ * @return {number}
  */</span>
 <span class="token keyword">var</span> <span class="token function-variable function">multiply</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">,</span> <span class="token constant">B</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token constant">A</span> <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token constant">B</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span>

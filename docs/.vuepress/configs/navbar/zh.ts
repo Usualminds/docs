@@ -45,7 +45,7 @@ export const zh: NavbarConfig = [
         text: '算法',
         children: [
             {
-                text: "数组",
+                text: "数据结构",
                 children: [
                     '/algorithms/array.md',
                     '/algorithms/hash.md',

@@ -264,5 +264,51 @@ where
     p1.email = p2.email and p1.id > p2.id
 ```
 
+## 字符串处理函数/正则
+
+###  修复表中的名字
+[👉 Leetcode 链接-1667](https://leetcode.cn/problems/fix-names-in-a-table/)
+
+:::tip 知识点
+- `concat()` 函数连接多个字符串
+- `left(str, length)` 从左开始截取字符串，`length` 是截取的长度
+- `upper` & `lower` 大小写转换函数
+- `substring(str,start,end)` 截取字符串，`end` 不写默认为空
+:::
+
+编写一个 `SQL` 查询来修复名字，使得只有第一个字符是大写的，其余都是小写的。
+
+返回按 `user_id` 排序的结果表。
+
+查询结果格式示例如下。
+
+```sql
+Users table:
++---------+-------+
+| user_id | name  |
++---------+-------+
+| 1       | aLice |
+| 2       | bOB   |
++---------+-------+
+输出：
++---------+-------+
+| user_id | name  |
++---------+-------+
+| 1       | Alice |
+| 2       | Bob   |
++---------+-------+
+```
+:::details 题解
+```sql
+# Write your MySQL query statement below
+select
+    user_id, 
+    concat(upper(left(name,1)), lower(substring(name,2))) as name
+from
+    Users
+order by
+    user_id
+```
+:::
 
 
