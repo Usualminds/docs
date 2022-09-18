@@ -1,5 +1,32 @@
 # 每日一题
 
+## 两个相同字符之间的最长子字符串
+[👉 Leetcode 链接-1624](https://leetcode.cn/problems/largest-substring-between-two-equal-characters/)
+
+给你一个字符串 s，请你返回 两个相同字符之间的最长子字符串的长度 ，计算长度时不含这两个字符。如果不存在这样的子字符串，返回 -1 。
+
+子字符串 是字符串中的一个连续字符序列。
+
+:::tip 考点
+哈希表
+:::
+```ts
+function maxLengthBetweenEqualCharacters(s: string): number {
+    let count = -1, len = s.length, map = new Map()
+
+    for(let i=0;i<len;i++){
+        let char = s[i]
+
+        if(map[char] !== undefined) {
+            count = Math.max(count, i - map[char] - 1)
+        } else {
+            map[char] = i
+        }
+    }
+
+    return count
+};
+```
 ## 最大交换
 [👉 Leetcode 链接-670](https://leetcode.cn/problems/maximum-swap/)
 
