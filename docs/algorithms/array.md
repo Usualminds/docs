@@ -1,5 +1,109 @@
 # 数组
 
+## 嵌套数组属性值改变
+修改一个嵌套对象数组的某个属性值，数据源结构如下
+```js
+    [
+        {
+            meta: {
+                title: 'ABC',
+                icon: 'top',
+                info: 'meta'
+            },
+            component: 'test-comp',
+            hidden: false,
+            path: 'abc/a'
+            children: [
+                meta: {
+                    title: 'ABC-child',
+                    icon: 'topchild',
+                    info: 'meta'
+                },
+                component: 'test-comp',
+                hidden: false,
+                path: 'abc/a/child'
+            ]
+        },
+        {
+            meta: {
+                title: 'DEF',
+                icon: 'top',
+                info: 'meta'
+            },
+            component: 'test-comp',
+            hidden: false,
+            path: 'abc/a'
+            children: [
+                meta: {
+                    title: 'DEF-child',
+                    icon: 'topchild',
+                    info: 'meta'
+                },
+                component: 'test-comp',
+                hidden: false,
+                path: 'abc/a/child'
+            ]
+        }
+    ]
+```
+要求修改后数据源结构如下，即所有 `icon` 的取值为空
+```js
+    [
+        {
+            meta: {
+                title: 'ABC',
+                icon: '',
+                info: 'meta'
+            },
+            component: 'test-comp',
+            hidden: false,
+            path: 'abc/a'
+            children: [
+                meta: {
+                    title: 'ABC-child',
+                    icon: '',
+                    info: 'meta'
+                },
+                component: 'test-comp',
+                hidden: false,
+                path: 'abc/a/child'
+            ]
+        },
+        {
+            meta: {
+                title: 'DEF',
+                icon: '',
+                info: 'meta'
+            },
+            component: 'test-comp',
+            hidden: false,
+            path: 'abc/a'
+            children: [
+                meta: {
+                    title: 'DEF-child',
+                    icon: '',
+                    info: 'meta'
+                },
+                component: 'test-comp',
+                hidden: false,
+                path: 'abc/a/child'
+            ]
+        }
+    ]
+```
+```ts
+function filterIcons(data: []) {
+    data.forEach(
+       function iter(child: []) {
+        if(child?.meta?.icon){
+            child.meta.icon = ''
+        }
+
+        Array.isArray(child.children) && child.children.length > 0 && child.children.forEach(iter)
+       } 
+    );
+}
+```
 ## 移除元素
 [👉 Leetcode 链接-27](https://leetcode.cn/problems/remove-element/)
 
