@@ -1,5 +1,40 @@
 # 每日一题
+## 按照频率将数组升序排序
+[👉 Leetcode 链接-1636](https://leetcode.cn/problems/sort-array-by-increasing-frequency/)
 
+给你一个整数数组 nums ，请你将数组按照每个值的频率 升序 排序。如果有多个值的频率相同，请你按照数值本身将它们 降序 排序。 
+
+请你返回排序后的数组。
+
+- 示例 1：
+    - 输入：nums = [1,1,2,2,2,3]
+    - 输出：[3,1,1,2,2,2]
+    - 解释：'3' 频率为 1，'1' 频率为 2，'2' 频率为 3 。
+- 示例 2：
+    - 输入：nums = [2,3,1,3,2]
+    - 输出：[1,3,3,2,2]
+    - 解释：'2' 和 '3' 频率都为 2 ，所以它们之间按照数值本身降序排序。
+
+```ts
+function frequencySort(nums: number[]): number[] {
+    let map = new Map<number,number>()
+
+    for(let num of nums) {
+        if(map.has(num)){
+            let count = map.get(num) + 1
+            map.set(num, count)
+        } else {
+            map.set(num, 0)
+        }
+    }
+
+    nums.sort((a,b) => {
+        return map.get(a) != map.get(b) ? map.get(a) - map.get(b) : b - a
+    })
+
+    return nums
+};
+```
 ## 两个相同字符之间的最长子字符串
 [👉 Leetcode 链接-1624](https://leetcode.cn/problems/largest-substring-between-two-equal-characters/)
 
