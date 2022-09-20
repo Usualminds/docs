@@ -1,5 +1,46 @@
 # 有趣题
 
+## 划分为 k 个相等的子集 ⭐⭐⭐
+[👉 Leetcode 链接-463](https://leetcode.cn/problems/partition-to-k-equal-sum-subsets/)
+
+给定一个整数数组  nums 和一个正整数 k，找出是否有可能把这个数组分成 k 个非空子集，其总和都相等。
+
+- 示例 1：
+    - 输入： nums = [4, 3, 2, 3, 5, 2, 1], k = 4
+    - 输出： True
+    - 说明： 有可能将其分成 4 个子集（5），（1,4），（2,3），（2,3）等于总和。
+  
+- 示例 2:
+    - 输入: nums = [1,2,3,4], k = 3
+    - 输出: false
+
+
+```ts
+// TODO:
+let nums: number[];
+let n: number, t: number, k: number;
+function canPartitionKSubsets(_nums: number[], _k: number): boolean {
+    nums = _nums; k = _k;
+    let tot = 0
+    for (let x of nums) tot += x
+    if (tot % k != 0) return false
+    nums.sort((a,b)=>a-b)
+    n = nums.length; t = tot / k
+    return dfs(n - 1, 0, 0, new Array<boolean>(n).fill(false))
+};
+function dfs(idx: number, cur: number, cnt: number, vis: boolean[]): boolean {
+    if (cnt == k) return true
+    if (cur == t) return dfs(n - 1, 0, cnt + 1, vis)
+    for (let i = idx; i >= 0; i--) {
+        if (vis[i] || cur + nums[i] > t) continue
+        vis[i] = true
+        if (dfs(idx - 1, cur + nums[i], cnt, vis)) return true
+        vis[i] = false
+        if (cur == 0) return false
+    }
+    return false
+}
+```
 ## Nim 游戏
 
 [👉 Leetcode 链接-292](https://leetcode.cn/problems/nim-game/)
