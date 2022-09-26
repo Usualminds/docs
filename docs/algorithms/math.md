@@ -1,5 +1,36 @@
 # 数学
 
+## 消失的两个数字
+[👉 Leetcode 链接-17](https://leetcode.cn/problems/missing-two-lcci/)
+
+给定一个数组，包含从 1 到 N 所有的整数，但其中缺了两个数字。你能在 O(N) 时间内只用 O(1) 的空间找到它们吗？
+
+以任意顺序返回这两个数字均可。
+
+- 示例 1:
+    - 输入: [1]
+    - 输出: [2,3]
+  
+- 示例 2:
+    - 输入: [2,3]
+    - 输出: [1,4]
+```ts
+function missingTwo(nums: number[]): number[] {
+    let len = nums.length + 2, cur = Math.floor(len * (len + 1)/2)
+
+    for(let num of nums) cur -=  num
+
+    let sum = cur, t = Math.floor(cur/2) 
+
+    cur = Math.floor(t*(t+1)/2)
+
+    for(let num of nums){
+        if(num<=t) cur -= num
+    }
+
+    return [cur, sum - cur]
+};
+```
 ## 最大公约数
 ```ts
 function getMax(a: number, b: number): number {
