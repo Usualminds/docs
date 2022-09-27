@@ -123,6 +123,10 @@ export const pagesData = {
   "v-0260974c": () => import(/* webpackChunkName: "v-0260974c" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/js/this.html.js").then(({ data }) => data),
   // path: /base/js/type.html
   "v-3f2b753e": () => import(/* webpackChunkName: "v-3f2b753e" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/js/type.html.js").then(({ data }) => data),
+  // path: /base/rust/basic.html
+  "v-6c90b9b1": () => import(/* webpackChunkName: "v-6c90b9b1" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/basic.html.js").then(({ data }) => data),
+  // path: /base/rust/variable.html
+  "v-da24e452": () => import(/* webpackChunkName: "v-da24e452" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/variable.html.js").then(({ data }) => data),
   // path: /base/ts/basic.html
   "v-4643b6f6": () => import(/* webpackChunkName: "v-4643b6f6" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/ts/basic.html.js").then(({ data }) => data),
   // path: /base/ts/deep.html
@@ -149,6 +153,10 @@ export const pagesData = {
   "v-f5170928": () => import(/* webpackChunkName: "v-f5170928" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/theroy/vue/reactive.html.js").then(({ data }) => data),
   // path: /theroy/vue/renderer.html
   "v-d9afb83c": () => import(/* webpackChunkName: "v-d9afb83c" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/theroy/vue/renderer.html.js").then(({ data }) => data),
+  // path: /translation/webpack/stats.html
+  "v-a0f89e5a": () => import(/* webpackChunkName: "v-a0f89e5a" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/webpack/stats.html.js").then(({ data }) => data),
+  // path: /translation/webpack/stylus-loader.html
+  "v-75b10664": () => import(/* webpackChunkName: "v-75b10664" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/webpack/stylus-loader.html.js").then(({ data }) => data),
   // path: /utils/babel/basic.html
   "v-fa0a26f2": () => import(/* webpackChunkName: "v-fa0a26f2" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/utils/babel/basic.html.js").then(({ data }) => data),
   // path: /utils/babel/mini-babel.html
@@ -159,10 +167,6 @@ export const pagesData = {
   "v-adaab582": () => import(/* webpackChunkName: "v-adaab582" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/utils/vite/basic.html.js").then(({ data }) => data),
   // path: /utils/webpack/basic.html
   "v-b53c7938": () => import(/* webpackChunkName: "v-b53c7938" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/utils/webpack/basic.html.js").then(({ data }) => data),
-  // path: /translation/webpack/stats.html
-  "v-a0f89e5a": () => import(/* webpackChunkName: "v-a0f89e5a" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/webpack/stats.html.js").then(({ data }) => data),
-  // path: /translation/webpack/stylus-loader.html
-  "v-75b10664": () => import(/* webpackChunkName: "v-75b10664" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/translation/webpack/stylus-loader.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
 }

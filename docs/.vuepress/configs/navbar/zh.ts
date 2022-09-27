@@ -6,6 +6,13 @@ export const zh: NavbarConfig = [
         link: '/base/js/basic.md',
         children: [
             {
+                text: 'Rust',
+                children: [
+                    '/base/rust/basic.md',
+                    '/base/rust/variable.md',
+                ],
+            },
+            {
                 text: 'Javascript',
                 children: [
                     '/base/js/basic.md',
