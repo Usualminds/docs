@@ -9,6 +9,7 @@ export const zh: SidebarConfig = {
                 children: [
                     '/base/rust/basic.md',
                     '/base/rust/variable.md',
+                    '/base/rust/practice.md',
                 ],
             },
             {

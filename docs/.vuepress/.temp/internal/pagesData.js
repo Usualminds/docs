@@ -169,4 +169,6 @@ export const pagesData = {
   "v-b53c7938": () => import(/* webpackChunkName: "v-b53c7938" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/utils/webpack/basic.html.js").then(({ data }) => data),
   // path: /404.html
   "v-3706649a": () => import(/* webpackChunkName: "v-3706649a" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/404.html.js").then(({ data }) => data),
+  // path: /base/rust/practice.html
+  "v-44398310": () => import(/* webpackChunkName: "v-44398310" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/practice.html.js").then(({ data }) => data),
 }

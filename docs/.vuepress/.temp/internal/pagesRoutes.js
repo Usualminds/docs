@@ -84,4 +84,5 @@ export const pagesRoutes = [
   ["v-adaab582","/utils/vite/basic.html",{"title":"Vite"},["/utils/vite/basic","/utils/vite/basic.md"]],
   ["v-b53c7938","/utils/webpack/basic.html",{"title":"Webpack"},["/utils/webpack/basic","/utils/webpack/basic.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
+  ["v-44398310","/base/rust/practice.html",{"title":"练习题"},["/base/rust/practice","/base/rust/practice.md"]],
 ]

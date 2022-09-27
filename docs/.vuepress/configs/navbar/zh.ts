@@ -10,6 +10,7 @@ export const zh: NavbarConfig = [
                 children: [
                     '/base/rust/basic.md',
                     '/base/rust/variable.md',
+                    '/base/rust/practice.md',
                 ],
             },
             {
