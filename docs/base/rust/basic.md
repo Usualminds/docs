@@ -2,7 +2,7 @@
  * @Author: Joe me@qjidea.com
  * @Date: 2022-09-27 10:49:56
  * @LastEditors: Joe me@qjidea.com
- * @LastEditTime: 2022-09-27 11:23:16
+ * @LastEditTime: 2022-09-28 10:07:19
  * @Description: 安装与使用
  * Copyright (c) 2022 by Joe me@qjidea.com, All Rights Reserved. 
 -->
@@ -39,3 +39,8 @@ registry = "git://mirrors.ustc.edu.cn/crates.io-index"
 
 ```
 > 使用[科大镜像](https://mirrors.ustc.edu.cn/help/crates.io-index.html)
+
+## 单测
+```rust
+assert_eq!()
+```
