@@ -1,4 +1,41 @@
 # 每日一题
+## 链表组件
+[👉 Leetcode 链接-817](https://leetcode.cn/problems/linked-list-components/)
+给定链表头结点 head，该链表上的每个结点都有一个 唯一的整型值 。同时给定列表 nums，该列表是上述链表中整型值的一个子集。
+
+返回列表 nums 中组件的个数，这里对组件的定义为：链表中一段最长连续结点的值（该值必须在列表 nums 中）构成的集合。
+
+```ts
+/**
+ * Definition for singly-linked list.
+ * class ListNode {
+ *     val: number
+ *     next: ListNode | null
+ *     constructor(val?: number, next?: ListNode | null) {
+ *         this.val = (val===undefined ? 0 : val)
+ *         this.next = (next===undefined ? null : next)
+ *     }
+ * }
+ */
+
+function numComponents(head: ListNode | null, nums: number[]): number {
+    let ans = 0
+    const set = new Set()
+
+    for(const x of nums) set.add(x)
+
+    while(head !== null){
+        if(set.has(head.val)){
+            while(head !== null && set.has(head.val)) {head = head.next}
+            ans++
+        } else {
+            head = head.next
+        }
+    }
+
+    return ans
+};
+```
 ## 按照频率将数组升序排序
 [👉 Leetcode 链接-1636](https://leetcode.cn/problems/sort-array-by-increasing-frequency/)
 
