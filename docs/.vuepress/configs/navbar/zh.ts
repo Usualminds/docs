@@ -160,7 +160,7 @@ export const zh: NavbarConfig = [
                 text: '算法',
                 children: [
                     /* inject */
-                    '/article/apple-grow.md',
+                    // '/article/apple-grow.md',
                     '/article/nginx.md',
                     '/article/taicss.md',
                     '/article/nim.md',
@@ -170,6 +170,18 @@ export const zh: NavbarConfig = [
                     '/article/pnpm.md',
                     '/article/dp.md',
                     '/article/browser-finger.md',
+                ]
+            },
+            {
+                text: 'IOS开发',
+                children: [
+                    '/article/ios/env.md',
+                ]
+            },
+            {
+                text: '读书笔记',
+                children: [
+                    '/article/books/work-meaning.md',
                 ]
             }
         ]

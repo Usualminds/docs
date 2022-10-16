@@ -52,6 +52,8 @@ export const pagesRoutes = [
   ["v-55ccc062","/algorithms/leetcode/june.html",{"title":"六月"},["/algorithms/leetcode/june","/algorithms/leetcode/june.md"]],
   ["v-bfebb490","/algorithms/leetcode/smart.html",{"title":"有趣题"},["/algorithms/leetcode/smart","/algorithms/leetcode/smart.md"]],
   ["v-808baa04","/algorithms/sql/basic.html",{"title":"基础"},["/algorithms/sql/basic","/algorithms/sql/basic.md"]],
+  ["v-3e13e9e1","/article/books/work-meaning.html",{"title":"工作、消费主义和新穷人"},["/article/books/work-meaning","/article/books/work-meaning.md"]],
+  ["v-14f32cc0","/article/ios/env.html",{"title":"IOS 开发第一弹-环境构建"},["/article/ios/env","/article/ios/env.md"]],
   ["v-0efe085c","/base/css/basic.html",{"title":"CSS"},["/base/css/basic","/base/css/basic.md"]],
   ["v-3b195be8","/base/h5/basic.html",{"title":"H5"},["/base/h5/basic","/base/h5/basic.md"]],
   ["v-15b51428","/base/js/basic.html",{"title":"基础"},["/base/js/basic","/base/js/basic.md"]],
@@ -62,6 +64,7 @@ export const pagesRoutes = [
   ["v-0260974c","/base/js/this.html",{"title":"this"},["/base/js/this","/base/js/this.md"]],
   ["v-3f2b753e","/base/js/type.html",{"title":"类型"},["/base/js/type","/base/js/type.md"]],
   ["v-6c90b9b1","/base/rust/basic.html",{"title":"基础"},["/base/rust/basic","/base/rust/basic.md"]],
+  ["v-44398310","/base/rust/practice.html",{"title":"练习题"},["/base/rust/practice","/base/rust/practice.md"]],
   ["v-da24e452","/base/rust/variable.html",{"title":"变量"},["/base/rust/variable","/base/rust/variable.md"]],
   ["v-4643b6f6","/base/ts/basic.html",{"title":"基础"},["/base/ts/basic","/base/ts/basic.md"]],
   ["v-11c386fc","/base/ts/deep.html",{"title":"深入"},["/base/ts/deep","/base/ts/deep.md"]],
@@ -84,5 +87,4 @@ export const pagesRoutes = [
   ["v-adaab582","/utils/vite/basic.html",{"title":"Vite"},["/utils/vite/basic","/utils/vite/basic.md"]],
   ["v-b53c7938","/utils/webpack/basic.html",{"title":"Webpack"},["/utils/webpack/basic","/utils/webpack/basic.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
-  ["v-44398310","/base/rust/practice.html",{"title":"练习题"},["/base/rust/practice","/base/rust/practice.md"]],
 ]

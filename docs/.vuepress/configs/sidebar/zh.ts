@@ -110,7 +110,7 @@ export const zh: SidebarConfig = {
             text: '文章',
             children: [
                 /* injectSider */
-                '/article/apple-grow.md',
+                // '/article/apple-grow.md',
                 '/article/nginx.md',
                 '/article/taicss.md',
                 '/article/nim.md',
@@ -122,6 +122,18 @@ export const zh: SidebarConfig = {
                 '/article/browser-finger.md',
             ],
         },
+        {
+            text: 'IOS开发',
+            children: [
+                '/article/ios/env.md',
+            ]
+        },
+        {
+            text: '读书笔记',
+            children: [
+                '/article/books/work-meaning.md',
+            ]
+        }
     ],
     '/translation/': [
         {
