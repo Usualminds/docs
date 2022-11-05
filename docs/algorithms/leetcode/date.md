@@ -1,4 +1,63 @@
 # 每日一题
+
+## 解析布尔表达式
+[👉 Leetcode 链接-1106](https://leetcode.cn/problems/parsing-a-boolean-expression/)
+
+给你一个以字符串形式表述的 布尔表达式（boolean） expression，返回该式的运算结果。
+
+有效的表达式需遵循以下约定：
+
+- "t"，运算结果为 True
+- "f"，运算结果为 False
+- "!(expr)"，运算过程为对内部表达式 expr 进行逻辑 非的运算（NOT）
+- "&(expr1,expr2,...)"，运算过程为对 2 个或以上内部表达式 expr1, expr2, ... 进行逻辑 与的运算（AND）
+- "|(expr1,expr2,...)"，运算过程为对 2 个或以上内部表达式 expr1, expr2, ... 进行逻辑 或的运算（OR）
+ 
+
+```ts
+function parseBoolExpr(expression: string): boolean {
+    let stack = [], len = expression.length
+
+    for(let i=0;i<len;i++){
+        const char = expression[i]
+        if(char === ','){
+            continue
+        } else if(char !== ')') {
+            stack.push(char)
+        } else {
+            let t=0, f=0
+
+            while(stack[stack.length - 1] !== '(') {
+                const val = stack.pop()
+                if(val === 't'){
+                    t++
+                } else {
+                    f++
+                }
+            }
+
+            stack.pop()
+            const peek = stack.pop()
+            switch(peek) {
+                case '!':
+                    stack.push(f===1 ? 't' : 'f')
+                    break
+                case '&':
+                    stack.push(f === 0 ? 't' : 'f')
+                    break
+                case '|':
+                    stack.push(t>0 ? 't' : 'f')
+                    break
+                default:
+            }
+        }
+    }
+
+    return stack.pop() === 't'
+};
+```
+
+
 ## 链表组件
 [👉 Leetcode 链接-817](https://leetcode.cn/problems/linked-list-components/)
 给定链表头结点 head，该链表上的每个结点都有一个 唯一的整型值 。同时给定列表 nums，该列表是上述链表中整型值的一个子集。

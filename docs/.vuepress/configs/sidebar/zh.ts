@@ -125,7 +125,8 @@ export const zh: SidebarConfig = {
         {
             text: 'IOS开发',
             children: [
-                '/article/ios/env.md',
+                '/article/ios/1-env.md',
+                '/article/ios/1-todo-list.md',
             ]
         },
         {

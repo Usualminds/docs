@@ -175,7 +175,8 @@ export const zh: NavbarConfig = [
             {
                 text: 'IOS开发',
                 children: [
-                    '/article/ios/env.md',
+                    '/article/ios/1-env.md',
+                    '/article/ios/2-todo-list.md',
                 ]
             },
             {

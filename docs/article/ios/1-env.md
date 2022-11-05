@@ -1,3 +1,6 @@
+![](https://tva1.sinaimg.cn/large/008i3skNgy1gyi52opgo2j31bi0hcmzl.jpg)
+
+> ### 最新文章关注这里[青梅主码](https://mp.weixin.qq.com/s?__biz=MzIwMTY3NjY3MA==&mid=2247487031&idx=1&sn=c734b2504a53b7b41a97d065ff06bcda&chksm=96eb0c26a19c8530f389aff1b0c86f06a3a21099fbadd7f49c3368e2de1e0ab942c103909522&token=1939791503&lang=zh_CN#rd)
 # IOS 开发第一弹-环境构建
 近期笔者计划开发一个 `IOS` 相关的 `APP` (先定个小目标 😂)，打算系统地学习下移动端开发，顺便将近期 `H5` 学习相关的知识在实际使用中串联起来，俗话说：光说不练，等于白干。那我们就先从环境构建开始学习。本期文章主要分为以下几个部分。
 

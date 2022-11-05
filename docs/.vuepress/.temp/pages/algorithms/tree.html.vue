@@ -23,18 +23,18 @@
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
  * Definition for a binary tree node.
- * class TreeNode {
+ * class TreeNode <span class="token punctuation">{</span>
  *     val: number
  *     left: TreeNode | null
  *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) <span class="token punctuation">{</span>
  *         this.val = (val===undefined ? 0 : val)
  *         this.left = (left===undefined ? null : left)
  *         this.right = (right===undefined ? null : right)
- *     }
- * }
+ *     <span class="token punctuation">}</span>
+ * <span class="token punctuation">}</span>
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">levelOrder</span><span class="token punctuation">(</span>root<span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
@@ -92,18 +92,18 @@
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
  * Definition for a binary tree node.
- * class TreeNode {
+ * class TreeNode <span class="token punctuation">{</span>
  *     val: number
  *     left: TreeNode | null
  *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) <span class="token punctuation">{</span>
  *         this.val = (val===undefined ? 0 : val)
  *         this.left = (left===undefined ? null : left)
  *         this.right = (right===undefined ? null : right)
- *     }
- * }
+ *     <span class="token punctuation">}</span>
+ * <span class="token punctuation">}</span>
  */</span>
 <span class="token keyword">function</span> <span class="token function">levelOrder</span><span class="token punctuation">(</span>root<span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> results<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
@@ -168,18 +168,18 @@
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
  * Definition for a binary tree node.
- * class TreeNode {
+ * class TreeNode <span class="token punctuation">{</span>
  *     val: number
  *     left: TreeNode | null
  *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) <span class="token punctuation">{</span>
  *         this.val = (val===undefined ? 0 : val)
  *         this.left = (left===undefined ? null : left)
  *         this.right = (right===undefined ? null : right)
- *     }
- * }
+ *     <span class="token punctuation">}</span>
+ * <span class="token punctuation">}</span>
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">isSubStructure</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token constant">B</span><span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">{</span>
@@ -235,18 +235,18 @@
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
  * Definition for a binary tree node.
- * class TreeNode {
+ * class TreeNode <span class="token punctuation">{</span>
  *     val: number
  *     left: TreeNode | null
  *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) <span class="token punctuation">{</span>
  *         this.val = (val===undefined ? 0 : val)
  *         this.left = (left===undefined ? null : left)
  *         this.right = (right===undefined ? null : right)
- *     }
- * }
+ *     <span class="token punctuation">}</span>
+ * <span class="token punctuation">}</span>
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">mirrorTree</span><span class="token punctuation">(</span>root<span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token punctuation">{</span>
@@ -310,18 +310,18 @@
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
  * Definition for a binary tree node.
- * class TreeNode {
+ * class TreeNode <span class="token punctuation">{</span>
  *     val: number
  *     left: TreeNode | null
  *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) <span class="token punctuation">{</span>
  *         this.val = (val===undefined ? 0 : val)
  *         this.left = (left===undefined ? null : left)
  *         this.right = (right===undefined ? null : right)
- *     }
- * }
+ *     <span class="token punctuation">}</span>
+ * <span class="token punctuation">}</span>
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">isSymmetric</span><span class="token punctuation">(</span>root<span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">{</span>
