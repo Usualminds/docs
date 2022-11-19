@@ -185,6 +185,24 @@ export const zh: SidebarConfig = {
             text: '工具',
             children: [
                 {
+                    text: 'Debugger',
+                    link: '/utils/debugger/basic.md',
+                    children: [
+                        {
+                            text: '浏览器',
+                            link: '/utils/debugger/chrome/basic.md'
+                        },
+                        {
+                            text: 'Vue',
+                            link: '/utils/debugger/vue/basic.md'
+                        },
+                        {
+                            text: 'Vscode',
+                            link: '/utils/debugger/vscode/basic.md'
+                        },
+                    ]
+                },
+                {
                     text: 'Babel',
                     children: [
                         '/utils/babel/basic.md',

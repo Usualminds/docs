@@ -1,31 +1,21 @@
-function numSpecial(mat: number[][]): number {
-  let count = 0,rows = mat.length,columns = mat[0].length;
+function customSortString(order: string, s: string): string {
+  let res = '', map = new Map<string, number>()
 
-  for (let i = 0; i < rows; i++) {
-    for (let j = 0; j < columns; j++) {
-      if (mat[i][j] === 1) {
-        let columns = getColumns(mat, j);
-        if (isSingle(mat[i], j) && isSingle(columns, i)) count++;
+  for(let char of s) {
+      if(map.has(char)) {
+          map.set(char, map.get(char)! + 1)
+      } else {
+          map.set(char, 1)
       }
-    }
-  }
-  return count;
-}
-
-function isSingle(arr: number[], j: number): boolean {
-  let len = arr.length;
-  for (let i = 0; i < len; i++) {
-    if (arr[i] === 1 && i !== j) return false;
-  }
-  return true;
-}
-
-function getColumns(mat: number[][], j: number): number[] {
-  let res: number[] = [];
-
-  for (let item of mat) {
-    res.push(item[j]);
   }
 
-  return res;
-}
+  for(let char of order) {
+      if(map.has(char)) res += char.repeat(map.get(char)!)
+  }
+  
+  for(let char of s) {
+      if(order.indexOf(char) === -1) res += char
+  }
+
+  return res
+};
