@@ -1,4 +1,78 @@
 # 每日一题
+
+## 最大频率栈
+[👉 本题 Leetcode 链接-895](https://leetcode.cn/problems/maximum-frequency-stack/)
+
+### 题目说明
+设计一个类似堆栈的数据结构，将元素推入堆栈，并从堆栈中弹出出现频率最高的元素。
+
+实现 FreqStack 类:
+
+- `FreqStack()` 构造一个空的堆栈。
+- `void push(int val)` 将一个整数 val 压入栈顶。
+- `int pop()` 删除并返回堆栈中出现频率最高的元素。
+如果出现频率最高的元素不只一个，则移除并返回最接近栈顶的元素。
+
+### 输入输出
+- 示例 1：
+  - 输入：["FreqStack","push","push","push","push","push","push","pop","pop","pop","pop"],
+  [[],[5],[7],[5],[7],[4],[5],[],[],[],[]]
+  - 输出：[null,null,null,null,null,null,null,5,7,5,4]
+  - 解释：
+    - FreqStack = new FreqStack();
+    - freqStack.push (5);//堆栈为 [5]
+    - freqStack.push (7);//堆栈是 [5,7]
+    - freqStack.push (5);//堆栈是 [5,7,5]
+    - freqStack.push (7);//堆栈是 [5,7,5,7]
+    - freqStack.push (4);//堆栈是 [5,7,5,7,4]
+    - freqStack.push (5);//堆栈是 [5,7,5,7,4,5]
+    - freqStack.pop ();//返回 5 ，因为 5 出现频率最高。堆栈变成 [5,7,5,7,4]。
+    - freqStack.pop ();//返回 7 ，因为 5 和 7 出现频率最高，但 7 最接近顶部。堆栈变成 [5,7,5,4]。
+    - freqStack.pop ();//返回 5 ，因为 5 出现频率最高。堆栈变成 [5,7,4]。
+    - freqStack.pop ();//返回 4 ，因为 4, 5 和 7 出现频率最高，但 4 是最接近顶部的。堆栈变成 [5,7]。
+
+### 解题思路
+> 通用哈希解法
+- 使用 `map` 保存所有数字及其对应的出现次数（频率）
+- 使用 `group` 保存所有出现次数（频率）及其对应数字，主要用于 `pop` 时弹出栈顶元素
+- 使用 `max` 记录最大出现次数，`pop` 时判断其 `group` 是否为空，为空时 `max` 需要减 `1`。
+
+### 代码实现
+```ts
+class FreqStack {
+    private map: Map<number, number>
+    private group: Map<number, Array<number>>
+    private max: number
+
+    constructor() {
+        this.map = new Map()
+        this.group = new Map()
+        this.max = 0
+    }
+
+    push(val: number): void {
+        this.map.set(val, (this.map.get(val) ?? 0) + 1)
+        if(!this.group.has(this.map.get(val))) {
+            this.group.set(this.map.get(val), [])
+        }
+
+        this.group.get(this.map.get(val)).push(val)
+        this.max = Math.max(this.max, this.map.get(val))
+    }
+
+    pop(): number {
+        let ans = this.group.get(this.max)[this.group.get(this.max).length - 1]
+        this.map.set(ans, this.map.get(ans) - 1)
+        this.group.get(this.max).pop()
+
+        if(this.group.get(this.max).length === 0){
+            this.max--
+        }
+        
+        return ans
+    }
+}
+```
 ## 第 N 个神奇数字
 [👉 本题 Leetcode 链接-878](https://leetcode.cn/problems/nth-magical-number/)
 
