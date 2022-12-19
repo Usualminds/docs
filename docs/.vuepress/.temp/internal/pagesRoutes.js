@@ -21,6 +21,7 @@ export const pagesRoutes = [
   ["v-6d274793","/article/signature.html",{"title":"signature_pad"},["/article/signature","/article/signature.md"]],
   ["v-58180794","/article/string.html",{"title":"字符串"},["/article/string","/article/string.md"]],
   ["v-82a0b5c0","/article/taicss.html",{"title":"Tailwindcss 实现原理"},["/article/taicss","/article/taicss.md"]],
+  ["v-271a29ec","/article/year.html",{"title":"2022 年终总结"},["/article/year","/article/year.md"]],
   ["v-5d3438fe","/business/basic.html",{"title":"原则"},["/business/basic","/business/basic.md"]],
   ["v-4cbc2b27","/design/factory.html",{"title":"工厂模式"},["/design/factory","/design/factory.md"]],
   ["v-72582dd0","/design/",{"title":"原则"},["/design/index.html","/design/index.md"]],

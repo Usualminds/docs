@@ -43,6 +43,8 @@ export const pagesData = {
   "v-58180794": () => import(/* webpackChunkName: "v-58180794" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/string.html.js").then(({ data }) => data),
   // path: /article/taicss.html
   "v-82a0b5c0": () => import(/* webpackChunkName: "v-82a0b5c0" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/taicss.html.js").then(({ data }) => data),
+  // path: /article/year.html
+  "v-271a29ec": () => import(/* webpackChunkName: "v-271a29ec" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/year.html.js").then(({ data }) => data),
   // path: /business/basic.html
   "v-5d3438fe": () => import(/* webpackChunkName: "v-5d3438fe" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/business/basic.html.js").then(({ data }) => data),
   // path: /design/factory.html

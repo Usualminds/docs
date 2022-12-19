@@ -45,6 +45,8 @@ export const pagesComponents = {
   "v-58180794": defineAsyncComponent(() => import(/* webpackChunkName: "v-58180794" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/string.html.vue")),
   // path: /article/taicss.html
   "v-82a0b5c0": defineAsyncComponent(() => import(/* webpackChunkName: "v-82a0b5c0" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/taicss.html.vue")),
+  // path: /article/year.html
+  "v-271a29ec": defineAsyncComponent(() => import(/* webpackChunkName: "v-271a29ec" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/year.html.vue")),
   // path: /business/basic.html
   "v-5d3438fe": defineAsyncComponent(() => import(/* webpackChunkName: "v-5d3438fe" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/business/basic.html.vue")),
   // path: /design/factory.html
