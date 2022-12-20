@@ -80,18 +80,22 @@ export const zh: NavbarConfig = [
         ],
     },
     {
-        text: "设计模式",
+        text: "编程范式",
         link: "/design/index.md",
         children: [
             {
+                text: "函数式编程",
+                children: ["/design/function/basic.md"],
+            },
+            {
                 text: "设计模式",
                 children: [
-                    "/design/index.md",
-                    "/design/single.md",
-                    "/design/factory.md",
-                    "/design/proxy.md",
-                    "/design/strategy.md",
-                    "/design/watch.md",
+                    "/design/patterns/index.md",
+                    "/design/patterns/single.md",
+                    "/design/patterns/factory.md",
+                    "/design/patterns/proxy.md",
+                    "/design/patterns/strategy.md",
+                    "/design/patterns/watch.md",
                 ],
             },
         ],

@@ -158,15 +158,19 @@ export const zh: SidebarConfig = {
     ],
     "/design/": [
         {
+            text: "函数式编程",
+            children: ["/design/function/basic.md"],
+        },
+        {
             text: "设计模式",
-            link: "/design/index.md",
+            link: "/design/patterns/index.md",
             children: [
-                "/design/index.md",
-                "/design/single.md",
-                "/design/factory.md",
-                "/design/proxy.md",
-                "/design/strategy.md",
-                "/design/watch.md",
+                "/design/patterns/index.md",
+                "/design/patterns/single.md",
+                "/design/patterns/factory.md",
+                "/design/patterns/proxy.md",
+                "/design/patterns/strategy.md",
+                "/design/patterns/watch.md",
             ],
         },
     ],
