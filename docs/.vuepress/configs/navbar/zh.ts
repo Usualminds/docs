@@ -85,7 +85,10 @@ export const zh: NavbarConfig = [
         children: [
             {
                 text: "函数式编程",
-                children: ["/design/function/basic.md"],
+                children: [
+                    "/design/function/basic.md",
+                    "/design/function/immutable.md",
+                ],
             },
             {
                 text: "设计模式",

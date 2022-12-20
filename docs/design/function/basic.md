@@ -2,8 +2,9 @@
 
 函数式编程核心的几个理解：
 - 分解需求粒度到最小函数实现
-- 每个函数只处理一件事，给定输入得到预期输出，不关注实现过程（可以简单理解为 Leetcode 的一道题目）
+- 每个函数只处理一件事，给定输入得到预期输出，不存在副作用，**只做计算**（只是显式的处理输入输出数据流，不改变函数之外的数据、不做中间处理等）；不关注实现过程（可以简单理解为 Leetcode 的一道题目）
 - 将多个函数按顺序流式(`a().b().c().end()`)组合，来解决特定问题
+
 - 函数式编程可以很好地处理复用问题，本质上是因为其简单的实现，即只关心输入和输出。
   
 > [以下示例参考链接-JavaScript 函数式编程实践指南](https://juejin.cn/book/7173591403639865377/section/7175421412176789565)
@@ -104,3 +105,12 @@ const logText = peopleList.filter(ageBiggerThan24)
 
 console.log(logText)
 ```
+
+## 理论相关
+### 函数是一等公民
+`Javascript` 函数的本质是对象（可执行的对象）
+
+一等公民函数必须满足的三个条件
+- pass value as a parameter (能否当做参数传递）
+- return value from a procedure（能否作为返回值返回）
+- assign value into a variable（能否赋值给变量）

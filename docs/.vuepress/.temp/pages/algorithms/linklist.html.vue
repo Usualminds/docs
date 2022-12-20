@@ -141,16 +141,16 @@ ans.val = 3，ans.next.val = 4，ans.next.next.val = 5，以及 ans.next.next.ne
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
  * Definition for singly-linked list.
- * class ListNode <span class="token punctuation">{</span>
+ * class ListNode {
  *     val: number
  *     next: ListNode | null
- *     constructor(val?: number, next?: ListNode | null) <span class="token punctuation">{</span>
+ *     constructor(val?: number, next?: ListNode | null) {
  *         this.val = (val===undefined ? 0 : val)
  *         this.next = (next===undefined ? null : next)
- *     <span class="token punctuation">}</span>
- * <span class="token punctuation">}</span>
+ *     }
+ * }
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">middleNode</span><span class="token punctuation">(</span>head<span class="token operator">:</span> ListNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> ListNode <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token punctuation">{</span>
@@ -188,16 +188,16 @@ ans.val = 3，ans.next.val = 4，ans.next.next.val = 5，以及 ans.next.next.ne
 </li>
 </ul>
 </div>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
  * Definition for singly-linked list.
- * class ListNode <span class="token punctuation">{</span>
+ * class ListNode {
  *     val: number
  *     next: ListNode | null
- *     constructor(val?: number, next?: ListNode | null) <span class="token punctuation">{</span>
+ *     constructor(val?: number, next?: ListNode | null) {
  *         this.val = (val===undefined ? 0 : val)
  *         this.next = (next===undefined ? null : next)
- *     <span class="token punctuation">}</span>
- * <span class="token punctuation">}</span>
+ *     }
+ * }
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">deleteNode</span><span class="token punctuation">(</span>head<span class="token operator">:</span> ListNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">,</span> val<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> ListNode <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token punctuation">{</span>
@@ -231,16 +231,16 @@ ans.val = 3，ans.next.val = 4，ans.next.next.val = 5，以及 ans.next.next.ne
 </ul>
 </div>
 <h3 id="一般性解法" tabindex="-1"><a class="header-anchor" href="#一般性解法" aria-hidden="true">#</a> 一般性解法</h3>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
  * Definition for singly-linked list.
- * class ListNode <span class="token punctuation">{</span>
+ * class ListNode {
  *     val: number
  *     next: ListNode | null
- *     constructor(val?: number, next?: ListNode | null) <span class="token punctuation">{</span>
+ *     constructor(val?: number, next?: ListNode | null) {
  *         this.val = (val===undefined ? 0 : val)
  *         this.next = (next===undefined ? null : next)
- *     <span class="token punctuation">}</span>
- * <span class="token punctuation">}</span>
+ *     }
+ * }
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">getKthFromEnd</span><span class="token punctuation">(</span>head<span class="token operator">:</span> ListNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">,</span> k<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> ListNode <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token punctuation">{</span>
@@ -260,16 +260,16 @@ ans.val = 3，ans.next.val = 4，ans.next.next.val = 5，以及 ans.next.next.ne
     <span class="token keyword">return</span> node
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="双指针" tabindex="-1"><a class="header-anchor" href="#双指针" aria-hidden="true">#</a> 双指针</h3>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
  * Definition for singly-linked list.
- * class ListNode <span class="token punctuation">{</span>
+ * class ListNode {
  *     val: number
  *     next: ListNode | null
- *     constructor(val?: number, next?: ListNode | null) <span class="token punctuation">{</span>
+ *     constructor(val?: number, next?: ListNode | null) {
  *         this.val = (val===undefined ? 0 : val)
  *         this.next = (next===undefined ? null : next)
- *     <span class="token punctuation">}</span>
- * <span class="token punctuation">}</span>
+ *     }
+ * }
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">getKthFromEnd</span><span class="token punctuation">(</span>head<span class="token operator">:</span> ListNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">,</span> k<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span> ListNode <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token punctuation">{</span>
