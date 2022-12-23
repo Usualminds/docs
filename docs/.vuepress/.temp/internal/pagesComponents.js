@@ -121,6 +121,12 @@ export const pagesComponents = {
   "v-0260974c": defineAsyncComponent(() => import(/* webpackChunkName: "v-0260974c" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/js/this.html.vue")),
   // path: /base/js/type.html
   "v-3f2b753e": defineAsyncComponent(() => import(/* webpackChunkName: "v-3f2b753e" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/js/type.html.vue")),
+  // path: /base/rust/basic.html
+  "v-6c90b9b1": defineAsyncComponent(() => import(/* webpackChunkName: "v-6c90b9b1" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/basic.html.vue")),
+  // path: /base/rust/practice.html
+  "v-44398310": defineAsyncComponent(() => import(/* webpackChunkName: "v-44398310" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/practice.html.vue")),
+  // path: /base/rust/variable.html
+  "v-da24e452": defineAsyncComponent(() => import(/* webpackChunkName: "v-da24e452" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/variable.html.vue")),
   // path: /base/ts/basic.html
   "v-4643b6f6": defineAsyncComponent(() => import(/* webpackChunkName: "v-4643b6f6" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/ts/basic.html.vue")),
   // path: /base/ts/deep.html
@@ -131,12 +137,6 @@ export const pagesComponents = {
   "v-10763323": defineAsyncComponent(() => import(/* webpackChunkName: "v-10763323" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/ts/practise.html.vue")),
   // path: /base/ts/ts_source_code.html
   "v-291eec7d": defineAsyncComponent(() => import(/* webpackChunkName: "v-291eec7d" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/ts/ts_source_code.html.vue")),
-  // path: /base/rust/basic.html
-  "v-6c90b9b1": defineAsyncComponent(() => import(/* webpackChunkName: "v-6c90b9b1" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/basic.html.vue")),
-  // path: /base/rust/practice.html
-  "v-44398310": defineAsyncComponent(() => import(/* webpackChunkName: "v-44398310" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/practice.html.vue")),
-  // path: /base/rust/variable.html
-  "v-da24e452": defineAsyncComponent(() => import(/* webpackChunkName: "v-da24e452" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/variable.html.vue")),
   // path: /business/hk/basic.html
   "v-74bb2421": defineAsyncComponent(() => import(/* webpackChunkName: "v-74bb2421" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/business/hk/basic.html.vue")),
   // path: /business/hk/trade.html

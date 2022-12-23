@@ -119,6 +119,12 @@ export const pagesData = {
   "v-0260974c": () => import(/* webpackChunkName: "v-0260974c" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/js/this.html.js").then(({ data }) => data),
   // path: /base/js/type.html
   "v-3f2b753e": () => import(/* webpackChunkName: "v-3f2b753e" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/js/type.html.js").then(({ data }) => data),
+  // path: /base/rust/basic.html
+  "v-6c90b9b1": () => import(/* webpackChunkName: "v-6c90b9b1" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/basic.html.js").then(({ data }) => data),
+  // path: /base/rust/practice.html
+  "v-44398310": () => import(/* webpackChunkName: "v-44398310" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/practice.html.js").then(({ data }) => data),
+  // path: /base/rust/variable.html
+  "v-da24e452": () => import(/* webpackChunkName: "v-da24e452" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/variable.html.js").then(({ data }) => data),
   // path: /base/ts/basic.html
   "v-4643b6f6": () => import(/* webpackChunkName: "v-4643b6f6" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/ts/basic.html.js").then(({ data }) => data),
   // path: /base/ts/deep.html
@@ -129,12 +135,6 @@ export const pagesData = {
   "v-10763323": () => import(/* webpackChunkName: "v-10763323" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/ts/practise.html.js").then(({ data }) => data),
   // path: /base/ts/ts_source_code.html
   "v-291eec7d": () => import(/* webpackChunkName: "v-291eec7d" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/ts/ts_source_code.html.js").then(({ data }) => data),
-  // path: /base/rust/basic.html
-  "v-6c90b9b1": () => import(/* webpackChunkName: "v-6c90b9b1" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/basic.html.js").then(({ data }) => data),
-  // path: /base/rust/practice.html
-  "v-44398310": () => import(/* webpackChunkName: "v-44398310" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/practice.html.js").then(({ data }) => data),
-  // path: /base/rust/variable.html
-  "v-da24e452": () => import(/* webpackChunkName: "v-da24e452" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/rust/variable.html.js").then(({ data }) => data),
   // path: /business/hk/basic.html
   "v-74bb2421": () => import(/* webpackChunkName: "v-74bb2421" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/business/hk/basic.html.js").then(({ data }) => data),
   // path: /business/hk/trade.html
