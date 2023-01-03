@@ -145,6 +145,8 @@ export const pagesComponents = {
   "v-014b202c": defineAsyncComponent(() => import(/* webpackChunkName: "v-014b202c" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/function/basic.html.vue")),
   // path: /design/function/immutable.html
   "v-a34bf0d4": defineAsyncComponent(() => import(/* webpackChunkName: "v-a34bf0d4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/function/immutable.html.vue")),
+  // path: /design/function/rules.html
+  "v-49d690c1": defineAsyncComponent(() => import(/* webpackChunkName: "v-49d690c1" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/function/rules.html.vue")),
   // path: /design/patterns/factory.html
   "v-59238fa3": defineAsyncComponent(() => import(/* webpackChunkName: "v-59238fa3" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/patterns/factory.html.vue")),
   // path: /design/patterns/

@@ -162,6 +162,7 @@ export const zh: SidebarConfig = {
             children: [
                 "/design/function/basic.md",
                 "/design/function/immutable.md",
+                "/design/function/rules.md",
             ],
         },
         {

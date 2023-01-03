@@ -71,6 +71,7 @@ export const pagesRoutes = [
   ["v-2785d8ab","/business/hk/trade.html",{"title":"交易机制"},["/business/hk/trade","/business/hk/trade.md"]],
   ["v-014b202c","/design/function/basic.html",{"title":"基础示例"},["/design/function/basic","/design/function/basic.md"]],
   ["v-a34bf0d4","/design/function/immutable.html",{"title":"数据不可变性"},["/design/function/immutable","/design/function/immutable.md"]],
+  ["v-49d690c1","/design/function/rules.html",{"title":"编程范式"},["/design/function/rules","/design/function/rules.md"]],
   ["v-59238fa3","/design/patterns/factory.html",{"title":"工厂模式"},["/design/patterns/factory","/design/patterns/factory.md"]],
   ["v-189db0d8","/design/patterns/",{"title":"原则"},["/design/patterns/index.html","/design/patterns/index.md"]],
   ["v-444089bf","/design/patterns/proxy.html",{"title":"代理模式"},["/design/patterns/proxy","/design/patterns/proxy.md"]],

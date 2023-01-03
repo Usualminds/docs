@@ -88,6 +88,7 @@ export const zh: NavbarConfig = [
                 children: [
                     "/design/function/basic.md",
                     "/design/function/immutable.md",
+                    "/design/function/rules.md",
                 ],
             },
             {
