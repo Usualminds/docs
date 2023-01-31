@@ -70,11 +70,11 @@ window.onload = function () {
         .set(".main", { perspective: 800 })
         .set(".photoBox", { opacity: 1, cursor: "pointer" })
         .set(".mainBoxes", {
-            left: "75%",
+            left: "55%",
             xPercent: -50,
             width: 1200,
             rotationX: 14,
-            rotationY: -15,
+            rotationY: -1,
             rotationZ: 10,
         })
         .set(".mainClose", {

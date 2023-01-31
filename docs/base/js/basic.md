@@ -152,3 +152,20 @@ console.log(x)
 
 // output: '1undefined'
 ```
+
+### 类的解构
+
+```js
+class C {
+  a = 1;
+  autoBoundMethod = () => {
+    console.log(this.a);
+  };
+}
+
+const c = new C();
+c.autoBoundMethod(); // 1
+const { autoBoundMethod } = c;
+autoBoundMethod(); // 1
+// If it were a normal method, it should be undefined in this case
+```

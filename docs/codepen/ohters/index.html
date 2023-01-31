@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .container {
+      width: 500px;
+    }
+    .logo {
+      width: 400px;
+      height: auto;
+    }
+
+    /* Global styles come from external css https://codepen.io/GreenSock/pen/gOWxmWG */
+
+
+    body {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      min-height: 100vh;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    .box {
+      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      border: 1px solid green;
+      width: 50px;
+      height: 50px;
+
+      background-color: beige;
+    }
+
+  </style>
+</head>
+<body>
+  <!-- <div class="container">
+    <img class="logo" src="./img.jpg" alt="">
+  </div> -->
+
+  <div class="box green">no delay</div>
+  <div class="box purple">delay: 1</div>
+  <div class="box orange">delay: 2</div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.4/gsap.min.js"></script>
+  <script src="./main.js"></script>
+</body>
+</html>

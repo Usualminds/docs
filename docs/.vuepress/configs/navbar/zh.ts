@@ -171,7 +171,7 @@ export const zh: NavbarConfig = [
                 children: [
                     /* inject */
                     // '/article/apple-grow.md',
-                    "/article/year.md",
+                    // "/article/year.md",
                     "/article/nginx.md",
                     "/article/taicss.md",
                     "/article/nim.md",
@@ -224,19 +224,19 @@ export const zh: NavbarConfig = [
             },
         ],
     },
-    {
-        text: "业务",
-        children: [
-            {
-                text: "职业规划",
-                children: ["/business/basic.md"],
-            },
-            {
-                text: "香港",
-                children: ["/business/hk/basic.md"],
-            },
-        ],
-    },
+    // {
+    //     text: "业务",
+    //     children: [
+    //         {
+    //             text: "职业规划",
+    //             children: ["/business/basic.md"],
+    //         },
+    //         {
+    //             text: "香港",
+    //             children: ["/business/hk/basic.md"],
+    //         },
+    //     ],
+    // },
     {
         text: "答题",
         children: [

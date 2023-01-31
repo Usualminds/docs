@@ -105,7 +105,7 @@ export const zh: SidebarConfig = {
             children: [
                 /* injectSider */
                 // '/article/apple-grow.md',
-                "/article/year.md",
+                // "/article/year.md",
                 "/article/nginx.md",
                 "/article/taicss.md",
                 "/article/nim.md",
@@ -222,21 +222,21 @@ export const zh: SidebarConfig = {
             ],
         },
     ],
-    "/business/": [
-        {
-            text: "业务",
-            children: [
-                {
-                    text: "基础业务",
-                    children: ["/business/basic.md"],
-                },
-                {
-                    text: "港交所",
-                    children: ["/business/hk/basic.md"],
-                },
-            ],
-        },
-    ],
+    // "/business/": [
+    //     {
+    //         text: "业务",
+    //         children: [
+    //             {
+    //                 text: "基础业务",
+    //                 children: ["/business/basic.md"],
+    //             },
+    //             {
+    //                 text: "港交所",
+    //                 children: ["/business/hk/basic.md"],
+    //             },
+    //         ],
+    //     },
+    // ],
     "/test/": [
         {
             text: "答题",
