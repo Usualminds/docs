@@ -20,6 +20,8 @@ export const zh: NavbarConfig = [
                     "/base/js/type.md",
                     "/base/js/prototype.md",
                     "/base/js/this.md",
+                    "/base/js/function.md",
+                    "/base/js/class.md",
                     "/base/js/event.md",
                     "/base/js/code.md",
                     "/base/js/others.md",
@@ -83,6 +85,10 @@ export const zh: NavbarConfig = [
         text: "编程范式",
         link: "/design/index.md",
         children: [
+            {
+                text: "面向对象编程",
+                children: ["/design/oop/basic.md"],
+            },
             {
                 text: "函数式编程",
                 children: [

@@ -21,6 +21,8 @@ export const zh: SidebarConfig = {
                         "/base/js/prototype.md",
                         "/base/js/this.md",
                         "/base/js/event.md",
+                        "/base/js/function.md",
+                        "/base/js/class.md",
                         "/base/js/code.md",
                         "/base/js/others.md",
                     ],
@@ -157,6 +159,10 @@ export const zh: SidebarConfig = {
         },
     ],
     "/design/": [
+        {
+            text: "面向对象编程",
+            children: ["/design/oop/basic.md"],
+        },
         {
             text: "函数式编程",
             children: [

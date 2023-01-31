@@ -107,10 +107,14 @@ export const pagesData = {
   "v-3b195be8": () => import(/* webpackChunkName: "v-3b195be8" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/h5/basic.html.js").then(({ data }) => data),
   // path: /base/js/basic.html
   "v-15b51428": () => import(/* webpackChunkName: "v-15b51428" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/js/basic.html.js").then(({ data }) => data),
+  // path: /base/js/class.html
+  "v-26d65ee2": () => import(/* webpackChunkName: "v-26d65ee2" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/js/class.html.js").then(({ data }) => data),
   // path: /base/js/code.html
   "v-45ece32a": () => import(/* webpackChunkName: "v-45ece32a" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/js/code.html.js").then(({ data }) => data),
   // path: /base/js/event.html
   "v-72cffb00": () => import(/* webpackChunkName: "v-72cffb00" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/js/event.html.js").then(({ data }) => data),
+  // path: /base/js/function.html
+  "v-5bcc0840": () => import(/* webpackChunkName: "v-5bcc0840" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/js/function.html.js").then(({ data }) => data),
   // path: /base/js/others.html
   "v-23ad1216": () => import(/* webpackChunkName: "v-23ad1216" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/base/js/others.html.js").then(({ data }) => data),
   // path: /base/js/prototype.html
@@ -145,6 +149,8 @@ export const pagesData = {
   "v-a34bf0d4": () => import(/* webpackChunkName: "v-a34bf0d4" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/function/immutable.html.js").then(({ data }) => data),
   // path: /design/function/rules.html
   "v-49d690c1": () => import(/* webpackChunkName: "v-49d690c1" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/function/rules.html.js").then(({ data }) => data),
+  // path: /design/oop/basic.html
+  "v-7c593d3c": () => import(/* webpackChunkName: "v-7c593d3c" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/oop/basic.html.js").then(({ data }) => data),
   // path: /design/patterns/factory.html
   "v-59238fa3": () => import(/* webpackChunkName: "v-59238fa3" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/design/patterns/factory.html.js").then(({ data }) => data),
   // path: /design/patterns/
