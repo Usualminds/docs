@@ -25,6 +25,8 @@ export const pagesComponents = {
   "v-686c67c1": defineAsyncComponent(() => import(/* webpackChunkName: "v-686c67c1" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/apple-grow.html.vue")),
   // path: /article/browser-finger.html
   "v-3c2b42b9": defineAsyncComponent(() => import(/* webpackChunkName: "v-3c2b42b9" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/browser-finger.html.vue")),
+  // path: /article/chatgpt.html
+  "v-58150150": defineAsyncComponent(() => import(/* webpackChunkName: "v-58150150" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/chatgpt.html.vue")),
   // path: /article/dp.html
   "v-54e17b9b": defineAsyncComponent(() => import(/* webpackChunkName: "v-54e17b9b" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/dp.html.vue")),
   // path: /article/lru.html

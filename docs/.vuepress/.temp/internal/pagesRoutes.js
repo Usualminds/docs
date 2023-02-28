@@ -11,6 +11,7 @@ export const pagesRoutes = [
   ["v-7f4aae09","/algorithms/tree.html",{"title":"树"},["/algorithms/tree","/algorithms/tree.md"]],
   ["v-686c67c1","/article/apple-grow.html",{"title":"回到过去"},["/article/apple-grow","/article/apple-grow.md"]],
   ["v-3c2b42b9","/article/browser-finger.html",{"title":"浏览器指纹及其应用"},["/article/browser-finger","/article/browser-finger.md"]],
+  ["v-58150150","/article/chatgpt.html",{"title":"ChatGPT 及其应用"},["/article/chatgpt","/article/chatgpt.md"]],
   ["v-54e17b9b","/article/dp.html",{"title":"动态规划"},["/article/dp","/article/dp.md"]],
   ["v-66153c7c","/article/lru.html",{"title":"LRU 和 LFU"},["/article/lru","/article/lru.md"]],
   ["v-31cbe2f1","/article/nginx.html",{"title":"nginx"},["/article/nginx","/article/nginx.md"]],

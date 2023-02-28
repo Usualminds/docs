@@ -23,6 +23,8 @@ export const pagesData = {
   "v-686c67c1": () => import(/* webpackChunkName: "v-686c67c1" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/apple-grow.html.js").then(({ data }) => data),
   // path: /article/browser-finger.html
   "v-3c2b42b9": () => import(/* webpackChunkName: "v-3c2b42b9" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/browser-finger.html.js").then(({ data }) => data),
+  // path: /article/chatgpt.html
+  "v-58150150": () => import(/* webpackChunkName: "v-58150150" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/chatgpt.html.js").then(({ data }) => data),
   // path: /article/dp.html
   "v-54e17b9b": () => import(/* webpackChunkName: "v-54e17b9b" */"/Users/apple/Documents/github/docs/docs/.vuepress/.temp/pages/article/dp.html.js").then(({ data }) => data),
   // path: /article/lru.html

@@ -1,5 +1,56 @@
 # 其它
 
+## fetch promise all
+
+```js
+let id = 1990000,
+  urls = [],
+  audios = [];
+
+for (let i = 0; i < 500; i++) {
+  id++;
+  let url = `url${id}`;
+
+  urls.push(url);
+}
+
+Promise.all(
+  urls.map((request) => {
+    return fetch(request)
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        return data;
+      });
+  })
+)
+  .then((values) => {
+    for (let val of values) {
+      let data = val.data;
+      let songs = data.songs;
+      if (songs && songs.length) {
+        console.log(songs);
+
+        for (let item of songs) {
+          audios.push(item.store_path);
+        }
+      }
+    }
+
+    for (let item of audios) {
+      let audio = document.createElement("audio");
+      audio.src = item;
+      audio.controls = true
+      audio.width = '400px'
+      audio.height = '100px'
+
+      document.body.append(audio);
+    }
+  })
+  .catch(console.error.bind(console));
+```
+
 ## 拷贝
 - 深拷贝：完全拷贝，互不影响，JSON.stringfy(obj)
 - 浅拷贝：拷贝的是引用地址，`for in`，`Object.assing({},obj)`，`{...obj}`
