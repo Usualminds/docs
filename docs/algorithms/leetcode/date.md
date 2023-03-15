@@ -1,4 +1,39 @@
 # 每日一题
+## 最大网络秩
+[👉 本题 Leetcode 链接-1615](https://leetcode.cn/problems/maximal-network-rank/)
+
+![](https://p.ipic.vip/89nzrw.jpg)
+
+```ts
+/**
+ * @param {number} n
+ * @param {number[][]} roads
+ * @return {number}
+ */
+var maximalNetworkRank = function(n, roads) {
+    let arr = new Array(n).fill(0).map(() => new Array(n).fill(0))
+    let degree = new Array(n).fill(0)
+    let max = 0
+
+    for(let item of roads){
+        arr[item[0]][item[1]] = true
+        arr[item[1]][item[0]] = true
+
+        degree[item[0]]++
+        degree[item[1]]++
+    }
+
+
+    for(let i=0;i<n;i++){
+        for(let j=i+1;j<n;j++){
+            let count = degree[i] + degree[j] - (arr[i][j] ? 1 : 0)
+            max = Math.max(max, count)
+        }
+    }
+
+    return max
+};
+```
 
 ## 礼物的最大价值（动态规划）
 [👉 本题 Leetcode 链接-47](https://leetcode.cn/problems/li-wu-de-zui-da-jie-zhi-lcof/)
