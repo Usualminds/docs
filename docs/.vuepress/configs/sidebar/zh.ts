@@ -5,14 +5,14 @@ export const zh: SidebarConfig = {
         {
             text: "基础",
             children: [
-                {
-                    text: "Rust",
-                    children: [
-                        "/base/rust/basic.md",
-                        "/base/rust/variable.md",
-                        "/base/rust/practice.md",
-                    ],
-                },
+                // {
+                //     text: "Rust",
+                //     children: [
+                //         "/base/rust/basic.md",
+                //         "/base/rust/variable.md",
+                //         "/base/rust/practice.md",
+                //     ],
+                // },
                 {
                     text: "Javascript",
                     children: [
