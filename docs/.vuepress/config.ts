@@ -68,10 +68,11 @@ export default defineUserConfig({
     ],
   ],
   lang: 'en-US',
-  title: '前端开发',
-  description: '前端 算法 数据结构 工程化 algorithm front-end AI engineering data-structure',
+  title: ' ',
+  description: '前端 算法 数据结构 工程化',
 
   theme: defaultTheme({
+    logo: "/imgs/logo.png",
     locales: {
       '/': {
         navbar: navbar.zh,

@@ -1,6 +1,7 @@
 ---
 home: true
 title: 首页
+heroImage: /imgs/logo.png
 actions:
   - text: 快速了解
     link: /base/js/basic.html
