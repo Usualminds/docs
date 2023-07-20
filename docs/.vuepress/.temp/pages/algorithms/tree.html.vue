@@ -3,7 +3,7 @@
 <h2 id="从上到下打印二叉树-i" tabindex="-1"><a class="header-anchor" href="#从上到下打印二叉树-i" aria-hidden="true">#</a> 从上到下打印二叉树 I</h2>
 <blockquote>
 <p>：point_right：
-<a href="https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+<a href="https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-lcof/" target="_blank" rel="nofollow noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>从上到下打印出二叉树的每个节点，同一层的节点按照从左到右的顺序打印。</p>
 <p>例如：
@@ -23,18 +23,18 @@
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
  * Definition for a binary tree node.
- * class TreeNode {
+ * class TreeNode <span class="token punctuation">{</span>
  *     val: number
  *     left: TreeNode | null
  *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) <span class="token punctuation">{</span>
  *         this.val = (val===undefined ? 0 : val)
  *         this.left = (left===undefined ? null : left)
  *         this.right = (right===undefined ? null : right)
- *     }
- * }
+ *     <span class="token punctuation">}</span>
+ * <span class="token punctuation">}</span>
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">levelOrder</span><span class="token punctuation">(</span>root<span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
@@ -64,7 +64,7 @@
 <h2 id="从上到下打印二叉树-ii" tabindex="-1"><a class="header-anchor" href="#从上到下打印二叉树-ii" aria-hidden="true">#</a> 从上到下打印二叉树 II</h2>
 <blockquote>
 <p>：point_right：
-<a href="https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+<a href="https://leetcode-cn.com/problems/cong-shang-dao-xia-da-yin-er-cha-shu-ii-lcof/" target="_blank" rel="nofollow noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>从上到下按层打印二叉树，同一层的节点按从左到右的顺序打印，每一层打印到一行。</p>
 <p>例如：
@@ -92,18 +92,18 @@
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
  * Definition for a binary tree node.
- * class TreeNode {
+ * class TreeNode <span class="token punctuation">{</span>
  *     val: number
  *     left: TreeNode | null
  *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) <span class="token punctuation">{</span>
  *         this.val = (val===undefined ? 0 : val)
  *         this.left = (left===undefined ? null : left)
  *         this.right = (right===undefined ? null : right)
- *     }
- * }
+ *     <span class="token punctuation">}</span>
+ * <span class="token punctuation">}</span>
  */</span>
 <span class="token keyword">function</span> <span class="token function">levelOrder</span><span class="token punctuation">(</span>root<span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token punctuation">{</span>
     <span class="token keyword">let</span> results<span class="token operator">:</span> <span class="token builtin">number</span><span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">[</span><span class="token punctuation">]</span> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span>
@@ -133,7 +133,7 @@
 <h2 id="树的子结构" tabindex="-1"><a class="header-anchor" href="#树的子结构" aria-hidden="true">#</a> 树的子结构</h2>
 <blockquote>
 <p>：point_right：
-<a href="https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+<a href="https://leetcode-cn.com/problems/shu-de-zi-jie-gou-lcof/" target="_blank" rel="nofollow noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>输入两棵二叉树 A 和 B，判断 B 是不是 A 的子结构。(约定空树不是任意一个树的子结构)</p>
 <p>B 是 A 的子结构，即 A 中有出现和 B 相同的结构和节点值。</p>
@@ -168,18 +168,18 @@
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
  * Definition for a binary tree node.
- * class TreeNode {
+ * class TreeNode <span class="token punctuation">{</span>
  *     val: number
  *     left: TreeNode | null
  *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) <span class="token punctuation">{</span>
  *         this.val = (val===undefined ? 0 : val)
  *         this.left = (left===undefined ? null : left)
  *         this.right = (right===undefined ? null : right)
- *     }
- * }
+ *     <span class="token punctuation">}</span>
+ * <span class="token punctuation">}</span>
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">isSubStructure</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">,</span> <span class="token constant">B</span><span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">{</span>
@@ -198,7 +198,7 @@
 <h2 id="二叉树的镜像" tabindex="-1"><a class="header-anchor" href="#二叉树的镜像" aria-hidden="true">#</a> 二叉树的镜像</h2>
 <blockquote>
 <p>：point_right：
-<a href="https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+<a href="https://leetcode-cn.com/problems/er-cha-shu-de-jing-xiang-lcof/" target="_blank" rel="nofollow noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>请完成一个函数，输入一个二叉树，该函数输出它的镜像。</p>
 <p>例如输入：</p>
@@ -235,18 +235,18 @@
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
  * Definition for a binary tree node.
- * class TreeNode {
+ * class TreeNode <span class="token punctuation">{</span>
  *     val: number
  *     left: TreeNode | null
  *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) <span class="token punctuation">{</span>
  *         this.val = (val===undefined ? 0 : val)
  *         this.left = (left===undefined ? null : left)
  *         this.right = (right===undefined ? null : right)
- *     }
- * }
+ *     <span class="token punctuation">}</span>
+ * <span class="token punctuation">}</span>
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">mirrorTree</span><span class="token punctuation">(</span>root<span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token punctuation">{</span>
@@ -264,7 +264,7 @@
 <h2 id="对称二叉树" tabindex="-1"><a class="header-anchor" href="#对称二叉树" aria-hidden="true">#</a> 对称二叉树</h2>
 <blockquote>
 <p>：point_right：
-<a href="https://leetcode-cn.com/problems/dui-cheng-de-er-cha-shu-lcof/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+<a href="https://leetcode-cn.com/problems/dui-cheng-de-er-cha-shu-lcof/" target="_blank" rel="nofollow noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>请实现一个函数，用来判断一棵二叉树是不是对称的。如果一棵二叉树和它的镜像一样，那么它是对称的。</p>
 <p>例如，二叉树 [1,2,2,3,4,4,3] 是对称的。</p>
@@ -310,18 +310,18 @@
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
  * Definition for a binary tree node.
- * class TreeNode {
+ * class TreeNode <span class="token punctuation">{</span>
  *     val: number
  *     left: TreeNode | null
  *     right: TreeNode | null
- *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) {
+ *     constructor(val?: number, left?: TreeNode | null, right?: TreeNode | null) <span class="token punctuation">{</span>
  *         this.val = (val===undefined ? 0 : val)
  *         this.left = (left===undefined ? null : left)
  *         this.right = (right===undefined ? null : right)
- *     }
- * }
+ *     <span class="token punctuation">}</span>
+ * <span class="token punctuation">}</span>
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">isSymmetric</span><span class="token punctuation">(</span>root<span class="token operator">:</span> TreeNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> <span class="token builtin">boolean</span> <span class="token punctuation">{</span>

@@ -1,0 +1,3 @@
+Sitemap: https://qjidea.com/sitemap.xml
+
+User-agent: *

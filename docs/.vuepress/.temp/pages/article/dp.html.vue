@@ -1,16 +1,16 @@
 <template><div><h1 id="动态规划" tabindex="-1"><a class="header-anchor" href="#动态规划" aria-hidden="true">#</a> 动态规划</h1>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyi52opgo2j31bi0hcmzl.jpg" alt=""></p>
 <h2 id="简介" tabindex="-1"><a class="header-anchor" href="#简介" aria-hidden="true">#</a> 简介</h2>
-<p>动态规划 (Dynamic programming，简称 DP) 是美国数学家 <a href="https://zh.wikipedia.org/wiki/%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E8%B2%9D%E7%88%BE%E6%9B%BC" target="_blank" rel="noopener noreferrer">Richard Bellman<ExternalLinkIcon/></a> 在研究<strong>决策过程和控制系统理论</strong>时创建的新方法。它在数学上属于运筹学的一个分支，在数学、管理科学、计算机科学、经济学和生物信息学中均有应用，核心是<strong>通过把原问题分解为相对简单的子问题的方式</strong>来求解复杂问题，主要应用是求解决策过程最优的数学方法。</p>
+<p>动态规划 (Dynamic programming，简称 DP) 是美国数学家 <a href="https://zh.wikipedia.org/wiki/%E7%90%86%E6%9F%A5%E5%BE%B7%C2%B7%E8%B2%9D%E7%88%BE%E6%9B%BC" target="_blank" rel="nofollow noopener noreferrer">Richard Bellman<ExternalLinkIcon/></a> 在研究<strong>决策过程和控制系统理论</strong>时创建的新方法。它在数学上属于运筹学的一个分支，在数学、管理科学、计算机科学、经济学和生物信息学中均有应用，核心是<strong>通过把原问题分解为相对简单的子问题的方式</strong>来求解复杂问题，主要应用是求解决策过程最优的数学方法。</p>
 <p>简单来讲，动态规划是一种算法思想，其核心是把问题分解为子问题，通过求解子问题进而解决当前问题。实际中，并非所有问题都可以通过动态规划来求解，通过动态规划解决的问题，对问题和其分解对子问题都有一定场景要求的，动态规划适用于有<strong>重叠子问题</strong>和<strong>最优子结构</strong>性质的问题，这类问题使用动态规划所耗时间往往比朴素解法更少。</p>
 <p>如下图，我们对动态规划问题从<strong>应用场景</strong>、<strong>题解思路</strong>和<strong>常见示例题目</strong>三个方面来展开。</p>
 <p><img src="https://tva1.sinaimg.cn/large/008i3skNgy1gyhru3tasoj31he0tsad7.jpg" alt=""></p>
 <blockquote>
-<p><a href="https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92" target="_blank" rel="noopener noreferrer">动态规划 Wiki<ExternalLinkIcon/></a></p>
+<p><a href="https://zh.wikipedia.org/wiki/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92" target="_blank" rel="nofollow noopener noreferrer">动态规划 Wiki<ExternalLinkIcon/></a></p>
 </blockquote>
 <h2 id="应用场景" tabindex="-1"><a class="header-anchor" href="#应用场景" aria-hidden="true">#</a> 应用场景</h2>
 <h3 id="重叠子问题" tabindex="-1"><a class="header-anchor" href="#重叠子问题" aria-hidden="true">#</a> 重叠子问题</h3>
-<p>重叠子问题关注的是一个问题被分解为多个子问题时，<strong>子问题和子问题之间的关联</strong>。子问题会被重复计算，特别是我们使用递归自上向下对问题进行求解时，那动态规划是如何处理和优化这些子问题呢？我们以最简单的<a href="https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/" target="_blank" rel="noopener noreferrer">斐波那契数列<ExternalLinkIcon/></a>为例来说明。</p>
+<p>重叠子问题关注的是一个问题被分解为多个子问题时，<strong>子问题和子问题之间的关联</strong>。子问题会被重复计算，特别是我们使用递归自上向下对问题进行求解时，那动态规划是如何处理和优化这些子问题呢？我们以最简单的<a href="https://leetcode-cn.com/problems/fei-bo-na-qi-shu-lie-lcof/" target="_blank" rel="nofollow noopener noreferrer">斐波那契数列<ExternalLinkIcon/></a>为例来说明。</p>
 <div class="custom-container tip"><p class="custom-container-title">斐波那契数列</p>
 <p>写一个函数，输入 n，求斐波那契 (Fibonacci) 数列的第 n 项 (即 F(N))。斐波那契数列的定义如下：
 <br><strong>F(0) = 0,F(1) = 1</strong>
@@ -94,7 +94,7 @@
 <h3 id="最大子序和" tabindex="-1"><a class="header-anchor" href="#最大子序和" aria-hidden="true">#</a> 最大子序和</h3>
 <blockquote>
 <p>：point_right：
-<a href="https://leetcode-cn.com/problems/maximum-subarray/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+<a href="https://leetcode-cn.com/problems/maximum-subarray/" target="_blank" rel="nofollow noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>给你一个整数数组 nums，请你找出一个具有最大和的连续子数组 (子数组最少包含一个元素)，返回其最大和。</p>
 <p>子数组是数组中的一个连续部分。</p>
@@ -137,7 +137,7 @@
     <span class="token keyword">return</span> max
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="股票的最大利润-⭐" tabindex="-1"><a class="header-anchor" href="#股票的最大利润-⭐" aria-hidden="true">#</a> 股票的最大利润 ⭐</h3>
-<p><a href="https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+<p><a href="https://leetcode-cn.com/problems/gu-piao-de-zui-da-li-run-lcof/" target="_blank" rel="nofollow noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
 <p>假设把某股票的价格按照时间先后顺序存储在数组中，请问买卖该股票一次可能获得的最大利润是多少？</p>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
 <ul>
@@ -197,7 +197,7 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="最长上升子序列-⭐⭐" tabindex="-1"><a class="header-anchor" href="#最长上升子序列-⭐⭐" aria-hidden="true">#</a> 最长上升子序列 ⭐⭐</h3>
 <blockquote>
 <p>：point_right：
-<a href="https://leetcode-cn.com/problems/longest-increasing-subsequence/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+<a href="https://leetcode-cn.com/problems/longest-increasing-subsequence/" target="_blank" rel="nofollow noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>给你一个整数数组 nums，找到其中最长严格递增子序列的长度。</p>
 <p>子序列是由数组派生而来的序列，删除 (或不删除) 数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。</p>
@@ -240,7 +240,7 @@
 <h3 id="最长递增子序列的个数-⭐⭐⭐" tabindex="-1"><a class="header-anchor" href="#最长递增子序列的个数-⭐⭐⭐" aria-hidden="true">#</a> 最长递增子序列的个数 ⭐⭐⭐</h3>
 <blockquote>
 <p>：point_right：
-<a href="https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/" target="_blank" rel="noopener noreferrer">题目链接<ExternalLinkIcon/></a></p>
+<a href="https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/" target="_blank" rel="nofollow noopener noreferrer">题目链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>给定一个未排序的整数数组，找到最长递增子序列的个数。</p>
 <div class="custom-container tip"><p class="custom-container-title">示例</p>

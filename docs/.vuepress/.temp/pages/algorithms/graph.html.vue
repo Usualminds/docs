@@ -1,7 +1,7 @@
 <template><div><h1 id="图论" tabindex="-1"><a class="header-anchor" href="#图论" aria-hidden="true">#</a> 图论</h1>
 <blockquote>
 <p>：point_right：
-<a href="https://zh.wikipedia.org/wiki/%E5%9B%BE%E8%AE%BA/" target="_blank" rel="noopener noreferrer">Wiki 链接<ExternalLinkIcon/></a></p>
+<a href="https://zh.wikipedia.org/wiki/%E5%9B%BE%E8%AE%BA/" target="_blank" rel="nofollow noopener noreferrer">Wiki 链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>图是由若干给定的顶点及连接两顶点的边所构成的图形，这种图形通常用来描述某些事物之间的某种特定关系。顶点用于代表事物，连接两顶点的边则用于表示两个事物间具有这种关系。</p>
 <h2 id="图的分类" tabindex="-1"><a class="header-anchor" href="#图的分类" aria-hidden="true">#</a> 图的分类</h2>
@@ -222,7 +222,7 @@
 <p>参考链接</p>
 </blockquote>
 <ul>
-<li><a href="https://leetcode-cn.com/leetbook/read/graph/r3sizg/" target="_blank" rel="noopener noreferrer">图<ExternalLinkIcon/></a></li>
+<li><a href="https://leetcode-cn.com/leetbook/read/graph/r3sizg/" target="_blank" rel="nofollow noopener noreferrer">图<ExternalLinkIcon/></a></li>
 </ul>
 </div></template>
 

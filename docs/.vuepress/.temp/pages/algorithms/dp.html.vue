@@ -29,16 +29,16 @@
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
  * Definition for singly-linked list.
- * class ListNode {
+ * class ListNode <span class="token punctuation">{</span>
  *     val: number
  *     next: ListNode | null
- *     constructor(val?: number, next?: ListNode | null) {
+ *     constructor(val?: number, next?: ListNode | null) <span class="token punctuation">{</span>
  *         this.val = (val===undefined ? 0 : val)
  *         this.next = (next===undefined ? null : next)
- *     }
- * }
+ *     <span class="token punctuation">}</span>
+ * <span class="token punctuation">}</span>
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">middleNode</span><span class="token punctuation">(</span>head<span class="token operator">:</span> ListNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> ListNode <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token punctuation">{</span>
@@ -172,7 +172,7 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="最长不含重复字符的子字符串" tabindex="-1"><a class="header-anchor" href="#最长不含重复字符的子字符串" aria-hidden="true">#</a> 最长不含重复字符的子字符串</h2>
 <blockquote>
 <p>：point_right：
-<a href="https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/" target="_blank" rel="noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
+<a href="https://leetcode-cn.com/problems/zui-chang-bu-han-zhong-fu-zi-fu-de-zi-zi-fu-chuan-lcof/" target="_blank" rel="nofollow noopener noreferrer">Leetcode 链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>请从字符串中找出一个最长的不包含重复字符的子字符串，计算该最长子字符串的长度。</p>
 <div class="custom-container tip"><p class="custom-container-title">提示</p>
@@ -238,7 +238,7 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="最长上升子序列" tabindex="-1"><a class="header-anchor" href="#最长上升子序列" aria-hidden="true">#</a> 最长上升子序列</h2>
 <blockquote>
 <p>：point_right：
-<a href="https://leetcode-cn.com/problems/longest-increasing-subsequence/" target="_blank" rel="noopener noreferrer">题目链接<ExternalLinkIcon/></a></p>
+<a href="https://leetcode-cn.com/problems/longest-increasing-subsequence/" target="_blank" rel="nofollow noopener noreferrer">题目链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>给你一个整数数组 nums，找到其中最长严格递增子序列的长度。</p>
 <p>子序列是由数组派生而来的序列，删除 (或不删除) 数组中的元素而不改变其余元素的顺序。例如，[3,6,2,7] 是数组 [0,3,1,6,2,2,7] 的子序列。</p>
@@ -270,7 +270,7 @@
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="最长递增子序列的个数" tabindex="-1"><a class="header-anchor" href="#最长递增子序列的个数" aria-hidden="true">#</a> 最长递增子序列的个数</h2>
 <blockquote>
 <p>：point_right：
-<a href="https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/" target="_blank" rel="noopener noreferrer">题目链接<ExternalLinkIcon/></a></p>
+<a href="https://leetcode-cn.com/problems/number-of-longest-increasing-subsequence/" target="_blank" rel="nofollow noopener noreferrer">题目链接<ExternalLinkIcon/></a></p>
 </blockquote>
 <p>给定一个未排序的整数数组，找到最长递增子序列的个数。</p>
 <div class="custom-container tip"><p class="custom-container-title">示例</p>

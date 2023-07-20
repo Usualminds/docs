@@ -1,6 +1,6 @@
 <template><div><h1 id="数学" tabindex="-1"><a class="header-anchor" href="#数学" aria-hidden="true">#</a> 数学</h1>
 <h2 id="消失的两个数字" tabindex="-1"><a class="header-anchor" href="#消失的两个数字" aria-hidden="true">#</a> 消失的两个数字</h2>
-<p><a href="https://leetcode.cn/problems/missing-two-lcci/" target="_blank" rel="noopener noreferrer">👉 Leetcode 链接-17<ExternalLinkIcon/></a></p>
+<p><a href="https://leetcode.cn/problems/missing-two-lcci/" target="_blank" rel="nofollow noopener noreferrer">👉 Leetcode 链接-17<ExternalLinkIcon/></a></p>
 <p>给定一个数组，包含从 1 到 N 所有的整数，但其中缺了两个数字。你能在 O(N) 时间内只用 O(1) 的空间找到它们吗？</p>
 <p>以任意顺序返回这两个数字均可。</p>
 <ul>
@@ -41,7 +41,7 @@
     <span class="token keyword">return</span> <span class="token function">getMax</span><span class="token punctuation">(</span>b<span class="token punctuation">,</span> r<span class="token punctuation">)</span>
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="pow-x-n" tabindex="-1"><a class="header-anchor" href="#pow-x-n" aria-hidden="true">#</a> Pow(x，n)</h2>
-<p><a href="https://leetcode.cn/problems/powx-n/" target="_blank" rel="noopener noreferrer">leetcode-50<ExternalLinkIcon/></a></p>
+<p><a href="https://leetcode.cn/problems/powx-n/" target="_blank" rel="nofollow noopener noreferrer">leetcode-50<ExternalLinkIcon/></a></p>
 <p>实现 pow(x，n)，即计算 x 的 n 次幂函数 (即，xn)</p>
 <h3 id="快速幂-递归" tabindex="-1"><a class="header-anchor" href="#快速幂-递归" aria-hidden="true">#</a> 快速幂+递归</h3>
 <div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token keyword">function</span> <span class="token function">myPow</span><span class="token punctuation">(</span>x<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">,</span>n<span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">)</span><span class="token operator">:</span><span class="token builtin">number</span><span class="token punctuation">{</span>
@@ -80,10 +80,10 @@
     <span class="token keyword">return</span> res
 <span class="token punctuation">}</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="递归乘法" tabindex="-1"><a class="header-anchor" href="#递归乘法" aria-hidden="true">#</a> 递归乘法</h2>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
- * @param {number} A
- * @param {number} B
- * @return {number}
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
+ * <span class="token keyword">@param</span> <span class="token punctuation">{</span>number<span class="token punctuation">}</span> A
+ * <span class="token keyword">@param</span> <span class="token punctuation">{</span>number<span class="token punctuation">}</span> B
+ * <span class="token keyword">@return</span> <span class="token punctuation">{</span>number<span class="token punctuation">}</span>
  */</span>
 <span class="token keyword">var</span> <span class="token function-variable function">multiply</span> <span class="token operator">=</span> <span class="token keyword">function</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">,</span> <span class="token constant">B</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
     <span class="token keyword">if</span><span class="token punctuation">(</span><span class="token constant">A</span> <span class="token operator">===</span> <span class="token number">0</span> <span class="token operator">||</span> <span class="token constant">B</span> <span class="token operator">===</span> <span class="token number">0</span><span class="token punctuation">)</span> <span class="token keyword">return</span> <span class="token number">0</span>
@@ -94,7 +94,7 @@
     <span class="token keyword">return</span> <span class="token constant">A</span> <span class="token operator">+</span> <span class="token function">multiply</span><span class="token punctuation">(</span><span class="token constant">A</span><span class="token punctuation">,</span> <span class="token constant">B</span> <span class="token operator">-</span><span class="token number">1</span><span class="token punctuation">)</span>
 <span class="token punctuation">}</span><span class="token punctuation">;</span>
 </code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="x-的平方根" tabindex="-1"><a class="header-anchor" href="#x-的平方根" aria-hidden="true">#</a> x 的平方根</h2>
-<p><a href="https://leetcode.cn/problems/sqrtx/" target="_blank" rel="noopener noreferrer">leetcode-69<ExternalLinkIcon/></a></p>
+<p><a href="https://leetcode.cn/problems/sqrtx/" target="_blank" rel="nofollow noopener noreferrer">leetcode-69<ExternalLinkIcon/></a></p>
 <p>给你一个非负整数 x，计算并返回 x 的算术平方根
 由于返回类型是整数，结果只保留整数部分，小数部分将被舍去</p>
 <ul>
