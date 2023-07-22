@@ -126,7 +126,10 @@ export const zh: SidebarConfig = {
         },
         {
             text: "读书笔记",
-            children: ["/article/books/work-meaning.md"],
+            children: [
+                "/article/books/work-meaning.md",
+                "/article/books/not-like-lesson.md",
+            ],
         },
     ],
     "/translation/": [

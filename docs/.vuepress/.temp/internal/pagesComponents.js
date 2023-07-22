@@ -99,6 +99,8 @@ export const pagesComponents = {
   "v-bfebb490": defineAsyncComponent(() => import(/* webpackChunkName: "v-bfebb490" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/leetcode/smart.html.vue")),
   // path: /algorithms/sql/basic.html
   "v-808baa04": defineAsyncComponent(() => import(/* webpackChunkName: "v-808baa04" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/sql/basic.html.vue")),
+  // path: /article/books/not-like-lesson.html
+  "v-d241ce48": defineAsyncComponent(() => import(/* webpackChunkName: "v-d241ce48" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/not-like-lesson.html.vue")),
   // path: /article/books/work-meaning.html
   "v-3e13e9e1": defineAsyncComponent(() => import(/* webpackChunkName: "v-3e13e9e1" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/work-meaning.html.vue")),
   // path: /article/ios/1-env.html

@@ -48,6 +48,7 @@ export const pagesRoutes = [
   ["v-55ccc062","/algorithms/leetcode/june.html",{"title":"六月"},["/algorithms/leetcode/june","/algorithms/leetcode/june.md"]],
   ["v-bfebb490","/algorithms/leetcode/smart.html",{"title":"有趣题"},["/algorithms/leetcode/smart","/algorithms/leetcode/smart.md"]],
   ["v-808baa04","/algorithms/sql/basic.html",{"title":"基础"},["/algorithms/sql/basic","/algorithms/sql/basic.md"]],
+  ["v-d241ce48","/article/books/not-like-lesson.html",{"title":"为什么学生不喜欢上学"},["/article/books/not-like-lesson","/article/books/not-like-lesson.md"]],
   ["v-3e13e9e1","/article/books/work-meaning.html",{"title":"工作、消费主义和新穷人"},["/article/books/work-meaning","/article/books/work-meaning.md"]],
   ["v-6f9c0c48","/article/ios/1-env.html",{"title":"IOS 开发第一弹-环境构建"},["/article/ios/1-env","/article/ios/1-env.md"]],
   ["v-fe11343a","/article/ios/2-todo-list.html",{"title":"IOS 开发第二弹-待办事项"},["/article/ios/2-todo-list","/article/ios/2-todo-list.md"]],

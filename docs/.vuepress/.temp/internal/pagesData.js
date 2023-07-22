@@ -97,6 +97,8 @@ export const pagesData = {
   "v-bfebb490": () => import(/* webpackChunkName: "v-bfebb490" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/leetcode/smart.html.js").then(({ data }) => data),
   // path: /algorithms/sql/basic.html
   "v-808baa04": () => import(/* webpackChunkName: "v-808baa04" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/sql/basic.html.js").then(({ data }) => data),
+  // path: /article/books/not-like-lesson.html
+  "v-d241ce48": () => import(/* webpackChunkName: "v-d241ce48" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/not-like-lesson.html.js").then(({ data }) => data),
   // path: /article/books/work-meaning.html
   "v-3e13e9e1": () => import(/* webpackChunkName: "v-3e13e9e1" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/work-meaning.html.js").then(({ data }) => data),
   // path: /article/ios/1-env.html
