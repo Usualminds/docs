@@ -2,6 +2,10 @@ import type { NavbarConfig } from "@vuepress/theme-default";
 
 export const zh: NavbarConfig = [
     {
+        text: '博客',
+        link: 'https://qjidea.com'
+    },
+    {
         text: "基础",
         link: "/base/js/basic.md",
         children: [
@@ -77,6 +81,16 @@ export const zh: NavbarConfig = [
                     "/algorithms/leetcode/february.md",
                     "/algorithms/leetcode/january.md",
                     "/algorithms/leetcode/contest.md",
+                ],
+            },
+            {
+                text: "答题",
+                children: [
+                    "/test/shopee.md",
+                    "/test/finpoints.md",
+                    "/test/mego.md",
+                    "/test/ht.md",
+                    "/test/ft.md",
                 ],
             },
         ],
@@ -231,6 +245,10 @@ export const zh: NavbarConfig = [
             },
         ],
     },
+    {
+        text: 'GitHub',
+        link: 'https://github.com/Usualminds/docs'
+    },
     // {
     //     text: "业务",
     //     children: [
@@ -244,19 +262,5 @@ export const zh: NavbarConfig = [
     //         },
     //     ],
     // },
-    {
-        text: "答题",
-        children: [
-            {
-                text: "题目",
-                children: [
-                    "/test/shopee.md",
-                    "/test/finpoints.md",
-                    "/test/mego.md",
-                    "/test/ht.md",
-                    "/test/ft.md",
-                ],
-            },
-        ],
-    },
+
 ];
