@@ -190,6 +190,7 @@ export const zh: NavbarConfig = [
                 text: "算法",
                 children: [
                     /* inject */
+                    '/article/css-timeline.md',
                     '/article/chatgpt.md',
                     // '/article/apple-grow.md',
                     // "/article/year.md",

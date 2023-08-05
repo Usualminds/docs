@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>clip-path</title>
+        <style>
+            .area {
+                height: 200px;
+                width: 200px;
+                border: 1px solid red;
+            }
+
+            .parallelogram {
+                height: 200px;
+                width: 200px;
+                background-color: blue;
+                background: linear-gradient(
+                    to right,
+                    red 20%,
+                    orange 0,
+                    orange 40%,
+                    yellow 0,
+                    yellow 60%,
+                    lime 0,
+                    lime 80%,
+                    green 0
+                );
+
+                animation-name: clip;
+                animation-duration: 4s;
+                animation-direction: alternate;
+                animation-iteration-count: infinite; */
+                /* animation-timeline: scroll(root); */
+                /* 矩形 */
+                clip-path: polygon(20% 0%, 80% 0%, 70% 100%, 10% 100%);
+                /* 全部展示&隐藏 */
+                /* clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+                clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); */
+            }
+
+            @keyframes clip {
+                0% {
+                    clip-path: polygon(0 0, 0 0, 0 100%, 0 100%);
+                }
+                100% {
+                    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+                }
+            }
+        </style>
+    </head>
+    <body>
+        <div class="area">
+            <div class="parallelogram"></div>
+        </div>
+    </body>
+</html>
