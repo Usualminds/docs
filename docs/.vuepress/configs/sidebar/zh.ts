@@ -130,6 +130,7 @@ export const zh: SidebarConfig = {
             children: [
                 "/article/books/work-meaning.md",
                 "/article/books/not-like-lesson.md",
+                "/article/books/not-like-lesson-next.md"
             ],
         },
     ],

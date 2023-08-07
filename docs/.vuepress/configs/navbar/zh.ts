@@ -214,7 +214,7 @@ export const zh: NavbarConfig = [
             },
             {
                 text: "读书笔记",
-                children: ["/article/books/work-meaning.md", "/article/books/not-like-lesson.md",],
+                children: ["/article/books/work-meaning.md", "/article/books/not-like-lesson.md","/article/books/not-like-lesson-next.md",],
             },
         ],
     },
