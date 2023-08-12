@@ -49,6 +49,7 @@ export const pagesRoutes = [
   ["v-55ccc062","/algorithms/leetcode/june.html",{"title":"六月"},["/algorithms/leetcode/june","/algorithms/leetcode/june.md"]],
   ["v-bfebb490","/algorithms/leetcode/smart.html",{"title":"有趣题"},["/algorithms/leetcode/smart","/algorithms/leetcode/smart.md"]],
   ["v-808baa04","/algorithms/sql/basic.html",{"title":"基础"},["/algorithms/sql/basic","/algorithms/sql/basic.md"]],
+  ["v-0d9e2a16","/article/books/not-like-lesson-next.html",{"title":"为什么学生不喜欢上学（二）"},["/article/books/not-like-lesson-next","/article/books/not-like-lesson-next.md"]],
   ["v-d241ce48","/article/books/not-like-lesson.html",{"title":"为什么学生不喜欢上学"},["/article/books/not-like-lesson","/article/books/not-like-lesson.md"]],
   ["v-3e13e9e1","/article/books/work-meaning.html",{"title":"工作、消费主义和新穷人"},["/article/books/work-meaning","/article/books/work-meaning.md"]],
   ["v-6f9c0c48","/article/ios/1-env.html",{"title":"IOS 开发第一弹-环境构建"},["/article/ios/1-env","/article/ios/1-env.md"]],
@@ -102,5 +103,4 @@ export const pagesRoutes = [
   ["v-0003f319","/utils/debugger/vscode/basic.html",{"title":"VS 调试"},["/utils/debugger/vscode/basic","/utils/debugger/vscode/basic.md"]],
   ["v-720d3d8b","/utils/debugger/vue/basic.html",{"title":"vue 调试"},["/utils/debugger/vue/basic","/utils/debugger/vue/basic.md"]],
   ["v-3706649a","/404.html",{"title":""},["/404"]],
-  ["v-0d9e2a16","/article/books/not-like-lesson-next.html",{"title":"为什么学生不喜欢上学（二）"},["/article/books/not-like-lesson-next","/article/books/not-like-lesson-next.md"]],
 ]
