@@ -101,6 +101,8 @@ export const pagesComponents = {
   "v-bfebb490": defineAsyncComponent(() => import(/* webpackChunkName: "v-bfebb490" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/leetcode/smart.html.vue")),
   // path: /algorithms/sql/basic.html
   "v-808baa04": defineAsyncComponent(() => import(/* webpackChunkName: "v-808baa04" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/sql/basic.html.vue")),
+  // path: /article/books/maom-thinking.html
+  "v-9c8d1af6": defineAsyncComponent(() => import(/* webpackChunkName: "v-9c8d1af6" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/maom-thinking.html.vue")),
   // path: /article/books/not-like-lesson-next.html
   "v-0d9e2a16": defineAsyncComponent(() => import(/* webpackChunkName: "v-0d9e2a16" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/not-like-lesson-next.html.vue")),
   // path: /article/books/not-like-lesson.html

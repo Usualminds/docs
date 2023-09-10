@@ -49,6 +49,7 @@ export const pagesRoutes = [
   ["v-55ccc062","/algorithms/leetcode/june.html",{"title":"六月"},["/algorithms/leetcode/june","/algorithms/leetcode/june.md"]],
   ["v-bfebb490","/algorithms/leetcode/smart.html",{"title":"有趣题"},["/algorithms/leetcode/smart","/algorithms/leetcode/smart.md"]],
   ["v-808baa04","/algorithms/sql/basic.html",{"title":"基础"},["/algorithms/sql/basic","/algorithms/sql/basic.md"]],
+  ["v-9c8d1af6","/article/books/maom-thinking.html",{"title":"毛姆的几个观点"},["/article/books/maom-thinking","/article/books/maom-thinking.md"]],
   ["v-0d9e2a16","/article/books/not-like-lesson-next.html",{"title":"为什么学生不喜欢上学（二）"},["/article/books/not-like-lesson-next","/article/books/not-like-lesson-next.md"]],
   ["v-d241ce48","/article/books/not-like-lesson.html",{"title":"为什么学生不喜欢上学"},["/article/books/not-like-lesson","/article/books/not-like-lesson.md"]],
   ["v-3e13e9e1","/article/books/work-meaning.html",{"title":"工作、消费主义和新穷人"},["/article/books/work-meaning","/article/books/work-meaning.md"]],

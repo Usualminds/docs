@@ -99,6 +99,8 @@ export const pagesData = {
   "v-bfebb490": () => import(/* webpackChunkName: "v-bfebb490" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/leetcode/smart.html.js").then(({ data }) => data),
   // path: /algorithms/sql/basic.html
   "v-808baa04": () => import(/* webpackChunkName: "v-808baa04" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/sql/basic.html.js").then(({ data }) => data),
+  // path: /article/books/maom-thinking.html
+  "v-9c8d1af6": () => import(/* webpackChunkName: "v-9c8d1af6" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/maom-thinking.html.js").then(({ data }) => data),
   // path: /article/books/not-like-lesson-next.html
   "v-0d9e2a16": () => import(/* webpackChunkName: "v-0d9e2a16" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/not-like-lesson-next.html.js").then(({ data }) => data),
   // path: /article/books/not-like-lesson.html
