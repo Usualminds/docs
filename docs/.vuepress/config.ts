@@ -41,31 +41,31 @@ export default defineUserConfig({
       "window.dataLayer = window.dataLayer || [];function gtag(){dataLayer.push(arguments);} gtag('js', new Date());gtag('config', 'G-S3EP2W1W5D');"
     ],
     // google ads
-    [
-      "script",
-      {
-        async: true,
-        crossorigin: 'anonymous',
-        src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2935642389749184",
-      },
-    ],
-    [
-      // @ts-ignore
-      "ins",
-      {
-        "class": "adsbygoogle",
-        "style": "display:block",
-        "data-ad-client": "ca-pub-2935642389749184",
-        'data-ad-slot': "2384546911",
-        'data-ad-format': "auto",
-        'data-full-width-responsive': "true"
-      }
-    ],
-    [
-      "script",
-      {},
-      "(adsbygoogle = window.adsbygoogle || []).push({});"
-    ],
+    // [
+    //   "script",
+    //   {
+    //     async: true,
+    //     crossorigin: 'anonymous',
+    //     src: "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2935642389749184",
+    //   },
+    // ],
+    // [
+    //   // @ts-ignore
+    //   "ins",
+    //   {
+    //     "class": "adsbygoogle",
+    //     "style": "display:block",
+    //     "data-ad-client": "ca-pub-2935642389749184",
+    //     'data-ad-slot': "2384546911",
+    //     'data-ad-format': "auto",
+    //     'data-full-width-responsive': "true"
+    //   }
+    // ],
+    // [
+    //   "script",
+    //   {},
+    //   "(adsbygoogle = window.adsbygoogle || []).push({});"
+    // ],
   ],
   lang: 'en-US',
   title: ' ',
