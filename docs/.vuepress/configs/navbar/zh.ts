@@ -187,7 +187,7 @@ export const zh: NavbarConfig = [
         text: "文章",
         children: [
             {
-                text: "算法",
+                text: "技术",
                 children: [
                     /* inject */
                     '/article/css-timeline.md',
@@ -215,6 +215,7 @@ export const zh: NavbarConfig = [
             {
                 text: "读书笔记",
                 children: [
+                    "/article/books/personal-anxiety.md",
                     "/article/books/maom-thinking.md",
                     "/article/books/work-meaning.md",
                     "/article/books/not-like-lesson.md",
