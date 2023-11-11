@@ -101,20 +101,6 @@ export const pagesComponents = {
   "v-bfebb490": defineAsyncComponent(() => import(/* webpackChunkName: "v-bfebb490" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/leetcode/smart.html.vue")),
   // path: /algorithms/sql/basic.html
   "v-808baa04": defineAsyncComponent(() => import(/* webpackChunkName: "v-808baa04" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/sql/basic.html.vue")),
-  // path: /article/books/maom-thinking.html
-  "v-9c8d1af6": defineAsyncComponent(() => import(/* webpackChunkName: "v-9c8d1af6" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/maom-thinking.html.vue")),
-  // path: /article/books/not-like-lesson-next.html
-  "v-0d9e2a16": defineAsyncComponent(() => import(/* webpackChunkName: "v-0d9e2a16" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/not-like-lesson-next.html.vue")),
-  // path: /article/books/not-like-lesson.html
-  "v-d241ce48": defineAsyncComponent(() => import(/* webpackChunkName: "v-d241ce48" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/not-like-lesson.html.vue")),
-  // path: /article/books/personal-anxiety.html
-  "v-085164e3": defineAsyncComponent(() => import(/* webpackChunkName: "v-085164e3" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/personal-anxiety.html.vue")),
-  // path: /article/books/work-meaning.html
-  "v-3e13e9e1": defineAsyncComponent(() => import(/* webpackChunkName: "v-3e13e9e1" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/work-meaning.html.vue")),
-  // path: /article/ios/1-env.html
-  "v-6f9c0c48": defineAsyncComponent(() => import(/* webpackChunkName: "v-6f9c0c48" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/ios/1-env.html.vue")),
-  // path: /article/ios/2-todo-list.html
-  "v-fe11343a": defineAsyncComponent(() => import(/* webpackChunkName: "v-fe11343a" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/ios/2-todo-list.html.vue")),
   // path: /base/css/basic.html
   "v-0efe085c": defineAsyncComponent(() => import(/* webpackChunkName: "v-0efe085c" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/base/css/basic.html.vue")),
   // path: /base/css/text-shadow.html
@@ -155,6 +141,20 @@ export const pagesComponents = {
   "v-10763323": defineAsyncComponent(() => import(/* webpackChunkName: "v-10763323" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/base/ts/practise.html.vue")),
   // path: /base/ts/ts_source_code.html
   "v-291eec7d": defineAsyncComponent(() => import(/* webpackChunkName: "v-291eec7d" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/base/ts/ts_source_code.html.vue")),
+  // path: /article/books/maom-thinking.html
+  "v-9c8d1af6": defineAsyncComponent(() => import(/* webpackChunkName: "v-9c8d1af6" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/maom-thinking.html.vue")),
+  // path: /article/books/not-like-lesson-next.html
+  "v-0d9e2a16": defineAsyncComponent(() => import(/* webpackChunkName: "v-0d9e2a16" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/not-like-lesson-next.html.vue")),
+  // path: /article/books/not-like-lesson.html
+  "v-d241ce48": defineAsyncComponent(() => import(/* webpackChunkName: "v-d241ce48" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/not-like-lesson.html.vue")),
+  // path: /article/books/personal-anxiety.html
+  "v-085164e3": defineAsyncComponent(() => import(/* webpackChunkName: "v-085164e3" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/personal-anxiety.html.vue")),
+  // path: /article/books/work-meaning.html
+  "v-3e13e9e1": defineAsyncComponent(() => import(/* webpackChunkName: "v-3e13e9e1" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/work-meaning.html.vue")),
+  // path: /article/ios/1-env.html
+  "v-6f9c0c48": defineAsyncComponent(() => import(/* webpackChunkName: "v-6f9c0c48" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/ios/1-env.html.vue")),
+  // path: /article/ios/2-todo-list.html
+  "v-fe11343a": defineAsyncComponent(() => import(/* webpackChunkName: "v-fe11343a" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/ios/2-todo-list.html.vue")),
   // path: /business/hk/basic.html
   "v-74bb2421": defineAsyncComponent(() => import(/* webpackChunkName: "v-74bb2421" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/business/hk/basic.html.vue")),
   // path: /business/hk/trade.html
@@ -179,12 +179,12 @@ export const pagesComponents = {
   "v-75939632": defineAsyncComponent(() => import(/* webpackChunkName: "v-75939632" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/design/patterns/strategy.html.vue")),
   // path: /design/patterns/watch.html
   "v-a5903804": defineAsyncComponent(() => import(/* webpackChunkName: "v-a5903804" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/design/patterns/watch.html.vue")),
+  // path: /theroy/react/
+  "v-1ef6020a": defineAsyncComponent(() => import(/* webpackChunkName: "v-1ef6020a" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/theroy/react/index.html.vue")),
   // path: /translation/webpack/stats.html
   "v-a0f89e5a": defineAsyncComponent(() => import(/* webpackChunkName: "v-a0f89e5a" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/translation/webpack/stats.html.vue")),
   // path: /translation/webpack/stylus-loader.html
   "v-75b10664": defineAsyncComponent(() => import(/* webpackChunkName: "v-75b10664" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/translation/webpack/stylus-loader.html.vue")),
-  // path: /theroy/react/
-  "v-1ef6020a": defineAsyncComponent(() => import(/* webpackChunkName: "v-1ef6020a" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/theroy/react/index.html.vue")),
   // path: /theroy/vue/compiler.html
   "v-b27afcf4": defineAsyncComponent(() => import(/* webpackChunkName: "v-b27afcf4" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/theroy/vue/compiler.html.vue")),
   // path: /theroy/vue/component.html
