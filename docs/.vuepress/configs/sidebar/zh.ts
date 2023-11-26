@@ -135,6 +135,12 @@ export const zh: SidebarConfig = {
                 "/article/books/not-like-lesson-next.md"
             ],
         },
+        {
+            text: "服务",
+            children: [
+                "/article/services/picture-cleaner.md",
+            ],
+        },
     ],
     "/translation/": [
         {

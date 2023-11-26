@@ -29,16 +29,16 @@
 </div>
 <CodeGroup>
   <CodeGroupItem title="TS" active>
-<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token doc-comment comment">/**
+<div class="language-typescript ext-ts line-numbers-mode"><pre v-pre class="language-typescript"><code><span class="token comment">/**
  * Definition for singly-linked list.
- * class ListNode <span class="token punctuation">{</span>
+ * class ListNode {
  *     val: number
  *     next: ListNode | null
- *     constructor(val?: number, next?: ListNode | null) <span class="token punctuation">{</span>
+ *     constructor(val?: number, next?: ListNode | null) {
  *         this.val = (val===undefined ? 0 : val)
  *         this.next = (next===undefined ? null : next)
- *     <span class="token punctuation">}</span>
- * <span class="token punctuation">}</span>
+ *     }
+ * }
  */</span>
 
 <span class="token keyword">function</span> <span class="token function">middleNode</span><span class="token punctuation">(</span>head<span class="token operator">:</span> ListNode <span class="token operator">|</span> <span class="token keyword">null</span><span class="token punctuation">)</span><span class="token operator">:</span> ListNode <span class="token operator">|</span> <span class="token keyword">null</span> <span class="token punctuation">{</span>
