@@ -43,4 +43,4 @@ Smart Picture 的使用方法，轻松上手，只需三步
 如有其他使用问题，欢迎留言。
 
 ## 写在最后
-Smart Picture 体验地址：**vaiui.com**
+Smart Picture 体验地址：**[vaiui.com](https://vaiui.com)**
