@@ -11,6 +11,8 @@
 
 效果如下图，我们**移除了图片中的两个人物和拍摄时间水印。**
 
+![](./vaiui.gif)
+
 ![](https://p.ipic.vip/1chb86.jpg)
 
 ## 亮点介绍
@@ -44,7 +46,10 @@ Smart Picture 的使用方法，轻松上手，只需三步
 - Smart Picture **不保存你上传的任何图片，仅对图片处理后返回给客户端浏览器**。
 - Smart Picture **基于开源，我们不提供任何商业服务，初衷是方便自己使用**。
 
-如有其他使用问题，欢迎留言。
+## 反馈建议
+如有其他使用问题，欢迎填写[反馈表单](https://jinshuju.net/f/UEQLzM)。
+
+![](https://p.ipic.vip/s9k4x9.jpg)
 
 ## 写在最后
 Smart Picture 体验地址：**[vaiui.com](https://vaiui.com)**
