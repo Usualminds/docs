@@ -215,6 +215,7 @@ export const zh: NavbarConfig = [
             {
                 text: "读书笔记",
                 children: [
+                    "/article/books/citylove.md",
                     "/article/books/education.md",
                     "/article/books/personal-anxiety.md",
                     "/article/books/maom-thinking.md",

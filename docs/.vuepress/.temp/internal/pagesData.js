@@ -99,6 +99,8 @@ export const pagesData = {
   "v-bfebb490": () => import(/* webpackChunkName: "v-bfebb490" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/leetcode/smart.html.js").then(({ data }) => data),
   // path: /algorithms/sql/basic.html
   "v-808baa04": () => import(/* webpackChunkName: "v-808baa04" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/sql/basic.html.js").then(({ data }) => data),
+  // path: /article/books/citylove.html
+  "v-77805fc5": () => import(/* webpackChunkName: "v-77805fc5" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/citylove.html.js").then(({ data }) => data),
   // path: /article/books/education.html
   "v-6a7f2728": () => import(/* webpackChunkName: "v-6a7f2728" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/education.html.js").then(({ data }) => data),
   // path: /article/books/maom-thinking.html

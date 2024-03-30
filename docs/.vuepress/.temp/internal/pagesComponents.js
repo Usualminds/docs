@@ -101,6 +101,8 @@ export const pagesComponents = {
   "v-bfebb490": defineAsyncComponent(() => import(/* webpackChunkName: "v-bfebb490" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/leetcode/smart.html.vue")),
   // path: /algorithms/sql/basic.html
   "v-808baa04": defineAsyncComponent(() => import(/* webpackChunkName: "v-808baa04" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/algorithms/sql/basic.html.vue")),
+  // path: /article/books/citylove.html
+  "v-77805fc5": defineAsyncComponent(() => import(/* webpackChunkName: "v-77805fc5" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/citylove.html.vue")),
   // path: /article/books/education.html
   "v-6a7f2728": defineAsyncComponent(() => import(/* webpackChunkName: "v-6a7f2728" */"/Users/apple/Documents/docs/docs/.vuepress/.temp/pages/article/books/education.html.vue")),
   // path: /article/books/maom-thinking.html
