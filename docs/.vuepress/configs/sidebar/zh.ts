@@ -128,6 +128,7 @@ export const zh: SidebarConfig = {
         {
             text: "读书笔记",
             children: [
+                "/article/books/elon.md",
                 "/article/books/citylove.md",
                 "/article/books/education.md",
                 "/article/books/personal-anxiety.md",
