@@ -106,6 +106,7 @@ export const zh: SidebarConfig = {
             text: "文章",
             children: [
                 /* injectSider */
+                '/article/cursor.md',
                 '/article/css-timeline.md',
                 '/article/chatgpt.md',
                 // '/article/apple-grow.md',

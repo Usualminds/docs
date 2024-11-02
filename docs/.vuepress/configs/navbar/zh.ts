@@ -190,6 +190,7 @@ export const zh: NavbarConfig = [
                 text: "技术",
                 children: [
                     /* inject */
+                    '/article/cursor.md',
                     '/article/css-timeline.md',
                     '/article/chatgpt.md',
                     // '/article/apple-grow.md',
